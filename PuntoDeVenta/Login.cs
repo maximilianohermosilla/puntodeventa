@@ -18,6 +18,7 @@ namespace PuntoDeVenta
             {
                 Main form = new Main();
                 form.Show(this);
+                this.Hide();
             }
             else
             {
