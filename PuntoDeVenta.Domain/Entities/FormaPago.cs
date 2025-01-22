@@ -6,8 +6,6 @@
         public string Descripcion { get; set; }
         public bool Habilitado { get; set; }
 
-        public virtual Usuario Usuario { get; set; }
-
         public virtual ICollection<Pedido> Pedidos { get; set; }
     }
 }

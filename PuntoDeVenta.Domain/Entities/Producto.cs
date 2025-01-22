@@ -16,5 +16,6 @@
 
         public virtual CategoriaProducto CategoriaProducto { get; set; }
         public virtual IList<PromocionProducto> PromocionProductos { get; set; }
+        public virtual IList<PedidoDetalle> PedidoDetalles { get; set; }
     }
 }
