@@ -36,6 +36,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             Name = "Ventas";
+            Size = new Size(1449, 606);
             ResumeLayout(false);
         }
 

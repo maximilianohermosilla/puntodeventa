@@ -36,6 +36,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             Name = "Creditos";
+            Size = new Size(1459, 593);
             ResumeLayout(false);
         }
 
