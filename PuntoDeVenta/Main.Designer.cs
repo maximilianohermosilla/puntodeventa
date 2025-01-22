@@ -30,10 +30,12 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            panel1 = new Panel();
+            panelHeader = new Panel();
             labelTitulo = new Label();
             pictureBox1 = new PictureBox();
-            panel2 = new Panel();
+            panelNavbar = new Panel();
+            btnReportes = new Button();
+            btnCorte = new Button();
             btnFacturas = new Button();
             btnConfiguracion = new Button();
             btnCompras = new Button();
@@ -43,24 +45,36 @@
             btnCreditos = new Button();
             btnVentas = new Button();
             imageList = new ImageList(components);
-            btnCorte = new Button();
-            btnReportes = new Button();
-            panel1.SuspendLayout();
+            panelMain = new Panel();
+            ventas1 = new Ventas();
+            reportes1 = new UserControls.Reportes();
+            productos1 = new UserControls.Productos();
+            inventario1 = new UserControls.Inventario();
+            facturas1 = new UserControls.Facturas();
+            creditos1 = new UserControls.Creditos();
+            corte1 = new UserControls.Corte();
+            configuracion1 = new UserControls.Configuracion();
+            compras1 = new UserControls.Compras();
+            clientes1 = new UserControls.Clientes();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel2.SuspendLayout();
+            panelNavbar.SuspendLayout();
+            panelMain.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // panelHeader
             // 
-            panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(labelTitulo);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1438, 44);
-            panel1.TabIndex = 0;
+            panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelHeader.BackColor = SystemColors.Control;
+            panelHeader.BorderStyle = BorderStyle.FixedSingle;
+            panelHeader.Controls.Add(labelTitulo);
+            panelHeader.Controls.Add(pictureBox1);
+            panelHeader.Dock = DockStyle.Top;
+            panelHeader.Location = new Point(0, 0);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Size = new Size(1438, 44);
+            panelHeader.TabIndex = 0;
             // 
             // labelTitulo
             // 
@@ -82,26 +96,60 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // panel2
+            // panelNavbar
             // 
-            panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panel2.BackColor = SystemColors.ControlLight;
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(btnReportes);
-            panel2.Controls.Add(btnCorte);
-            panel2.Controls.Add(btnFacturas);
-            panel2.Controls.Add(btnConfiguracion);
-            panel2.Controls.Add(btnCompras);
-            panel2.Controls.Add(btnInventario);
-            panel2.Controls.Add(btnProductos);
-            panel2.Controls.Add(btnClientes);
-            panel2.Controls.Add(btnCreditos);
-            panel2.Controls.Add(btnVentas);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 44);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1438, 51);
-            panel2.TabIndex = 1;
+            panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelNavbar.BackColor = SystemColors.ControlLight;
+            panelNavbar.BorderStyle = BorderStyle.FixedSingle;
+            panelNavbar.Controls.Add(btnReportes);
+            panelNavbar.Controls.Add(btnCorte);
+            panelNavbar.Controls.Add(btnFacturas);
+            panelNavbar.Controls.Add(btnConfiguracion);
+            panelNavbar.Controls.Add(btnCompras);
+            panelNavbar.Controls.Add(btnInventario);
+            panelNavbar.Controls.Add(btnProductos);
+            panelNavbar.Controls.Add(btnClientes);
+            panelNavbar.Controls.Add(btnCreditos);
+            panelNavbar.Controls.Add(btnVentas);
+            panelNavbar.Dock = DockStyle.Top;
+            panelNavbar.Location = new Point(0, 44);
+            panelNavbar.Name = "panelNavbar";
+            panelNavbar.Size = new Size(1438, 51);
+            panelNavbar.TabIndex = 1;
+            // 
+            // btnReportes
+            // 
+            btnReportes.BackColor = SystemColors.ButtonHighlight;
+            btnReportes.BackgroundImageLayout = ImageLayout.None;
+            btnReportes.FlatAppearance.BorderSize = 0;
+            btnReportes.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReportes.Image = (Image)resources.GetObject("btnReportes.Image");
+            btnReportes.Location = new Point(1155, 1);
+            btnReportes.Name = "btnReportes";
+            btnReportes.Size = new Size(122, 45);
+            btnReportes.TabIndex = 9;
+            btnReportes.Text = "Reportes";
+            btnReportes.TextAlign = ContentAlignment.MiddleRight;
+            btnReportes.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnReportes.UseVisualStyleBackColor = false;
+            btnReportes.Click += btnReportes_Click;
+            // 
+            // btnCorte
+            // 
+            btnCorte.BackColor = SystemColors.ButtonHighlight;
+            btnCorte.BackgroundImageLayout = ImageLayout.None;
+            btnCorte.FlatAppearance.BorderSize = 0;
+            btnCorte.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCorte.Image = (Image)resources.GetObject("btnCorte.Image");
+            btnCorte.Location = new Point(1027, 1);
+            btnCorte.Name = "btnCorte";
+            btnCorte.Size = new Size(122, 45);
+            btnCorte.TabIndex = 8;
+            btnCorte.Text = "Corte";
+            btnCorte.TextAlign = ContentAlignment.MiddleRight;
+            btnCorte.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCorte.UseVisualStyleBackColor = false;
+            btnCorte.Click += btnCorte_Click;
             // 
             // btnFacturas
             // 
@@ -118,6 +166,7 @@
             btnFacturas.TextAlign = ContentAlignment.MiddleRight;
             btnFacturas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnFacturas.UseVisualStyleBackColor = false;
+            btnFacturas.Click += btnFacturas_Click;
             // 
             // btnConfiguracion
             // 
@@ -134,6 +183,7 @@
             btnConfiguracion.TextAlign = ContentAlignment.MiddleRight;
             btnConfiguracion.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnConfiguracion.UseVisualStyleBackColor = false;
+            btnConfiguracion.Click += btnConfiguracion_Click;
             // 
             // btnCompras
             // 
@@ -150,6 +200,7 @@
             btnCompras.TextAlign = ContentAlignment.MiddleRight;
             btnCompras.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCompras.UseVisualStyleBackColor = false;
+            btnCompras.Click += btnCompras_Click;
             // 
             // btnInventario
             // 
@@ -166,6 +217,7 @@
             btnInventario.TextAlign = ContentAlignment.MiddleRight;
             btnInventario.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnInventario.UseVisualStyleBackColor = false;
+            btnInventario.Click += btnInventario_Click;
             // 
             // btnProductos
             // 
@@ -182,6 +234,7 @@
             btnProductos.TextAlign = ContentAlignment.MiddleRight;
             btnProductos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnProductos.UseVisualStyleBackColor = false;
+            btnProductos.Click += btnProductos_Click;
             // 
             // btnClientes
             // 
@@ -198,6 +251,7 @@
             btnClientes.TextAlign = ContentAlignment.MiddleRight;
             btnClientes.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnClientes.UseVisualStyleBackColor = false;
+            btnClientes.Click += btnClientes_Click;
             // 
             // btnCreditos
             // 
@@ -214,6 +268,7 @@
             btnCreditos.TextAlign = ContentAlignment.MiddleRight;
             btnCreditos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCreditos.UseVisualStyleBackColor = false;
+            btnCreditos.Click += btnCreditos_Click;
             // 
             // btnVentas
             // 
@@ -230,6 +285,7 @@
             btnVentas.TextAlign = ContentAlignment.MiddleRight;
             btnVentas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnVentas.UseVisualStyleBackColor = false;
+            btnVentas.Click += btnVentas_Click;
             // 
             // imageList
             // 
@@ -238,37 +294,117 @@
             imageList.TransparentColor = Color.Transparent;
             imageList.Images.SetKeyName(0, "basket.png");
             // 
-            // btnCorte
+            // panelMain
             // 
-            btnCorte.BackColor = SystemColors.ButtonHighlight;
-            btnCorte.BackgroundImageLayout = ImageLayout.None;
-            btnCorte.FlatAppearance.BorderSize = 0;
-            btnCorte.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCorte.Image = new Bitmap(Properties.Resources.list_01, new Size(24, 24));
-            btnCorte.Location = new Point(1027, 1);
-            btnCorte.Name = "btnCorte";
-            btnCorte.Size = new Size(122, 45);
-            btnCorte.TabIndex = 8;
-            btnCorte.Text = "Corte";
-            btnCorte.TextAlign = ContentAlignment.MiddleRight;
-            btnCorte.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnCorte.UseVisualStyleBackColor = false;
+            panelMain.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelMain.BackColor = SystemColors.ActiveBorder;
+            panelMain.Controls.Add(ventas1);
+            panelMain.Controls.Add(reportes1);
+            panelMain.Controls.Add(productos1);
+            panelMain.Controls.Add(inventario1);
+            panelMain.Controls.Add(facturas1);
+            panelMain.Controls.Add(creditos1);
+            panelMain.Controls.Add(corte1);
+            panelMain.Controls.Add(configuracion1);
+            panelMain.Controls.Add(compras1);
+            panelMain.Controls.Add(clientes1);
+            panelMain.Dock = DockStyle.Fill;
+            panelMain.Location = new Point(0, 95);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(1438, 671);
+            panelMain.TabIndex = 2;
             // 
-            // btnReportes
+            // ventas1
             // 
-            btnReportes.BackColor = SystemColors.ButtonHighlight;
-            btnReportes.BackgroundImageLayout = ImageLayout.None;
-            btnReportes.FlatAppearance.BorderSize = 0;
-            btnReportes.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnReportes.Image = new Bitmap(Properties.Resources.report_02, new Size(24, 24));
-            btnReportes.Location = new Point(1155, 1);
-            btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(122, 45);
-            btnReportes.TabIndex = 9;
-            btnReportes.Text = "Reportes";
-            btnReportes.TextAlign = ContentAlignment.MiddleRight;
-            btnReportes.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnReportes.UseVisualStyleBackColor = false;
+            ventas1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ventas1.BackColor = SystemColors.MenuHighlight;
+            ventas1.Dock = DockStyle.Fill;
+            ventas1.Location = new Point(0, 0);
+            ventas1.Name = "ventas1";
+            ventas1.Size = new Size(1438, 671);
+            ventas1.TabIndex = 9;
+            // 
+            // reportes1
+            // 
+            reportes1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            reportes1.Dock = DockStyle.Fill;
+            reportes1.Location = new Point(0, 0);
+            reportes1.Name = "reportes1";
+            reportes1.Size = new Size(1438, 671);
+            reportes1.TabIndex = 8;
+            // 
+            // productos1
+            // 
+            productos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            productos1.Dock = DockStyle.Fill;
+            productos1.Location = new Point(0, 0);
+            productos1.Name = "productos1";
+            productos1.Size = new Size(1438, 671);
+            productos1.TabIndex = 7;
+            // 
+            // inventario1
+            // 
+            inventario1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            inventario1.Dock = DockStyle.Fill;
+            inventario1.Location = new Point(0, 0);
+            inventario1.Name = "inventario1";
+            inventario1.Size = new Size(1438, 671);
+            inventario1.TabIndex = 6;
+            // 
+            // facturas1
+            // 
+            facturas1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            facturas1.Dock = DockStyle.Fill;
+            facturas1.Location = new Point(0, 0);
+            facturas1.Name = "facturas1";
+            facturas1.Size = new Size(1438, 671);
+            facturas1.TabIndex = 5;
+            // 
+            // creditos1
+            // 
+            creditos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            creditos1.BackColor = SystemColors.ActiveCaptionText;
+            creditos1.Dock = DockStyle.Fill;
+            creditos1.Location = new Point(0, 0);
+            creditos1.Name = "creditos1";
+            creditos1.Size = new Size(1438, 671);
+            creditos1.TabIndex = 4;
+            // 
+            // corte1
+            // 
+            corte1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            corte1.Dock = DockStyle.Fill;
+            corte1.Location = new Point(0, 0);
+            corte1.Name = "corte1";
+            corte1.Size = new Size(1438, 671);
+            corte1.TabIndex = 3;
+            // 
+            // configuracion1
+            // 
+            configuracion1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            configuracion1.Dock = DockStyle.Fill;
+            configuracion1.Location = new Point(0, 0);
+            configuracion1.Name = "configuracion1";
+            configuracion1.Size = new Size(1438, 671);
+            configuracion1.TabIndex = 2;
+            // 
+            // compras1
+            // 
+            compras1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            compras1.Dock = DockStyle.Fill;
+            compras1.Location = new Point(0, 0);
+            compras1.Name = "compras1";
+            compras1.Size = new Size(1438, 671);
+            compras1.TabIndex = 1;
+            // 
+            // clientes1
+            // 
+            clientes1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            clientes1.Dock = DockStyle.Fill;
+            clientes1.Location = new Point(0, 0);
+            clientes1.Name = "clientes1";
+            clientes1.Size = new Size(1438, 671);
+            clientes1.TabIndex = 0;
             // 
             // Main
             // 
@@ -276,23 +412,25 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1438, 766);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(panelMain);
+            Controls.Add(panelNavbar);
+            Controls.Add(panelHeader);
             Name = "Main";
             ShowIcon = false;
             Text = "PuntoDeVenta - Bedaqui";
             WindowState = FormWindowState.Maximized;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panelHeader.ResumeLayout(false);
+            panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel2.ResumeLayout(false);
+            panelNavbar.ResumeLayout(false);
+            panelMain.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panel1;
-        private Panel panel2;
+        private Panel panelHeader;
+        private Panel panelNavbar;
         private Label labelTitulo;
         private PictureBox pictureBox1;
         public Button btnVentas;
@@ -306,5 +444,24 @@
         public Button btnFacturas;
         public Button btnReportes;
         public Button btnCorte;
-    }
+        private Panel panelMain;
+        public void InitializeUserControls()
+        {
+            var clientesUserControl = new PuntoDeVenta.UserControls.Clientes();
+
+            panelMain.Controls.Add(clientesUserControl);
+        }
+
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Ventas ventas1;
+        private UserControls.Reportes reportes1;
+        private UserControls.Productos productos1;
+        private UserControls.Inventario inventario1;
+        private UserControls.Facturas facturas1;
+        private UserControls.Creditos creditos1;
+        private UserControls.Corte corte1;
+        private UserControls.Configuracion configuracion1;
+        private UserControls.Compras compras1;
+        private UserControls.Clientes clientes1;
+    }    
 }
