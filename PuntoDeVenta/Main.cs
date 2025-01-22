@@ -87,6 +87,6 @@ namespace PuntoDeVenta
             clientes1.Visible = false;
 
             control.Visible = true;
-    }
+        }
     }
 }

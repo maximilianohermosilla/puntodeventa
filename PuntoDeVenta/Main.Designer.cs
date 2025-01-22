@@ -56,17 +56,20 @@
             configuracion1 = new UserControls.Configuracion();
             compras1 = new UserControls.Compras();
             clientes1 = new UserControls.Clientes();
+            panelFooter = new Panel();
+            label1 = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelNavbar.SuspendLayout();
             panelMain.SuspendLayout();
+            panelFooter.SuspendLayout();
             SuspendLayout();
             // 
             // panelHeader
             // 
             panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelHeader.BackColor = SystemColors.Control;
+            panelHeader.BackColor = SystemColors.ButtonHighlight;
             panelHeader.BorderStyle = BorderStyle.FixedSingle;
             panelHeader.Controls.Add(labelTitulo);
             panelHeader.Controls.Add(pictureBox1);
@@ -99,7 +102,7 @@
             // panelNavbar
             // 
             panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelNavbar.BackColor = SystemColors.ControlLight;
+            panelNavbar.BackColor = SystemColors.ButtonFace;
             panelNavbar.BorderStyle = BorderStyle.FixedSingle;
             panelNavbar.Controls.Add(btnReportes);
             panelNavbar.Controls.Add(btnCorte);
@@ -114,7 +117,7 @@
             panelNavbar.Dock = DockStyle.Top;
             panelNavbar.Location = new Point(0, 44);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(1438, 51);
+            panelNavbar.Size = new Size(1438, 54);
             panelNavbar.TabIndex = 1;
             // 
             // btnReportes
@@ -124,7 +127,7 @@
             btnReportes.FlatAppearance.BorderSize = 0;
             btnReportes.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReportes.Image = (Image)resources.GetObject("btnReportes.Image");
-            btnReportes.Location = new Point(1155, 1);
+            btnReportes.Location = new Point(1155, 3);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(122, 45);
             btnReportes.TabIndex = 9;
@@ -141,7 +144,7 @@
             btnCorte.FlatAppearance.BorderSize = 0;
             btnCorte.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCorte.Image = (Image)resources.GetObject("btnCorte.Image");
-            btnCorte.Location = new Point(1027, 1);
+            btnCorte.Location = new Point(1027, 3);
             btnCorte.Name = "btnCorte";
             btnCorte.Size = new Size(122, 45);
             btnCorte.TabIndex = 8;
@@ -158,7 +161,7 @@
             btnFacturas.FlatAppearance.BorderSize = 0;
             btnFacturas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnFacturas.Image = (Image)resources.GetObject("btnFacturas.Image");
-            btnFacturas.Location = new Point(899, 1);
+            btnFacturas.Location = new Point(899, 3);
             btnFacturas.Name = "btnFacturas";
             btnFacturas.Size = new Size(122, 45);
             btnFacturas.TabIndex = 7;
@@ -175,7 +178,7 @@
             btnConfiguracion.FlatAppearance.BorderSize = 0;
             btnConfiguracion.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnConfiguracion.Image = (Image)resources.GetObject("btnConfiguracion.Image");
-            btnConfiguracion.Location = new Point(771, 1);
+            btnConfiguracion.Location = new Point(771, 3);
             btnConfiguracion.Name = "btnConfiguracion";
             btnConfiguracion.Size = new Size(122, 45);
             btnConfiguracion.TabIndex = 6;
@@ -192,7 +195,7 @@
             btnCompras.FlatAppearance.BorderSize = 0;
             btnCompras.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCompras.Image = (Image)resources.GetObject("btnCompras.Image");
-            btnCompras.Location = new Point(643, 1);
+            btnCompras.Location = new Point(643, 3);
             btnCompras.Name = "btnCompras";
             btnCompras.Size = new Size(122, 45);
             btnCompras.TabIndex = 5;
@@ -209,7 +212,7 @@
             btnInventario.FlatAppearance.BorderSize = 0;
             btnInventario.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnInventario.Image = (Image)resources.GetObject("btnInventario.Image");
-            btnInventario.Location = new Point(387, 1);
+            btnInventario.Location = new Point(387, 3);
             btnInventario.Name = "btnInventario";
             btnInventario.Size = new Size(122, 45);
             btnInventario.TabIndex = 4;
@@ -226,7 +229,7 @@
             btnProductos.FlatAppearance.BorderSize = 0;
             btnProductos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnProductos.Image = (Image)resources.GetObject("btnProductos.Image");
-            btnProductos.Location = new Point(259, 1);
+            btnProductos.Location = new Point(259, 3);
             btnProductos.Name = "btnProductos";
             btnProductos.Size = new Size(122, 45);
             btnProductos.TabIndex = 3;
@@ -243,7 +246,7 @@
             btnClientes.FlatAppearance.BorderSize = 0;
             btnClientes.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClientes.Image = (Image)resources.GetObject("btnClientes.Image");
-            btnClientes.Location = new Point(515, 1);
+            btnClientes.Location = new Point(515, 3);
             btnClientes.Name = "btnClientes";
             btnClientes.Size = new Size(122, 45);
             btnClientes.TabIndex = 2;
@@ -260,7 +263,7 @@
             btnCreditos.FlatAppearance.BorderSize = 0;
             btnCreditos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCreditos.Image = (Image)resources.GetObject("btnCreditos.Image");
-            btnCreditos.Location = new Point(131, 1);
+            btnCreditos.Location = new Point(131, 3);
             btnCreditos.Name = "btnCreditos";
             btnCreditos.Size = new Size(122, 45);
             btnCreditos.TabIndex = 1;
@@ -274,10 +277,11 @@
             // 
             btnVentas.BackColor = SystemColors.ButtonHighlight;
             btnVentas.BackgroundImageLayout = ImageLayout.None;
+            btnVentas.FlatAppearance.BorderColor = Color.Black;
             btnVentas.FlatAppearance.BorderSize = 0;
             btnVentas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVentas.Image = (Image)resources.GetObject("btnVentas.Image");
-            btnVentas.Location = new Point(3, 1);
+            btnVentas.Location = new Point(3, 3);
             btnVentas.Name = "btnVentas";
             btnVentas.Size = new Size(122, 45);
             btnVentas.TabIndex = 0;
@@ -309,19 +313,19 @@
             panelMain.Controls.Add(compras1);
             panelMain.Controls.Add(clientes1);
             panelMain.Dock = DockStyle.Fill;
-            panelMain.Location = new Point(0, 95);
+            panelMain.Location = new Point(0, 98);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1438, 671);
+            panelMain.Size = new Size(1438, 634);
             panelMain.TabIndex = 2;
             // 
             // ventas1
             // 
             ventas1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ventas1.BackColor = SystemColors.MenuHighlight;
+            ventas1.BackColor = Color.Honeydew;
             ventas1.Dock = DockStyle.Fill;
             ventas1.Location = new Point(0, 0);
             ventas1.Name = "ventas1";
-            ventas1.Size = new Size(1438, 671);
+            ventas1.Size = new Size(1438, 634);
             ventas1.TabIndex = 9;
             // 
             // reportes1
@@ -330,7 +334,7 @@
             reportes1.Dock = DockStyle.Fill;
             reportes1.Location = new Point(0, 0);
             reportes1.Name = "reportes1";
-            reportes1.Size = new Size(1438, 671);
+            reportes1.Size = new Size(1438, 632);
             reportes1.TabIndex = 8;
             // 
             // productos1
@@ -339,7 +343,7 @@
             productos1.Dock = DockStyle.Fill;
             productos1.Location = new Point(0, 0);
             productos1.Name = "productos1";
-            productos1.Size = new Size(1438, 671);
+            productos1.Size = new Size(1449, 584);
             productos1.TabIndex = 7;
             // 
             // inventario1
@@ -348,7 +352,7 @@
             inventario1.Dock = DockStyle.Fill;
             inventario1.Location = new Point(0, 0);
             inventario1.Name = "inventario1";
-            inventario1.Size = new Size(1438, 671);
+            inventario1.Size = new Size(1452, 578);
             inventario1.TabIndex = 6;
             // 
             // facturas1
@@ -357,17 +361,17 @@
             facturas1.Dock = DockStyle.Fill;
             facturas1.Location = new Point(0, 0);
             facturas1.Name = "facturas1";
-            facturas1.Size = new Size(1438, 671);
+            facturas1.Size = new Size(1451, 579);
             facturas1.TabIndex = 5;
             // 
             // creditos1
             // 
             creditos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            creditos1.BackColor = SystemColors.ActiveCaptionText;
             creditos1.Dock = DockStyle.Fill;
+            creditos1.BackColor = SystemColors.ActiveCaptionText;
             creditos1.Location = new Point(0, 0);
             creditos1.Name = "creditos1";
-            creditos1.Size = new Size(1438, 671);
+            creditos1.Size = new Size(1459, 593);
             creditos1.TabIndex = 4;
             // 
             // corte1
@@ -376,7 +380,7 @@
             corte1.Dock = DockStyle.Fill;
             corte1.Location = new Point(0, 0);
             corte1.Name = "corte1";
-            corte1.Size = new Size(1438, 671);
+            corte1.Size = new Size(1463, 591);
             corte1.TabIndex = 3;
             // 
             // configuracion1
@@ -385,7 +389,7 @@
             configuracion1.Dock = DockStyle.Fill;
             configuracion1.Location = new Point(0, 0);
             configuracion1.Name = "configuracion1";
-            configuracion1.Size = new Size(1438, 671);
+            configuracion1.Size = new Size(1458, 590);
             configuracion1.TabIndex = 2;
             // 
             // compras1
@@ -394,7 +398,7 @@
             compras1.Dock = DockStyle.Fill;
             compras1.Location = new Point(0, 0);
             compras1.Name = "compras1";
-            compras1.Size = new Size(1438, 671);
+            compras1.Size = new Size(1460, 580);
             compras1.TabIndex = 1;
             // 
             // clientes1
@@ -403,8 +407,30 @@
             clientes1.Dock = DockStyle.Fill;
             clientes1.Location = new Point(0, 0);
             clientes1.Name = "clientes1";
-            clientes1.Size = new Size(1438, 671);
+            clientes1.Size = new Size(1445, 579);
             clientes1.TabIndex = 0;
+            // 
+            // panelFooter
+            // 
+            panelFooter.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelFooter.BackColor = SystemColors.ButtonHighlight;
+            panelFooter.BorderStyle = BorderStyle.FixedSingle;
+            panelFooter.Controls.Add(label1);
+            panelFooter.Dock = DockStyle.Bottom;
+            panelFooter.Location = new Point(0, 732);
+            panelFooter.Name = "panelFooter";
+            panelFooter.Size = new Size(1438, 34);
+            panelFooter.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Light", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(1238, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(199, 30);
+            label1.TabIndex = 1;
+            label1.Text = "22/01/2025 - 20:13";
             // 
             // Main
             // 
@@ -413,6 +439,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ClientSize = new Size(1438, 766);
             Controls.Add(panelMain);
+            Controls.Add(panelFooter);
             Controls.Add(panelNavbar);
             Controls.Add(panelHeader);
             Name = "Main";
@@ -424,6 +451,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelNavbar.ResumeLayout(false);
             panelMain.ResumeLayout(false);
+            panelFooter.ResumeLayout(false);
+            panelFooter.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -463,5 +492,7 @@
         private UserControls.Configuracion configuracion1;
         private UserControls.Compras compras1;
         private UserControls.Clientes clientes1;
+        private Panel panelFooter;
+        private Label label1;
     }    
 }

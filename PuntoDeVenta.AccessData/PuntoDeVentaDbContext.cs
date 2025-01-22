@@ -118,11 +118,11 @@ namespace PuntoDeVenta.AccessData
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<FormaPago>().HasData(
-                new FormaPago { Id = 1, Descripcion = "Efectivo", Habilitado = true },
-                new FormaPago { Id = 2, Descripcion = "Tarjeta de Crédito", Habilitado = true },
-                new FormaPago { Id = 3, Descripcion = "Tarjeta de Débito", Habilitado = true },
-                new FormaPago { Id = 4, Descripcion = "MercadoPago", Habilitado = true },
-                new FormaPago { Id = 5, Descripcion = "Transferencia", Habilitado = true }
+                new FormaPago { Id = 1, Descripcion = "Efectivo", Codigo = "cash", Habilitado = true },
+                new FormaPago { Id = 2, Descripcion = "Tarjeta de Crédito", Codigo = "credit", Habilitado = true },
+                new FormaPago { Id = 3, Descripcion = "Tarjeta de Débito", Codigo = "debit", Habilitado = true },
+                new FormaPago { Id = 4, Descripcion = "MercadoPago", Codigo = "mercadopago", Habilitado = true },
+                new FormaPago { Id = 5, Descripcion = "Transferencia", Codigo = "transfer", Habilitado = true }
             );
         }
     }

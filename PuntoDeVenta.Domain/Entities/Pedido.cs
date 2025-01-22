@@ -3,6 +3,7 @@
     public partial class Pedido
     {
         public int Id { get; set; }
+        public string? Nombre { get; set; }
         public DateTime FechaCreacion { get; set; }
         public DateTime? FechaFinalizacion { get; set; }
         public float PrecioTotal { get; set; }
