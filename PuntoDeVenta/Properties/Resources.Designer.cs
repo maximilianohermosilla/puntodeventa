@@ -73,9 +73,39 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _new {
+            get {
+                object obj = ResourceManager.GetObject("new", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add1 {
+            get {
+                object obj = ResourceManager.GetObject("add1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap alert {
+            get {
+                object obj = ResourceManager.GetObject("alert", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +123,39 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back1 {
+            get {
+                object obj = ResourceManager.GetObject("back1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bar_code_03 {
+            get {
+                object obj = ResourceManager.GetObject("bar_code_03", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap barcode_01 {
             get {
                 object obj = ResourceManager.GetObject("barcode_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barcode_011 {
+            get {
+                object obj = ResourceManager.GetObject("barcode_011", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,6 +173,46 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap barcode_021 {
+            get {
+                object obj = ResourceManager.GetObject("barcode_021", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barcode_block {
+            get {
+                object obj = ResourceManager.GetObject("barcode_block", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barcode_read_01 {
+            get {
+                object obj = ResourceManager.GetObject("barcode_read_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap barcode_read_02 {
+            get {
+                object obj = ResourceManager.GetObject("barcode_read_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap basket {
             get {
                 object obj = ResourceManager.GetObject("basket", resourceCulture);
@@ -123,9 +223,39 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap basket1 {
+            get {
+                object obj = ResourceManager.GetObject("basket1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap box {
             get {
                 object obj = ResourceManager.GetObject("box", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap box1 {
+            get {
+                object obj = ResourceManager.GetObject("box1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calculator_cash {
+            get {
+                object obj = ResourceManager.GetObject("calculator_cash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +283,119 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar_time1 {
+            get {
+                object obj = ResourceManager.GetObject("calendar_time1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendar1 {
+            get {
+                object obj = ResourceManager.GetObject("calendar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap camera {
             get {
                 object obj = ResourceManager.GetObject("camera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camera1 {
+            get {
+                object obj = ResourceManager.GetObject("camera1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancel {
+            get {
+                object obj = ResourceManager.GetObject("cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cash_box_01 {
+            get {
+                object obj = ResourceManager.GetObject("cash_box_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cash_box_02 {
+            get {
+                object obj = ResourceManager.GetObject("cash_box_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cash_in {
+            get {
+                object obj = ResourceManager.GetObject("cash_in", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cash_out {
+            get {
+                object obj = ResourceManager.GetObject("cash_out", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap category {
+            get {
+                object obj = ResourceManager.GetObject("category", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap category_add {
+            get {
+                object obj = ResourceManager.GetObject("category_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap check {
+            get {
+                object obj = ResourceManager.GetObject("check", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +413,29 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap check_ok1 {
+            get {
+                object obj = ResourceManager.GetObject("check_ok1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap checklist {
             get {
                 object obj = ResourceManager.GetObject("checklist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checklist1 {
+            get {
+                object obj = ResourceManager.GetObject("checklist1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +463,69 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap config_021 {
+            get {
+                object obj = ResourceManager.GetObject("config_021", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap config1 {
+            get {
+                object obj = ResourceManager.GetObject("config1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit {
+            get {
+                object obj = ResourceManager.GetObject("edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exce_download {
+            get {
+                object obj = ResourceManager.GetObject("exce_download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap folder {
             get {
                 object obj = ResourceManager.GetObject("folder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder1 {
+            get {
+                object obj = ResourceManager.GetObject("folder1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +543,29 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gallery_011 {
+            get {
+                object obj = ResourceManager.GetObject("gallery_011", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gallery_02 {
             get {
                 object obj = ResourceManager.GetObject("gallery_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gallery_021 {
+            get {
+                object obj = ResourceManager.GetObject("gallery_021", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +583,29 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap help1 {
+            get {
+                object obj = ResourceManager.GetObject("help1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap import {
             get {
                 object obj = ResourceManager.GetObject("import", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap import1 {
+            get {
+                object obj = ResourceManager.GetObject("import1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +623,29 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap list_011 {
+            get {
+                object obj = ResourceManager.GetObject("list_011", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap list_02 {
             get {
                 object obj = ResourceManager.GetObject("list_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap list_021 {
+            get {
+                object obj = ResourceManager.GetObject("list_021", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +663,59 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap list_031 {
+            get {
+                object obj = ResourceManager.GetObject("list_031", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap list_04 {
             get {
                 object obj = ResourceManager.GetObject("list_04", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap list_041 {
+            get {
+                object obj = ResourceManager.GetObject("list_041", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap list_add {
+            get {
+                object obj = ResourceManager.GetObject("list_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap list_block {
+            get {
+                object obj = ResourceManager.GetObject("list_block", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lock1 {
+            get {
+                object obj = ResourceManager.GetObject("lock1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +733,29 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_bedaqui1 {
+            get {
+                object obj = ResourceManager.GetObject("logo_bedaqui1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap message {
             get {
                 object obj = ResourceManager.GetObject("message", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap message1 {
+            get {
+                object obj = ResourceManager.GetObject("message1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,9 +773,79 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap money1 {
+            get {
+                object obj = ResourceManager.GetObject("money1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap news {
             get {
                 object obj = ResourceManager.GetObject("news", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap news1 {
+            get {
+                object obj = ResourceManager.GetObject("news1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap payment_cash {
+            get {
+                object obj = ResourceManager.GetObject("payment_cash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap payment_credit {
+            get {
+                object obj = ResourceManager.GetObject("payment_credit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap payment_debit {
+            get {
+                object obj = ResourceManager.GetObject("payment_debit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap payment_mercadopago {
+            get {
+                object obj = ResourceManager.GetObject("payment_mercadopago", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap payment_transfer {
+            get {
+                object obj = ResourceManager.GetObject("payment_transfer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +863,39 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap people_base1 {
+            get {
+                object obj = ResourceManager.GetObject("people_base1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap people_cash {
+            get {
+                object obj = ResourceManager.GetObject("people_cash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap people_pc {
             get {
                 object obj = ResourceManager.GetObject("people_pc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap people_pc1 {
+            get {
+                object obj = ResourceManager.GetObject("people_pc1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,9 +913,39 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap people_sun1 {
+            get {
+                object obj = ResourceManager.GetObject("people_sun1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap people_talk {
             get {
                 object obj = ResourceManager.GetObject("people_talk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap people_talk1 {
+            get {
+                object obj = ResourceManager.GetObject("people_talk1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap person_add {
+            get {
+                object obj = ResourceManager.GetObject("person_add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,9 +963,39 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap phone1 {
+            get {
+                object obj = ResourceManager.GetObject("phone1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap piechart {
             get {
                 object obj = ResourceManager.GetObject("piechart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap piechart1 {
+            get {
+                object obj = ResourceManager.GetObject("piechart1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap poeple_add {
+            get {
+                object obj = ResourceManager.GetObject("poeple_add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,9 +1013,79 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap print1 {
+            get {
+                object obj = ResourceManager.GetObject("print1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap product_add {
+            get {
+                object obj = ResourceManager.GetObject("product_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap product_delete {
+            get {
+                object obj = ResourceManager.GetObject("product_delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap promotion {
+            get {
+                object obj = ResourceManager.GetObject("promotion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap recipe {
+            get {
+                object obj = ResourceManager.GetObject("recipe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh {
+            get {
+                object obj = ResourceManager.GetObject("refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap report_01 {
             get {
                 object obj = ResourceManager.GetObject("report_01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap report_011 {
+            get {
+                object obj = ResourceManager.GetObject("report_011", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +1103,29 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap report_021 {
+            get {
+                object obj = ResourceManager.GetObject("report_021", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap report_03 {
             get {
                 object obj = ResourceManager.GetObject("report_03", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap report_031 {
+            get {
+                object obj = ResourceManager.GetObject("report_031", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,9 +1143,29 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search1 {
+            get {
+                object obj = ResourceManager.GetObject("search1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap security_box {
             get {
                 object obj = ResourceManager.GetObject("security_box", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap security_box1 {
+            get {
+                object obj = ResourceManager.GetObject("security_box1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -463,9 +1183,29 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap share1 {
+            get {
+                object obj = ResourceManager.GetObject("share1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shop {
             get {
                 object obj = ResourceManager.GetObject("shop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shop1 {
+            get {
+                object obj = ResourceManager.GetObject("shop1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -483,6 +1223,36 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tags1 {
+            get {
+                object obj = ResourceManager.GetObject("tags1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ticket {
+            get {
+                object obj = ResourceManager.GetObject("ticket", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash {
+            get {
+                object obj = ResourceManager.GetObject("trash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap truck {
             get {
                 object obj = ResourceManager.GetObject("truck", resourceCulture);
@@ -493,9 +1263,49 @@ namespace PuntoDeVenta.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap truck1 {
+            get {
+                object obj = ResourceManager.GetObject("truck1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap upload {
+            get {
+                object obj = ResourceManager.GetObject("upload", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap video {
             get {
                 object obj = ResourceManager.GetObject("video", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap video1 {
+            get {
+                object obj = ResourceManager.GetObject("video1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap warning {
+            get {
+                object obj = ResourceManager.GetObject("warning", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

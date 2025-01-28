@@ -8,6 +8,7 @@ namespace PuntoDeVenta
     {
         /// <summary>
         ///  The main entry point for the application.
+        ///  new Bitmap(Properties.Resources.check, 24, 24);
         /// </summary>
         [STAThread]
         static void Main()

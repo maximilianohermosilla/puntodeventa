@@ -105,7 +105,7 @@
             // 
             pictureBox1.BackgroundImage = Properties.Resources.logo_bedaqui;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Image = Properties.Resources.logo_bedaqui;
+            pictureBox1.Image = Properties.Resources.logo_bedaqui1;
             pictureBox1.Location = new Point(334, 26);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(130, 130);
@@ -117,7 +117,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MidnightBlue;
+            BackColor = Color.SlateGray;
             ClientSize = new Size(800, 450);
             Controls.Add(pictureBox1);
             Controls.Add(labelPassword);

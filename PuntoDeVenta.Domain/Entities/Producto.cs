@@ -6,6 +6,7 @@
         public string Codigo { get; set; }
         public string Descripcion { get; set; }
         public float PrecioCosto { get; set; }
+        public float PrecioPorMayor { get; set; }
         public float PrecioVenta { get; set; }
         public int Cantidad { get; set; }
         public int CantidadMinima { get; set; }

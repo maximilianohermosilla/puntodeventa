@@ -57,8 +57,9 @@
             compras1 = new UserControls.Compras();
             clientes1 = new UserControls.Clientes();
             panelFooter = new Panel();
-            label1 = new Label();
+            txtDatetime = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            timer1 = new System.Windows.Forms.Timer(components);
             panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelNavbar.SuspendLayout();
@@ -334,7 +335,7 @@
             reportes1.Dock = DockStyle.Fill;
             reportes1.Location = new Point(0, 0);
             reportes1.Name = "reportes1";
-            reportes1.Size = new Size(1438, 632);
+            reportes1.Size = new Size(1438, 634);
             reportes1.TabIndex = 8;
             // 
             // productos1
@@ -343,7 +344,7 @@
             productos1.Dock = DockStyle.Fill;
             productos1.Location = new Point(0, 0);
             productos1.Name = "productos1";
-            productos1.Size = new Size(1449, 584);
+            productos1.Size = new Size(1438, 634);
             productos1.TabIndex = 7;
             // 
             // inventario1
@@ -352,7 +353,7 @@
             inventario1.Dock = DockStyle.Fill;
             inventario1.Location = new Point(0, 0);
             inventario1.Name = "inventario1";
-            inventario1.Size = new Size(1452, 578);
+            inventario1.Size = new Size(1438, 634);
             inventario1.TabIndex = 6;
             // 
             // facturas1
@@ -361,17 +362,17 @@
             facturas1.Dock = DockStyle.Fill;
             facturas1.Location = new Point(0, 0);
             facturas1.Name = "facturas1";
-            facturas1.Size = new Size(1451, 579);
+            facturas1.Size = new Size(1438, 634);
             facturas1.TabIndex = 5;
             // 
             // creditos1
             // 
             creditos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            creditos1.Dock = DockStyle.Fill;
             creditos1.BackColor = SystemColors.ActiveCaptionText;
+            creditos1.Dock = DockStyle.Fill;
             creditos1.Location = new Point(0, 0);
             creditos1.Name = "creditos1";
-            creditos1.Size = new Size(1459, 593);
+            creditos1.Size = new Size(1438, 634);
             creditos1.TabIndex = 4;
             // 
             // corte1
@@ -380,7 +381,7 @@
             corte1.Dock = DockStyle.Fill;
             corte1.Location = new Point(0, 0);
             corte1.Name = "corte1";
-            corte1.Size = new Size(1463, 591);
+            corte1.Size = new Size(1438, 634);
             corte1.TabIndex = 3;
             // 
             // configuracion1
@@ -389,7 +390,7 @@
             configuracion1.Dock = DockStyle.Fill;
             configuracion1.Location = new Point(0, 0);
             configuracion1.Name = "configuracion1";
-            configuracion1.Size = new Size(1458, 590);
+            configuracion1.Size = new Size(1438, 634);
             configuracion1.TabIndex = 2;
             // 
             // compras1
@@ -398,7 +399,7 @@
             compras1.Dock = DockStyle.Fill;
             compras1.Location = new Point(0, 0);
             compras1.Name = "compras1";
-            compras1.Size = new Size(1460, 580);
+            compras1.Size = new Size(1438, 634);
             compras1.TabIndex = 1;
             // 
             // clientes1
@@ -407,7 +408,7 @@
             clientes1.Dock = DockStyle.Fill;
             clientes1.Location = new Point(0, 0);
             clientes1.Name = "clientes1";
-            clientes1.Size = new Size(1445, 579);
+            clientes1.Size = new Size(1438, 634);
             clientes1.TabIndex = 0;
             // 
             // panelFooter
@@ -415,22 +416,28 @@
             panelFooter.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelFooter.BackColor = SystemColors.ButtonHighlight;
             panelFooter.BorderStyle = BorderStyle.FixedSingle;
-            panelFooter.Controls.Add(label1);
+            panelFooter.Controls.Add(txtDatetime);
             panelFooter.Dock = DockStyle.Bottom;
             panelFooter.Location = new Point(0, 732);
             panelFooter.Name = "panelFooter";
             panelFooter.Size = new Size(1438, 34);
             panelFooter.TabIndex = 3;
             // 
-            // label1
+            // txtDatetime
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Light", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1238, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(199, 30);
-            label1.TabIndex = 1;
-            label1.Text = "22/01/2025 - 20:13";
+            txtDatetime.AutoSize = true;
+            txtDatetime.Dock = DockStyle.Right;
+            txtDatetime.Font = new Font("Segoe UI Light", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtDatetime.Location = new Point(1239, 0);
+            txtDatetime.Name = "txtDatetime";
+            txtDatetime.Size = new Size(197, 30);
+            txtDatetime.TabIndex = 1;
+            txtDatetime.Text = "22/1/2025 21:17:39";
+            // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // Main
             // 
@@ -493,6 +500,7 @@
         private UserControls.Compras compras1;
         private UserControls.Clientes clientes1;
         private Panel panelFooter;
-        private Label label1;
+        private Label txtDatetime;
+        private System.Windows.Forms.Timer timer1;
     }    
 }

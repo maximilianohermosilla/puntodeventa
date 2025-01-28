@@ -118,107 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="logo_bedaqui" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\logo_bedaqui.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="barcode_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\barcode_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="barcode_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\barcode_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="basket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\icons\basket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="box" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="calendar_time" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\calendar_time.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="check_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\check_ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="checklist" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\checklist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="config_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\config_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gallery_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\gallery_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gallery_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\gallery_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="help" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="import" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\import.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="list_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\list_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="list_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\list_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="list_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\list_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="list_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\list_04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="message" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="money" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="news" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\news.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="people_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\people_base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="people_pc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\people_pc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="people_sun" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\people_sun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="people_talk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\people_talk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="piechart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\piechart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="print" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="report_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\icons\report_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,28 +127,370 @@
   <data name="report_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\icons\report_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="report_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\report_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gallery_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\gallery_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="security_box" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\security_box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="video" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\video.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="news" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\news.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calendar_time" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\calendar_time.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="share" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\icons\share.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="list_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\list_04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checklist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\checklist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcode_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\barcode_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\check_ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="money" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\list_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="people_talk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\people_talk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\list_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\icons\shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tags" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\assets\icons\tags.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="message" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="import" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\import.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcode_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\barcode_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="piechart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\piechart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\icons\truck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="video" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="people_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\people_base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="security_box" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\security_box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tags" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\tags.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="box" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\list_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="people_pc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\people_pc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_bedaqui" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\logo_bedaqui.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="people_sun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\people_sun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="report_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\report_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gallery_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\gallery_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="config" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="config_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\config_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="payment_cash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\payment\payment_cash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="payment_credit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\payment\payment_credit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="payment_debit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\payment\payment_debit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="payment_mercadopago" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\payment\payment_mercadopago.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="payment_transfer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\payment\payment_transfer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\alert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bar_code_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\bar_code_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcode_011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\barcode_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcode_021" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\barcode_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcode_block" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\barcode_block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcode_read_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\barcode_read_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcode_read_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\barcode_read_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="basket1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\basket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="box1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calculator_cash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\calculator_cash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calendar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calendar_time1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\calendar_time.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="camera1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cash_box_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\cash_box_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cash_box_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\cash_box_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cash_in" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\cash_in.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cash_out" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\cash_out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="category" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\category.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="category_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\category_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="check_ok1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\check_ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checklist1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\checklist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="config1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="config_021" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\config_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exce_download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\exce_download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gallery_011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\gallery_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gallery_021" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\gallery_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="import1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\import.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list_011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\list_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list_021" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\list_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list_031" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\list_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list_041" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\list_04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\list_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list_block" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\list_block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="message1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="money1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="new" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="news1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\news.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="people_base1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\people_base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="people_cash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\people_cash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="people_pc1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\people_pc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="people_sun1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\people_sun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="people_talk1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\people_talk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="person_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\person_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="phone1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="piechart1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\piechart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="poeple_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\poeple_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="print1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="product_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\product_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="product_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\product_delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="promotion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\promotion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="recipe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\recipe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="report_011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\report_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="report_021" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\report_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="report_031" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\report_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="security_box1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\security_box.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="share1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\share.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shop1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tags1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\tags.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\ticket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="truck1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\truck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="upload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="video1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\assets\icons\video.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\icons\warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_bedaqui1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\assets\logo_bedaqui.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
