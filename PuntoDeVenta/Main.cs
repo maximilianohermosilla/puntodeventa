@@ -96,5 +96,9 @@ namespace PuntoDeVenta
             txtDatetime.Text = pp.ToString(); ;
         }
 
+        private void panelNavbar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

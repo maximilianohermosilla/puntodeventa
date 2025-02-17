@@ -127,6 +127,11 @@ namespace PuntoDeVenta.AccessData
                 entity.HasOne(d => d.Usuario).WithMany(p => p.PermisoUsuarios).HasForeignKey(d => d.IdUsuario).OnDelete(DeleteBehavior.NoAction);
             });
 
+            modelBuilder.Entity<Turno>(entity =>
+            {
+                entity.HasOne(d => d.Usuario).WithMany(p => p.Turnos).HasForeignKey(d => d.IdUsuario).OnDelete(DeleteBehavior.NoAction);
+            });
+
 
             base.OnModelCreating(modelBuilder);
 
