@@ -12,12 +12,12 @@ namespace PuntoDeVenta.AccessData
         public DbSet<CategoriaProducto> CategoriaProducto { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Estado> Estado { get; set; }
-        public DbSet<EstadoPedido> EstadoPedido { get; set; }
+        public DbSet<TicketEstado> EstadoTicket { get; set; }
         public DbSet<FormaPago> FormaPago { get; set; }
         public DbSet<Movimiento> Movimiento { get; set; }
         public DbSet<Parametro> Parametro { get; set; }
-        public DbSet<Pedido> Pedido { get; set; }
-        public DbSet<PedidoDetalle> PedidoDetalle { get; set; }
+        public DbSet<Ticket> Ticket { get; set; }
+        public DbSet<TicketDetalle> TicketDetalle { get; set; }
         public DbSet<Perfil> Perfil { get; set; }
         public DbSet<Producto> Producto { get; set; }
         public DbSet<Promocion> Promocion { get; set; }
@@ -55,24 +55,24 @@ namespace PuntoDeVenta.AccessData
                 entity.Property(e => e.Descripcion).HasMaxLength(50).IsRequired();
             });
 
-            modelBuilder.Entity<EstadoPedido>(entity =>
+            modelBuilder.Entity<TicketEstado>(entity =>
             {
-                entity.HasOne(d => d.Estado).WithMany(p => p.EstadoPedidos).HasForeignKey(d => d.IdEstado).OnDelete(DeleteBehavior.NoAction);
-                entity.HasOne(d => d.Pedido).WithMany(p => p.EstadoPedidos).HasForeignKey(d => d.IdPedido).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.Estado).WithMany(p => p.TicketEstados).HasForeignKey(d => d.IdEstado).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.Ticket).WithMany(p => p.TicketEstados).HasForeignKey(d => d.IdTicket).OnDelete(DeleteBehavior.NoAction);
             });
 
-            modelBuilder.Entity<Pedido>(entity =>
+            modelBuilder.Entity<Ticket>(entity =>
             {
                 entity.Property(e => e.PrecioTotal).HasColumnType("numeric(25,2)");
-                entity.HasOne(d => d.Estado).WithMany(p => p.Pedidos).HasForeignKey(d => d.IdEstado).OnDelete(DeleteBehavior.NoAction);
-                entity.HasOne(d => d.FormaPago).WithMany(p => p.Pedidos).HasForeignKey(d => d.IdFormaPago).OnDelete(DeleteBehavior.NoAction);
-                entity.HasOne(d => d.Usuario).WithMany(p => p.Pedidos).HasForeignKey(d => d.IdUsuario).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.Estado).WithMany(p => p.Tickets).HasForeignKey(d => d.IdEstado).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.FormaPago).WithMany(p => p.Tickets).HasForeignKey(d => d.IdFormaPago).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.Turno).WithMany(p => p.Tickets).HasForeignKey(d => d.IdTurno).OnDelete(DeleteBehavior.NoAction);
             });
 
-            modelBuilder.Entity<PedidoDetalle>(entity =>
+            modelBuilder.Entity<TicketDetalle>(entity =>
             {
-                entity.HasOne(d => d.Producto).WithMany(p => p.PedidoDetalles).HasForeignKey(d => d.IdProducto).OnDelete(DeleteBehavior.NoAction);
-                entity.HasOne(d => d.Pedido).WithMany(p => p.PedidoDetalles).HasForeignKey(d => d.IdPedido).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.Producto).WithMany(p => p.TicketDetalles).HasForeignKey(d => d.IdProducto).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.Ticket).WithMany(p => p.TicketDetalles).HasForeignKey(d => d.IdTicket).OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<Perfil>(entity =>
@@ -115,14 +115,40 @@ namespace PuntoDeVenta.AccessData
                 entity.HasOne(d => d.Perfil).WithMany(p => p.Usuarios).HasForeignKey(d => d.IdPerfil).OnDelete(DeleteBehavior.NoAction);
             });
 
+            modelBuilder.Entity<PermisoPerfil>(entity =>
+            {
+                entity.HasOne(d => d.Permiso).WithMany(p => p.PermisoPerfils).HasForeignKey(d => d.IdPermiso).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.Perfil).WithMany(p => p.PermisoPerfils).HasForeignKey(d => d.IdPerfil).OnDelete(DeleteBehavior.NoAction);
+            });
+
+            modelBuilder.Entity<PermisoUsuario>(entity =>
+            {
+                entity.HasOne(d => d.Permiso).WithMany(p => p.PermisoUsuarios).HasForeignKey(d => d.IdPermiso).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.Usuario).WithMany(p => p.PermisoUsuarios).HasForeignKey(d => d.IdUsuario).OnDelete(DeleteBehavior.NoAction);
+            });
+
+
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Estado>().HasData(
+                new Estado { Id = 1, Descripcion = "Iniciado" },
+                new Estado { Id = 2, Descripcion = "Finalizado" },
+                new Estado { Id = 3, Descripcion = "Cancelado" }
+            );
 
             modelBuilder.Entity<FormaPago>().HasData(
                 new FormaPago { Id = 1, Descripcion = "Efectivo", Codigo = "cash", Habilitado = true },
                 new FormaPago { Id = 2, Descripcion = "Tarjeta de Crédito", Codigo = "credit", Habilitado = true },
                 new FormaPago { Id = 3, Descripcion = "Tarjeta de Débito", Codigo = "debit", Habilitado = true },
-                new FormaPago { Id = 4, Descripcion = "MercadoPago", Codigo = "mercadopago", Habilitado = true },
-                new FormaPago { Id = 5, Descripcion = "Transferencia", Codigo = "transfer", Habilitado = true }
+                new FormaPago { Id = 4, Descripcion = "Transferencia", Codigo = "transfer", Habilitado = true },
+                new FormaPago { Id = 5, Descripcion = "MercadoPago", Codigo = "mercadopago", Habilitado = true }
+            );
+
+            modelBuilder.Entity<TipoMovimiento>().HasData(
+                new TipoMovimiento { Id = 1, Descripcion = "Entrada" },
+                new TipoMovimiento { Id = 2, Descripcion = "Salida" },
+                new TipoMovimiento { Id = 3, Descripcion = "Ajuste" },
+                new TipoMovimiento { Id = 4, Descripcion = "Devolución" }
             );
         }
     }

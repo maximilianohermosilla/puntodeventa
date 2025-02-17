@@ -100,7 +100,7 @@
             // 
             txtCodigo.Location = new Point(155, 14);
             txtCodigo.Name = "txtCodigo";
-            txtCodigo.Size = new Size(494, 23);
+            txtCodigo.Size = new Size(483, 23);
             txtCodigo.TabIndex = 2;
             // 
             // btnVarios
@@ -111,7 +111,7 @@
             btnVarios.FlatAppearance.BorderSize = 0;
             btnVarios.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVarios.Image = (Image)resources.GetObject("btnVarios.Image");
-            btnVarios.Location = new Point(15, 58);
+            btnVarios.Location = new Point(4, 58);
             btnVarios.Name = "btnVarios";
             btnVarios.Size = new Size(122, 35);
             btnVarios.TabIndex = 3;
@@ -128,7 +128,7 @@
             btnComun.FlatAppearance.BorderSize = 0;
             btnComun.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnComun.Image = (Image)resources.GetObject("btnComun.Image");
-            btnComun.Location = new Point(143, 58);
+            btnComun.Location = new Point(132, 58);
             btnComun.Name = "btnComun";
             btnComun.Size = new Size(122, 35);
             btnComun.TabIndex = 4;
@@ -145,7 +145,7 @@
             btnBuscar.FlatAppearance.BorderSize = 0;
             btnBuscar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBuscar.Image = (Image)resources.GetObject("btnBuscar.Image");
-            btnBuscar.Location = new Point(271, 58);
+            btnBuscar.Location = new Point(260, 58);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(122, 35);
             btnBuscar.TabIndex = 5;
@@ -162,7 +162,7 @@
             btnEntradas.FlatAppearance.BorderSize = 0;
             btnEntradas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEntradas.Image = (Image)resources.GetObject("btnEntradas.Image");
-            btnEntradas.Location = new Point(399, 58);
+            btnEntradas.Location = new Point(388, 58);
             btnEntradas.Name = "btnEntradas";
             btnEntradas.Size = new Size(122, 35);
             btnEntradas.TabIndex = 6;
@@ -179,7 +179,7 @@
             btnSalidas.FlatAppearance.BorderSize = 0;
             btnSalidas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSalidas.Image = (Image)resources.GetObject("btnSalidas.Image");
-            btnSalidas.Location = new Point(527, 58);
+            btnSalidas.Location = new Point(516, 58);
             btnSalidas.Name = "btnSalidas";
             btnSalidas.Size = new Size(122, 35);
             btnSalidas.TabIndex = 7;
@@ -196,7 +196,7 @@
             btnAsignarCliente.FlatAppearance.BorderSize = 0;
             btnAsignarCliente.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAsignarCliente.Image = (Image)resources.GetObject("btnAsignarCliente.Image");
-            btnAsignarCliente.Location = new Point(655, 58);
+            btnAsignarCliente.Location = new Point(644, 59);
             btnAsignarCliente.Name = "btnAsignarCliente";
             btnAsignarCliente.Size = new Size(122, 35);
             btnAsignarCliente.TabIndex = 8;
@@ -213,7 +213,7 @@
             btnVerificador.FlatAppearance.BorderSize = 0;
             btnVerificador.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVerificador.Image = (Image)resources.GetObject("btnVerificador.Image");
-            btnVerificador.Location = new Point(783, 58);
+            btnVerificador.Location = new Point(772, 59);
             btnVerificador.Name = "btnVerificador";
             btnVerificador.Size = new Size(122, 35);
             btnVerificador.TabIndex = 9;
@@ -230,7 +230,7 @@
             btnAgregarProducto.FlatAppearance.BorderSize = 0;
             btnAgregarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAgregarProducto.Image = (Image)resources.GetObject("btnAgregarProducto.Image");
-            btnAgregarProducto.Location = new Point(655, 8);
+            btnAgregarProducto.Location = new Point(644, 8);
             btnAgregarProducto.Name = "btnAgregarProducto";
             btnAgregarProducto.Size = new Size(122, 35);
             btnAgregarProducto.TabIndex = 10;
@@ -247,7 +247,7 @@
             btnEliminarProducto.FlatAppearance.BorderSize = 0;
             btnEliminarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminarProducto.Image = (Image)resources.GetObject("btnEliminarProducto.Image");
-            btnEliminarProducto.Location = new Point(783, 8);
+            btnEliminarProducto.Location = new Point(772, 8);
             btnEliminarProducto.Name = "btnEliminarProducto";
             btnEliminarProducto.Size = new Size(122, 35);
             btnEliminarProducto.TabIndex = 11;
@@ -274,7 +274,7 @@
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(1441, 367);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
+            tabPage1.Text = "Ticket 1";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -284,7 +284,7 @@
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(1441, 367);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
+            tabPage2.Text = "Ticket 2";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel2

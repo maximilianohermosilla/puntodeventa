@@ -7,5 +7,6 @@
         public bool Habilitado { get; set; }
 
         public virtual ICollection<Usuario> Usuarios { get; } = new List<Usuario>();
+        public virtual ICollection<PermisoPerfil> PermisoPerfils { get; } = new List<PermisoPerfil>();
     }
 }

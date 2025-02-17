@@ -7,6 +7,6 @@
         public string Codigo { get; set; }
         public bool Habilitado { get; set; }
 
-        public virtual ICollection<Pedido> Pedidos { get; set; }
+        public virtual ICollection<Ticket> Tickets { get; set; }
     }
 }

@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Include="Entities\PermisoUsuario.cs" />
-    <None Include="Entities\TipoPermiso.cs" />
-  </ItemGroup>
-
 </Project>

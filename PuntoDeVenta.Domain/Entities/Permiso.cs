@@ -8,6 +8,7 @@
         public int IdTipoPermiso { get; set; }
 
         public virtual TipoPermiso TipoPermiso { get; set; }
-        public virtual ICollection<Usuario> Usuarios { get; } = new List<Usuario>();
+        public virtual ICollection<PermisoUsuario> PermisoUsuarios { get; } = new List<PermisoUsuario>();
+        public virtual ICollection<PermisoPerfil> PermisoPerfils { get; } = new List<PermisoPerfil>();
     }
 }

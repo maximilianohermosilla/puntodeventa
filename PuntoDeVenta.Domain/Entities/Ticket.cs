@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta.Domain.Entities
 {
-    public partial class Pedido
+    public partial class Ticket
     {
         public int Id { get; set; }
         public string? Nombre { get; set; }
@@ -9,15 +9,15 @@
         public float PrecioTotal { get; set; }
         public int IdEstado { get; set; }
         public int IdFormaPago { get; set; }
-        public int IdUsuario { get; set; }
-        public int IdCliente { get; set; }
+        public int IdTurno { get; set; }
+        public int? IdCliente { get; set; }
         
         public virtual Estado Estado { get; set; }
         public virtual FormaPago FormaPago { get; set; }
-        public virtual Usuario Usuario { get; set; }
-        public virtual Cliente Cliente{ get; set; }
+        public virtual Turno Turno { get; set; }
+        public virtual Cliente? Cliente{ get; set; }
 
-        public virtual ICollection<PedidoDetalle> PedidoDetalles { get; set; }
-        public virtual ICollection<EstadoPedido> EstadoPedidos { get; set; }
+        public virtual ICollection<TicketDetalle> TicketDetalles { get; set; }
+        public virtual ICollection<TicketEstado> TicketEstados { get; set; }
     }
 }

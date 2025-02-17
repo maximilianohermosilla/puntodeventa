@@ -15,6 +15,8 @@
         public int IdPerfil { get; set; }
 
         public virtual Perfil Perfil { get; set; }
-        public virtual IList<Pedido> Pedidos { get; set; }
+        public virtual ICollection<Ticket> Tickets { get; set; }
+        public virtual ICollection<Turno> Turnos { get; set; }
+        public virtual ICollection<PermisoUsuario> PermisoUsuarios { get; } = new List<PermisoUsuario>();
     }
 }

@@ -11,6 +11,6 @@
         public bool Habilitado { get; set; }
         public DateTime FechaCreacion { get; set; }
 
-        public virtual IList<Pedido> Pedidos { get; set; }
+        public virtual IList<Ticket> Tickets { get; set; }
     }
 }
