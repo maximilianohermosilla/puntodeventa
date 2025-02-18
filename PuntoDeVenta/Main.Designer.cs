@@ -47,8 +47,8 @@
             imageList = new ImageList(components);
             panelMain = new Panel();
             ventas1 = new Ventas();
-            reportes1 = new UserControls.Reportes();
             productos1 = new UserControls.Productos();
+            reportes1 = new UserControls.Reportes();
             inventario1 = new UserControls.Inventario();
             facturas1 = new UserControls.Facturas();
             creditos1 = new UserControls.Creditos();
@@ -333,8 +333,8 @@
             panelMain.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelMain.BackColor = SystemColors.ActiveBorder;
             panelMain.Controls.Add(ventas1);
-            panelMain.Controls.Add(reportes1);
             panelMain.Controls.Add(productos1);
+            panelMain.Controls.Add(reportes1);
             panelMain.Controls.Add(inventario1);
             panelMain.Controls.Add(facturas1);
             panelMain.Controls.Add(creditos1);
@@ -358,6 +358,16 @@
             ventas1.Size = new Size(1438, 634);
             ventas1.TabIndex = 9;
             // 
+            // productos1
+            // 
+            productos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            productos1.BackColor = Color.Honeydew;
+            productos1.Dock = DockStyle.Fill;
+            productos1.Location = new Point(0, 0);
+            productos1.Name = "ventas1";
+            productos1.Size = new Size(1438, 634);
+            productos1.TabIndex = 9;
+            // 
             // reportes1
             // 
             reportes1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -366,15 +376,6 @@
             reportes1.Name = "reportes1";
             reportes1.Size = new Size(1438, 634);
             reportes1.TabIndex = 8;
-            // 
-            // productos1
-            // 
-            productos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            productos1.Dock = DockStyle.Fill;
-            productos1.Location = new Point(0, 0);
-            productos1.Name = "productos1";
-            productos1.Size = new Size(1438, 634);
-            productos1.TabIndex = 7;
             // 
             // inventario1
             // 
