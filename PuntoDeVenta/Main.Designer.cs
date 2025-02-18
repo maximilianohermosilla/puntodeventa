@@ -235,7 +235,7 @@
             btnInventario.Name = "btnInventario";
             btnInventario.Size = new Size(122, 45);
             btnInventario.TabIndex = 4;
-            btnInventario.Text = "F4 Inventario";
+            btnInventario.Text = "(F4) Inventario";
             btnInventario.TextAlign = ContentAlignment.MiddleRight;
             btnInventario.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnInventario.UseVisualStyleBackColor = false;
@@ -255,7 +255,7 @@
             btnProductos.Name = "btnProductos";
             btnProductos.Size = new Size(122, 45);
             btnProductos.TabIndex = 3;
-            btnProductos.Text = "F3 Productos";
+            btnProductos.Text = "(F3) Productos";
             btnProductos.TextAlign = ContentAlignment.MiddleRight;
             btnProductos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnProductos.UseVisualStyleBackColor = false;
@@ -295,7 +295,7 @@
             btnCreditos.Name = "btnCreditos";
             btnCreditos.Size = new Size(122, 45);
             btnCreditos.TabIndex = 1;
-            btnCreditos.Text = "F2 Créditos";
+            btnCreditos.Text = "(F2) Créditos";
             btnCreditos.TextAlign = ContentAlignment.MiddleRight;
             btnCreditos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCreditos.UseVisualStyleBackColor = false;
@@ -315,7 +315,7 @@
             btnVentas.Name = "btnVentas";
             btnVentas.Size = new Size(122, 45);
             btnVentas.TabIndex = 0;
-            btnVentas.Text = "F1 Ventas";
+            btnVentas.Text = "(F1) Ventas";
             btnVentas.TextAlign = ContentAlignment.MiddleRight;
             btnVentas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnVentas.UseVisualStyleBackColor = false;
