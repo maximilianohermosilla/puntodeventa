@@ -361,7 +361,7 @@
             // productos1
             // 
             productos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            productos1.BackColor = Color.Honeydew;
+            productos1.BackColor = Color.Azure;
             productos1.Dock = DockStyle.Fill;
             productos1.Location = new Point(0, 0);
             productos1.Name = "productos1";
@@ -371,6 +371,7 @@
             // reportes1
             // 
             reportes1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            reportes1.BackColor = Color.WhiteSmoke;
             reportes1.Dock = DockStyle.Fill;
             reportes1.Location = new Point(0, 0);
             reportes1.Name = "reportes1";
@@ -380,6 +381,7 @@
             // inventario1
             // 
             inventario1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            productos1.BackColor = Color.WhiteSmoke;
             inventario1.Dock = DockStyle.Fill;
             inventario1.Location = new Point(0, 0);
             inventario1.Name = "inventario1";
@@ -389,6 +391,7 @@
             // facturas1
             // 
             facturas1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            facturas1.BackColor = Color.WhiteSmoke;
             facturas1.Dock = DockStyle.Fill;
             facturas1.Location = new Point(0, 0);
             facturas1.Name = "facturas1";
@@ -398,7 +401,7 @@
             // creditos1
             // 
             creditos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            creditos1.BackColor = SystemColors.ActiveCaptionText;
+            creditos1.BackColor = Color.WhiteSmoke;
             creditos1.Dock = DockStyle.Fill;
             creditos1.Location = new Point(0, 0);
             creditos1.Name = "creditos1";
@@ -408,6 +411,7 @@
             // corte1
             // 
             corte1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            corte1.BackColor = Color.WhiteSmoke;
             corte1.Dock = DockStyle.Fill;
             corte1.Location = new Point(0, 0);
             corte1.Name = "corte1";
@@ -417,6 +421,7 @@
             // configuracion1
             // 
             configuracion1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            configuracion1.BackColor = Color.WhiteSmoke;
             configuracion1.Dock = DockStyle.Fill;
             configuracion1.Location = new Point(0, 0);
             configuracion1.Name = "configuracion1";
@@ -426,6 +431,7 @@
             // compras1
             // 
             compras1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            compras1.BackColor = Color.WhiteSmoke;
             compras1.Dock = DockStyle.Fill;
             compras1.Location = new Point(0, 0);
             compras1.Name = "compras1";
@@ -435,6 +441,7 @@
             // clientes1
             // 
             clientes1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            clientes1.BackColor = Color.WhiteSmoke;
             clientes1.Dock = DockStyle.Fill;
             clientes1.Location = new Point(0, 0);
             clientes1.Name = "clientes1";

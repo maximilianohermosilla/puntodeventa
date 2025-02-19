@@ -504,7 +504,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Honeydew;
+            BackColor = Color.LightGray;
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);

@@ -16,5 +16,10 @@ namespace PuntoDeVenta.UserControls
         {
             InitializeComponent();
         }
+
+        private void btnEstadoCuenta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

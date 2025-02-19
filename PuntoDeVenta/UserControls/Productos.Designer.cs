@@ -91,8 +91,10 @@
             // 
             btnCatalogo.BackColor = SystemColors.ButtonHighlight;
             btnCatalogo.BackgroundImageLayout = ImageLayout.None;
-            btnCatalogo.FlatAppearance.BorderColor = Color.Black;
-            btnCatalogo.FlatAppearance.BorderSize = 0;
+            btnCatalogo.FlatAppearance.BorderColor = Color.Silver;
+            btnCatalogo.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnCatalogo.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnCatalogo.FlatStyle = FlatStyle.Flat;
             btnCatalogo.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCatalogo.Image = (Image)resources.GetObject("btnCatalogo.Image");
             btnCatalogo.Location = new Point(925, 5);
@@ -109,8 +111,10 @@
             // 
             btnNuevoProducto.BackColor = SystemColors.ButtonHighlight;
             btnNuevoProducto.BackgroundImageLayout = ImageLayout.None;
-            btnNuevoProducto.FlatAppearance.BorderColor = Color.Black;
-            btnNuevoProducto.FlatAppearance.BorderSize = 0;
+            btnNuevoProducto.FlatAppearance.BorderColor = Color.Silver;
+            btnNuevoProducto.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnNuevoProducto.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnNuevoProducto.FlatStyle = FlatStyle.Flat;
             btnNuevoProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnNuevoProducto.Image = (Image)resources.GetObject("btnNuevoProducto.Image");
             btnNuevoProducto.Location = new Point(3, 5);
@@ -127,8 +131,10 @@
             // 
             btnModificarProducto.BackColor = SystemColors.ButtonHighlight;
             btnModificarProducto.BackgroundImageLayout = ImageLayout.None;
-            btnModificarProducto.FlatAppearance.BorderColor = Color.Black;
-            btnModificarProducto.FlatAppearance.BorderSize = 0;
+            btnModificarProducto.FlatAppearance.BorderColor = Color.Silver;
+            btnModificarProducto.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnModificarProducto.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnModificarProducto.FlatStyle = FlatStyle.Flat;
             btnModificarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnModificarProducto.Image = (Image)resources.GetObject("btnModificarProducto.Image");
             btnModificarProducto.Location = new Point(131, 5);
@@ -145,8 +151,10 @@
             // 
             btnEliminarProducto.BackColor = SystemColors.ButtonHighlight;
             btnEliminarProducto.BackgroundImageLayout = ImageLayout.None;
-            btnEliminarProducto.FlatAppearance.BorderColor = Color.Black;
-            btnEliminarProducto.FlatAppearance.BorderSize = 0;
+            btnEliminarProducto.FlatAppearance.BorderColor = Color.Silver;
+            btnEliminarProducto.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnEliminarProducto.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnEliminarProducto.FlatStyle = FlatStyle.Flat;
             btnEliminarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminarProducto.Image = (Image)resources.GetObject("btnEliminarProducto.Image");
             btnEliminarProducto.Location = new Point(259, 5);
@@ -163,8 +171,10 @@
             // 
             btnCategorias.BackColor = SystemColors.ButtonHighlight;
             btnCategorias.BackgroundImageLayout = ImageLayout.None;
-            btnCategorias.FlatAppearance.BorderColor = Color.Black;
-            btnCategorias.FlatAppearance.BorderSize = 0;
+            btnCategorias.FlatAppearance.BorderColor = Color.Silver;
+            btnCategorias.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnCategorias.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnCategorias.FlatStyle = FlatStyle.Flat;
             btnCategorias.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCategorias.Image = (Image)resources.GetObject("btnCategorias.Image");
             btnCategorias.Location = new Point(387, 5);
@@ -181,8 +191,10 @@
             // 
             btnImportar.BackColor = SystemColors.ButtonHighlight;
             btnImportar.BackgroundImageLayout = ImageLayout.None;
-            btnImportar.FlatAppearance.BorderColor = Color.Black;
-            btnImportar.FlatAppearance.BorderSize = 0;
+            btnImportar.FlatAppearance.BorderColor = Color.Silver;
+            btnImportar.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnImportar.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnImportar.FlatStyle = FlatStyle.Flat;
             btnImportar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnImportar.Image = (Image)resources.GetObject("btnImportar.Image");
             btnImportar.Location = new Point(797, 5);
@@ -199,8 +211,10 @@
             // 
             btnVentasPeriodo.BackColor = SystemColors.ButtonHighlight;
             btnVentasPeriodo.BackgroundImageLayout = ImageLayout.None;
-            btnVentasPeriodo.FlatAppearance.BorderColor = Color.Black;
-            btnVentasPeriodo.FlatAppearance.BorderSize = 0;
+            btnVentasPeriodo.FlatAppearance.BorderColor = Color.Silver;
+            btnVentasPeriodo.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnVentasPeriodo.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnVentasPeriodo.FlatStyle = FlatStyle.Flat;
             btnVentasPeriodo.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVentasPeriodo.Image = (Image)resources.GetObject("btnVentasPeriodo.Image");
             btnVentasPeriodo.Location = new Point(515, 5);
@@ -217,8 +231,10 @@
             // 
             btnPromociones.BackColor = SystemColors.ButtonHighlight;
             btnPromociones.BackgroundImageLayout = ImageLayout.None;
-            btnPromociones.FlatAppearance.BorderColor = Color.Black;
-            btnPromociones.FlatAppearance.BorderSize = 0;
+            btnPromociones.FlatAppearance.BorderColor = Color.Silver;
+            btnPromociones.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnPromociones.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnPromociones.FlatStyle = FlatStyle.Flat;
             btnPromociones.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPromociones.Image = (Image)resources.GetObject("btnPromociones.Image");
             btnPromociones.Location = new Point(669, 5);

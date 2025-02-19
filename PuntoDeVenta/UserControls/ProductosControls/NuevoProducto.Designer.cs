@@ -86,8 +86,10 @@
             // 
             btnGuardarProducto.BackColor = SystemColors.ButtonHighlight;
             btnGuardarProducto.BackgroundImageLayout = ImageLayout.None;
-            btnGuardarProducto.FlatAppearance.BorderColor = Color.Black;
-            btnGuardarProducto.FlatAppearance.BorderSize = 0;
+            btnGuardarProducto.FlatAppearance.BorderColor = Color.Silver;
+            btnGuardarProducto.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnGuardarProducto.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnGuardarProducto.FlatStyle = FlatStyle.Flat;
             btnGuardarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGuardarProducto.Image = (Image)resources.GetObject("btnGuardarProducto.Image");
             btnGuardarProducto.Location = new Point(5, 6);
