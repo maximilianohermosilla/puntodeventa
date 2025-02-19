@@ -42,6 +42,7 @@
             btnPromociones = new Button();
             panelMain = new Panel();
             nuevoProducto1 = new ProductosControls.NuevoProducto();
+            etiquetaControl1 = new CommonControls.EtiquetaControl();
             panelHeader.SuspendLayout();
             panelNavbar.SuspendLayout();
             panelMain.SuspendLayout();
@@ -94,7 +95,7 @@
             btnCatalogo.FlatAppearance.BorderColor = Color.Black;
             btnCatalogo.FlatAppearance.BorderSize = 0;
             btnCatalogo.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCatalogo.Image = new Bitmap(Properties.Resources.list_01, 24, 24);
+            btnCatalogo.Image = (Image)resources.GetObject("btnCatalogo.Image");
             btnCatalogo.Location = new Point(925, 5);
             btnCatalogo.Name = "btnCatalogo";
             btnCatalogo.Size = new Size(122, 35);
@@ -112,7 +113,7 @@
             btnNuevoProducto.FlatAppearance.BorderColor = Color.Black;
             btnNuevoProducto.FlatAppearance.BorderSize = 0;
             btnNuevoProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNuevoProducto.Image = new Bitmap(Properties.Resources.add, 24, 24);
+            btnNuevoProducto.Image = (Image)resources.GetObject("btnNuevoProducto.Image");
             btnNuevoProducto.Location = new Point(3, 5);
             btnNuevoProducto.Name = "btnNuevoProducto";
             btnNuevoProducto.Size = new Size(122, 35);
@@ -130,7 +131,7 @@
             btnModificarProducto.FlatAppearance.BorderColor = Color.Black;
             btnModificarProducto.FlatAppearance.BorderSize = 0;
             btnModificarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnModificarProducto.Image = new Bitmap(Properties.Resources.edit, 24, 24);
+            btnModificarProducto.Image = (Image)resources.GetObject("btnModificarProducto.Image");
             btnModificarProducto.Location = new Point(131, 5);
             btnModificarProducto.Name = "btnModificarProducto";
             btnModificarProducto.Size = new Size(122, 35);
@@ -148,7 +149,7 @@
             btnEliminarProducto.FlatAppearance.BorderColor = Color.Black;
             btnEliminarProducto.FlatAppearance.BorderSize = 0;
             btnEliminarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEliminarProducto.Image = new Bitmap(Properties.Resources.trash, 24, 24);
+            btnEliminarProducto.Image = (Image)resources.GetObject("btnEliminarProducto.Image");
             btnEliminarProducto.Location = new Point(259, 5);
             btnEliminarProducto.Name = "btnEliminarProducto";
             btnEliminarProducto.Size = new Size(122, 35);
@@ -166,7 +167,7 @@
             btnCategorias.FlatAppearance.BorderColor = Color.Black;
             btnCategorias.FlatAppearance.BorderSize = 0;
             btnCategorias.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCategorias.Image = new Bitmap(Properties.Resources.tags, 24, 24);
+            btnCategorias.Image = (Image)resources.GetObject("btnCategorias.Image");
             btnCategorias.Location = new Point(387, 5);
             btnCategorias.Name = "btnCategorias";
             btnCategorias.Size = new Size(122, 35);
@@ -184,7 +185,7 @@
             btnImportar.FlatAppearance.BorderColor = Color.Black;
             btnImportar.FlatAppearance.BorderSize = 0;
             btnImportar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnImportar.Image = new Bitmap(Properties.Resources.import, 24, 24);
+            btnImportar.Image = (Image)resources.GetObject("btnImportar.Image");
             btnImportar.Location = new Point(797, 5);
             btnImportar.Name = "btnImportar";
             btnImportar.Size = new Size(122, 35);
@@ -202,7 +203,7 @@
             btnVentasPeriodo.FlatAppearance.BorderColor = Color.Black;
             btnVentasPeriodo.FlatAppearance.BorderSize = 0;
             btnVentasPeriodo.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVentasPeriodo.Image = new Bitmap(Properties.Resources.calendar, 24, 24);
+            btnVentasPeriodo.Image = (Image)resources.GetObject("btnVentasPeriodo.Image");
             btnVentasPeriodo.Location = new Point(515, 5);
             btnVentasPeriodo.Name = "btnVentasPeriodo";
             btnVentasPeriodo.Size = new Size(148, 35);
@@ -220,7 +221,7 @@
             btnPromociones.FlatAppearance.BorderColor = Color.Black;
             btnPromociones.FlatAppearance.BorderSize = 0;
             btnPromociones.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPromociones.Image = new Bitmap(Properties.Resources.promotion, 24, 24);
+            btnPromociones.Image = (Image)resources.GetObject("btnPromociones.Image");
             btnPromociones.Location = new Point(669, 5);
             btnPromociones.Name = "btnPromociones";
             btnPromociones.Size = new Size(122, 35);
@@ -233,6 +234,7 @@
             // 
             // panelMain
             // 
+            panelMain.Controls.Add(etiquetaControl1);
             panelMain.Controls.Add(nuevoProducto1);
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(0, 76);
@@ -248,6 +250,13 @@
             nuevoProducto1.Name = "nuevoProducto1";
             nuevoProducto1.Size = new Size(1449, 508);
             nuevoProducto1.TabIndex = 8;
+            // 
+            // etiquetaControl1
+            // 
+            etiquetaControl1.Location = new Point(399, 90);
+            etiquetaControl1.Name = "etiquetaControl1";
+            etiquetaControl1.Size = new Size(553, 253);
+            etiquetaControl1.TabIndex = 9;
             // 
             // Productos
             // 
@@ -280,5 +289,6 @@
         private Panel panelMain;
         private UserControls.ProductosControls.NuevoProducto nuevoProducto1;
         public Button btnCatalogo;
+        private CommonControls.EtiquetaControl etiquetaControl1;
     }
 }

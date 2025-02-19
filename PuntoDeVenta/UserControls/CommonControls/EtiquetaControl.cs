@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PuntoDeVenta.UserControls.ProductosControls
+namespace PuntoDeVenta.UserControls.CommonControls
 {
-    public partial class NuevoProducto : UserControl
+    public partial class EtiquetaControl : UserControl
     {
-        public NuevoProducto()
+        public EtiquetaControl()
         {
             InitializeComponent();
         }
 
-        private void btnGuardarProducto_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
 
         }

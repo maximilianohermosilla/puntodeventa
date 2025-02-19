@@ -16,6 +16,10 @@ namespace PuntoDeVenta
         public Main()
         {
             InitializeComponent();
+            timer1 = new System.Windows.Forms.Timer();
+            timer1.Interval = 1;
+            timer1.Tick += timer1_Tick;
+            timer1.Start();
         }
 
         private void Main_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -92,8 +96,7 @@ namespace PuntoDeVenta
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int pp = DateTime.Now.Hour;
-            txtDatetime.Text = pp.ToString(); ;
+            txtDatetime.Text = DateTime.Now.ToString("dd/MM/yyyy - HH:mm:ss");
         }
 
         private void panelNavbar_Paint(object sender, PaintEventArgs e)

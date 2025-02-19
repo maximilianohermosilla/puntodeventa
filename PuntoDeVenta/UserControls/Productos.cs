@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace PuntoDeVenta.UserControls
 {
@@ -17,6 +18,7 @@ namespace PuntoDeVenta.UserControls
         public Productos()
         {
             InitializeComponent();
+            SetActivePanel(nuevoProducto1);
         }
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)
@@ -26,7 +28,20 @@ namespace PuntoDeVenta.UserControls
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
+            //SetActivePanel(etiquetaControl1);
+            //Form2 testDialog = new Form2();
 
+            //// Show testDialog as a modal dialog and determine if DialogResult = OK.
+            //if (testDialog.ShowDialog(this) == DialogResult.OK)
+            //{
+            //    // Read the contents of testDialog's TextBox.
+            //    this.txtResult.Text = testDialog.TextBox1.Text;
+            //}
+            //else
+            //{
+            //    this.txtResult.Text = "Cancelled";
+            //}
+            //testDialog.Dispose();
         }
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
@@ -61,8 +76,9 @@ namespace PuntoDeVenta.UserControls
 
         public void SetActivePanel(UserControl control)
         {
+            etiquetaControl1.Visible = false;
             nuevoProducto1.Visible = false;
-            
+
 
             control.Visible = true;
         }

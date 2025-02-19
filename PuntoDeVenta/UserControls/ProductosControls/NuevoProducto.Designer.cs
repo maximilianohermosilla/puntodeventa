@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoProducto));
             labelTitle = new Label();
             panelFooter = new Panel();
             btnGuardarProducto = new Button();
@@ -88,7 +89,7 @@
             btnGuardarProducto.FlatAppearance.BorderColor = Color.Black;
             btnGuardarProducto.FlatAppearance.BorderSize = 0;
             btnGuardarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnGuardarProducto.Image = new Bitmap(Properties.Resources.check, 24, 24);
+            btnGuardarProducto.Image = (Image)resources.GetObject("btnGuardarProducto.Image");
             btnGuardarProducto.Location = new Point(5, 6);
             btnGuardarProducto.Name = "btnGuardarProducto";
             btnGuardarProducto.Size = new Size(136, 35);
@@ -97,6 +98,7 @@
             btnGuardarProducto.TextAlign = ContentAlignment.MiddleRight;
             btnGuardarProducto.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnGuardarProducto.UseVisualStyleBackColor = false;
+            btnGuardarProducto.Click += btnGuardarProducto_Click;
             // 
             // panelNuevoProducto
             // 
