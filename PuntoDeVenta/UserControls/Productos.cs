@@ -28,24 +28,27 @@ namespace PuntoDeVenta.UserControls
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            //SetActivePanel(etiquetaControl1);
-            //Form2 testDialog = new Form2();
+            SetActivePanel(null);
+            EtiquetaDialog etiquetaDialog = new EtiquetaDialog();
+            etiquetaDialog.labelProducto.Text = "Modificar Producto";
 
-            //// Show testDialog as a modal dialog and determine if DialogResult = OK.
-            //if (testDialog.ShowDialog(this) == DialogResult.OK)
-            //{
-            //    // Read the contents of testDialog's TextBox.
-            //    this.txtResult.Text = testDialog.TextBox1.Text;
-            //}
-            //else
-            //{
-            //    this.txtResult.Text = "Cancelled";
-            //}
-            //testDialog.Dispose();
+            if (etiquetaDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                MessageBox.Show(etiquetaDialog.txtEtiqueta.Text);
+            }
+            etiquetaDialog.Dispose();
         }
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
+            SetActivePanel(null);
+            EtiquetaDialog etiquetaDialog = new EtiquetaDialog();
+            etiquetaDialog.labelProducto.Text = "Eliminar Producto";
+            if (etiquetaDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                MessageBox.Show(etiquetaDialog.txtEtiqueta.Text);
+            }
+            etiquetaDialog.Dispose();
 
         }
 
@@ -74,13 +77,15 @@ namespace PuntoDeVenta.UserControls
 
         }
 
-        public void SetActivePanel(UserControl control)
+        public void SetActivePanel(UserControl? control)
         {
-            etiquetaControl1.Visible = false;
             nuevoProducto1.Visible = false;
 
 
-            control.Visible = true;
+            if (control != null)
+            {
+                control.Visible = true;
+            }
         }
     }
 }

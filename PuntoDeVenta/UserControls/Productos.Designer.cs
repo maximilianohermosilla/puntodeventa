@@ -42,7 +42,6 @@
             btnPromociones = new Button();
             panelMain = new Panel();
             nuevoProducto1 = new ProductosControls.NuevoProducto();
-            etiquetaControl1 = new CommonControls.EtiquetaControl();
             panelHeader.SuspendLayout();
             panelNavbar.SuspendLayout();
             panelMain.SuspendLayout();
@@ -234,7 +233,6 @@
             // 
             // panelMain
             // 
-            panelMain.Controls.Add(etiquetaControl1);
             panelMain.Controls.Add(nuevoProducto1);
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(0, 76);
@@ -250,13 +248,6 @@
             nuevoProducto1.Name = "nuevoProducto1";
             nuevoProducto1.Size = new Size(1449, 508);
             nuevoProducto1.TabIndex = 8;
-            // 
-            // etiquetaControl1
-            // 
-            etiquetaControl1.Location = new Point(399, 90);
-            etiquetaControl1.Name = "etiquetaControl1";
-            etiquetaControl1.Size = new Size(553, 253);
-            etiquetaControl1.TabIndex = 9;
             // 
             // Productos
             // 
@@ -289,6 +280,5 @@
         private Panel panelMain;
         private UserControls.ProductosControls.NuevoProducto nuevoProducto1;
         public Button btnCatalogo;
-        private CommonControls.EtiquetaControl etiquetaControl1;
     }
 }

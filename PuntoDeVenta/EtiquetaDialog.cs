@@ -8,18 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PuntoDeVenta.UserControls.CommonControls
+namespace PuntoDeVenta
 {
-    public partial class EtiquetaControl : UserControl
+    public partial class EtiquetaDialog : Form
     {
-        public EtiquetaControl()
+        public EtiquetaDialog()
         {
             InitializeComponent();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
+        }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }
