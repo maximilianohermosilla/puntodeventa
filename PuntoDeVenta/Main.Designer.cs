@@ -231,11 +231,11 @@
             btnInventario.FlatStyle = FlatStyle.Flat;
             btnInventario.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnInventario.Image = (Image)resources.GetObject("btnInventario.Image");
-            btnInventario.Location = new Point(387, 3);
+            btnInventario.Location = new Point(131, 3);
             btnInventario.Name = "btnInventario";
             btnInventario.Size = new Size(122, 45);
             btnInventario.TabIndex = 4;
-            btnInventario.Text = "(F4) Inventario";
+            btnInventario.Text = "(F2) Inventario";
             btnInventario.TextAlign = ContentAlignment.MiddleRight;
             btnInventario.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnInventario.UseVisualStyleBackColor = false;
@@ -291,11 +291,11 @@
             btnCreditos.FlatStyle = FlatStyle.Flat;
             btnCreditos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCreditos.Image = (Image)resources.GetObject("btnCreditos.Image");
-            btnCreditos.Location = new Point(131, 3);
+            btnCreditos.Location = new Point(387, 3);
             btnCreditos.Name = "btnCreditos";
             btnCreditos.Size = new Size(122, 45);
             btnCreditos.TabIndex = 1;
-            btnCreditos.Text = "(F2) Créditos";
+            btnCreditos.Text = "(F4) Créditos";
             btnCreditos.TextAlign = ContentAlignment.MiddleRight;
             btnCreditos.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCreditos.UseVisualStyleBackColor = false;
@@ -364,7 +364,7 @@
             productos1.BackColor = Color.Honeydew;
             productos1.Dock = DockStyle.Fill;
             productos1.Location = new Point(0, 0);
-            productos1.Name = "ventas1";
+            productos1.Name = "productos1";
             productos1.Size = new Size(1438, 634);
             productos1.TabIndex = 9;
             // 

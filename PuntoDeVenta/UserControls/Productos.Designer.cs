@@ -94,7 +94,7 @@
             btnCatalogo.FlatAppearance.BorderColor = Color.Black;
             btnCatalogo.FlatAppearance.BorderSize = 0;
             btnCatalogo.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCatalogo.Image = (Image)resources.GetObject("btnCatalogo.Image");
+            btnCatalogo.Image = new Bitmap(Properties.Resources.list_01, 24, 24);
             btnCatalogo.Location = new Point(925, 5);
             btnCatalogo.Name = "btnCatalogo";
             btnCatalogo.Size = new Size(122, 35);
@@ -112,7 +112,7 @@
             btnNuevoProducto.FlatAppearance.BorderColor = Color.Black;
             btnNuevoProducto.FlatAppearance.BorderSize = 0;
             btnNuevoProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNuevoProducto.Image = (Image)resources.GetObject("btnNuevoProducto.Image");
+            btnNuevoProducto.Image = new Bitmap(Properties.Resources.add, 24, 24);
             btnNuevoProducto.Location = new Point(3, 5);
             btnNuevoProducto.Name = "btnNuevoProducto";
             btnNuevoProducto.Size = new Size(122, 35);
@@ -130,7 +130,7 @@
             btnModificarProducto.FlatAppearance.BorderColor = Color.Black;
             btnModificarProducto.FlatAppearance.BorderSize = 0;
             btnModificarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnModificarProducto.Image = (Image)resources.GetObject("btnModificarProducto.Image");
+            btnModificarProducto.Image = new Bitmap(Properties.Resources.edit, 24, 24);
             btnModificarProducto.Location = new Point(131, 5);
             btnModificarProducto.Name = "btnModificarProducto";
             btnModificarProducto.Size = new Size(122, 35);
@@ -148,7 +148,7 @@
             btnEliminarProducto.FlatAppearance.BorderColor = Color.Black;
             btnEliminarProducto.FlatAppearance.BorderSize = 0;
             btnEliminarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEliminarProducto.Image = (Image)resources.GetObject("btnEliminarProducto.Image");
+            btnEliminarProducto.Image = new Bitmap(Properties.Resources.trash, 24, 24);
             btnEliminarProducto.Location = new Point(259, 5);
             btnEliminarProducto.Name = "btnEliminarProducto";
             btnEliminarProducto.Size = new Size(122, 35);
@@ -166,7 +166,7 @@
             btnCategorias.FlatAppearance.BorderColor = Color.Black;
             btnCategorias.FlatAppearance.BorderSize = 0;
             btnCategorias.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCategorias.Image = (Image)resources.GetObject("btnCategorias.Image");
+            btnCategorias.Image = new Bitmap(Properties.Resources.tags, 24, 24);
             btnCategorias.Location = new Point(387, 5);
             btnCategorias.Name = "btnCategorias";
             btnCategorias.Size = new Size(122, 35);
@@ -184,7 +184,7 @@
             btnImportar.FlatAppearance.BorderColor = Color.Black;
             btnImportar.FlatAppearance.BorderSize = 0;
             btnImportar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnImportar.Image = (Image)resources.GetObject("btnImportar.Image");
+            btnImportar.Image = new Bitmap(Properties.Resources.import, 24, 24);
             btnImportar.Location = new Point(797, 5);
             btnImportar.Name = "btnImportar";
             btnImportar.Size = new Size(122, 35);
@@ -202,7 +202,7 @@
             btnVentasPeriodo.FlatAppearance.BorderColor = Color.Black;
             btnVentasPeriodo.FlatAppearance.BorderSize = 0;
             btnVentasPeriodo.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVentasPeriodo.Image = (Image)resources.GetObject("btnVentasPeriodo.Image");
+            btnVentasPeriodo.Image = new Bitmap(Properties.Resources.calendar, 24, 24);
             btnVentasPeriodo.Location = new Point(515, 5);
             btnVentasPeriodo.Name = "btnVentasPeriodo";
             btnVentasPeriodo.Size = new Size(148, 35);
@@ -220,7 +220,7 @@
             btnPromociones.FlatAppearance.BorderColor = Color.Black;
             btnPromociones.FlatAppearance.BorderSize = 0;
             btnPromociones.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPromociones.Image = (Image)resources.GetObject("btnPromociones.Image");
+            btnPromociones.Image = new Bitmap(Properties.Resources.promotion, 24, 24);
             btnPromociones.Location = new Point(669, 5);
             btnPromociones.Name = "btnPromociones";
             btnPromociones.Size = new Size(122, 35);

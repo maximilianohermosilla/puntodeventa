@@ -131,7 +131,7 @@
             btnComun.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnComun.FlatStyle = FlatStyle.Flat;
             btnComun.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnComun.Image = (Image)resources.GetObject("btnComun.Image");
+            btnComun.Image = new Bitmap(Properties.Resources.product_add, 24, 24);
             btnComun.Location = new Point(132, 58);
             btnComun.Name = "btnComun";
             btnComun.Size = new Size(122, 35);
@@ -150,7 +150,7 @@
             btnBuscar.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnBuscar.FlatStyle = FlatStyle.Flat;
             btnBuscar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBuscar.Image = (Image)resources.GetObject("btnBuscar.Image");
+            btnBuscar.Image = new Bitmap(Properties.Resources.search, 24, 24);
             btnBuscar.Location = new Point(260, 58);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(122, 35);
@@ -169,7 +169,7 @@
             btnEntradas.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnEntradas.FlatStyle = FlatStyle.Flat;
             btnEntradas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEntradas.Image = (Image)resources.GetObject("btnEntradas.Image");
+            btnEntradas.Image = new Bitmap(Properties.Resources.cash_in, 24, 24);
             btnEntradas.Location = new Point(388, 58);
             btnEntradas.Name = "btnEntradas";
             btnEntradas.Size = new Size(122, 35);
@@ -188,7 +188,7 @@
             btnSalidas.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnSalidas.FlatStyle = FlatStyle.Flat;
             btnSalidas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSalidas.Image = (Image)resources.GetObject("btnSalidas.Image");
+            btnSalidas.Image = new Bitmap(Properties.Resources.cash_out, 24, 24);
             btnSalidas.Location = new Point(516, 58);
             btnSalidas.Name = "btnSalidas";
             btnSalidas.Size = new Size(122, 35);
@@ -207,7 +207,7 @@
             btnPorMayor.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnPorMayor.FlatStyle = FlatStyle.Flat;
             btnPorMayor.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPorMayor.Image = (Image)resources.GetObject("btnPorMayor.Image");
+            btnPorMayor.Image = new Bitmap(Properties.Resources.category_add, 24, 24);
             btnPorMayor.Location = new Point(644, 58);
             btnPorMayor.Name = "btnPorMayor";
             btnPorMayor.Size = new Size(122, 35);
@@ -226,7 +226,7 @@
             btnVerificador.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnVerificador.FlatStyle = FlatStyle.Flat;
             btnVerificador.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVerificador.Image = (Image)resources.GetObject("btnVerificador.Image");
+            btnVerificador.Image = new Bitmap(Properties.Resources.barcode_read_01, 24, 24);
             btnVerificador.Location = new Point(772, 58);
             btnVerificador.Name = "btnVerificador";
             btnVerificador.Size = new Size(122, 35);
@@ -245,7 +245,7 @@
             btnAgregarProducto.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnAgregarProducto.FlatStyle = FlatStyle.Flat;
             btnAgregarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAgregarProducto.Image = (Image)resources.GetObject("btnAgregarProducto.Image");
+            btnAgregarProducto.Image = new Bitmap(Properties.Resources.product_add, 24, 24);
             btnAgregarProducto.Location = new Point(644, 8);
             btnAgregarProducto.Name = "btnAgregarProducto";
             btnAgregarProducto.Size = new Size(122, 35);
@@ -265,7 +265,7 @@
             btnEliminarProducto.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnEliminarProducto.FlatStyle = FlatStyle.Flat;
             btnEliminarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEliminarProducto.Image = (Image)resources.GetObject("btnEliminarProducto.Image");
+            btnEliminarProducto.Image = new Bitmap(Properties.Resources.product_delete, 24, 24);
             btnEliminarProducto.Location = new Point(772, 8);
             btnEliminarProducto.Name = "btnEliminarProducto";
             btnEliminarProducto.Size = new Size(122, 35);
@@ -328,7 +328,7 @@
             btnReimprimir.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnReimprimir.FlatStyle = FlatStyle.Flat;
             btnReimprimir.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnReimprimir.Image = (Image)resources.GetObject("btnReimprimir.Image");
+            btnReimprimir.Image = new Bitmap(Properties.Resources.print, 24, 24);
             btnReimprimir.Location = new Point(993, 2);
             btnReimprimir.Name = "btnReimprimir";
             btnReimprimir.Size = new Size(223, 36);
@@ -348,7 +348,7 @@
             btnVentasDevoluciones.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnVentasDevoluciones.FlatStyle = FlatStyle.Flat;
             btnVentasDevoluciones.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVentasDevoluciones.Image = (Image)resources.GetObject("btnVentasDevoluciones.Image");
+            btnVentasDevoluciones.Image = new Bitmap(Properties.Resources.news, 24, 24);
             btnVentasDevoluciones.Location = new Point(1222, 2);
             btnVentasDevoluciones.Name = "btnVentasDevoluciones";
             btnVentasDevoluciones.Size = new Size(222, 36);
@@ -383,7 +383,7 @@
             btnCobrar.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnCobrar.FlatStyle = FlatStyle.Flat;
             btnCobrar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCobrar.Image = (Image)resources.GetObject("btnCobrar.Image");
+            btnCobrar.Image = new Bitmap(Properties.Resources.ticket, 24, 24);
             btnCobrar.Location = new Point(1323, 2);
             btnCobrar.Name = "btnCobrar";
             btnCobrar.Size = new Size(122, 34);
@@ -402,7 +402,7 @@
             btnAsignarCliente.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnAsignarCliente.FlatStyle = FlatStyle.Flat;
             btnAsignarCliente.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAsignarCliente.Image = (Image)resources.GetObject("btnAsignarCliente.Image");
+            btnAsignarCliente.Image = new Bitmap(Properties.Resources.person_add, 24, 24);
             btnAsignarCliente.Location = new Point(388, 2);
             btnAsignarCliente.Name = "btnAsignarCliente";
             btnAsignarCliente.Size = new Size(122, 35);
@@ -421,7 +421,7 @@
             btnEliminarTicket.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnEliminarTicket.FlatStyle = FlatStyle.Flat;
             btnEliminarTicket.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEliminarTicket.Image = (Image)resources.GetObject("btnEliminarTicket.Image");
+            btnEliminarTicket.Image = new Bitmap(Properties.Resources.list_block, 24, 24);
             btnEliminarTicket.Location = new Point(260, 2);
             btnEliminarTicket.Name = "btnEliminarTicket";
             btnEliminarTicket.Size = new Size(122, 35);
@@ -440,7 +440,7 @@
             btnPendiente.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnPendiente.FlatStyle = FlatStyle.Flat;
             btnPendiente.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPendiente.Image = (Image)resources.GetObject("btnPendiente.Image");
+            btnPendiente.Image = new Bitmap(Properties.Resources.list_add, 24, 24);
             btnPendiente.Location = new Point(132, 2);
             btnPendiente.Name = "btnPendiente";
             btnPendiente.Size = new Size(122, 35);
@@ -459,7 +459,7 @@
             btnCambiar.FlatAppearance.MouseOverBackColor = Color.LightGray;
             btnCambiar.FlatStyle = FlatStyle.Flat;
             btnCambiar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCambiar.Image = (Image)resources.GetObject("btnCambiar.Image");
+            btnCambiar.Image = new Bitmap(Properties.Resources.refresh, 24, 24);
             btnCambiar.Location = new Point(4, 2);
             btnCambiar.Name = "btnCambiar";
             btnCambiar.Size = new Size(122, 35);
