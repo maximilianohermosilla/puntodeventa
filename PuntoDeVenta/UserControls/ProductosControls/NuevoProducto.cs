@@ -1,43 +1,83 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using PuntoDeVenta.AccessData;
+using PuntoDeVenta.Application.DTO;
+using PuntoDeVenta.Application.Interfaces;
+using PuntoDeVenta.Application.Services;
 
 namespace PuntoDeVenta.UserControls.ProductosControls
 {
     public partial class NuevoProducto : UserControl
     {
-        public NuevoProducto()
+
+        private static PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
+
+        private readonly IProductoService _productoService;
+        public List<CategoriaProductoResponse> _categoriaProductos;
+
+        public NuevoProducto(List<CategoriaProductoResponse> categoriaProductos)
         {
+            _productoService = new ProductoService(_context);
+            _categoriaProductos = categoriaProductos;
             InitializeComponent();
+            SetearCategorias();
+        }
+
+        public void SetearCategorias()
+        {
+            comboCategoria.DataSource = _categoriaProductos;
+            comboCategoria.DisplayMember = "Descripcion";
+            comboCategoria.ValueMember = "Id";
+        }
+
+        public void SetearCategorias(List<CategoriaProductoResponse> categoriaProductos)
+        {
+            comboCategoria.DataSource = categoriaProductos;
+            comboCategoria.DisplayMember = "Descripcion";
+            comboCategoria.ValueMember = "Id";
         }
 
         private void btnGuardarProducto_Click(object sender, EventArgs e)
-        {          
-            
-            //txtDescripcion;
-            
-            //txtCodigo;
-            
-            //comboCategoria;
-            
-            //txtPrecioMayor;
-            
-            //txtPrecioVenta;
-            
-            //txtPrecioCosto;
-            
-            
-            //txtCantidadMinima;
-            
-            //txtCantidadActual;
-            
-            //checkInventario;
+        {
+            _ = GuardarProducto();
+        }
+
+        public async Task GuardarProducto()
+        {
+            try
+            {
+                if (txtDescripcion.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar un nombre válido");
+                }
+                else
+                {
+                    ProductoRequest producto = new ProductoRequest()
+                    {
+                        Codigo = txtCodigo.Text,
+                        Descripcion = txtDescripcion.Text,
+                        IdCategoriaProducto = Convert.ToInt32(comboCategoria.SelectedValue) > 0 ? Convert.ToInt32(comboCategoria.SelectedValue) : null,
+                        PrecioPorMayor = Convert.ToInt32(txtPrecioMayor.Value),
+                        PrecioVenta = Convert.ToInt32(txtPrecioVenta.Value),
+                        PrecioCosto = Convert.ToInt32(txtPrecioCosto.Value),
+                        CantidadMinima = checkInventario.Checked ? Convert.ToInt32(txtCantidadMinima.Value) : 0,
+                        Cantidad = checkInventario.Checked ? Convert.ToInt32(txtCantidadActual.Value) : 0,
+                    };
+
+                    var response = await _productoService.Insert(producto);
+
+                    MessageBox.Show(response.message);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }            
+        }
+
+        private void checkInventario_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txtCantidadActual.Enabled = checkInventario.Checked == true;
+            txtCantidadMinima.Enabled = checkInventario.Checked == true;
+
         }
     }
 }

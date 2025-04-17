@@ -4,6 +4,9 @@ using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.AccessData.Interfaces;
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Domain.Entities;
+using PuntoDeVenta.AccessData.Repository;
+using PuntoDeVenta.AccessData;
+using PuntoDeVenta.Application.Profiles;
 
 namespace PuntoDeVenta.Application.Services
 {
@@ -11,13 +14,21 @@ namespace PuntoDeVenta.Application.Services
     {
         private readonly IProductoRepository _productoRepository;
         private readonly IMapper _mapper;
-        private readonly ILogger<ProductoService> _logger;
+
+        public ProductoService(PuntoDeVentaDbContext context)
+        {
+            var config = new MapperConfiguration(cfg => {
+                cfg.AddProfile<MappingProfile>();
+            });
+
+            _productoRepository = new ProductoRepository(context);
+            _mapper = config.CreateMapper();
+        }
 
         public ProductoService(IProductoRepository productoRepository, IMapper mapper, ILogger<ProductoService> logger)
         {
             _productoRepository = productoRepository;
             _mapper = mapper;
-            _logger = logger;
         }
 
         public async Task<ResponseModel> Delete(int id)
@@ -38,8 +49,6 @@ namespace PuntoDeVenta.Application.Services
 
                 await _productoRepository.Delete(producto);
                 productoResponse = _mapper.Map<ProductoResponse>(producto);
-
-                _logger.LogInformation("Se eliminó el producto: " + id + ", " + producto.Descripcion);
             }
             catch (Exception ex)
             {
@@ -123,8 +132,6 @@ namespace PuntoDeVenta.Application.Services
                 Producto producto = _mapper.Map<Producto>(entity);
                 producto = await _productoRepository.Create(producto);
                 productoResponse = _mapper.Map<ProductoResponse>(producto);
-
-                _logger.LogInformation("Se insertó un nuevo producto: " + producto.Id + ". Nombre: " + producto.Descripcion);
             }
             catch (Exception ex)
             {
@@ -164,8 +171,6 @@ namespace PuntoDeVenta.Application.Services
 
                 await _productoRepository.SaveChangesAsync();
                 productoResponse = _mapper.Map<ProductoResponse>(producto);
-
-                _logger.LogInformation("Se actualizó el producto: " + producto.Id + ". Nombre anterior: " + producto.Descripcion + ". Nombre actual: " + entity.Descripcion);
             }
             catch (Exception ex)
             {

@@ -153,6 +153,7 @@
             checkInventario.TabIndex = 19;
             checkInventario.Text = "El producto utiliza inventario";
             checkInventario.UseVisualStyleBackColor = true;
+            checkInventario.CheckedChanged += checkInventario_CheckedChanged_1;
             // 
             // labelCantidadMinima
             // 
@@ -166,7 +167,9 @@
             // 
             // txtCantidadMinima
             // 
+            txtCantidadMinima.Enabled = false;
             txtCantidadMinima.Location = new Point(128, 355);
+            txtCantidadMinima.Maximum = 1000000;
             txtCantidadMinima.Name = "txtCantidadMinima";
             txtCantidadMinima.Size = new Size(309, 23);
             txtCantidadMinima.TabIndex = 17;
@@ -183,7 +186,9 @@
             // 
             // txtCantidadActual
             // 
+            txtCantidadActual.Enabled = false;
             txtCantidadActual.Location = new Point(128, 318);
+            txtCantidadActual.Maximum = 1000000;
             txtCantidadActual.Name = "txtCantidadActual";
             txtCantidadActual.Size = new Size(309, 23);
             txtCantidadActual.TabIndex = 15;
@@ -219,6 +224,7 @@
             // txtPrecioMayor
             // 
             txtPrecioMayor.Location = new Point(128, 173);
+            txtPrecioMayor.Maximum = 1000000;
             txtPrecioMayor.Name = "txtPrecioMayor";
             txtPrecioMayor.Size = new Size(309, 23);
             txtPrecioMayor.TabIndex = 11;
@@ -236,6 +242,7 @@
             // txtPrecioVenta
             // 
             txtPrecioVenta.Location = new Point(128, 138);
+            txtPrecioVenta.Maximum = 1000000;
             txtPrecioVenta.Name = "txtPrecioVenta";
             txtPrecioVenta.Size = new Size(309, 23);
             txtPrecioVenta.TabIndex = 9;
@@ -253,6 +260,7 @@
             // txtPrecioCosto
             // 
             txtPrecioCosto.Location = new Point(128, 104);
+            txtPrecioCosto.Maximum = 1000000;
             txtPrecioCosto.Name = "txtPrecioCosto";
             txtPrecioCosto.Size = new Size(309, 23);
             txtPrecioCosto.TabIndex = 7;

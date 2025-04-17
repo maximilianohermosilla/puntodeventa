@@ -3,8 +3,6 @@ using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
 using PuntoDeVenta.Domain.Entities;
-using System.ComponentModel;
-using System.Windows.Forms;
 
 namespace PuntoDeVenta.UserControls.ProductosControls
 {
@@ -13,43 +11,40 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         private static PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
 
         private readonly ICategoriaProductoService _categoriaProductoService;
-        public List<CategoriaProductoResponse> categoriaProductos = new List<CategoriaProductoResponse>();
+        public List<CategoriaProductoResponse> _categoriaProductos;
 
-        public CategoriaProducto()
+        public CategoriaProducto(List<CategoriaProductoResponse> categoriaProductos)
         {
             _categoriaProductoService = new CategoriaProductoService(_context);
+            _categoriaProductos = categoriaProductos;
             InitializeComponent();
-            _ = GetAllCategorias();
+            SetearCategorias();
         }
 
-        public async Task GetAllCategorias()
+        public void SetearCategorias()
         {
-            try
-            {
-                var response = await _categoriaProductoService.GetAll();
-
-                if (response != null && response.success)
-                {
-                    categoriaProductos = (List<CategoriaProductoResponse>)response.response!;
-                    listCategorias.DataSource = categoriaProductos;
-                    listCategorias.DisplayMember = "Descripcion"; // propiedad que se muestra
-                    listCategorias.ValueMember = "Id";
-                    //listCategorias.Items.Add(categoriaProductos.Select(c => c.Descripcion));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            listCategorias.DataSource = _categoriaProductos;
+            listCategorias.DisplayMember = "Descripcion";
+            listCategorias.ValueMember = "Id";
         }
 
+        public void SetearCategorias(List<CategoriaProductoResponse>  categoriaProductos)
+        {
+            _categoriaProductos = categoriaProductos;
+            listCategorias.DataSource = null;
+            listCategorias.DataSource = _categoriaProductos;
+            listCategorias.DisplayMember = "Descripcion";
+            listCategorias.ValueMember = "Id";
+            listCategorias.Refresh();
+            listCategorias.Invalidate();
+        }
 
         private void btnGuardarProducto_Click(object sender, EventArgs e)
         {
-            _ = GuardarProducto();            
+            _ = GuardarCategoriaProducto();            
         }
 
-        public async Task GuardarProducto()
+        public async Task GuardarCategoriaProducto()
         {
             try
             {
@@ -71,8 +66,8 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
                     if (response != null && response.success)
                     {
-                        categoriaProductos.Add((CategoriaProductoResponse)response.response!);
-                        listCategorias.Items.Add(((CategoriaProductoResponse)response.response!).Descripcion!);
+                        _categoriaProductos.Add((CategoriaProductoResponse)response.response!);
+                        SetearCategorias(_categoriaProductos);
                     }
                 }
             }

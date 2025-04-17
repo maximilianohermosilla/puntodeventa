@@ -15,9 +15,9 @@ namespace PuntoDeVenta.Application.DTO
         public int CantidadMaxima { get; set; }
         public DateTime FechaCreacion { get; set; }
         public bool Habilitado { get; set; }
-        public int IdCategoriaProducto { get; set; }
+        public int? IdCategoriaProducto { get; set; }
 
-        public virtual CategoriaProductoResponse CategoriaProducto { get; set; }
+        public virtual CategoriaProductoResponse? CategoriaProducto { get; set; }
 
     }
 }

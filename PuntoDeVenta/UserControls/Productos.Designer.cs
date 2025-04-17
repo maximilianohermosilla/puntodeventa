@@ -46,8 +46,8 @@ namespace PuntoDeVenta.UserControls
             btnVentasPeriodo = new Button();
             btnPromociones = new Button();
             panelMain = new Panel();
-            categoriaProducto1 = new CategoriaProducto();
-            nuevoProducto1 = new NuevoProducto();
+            categoriaProducto1 = new CategoriaProducto(categoriaProductos);
+            nuevoProducto1 = new NuevoProducto(categoriaProductos);
             panelHeader.SuspendLayout();
             panelNavbar.SuspendLayout();
             panelMain.SuspendLayout();

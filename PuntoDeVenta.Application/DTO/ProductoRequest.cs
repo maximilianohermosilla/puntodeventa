@@ -11,9 +11,9 @@
         public int Cantidad { get; set; }
         public int CantidadMinima { get; set; }
         public int CantidadMaxima { get; set; }
-        public DateTime FechaCreacion { get; set; }
-        public bool Habilitado { get; set; }
-        public int IdCategoriaProducto { get; set; }
+        public DateTime FechaCreacion { get; set; } = DateTime.Now;
+        public bool Habilitado { get; set; } = true;
+        public int? IdCategoriaProducto { get; set; } = null;
 
     }
 }
