@@ -47,20 +47,26 @@
             // 
             // btnAceptar
             // 
-            btnAceptar.BackColor = SystemColors.ButtonHighlight;
+            btnAceptar.BackColor = Color.FromArgb(0, 80, 200);
             resources.ApplyResources(btnAceptar, "btnAceptar");
             btnAceptar.FlatAppearance.BorderColor = Color.Black;
             btnAceptar.FlatAppearance.BorderSize = 0;
+            btnAceptar.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnAceptar.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnAceptar.ForeColor = SystemColors.ButtonHighlight;
             btnAceptar.Name = "btnAceptar";
             btnAceptar.UseVisualStyleBackColor = false;
             btnAceptar.Click += btnAceptar_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = SystemColors.ButtonHighlight;
+            btnCancelar.BackColor = Color.FromArgb(0, 80, 200);
             resources.ApplyResources(btnCancelar, "btnCancelar");
             btnCancelar.FlatAppearance.BorderColor = Color.Black;
             btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnCancelar.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnCancelar.ForeColor = SystemColors.ButtonHighlight;
             btnCancelar.Name = "btnCancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
@@ -71,10 +77,12 @@
             AllowDrop = true;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(49, 66, 82);
             Controls.Add(btnCancelar);
             Controls.Add(btnAceptar);
             Controls.Add(txtEtiqueta);
             Controls.Add(labelProducto);
+            ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "EtiquetaDialog";
             ResumeLayout(false);

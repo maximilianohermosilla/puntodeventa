@@ -120,10 +120,10 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnGuardarProducto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABzSURBVEhL7c9BCoAgEIXhOVF3sCHtlOr9okUEtawEH7iQ
-        No7gYj4IUph/ipQazxzXKb/KS3GO7klPvpJTxsX/QuNVY8YxlI9VTV/+Dd1/S5riwN5etSUiceDgznKJ
-        aByMXw5ExeNgotu7xYGD3brFFRHRC50Ee/RPyHbLAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAAHNJREFUSEvtz0EKgCAQheE5UXewIe2U6v2iRQS1rAQfuJA2juBiPghSmH+KlBrP
+        HNcpv8pLcY7uSU++klPGxf9C41VjxjGUj1VNX/4N3X9LmuLA3l61JSJx4ODOcoloHIxfDkTF42Ci27vF
+        gYPdusUVEdELnQR79E/IdssAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

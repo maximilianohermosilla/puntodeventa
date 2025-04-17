@@ -65,7 +65,7 @@
             // 
             labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTitle.ForeColor = SystemColors.ActiveCaptionText;
+            labelTitle.ForeColor = SystemColors.ButtonHighlight;
             labelTitle.Location = new Point(5, 3);
             labelTitle.Name = "labelTitle";
             labelTitle.Size = new Size(180, 25);
@@ -84,13 +84,14 @@
             // 
             // btnGuardarProducto
             // 
-            btnGuardarProducto.BackColor = SystemColors.ButtonHighlight;
+            btnGuardarProducto.BackColor = Color.FromArgb(0, 80, 200);
             btnGuardarProducto.BackgroundImageLayout = ImageLayout.None;
             btnGuardarProducto.FlatAppearance.BorderColor = Color.Silver;
             btnGuardarProducto.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnGuardarProducto.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnGuardarProducto.FlatStyle = FlatStyle.Flat;
+            btnGuardarProducto.FlatStyle = FlatStyle.Popup;
             btnGuardarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGuardarProducto.ForeColor = SystemColors.ButtonHighlight;
             btnGuardarProducto.Image = (Image)resources.GetObject("btnGuardarProducto.Image");
             btnGuardarProducto.Location = new Point(5, 6);
             btnGuardarProducto.Name = "btnGuardarProducto";
@@ -104,6 +105,7 @@
             // 
             // panelNuevoProducto
             // 
+            panelNuevoProducto.BackColor = Color.FromArgb(49, 66, 82);
             panelNuevoProducto.Controls.Add(panelFooter);
             panelNuevoProducto.Controls.Add(labelInventario);
             panelNuevoProducto.Controls.Add(checkInventario);
@@ -125,6 +127,7 @@
             panelNuevoProducto.Controls.Add(labelCodigo);
             panelNuevoProducto.Controls.Add(labelTitle);
             panelNuevoProducto.Dock = DockStyle.Fill;
+            panelNuevoProducto.ForeColor = SystemColors.ButtonHighlight;
             panelNuevoProducto.Location = new Point(0, 0);
             panelNuevoProducto.Name = "panelNuevoProducto";
             panelNuevoProducto.Size = new Size(1449, 584);
@@ -134,7 +137,7 @@
             // 
             labelInventario.AutoSize = true;
             labelInventario.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelInventario.ForeColor = SystemColors.ActiveCaptionText;
+            labelInventario.ForeColor = SystemColors.ButtonHighlight;
             labelInventario.Location = new Point(6, 259);
             labelInventario.Name = "labelInventario";
             labelInventario.Size = new Size(103, 21);

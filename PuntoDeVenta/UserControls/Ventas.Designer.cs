@@ -105,13 +105,14 @@
             // 
             // btnVarios
             // 
-            btnVarios.BackColor = SystemColors.ButtonHighlight;
+            btnVarios.BackColor = Color.FromArgb(0, 80, 200);
             btnVarios.BackgroundImageLayout = ImageLayout.None;
             btnVarios.FlatAppearance.BorderColor = Color.Silver;
             btnVarios.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnVarios.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnVarios.FlatStyle = FlatStyle.Flat;
+            btnVarios.FlatStyle = FlatStyle.Popup;
             btnVarios.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnVarios.ForeColor = SystemColors.ButtonHighlight;
             btnVarios.Image = (Image)resources.GetObject("btnVarios.Image");
             btnVarios.Location = new Point(4, 58);
             btnVarios.Name = "btnVarios";
@@ -124,14 +125,15 @@
             // 
             // btnComun
             // 
-            btnComun.BackColor = SystemColors.ButtonHighlight;
+            btnComun.BackColor = Color.FromArgb(0, 80, 200);
             btnComun.BackgroundImageLayout = ImageLayout.None;
             btnComun.FlatAppearance.BorderColor = Color.Silver;
             btnComun.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnComun.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnComun.FlatStyle = FlatStyle.Flat;
+            btnComun.FlatStyle = FlatStyle.Popup;
             btnComun.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnComun.Image = new Bitmap(Properties.Resources.product_add, 24, 24);
+            btnComun.ForeColor = SystemColors.ButtonHighlight;
+            btnComun.Image = (Image)resources.GetObject("btnComun.Image");
             btnComun.Location = new Point(132, 58);
             btnComun.Name = "btnComun";
             btnComun.Size = new Size(122, 35);
@@ -143,14 +145,15 @@
             // 
             // btnBuscar
             // 
-            btnBuscar.BackColor = SystemColors.ButtonHighlight;
+            btnBuscar.BackColor = Color.FromArgb(0, 80, 200);
             btnBuscar.BackgroundImageLayout = ImageLayout.None;
             btnBuscar.FlatAppearance.BorderColor = Color.Silver;
             btnBuscar.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnBuscar.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.FlatStyle = FlatStyle.Popup;
             btnBuscar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBuscar.Image = new Bitmap(Properties.Resources.search, 24, 24);
+            btnBuscar.ForeColor = SystemColors.ButtonHighlight;
+            btnBuscar.Image = (Image)resources.GetObject("btnBuscar.Image");
             btnBuscar.Location = new Point(260, 58);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(122, 35);
@@ -162,14 +165,15 @@
             // 
             // btnEntradas
             // 
-            btnEntradas.BackColor = SystemColors.ButtonHighlight;
+            btnEntradas.BackColor = Color.FromArgb(0, 80, 200);
             btnEntradas.BackgroundImageLayout = ImageLayout.None;
             btnEntradas.FlatAppearance.BorderColor = Color.Silver;
             btnEntradas.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnEntradas.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnEntradas.FlatStyle = FlatStyle.Flat;
+            btnEntradas.FlatStyle = FlatStyle.Popup;
             btnEntradas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEntradas.Image = new Bitmap(Properties.Resources.cash_in, 24, 24);
+            btnEntradas.ForeColor = SystemColors.ButtonHighlight;
+            btnEntradas.Image = (Image)resources.GetObject("btnEntradas.Image");
             btnEntradas.Location = new Point(388, 58);
             btnEntradas.Name = "btnEntradas";
             btnEntradas.Size = new Size(122, 35);
@@ -181,14 +185,15 @@
             // 
             // btnSalidas
             // 
-            btnSalidas.BackColor = SystemColors.ButtonHighlight;
+            btnSalidas.BackColor = Color.FromArgb(0, 80, 200);
             btnSalidas.BackgroundImageLayout = ImageLayout.None;
             btnSalidas.FlatAppearance.BorderColor = Color.Silver;
             btnSalidas.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnSalidas.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnSalidas.FlatStyle = FlatStyle.Flat;
+            btnSalidas.FlatStyle = FlatStyle.Popup;
             btnSalidas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSalidas.Image = new Bitmap(Properties.Resources.cash_out, 24, 24);
+            btnSalidas.ForeColor = SystemColors.ButtonHighlight;
+            btnSalidas.Image = (Image)resources.GetObject("btnSalidas.Image");
             btnSalidas.Location = new Point(516, 58);
             btnSalidas.Name = "btnSalidas";
             btnSalidas.Size = new Size(122, 35);
@@ -200,14 +205,15 @@
             // 
             // btnPorMayor
             // 
-            btnPorMayor.BackColor = SystemColors.ButtonHighlight;
+            btnPorMayor.BackColor = Color.FromArgb(0, 80, 200);
             btnPorMayor.BackgroundImageLayout = ImageLayout.None;
             btnPorMayor.FlatAppearance.BorderColor = Color.Silver;
             btnPorMayor.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnPorMayor.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnPorMayor.FlatStyle = FlatStyle.Flat;
+            btnPorMayor.FlatStyle = FlatStyle.Popup;
             btnPorMayor.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPorMayor.Image = new Bitmap(Properties.Resources.category_add, 24, 24);
+            btnPorMayor.ForeColor = SystemColors.ButtonHighlight;
+            btnPorMayor.Image = (Image)resources.GetObject("btnPorMayor.Image");
             btnPorMayor.Location = new Point(644, 58);
             btnPorMayor.Name = "btnPorMayor";
             btnPorMayor.Size = new Size(122, 35);
@@ -219,14 +225,15 @@
             // 
             // btnVerificador
             // 
-            btnVerificador.BackColor = SystemColors.ButtonHighlight;
+            btnVerificador.BackColor = Color.FromArgb(0, 80, 200);
             btnVerificador.BackgroundImageLayout = ImageLayout.None;
             btnVerificador.FlatAppearance.BorderColor = Color.Silver;
             btnVerificador.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnVerificador.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnVerificador.FlatStyle = FlatStyle.Flat;
+            btnVerificador.FlatStyle = FlatStyle.Popup;
             btnVerificador.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVerificador.Image = new Bitmap(Properties.Resources.barcode_read_01, 24, 24);
+            btnVerificador.ForeColor = SystemColors.ButtonHighlight;
+            btnVerificador.Image = (Image)resources.GetObject("btnVerificador.Image");
             btnVerificador.Location = new Point(772, 58);
             btnVerificador.Name = "btnVerificador";
             btnVerificador.Size = new Size(122, 35);
@@ -238,14 +245,15 @@
             // 
             // btnAgregarProducto
             // 
-            btnAgregarProducto.BackColor = SystemColors.ButtonHighlight;
+            btnAgregarProducto.BackColor = Color.FromArgb(0, 80, 200);
             btnAgregarProducto.BackgroundImageLayout = ImageLayout.None;
             btnAgregarProducto.FlatAppearance.BorderColor = Color.Silver;
             btnAgregarProducto.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnAgregarProducto.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnAgregarProducto.FlatStyle = FlatStyle.Flat;
+            btnAgregarProducto.FlatStyle = FlatStyle.Popup;
             btnAgregarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAgregarProducto.Image = new Bitmap(Properties.Resources.product_add, 24, 24);
+            btnAgregarProducto.ForeColor = SystemColors.ButtonHighlight;
+            btnAgregarProducto.Image = (Image)resources.GetObject("btnAgregarProducto.Image");
             btnAgregarProducto.Location = new Point(644, 8);
             btnAgregarProducto.Name = "btnAgregarProducto";
             btnAgregarProducto.Size = new Size(122, 35);
@@ -258,14 +266,15 @@
             // 
             // btnEliminarProducto
             // 
-            btnEliminarProducto.BackColor = SystemColors.ButtonHighlight;
+            btnEliminarProducto.BackColor = Color.FromArgb(0, 80, 200);
             btnEliminarProducto.BackgroundImageLayout = ImageLayout.None;
             btnEliminarProducto.FlatAppearance.BorderColor = Color.Silver;
             btnEliminarProducto.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnEliminarProducto.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnEliminarProducto.FlatStyle = FlatStyle.Flat;
+            btnEliminarProducto.FlatStyle = FlatStyle.Popup;
             btnEliminarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEliminarProducto.Image = new Bitmap(Properties.Resources.product_delete, 24, 24);
+            btnEliminarProducto.ForeColor = SystemColors.ButtonHighlight;
+            btnEliminarProducto.Image = (Image)resources.GetObject("btnEliminarProducto.Image");
             btnEliminarProducto.Location = new Point(772, 8);
             btnEliminarProducto.Name = "btnEliminarProducto";
             btnEliminarProducto.Size = new Size(122, 35);
@@ -288,13 +297,14 @@
             // 
             // tabPage1
             // 
+            tabPage1.BackColor = Color.Transparent;
+            tabPage1.ForeColor = SystemColors.ControlText;
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(1441, 367);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Ticket 1";
-            tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -309,10 +319,12 @@
             // panel2
             // 
             panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel2.BackColor = Color.FromArgb(49, 66, 82);
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(btnReimprimir);
             panel2.Controls.Add(btnVentasDevoluciones);
             panel2.Dock = DockStyle.Bottom;
+            panel2.ForeColor = SystemColors.ButtonHighlight;
             panel2.Location = new Point(0, 563);
             panel2.Name = "panel2";
             panel2.Size = new Size(1449, 43);
@@ -321,14 +333,15 @@
             // btnReimprimir
             // 
             btnReimprimir.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            btnReimprimir.BackColor = SystemColors.ButtonHighlight;
+            btnReimprimir.BackColor = Color.FromArgb(0, 80, 200);
             btnReimprimir.BackgroundImageLayout = ImageLayout.None;
             btnReimprimir.FlatAppearance.BorderColor = Color.Silver;
             btnReimprimir.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnReimprimir.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnReimprimir.FlatStyle = FlatStyle.Flat;
+            btnReimprimir.FlatStyle = FlatStyle.Popup;
             btnReimprimir.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnReimprimir.Image = new Bitmap(Properties.Resources.print, 24, 24);
+            btnReimprimir.ForeColor = SystemColors.ButtonHighlight;
+            btnReimprimir.Image = (Image)resources.GetObject("btnReimprimir.Image");
             btnReimprimir.Location = new Point(993, 2);
             btnReimprimir.Name = "btnReimprimir";
             btnReimprimir.Size = new Size(223, 36);
@@ -341,14 +354,15 @@
             // btnVentasDevoluciones
             // 
             btnVentasDevoluciones.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            btnVentasDevoluciones.BackColor = SystemColors.ButtonHighlight;
+            btnVentasDevoluciones.BackColor = Color.FromArgb(0, 80, 200);
             btnVentasDevoluciones.BackgroundImageLayout = ImageLayout.None;
             btnVentasDevoluciones.FlatAppearance.BorderColor = Color.Silver;
             btnVentasDevoluciones.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnVentasDevoluciones.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnVentasDevoluciones.FlatStyle = FlatStyle.Flat;
+            btnVentasDevoluciones.FlatStyle = FlatStyle.Popup;
             btnVentasDevoluciones.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVentasDevoluciones.Image = new Bitmap(Properties.Resources.news, 24, 24);
+            btnVentasDevoluciones.ForeColor = SystemColors.ButtonHighlight;
+            btnVentasDevoluciones.Image = (Image)resources.GetObject("btnVentasDevoluciones.Image");
             btnVentasDevoluciones.Location = new Point(1222, 2);
             btnVentasDevoluciones.Name = "btnVentasDevoluciones";
             btnVentasDevoluciones.Size = new Size(222, 36);
@@ -361,6 +375,7 @@
             // panel3
             // 
             panel3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel3.BackColor = Color.FromArgb(49, 66, 82);
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(btnCobrar);
             panel3.Controls.Add(btnAsignarCliente);
@@ -368,6 +383,7 @@
             panel3.Controls.Add(btnPendiente);
             panel3.Controls.Add(btnCambiar);
             panel3.Dock = DockStyle.Bottom;
+            panel3.ForeColor = SystemColors.ButtonHighlight;
             panel3.Location = new Point(0, 522);
             panel3.Name = "panel3";
             panel3.Size = new Size(1449, 41);
@@ -376,14 +392,15 @@
             // btnCobrar
             // 
             btnCobrar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCobrar.BackColor = SystemColors.ButtonHighlight;
+            btnCobrar.BackColor = Color.FromArgb(0, 80, 200);
             btnCobrar.BackgroundImageLayout = ImageLayout.None;
             btnCobrar.FlatAppearance.BorderColor = Color.Silver;
             btnCobrar.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnCobrar.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnCobrar.FlatStyle = FlatStyle.Flat;
+            btnCobrar.FlatStyle = FlatStyle.Popup;
             btnCobrar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCobrar.Image = new Bitmap(Properties.Resources.ticket, 24, 24);
+            btnCobrar.ForeColor = SystemColors.ButtonHighlight;
+            btnCobrar.Image = (Image)resources.GetObject("btnCobrar.Image");
             btnCobrar.Location = new Point(1323, 2);
             btnCobrar.Name = "btnCobrar";
             btnCobrar.Size = new Size(122, 34);
@@ -395,14 +412,15 @@
             // 
             // btnAsignarCliente
             // 
-            btnAsignarCliente.BackColor = SystemColors.ButtonHighlight;
+            btnAsignarCliente.BackColor = Color.FromArgb(0, 80, 200);
             btnAsignarCliente.BackgroundImageLayout = ImageLayout.None;
             btnAsignarCliente.FlatAppearance.BorderColor = Color.Silver;
             btnAsignarCliente.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnAsignarCliente.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnAsignarCliente.FlatStyle = FlatStyle.Flat;
+            btnAsignarCliente.FlatStyle = FlatStyle.Popup;
             btnAsignarCliente.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAsignarCliente.Image = new Bitmap(Properties.Resources.person_add, 24, 24);
+            btnAsignarCliente.ForeColor = SystemColors.ButtonHighlight;
+            btnAsignarCliente.Image = (Image)resources.GetObject("btnAsignarCliente.Image");
             btnAsignarCliente.Location = new Point(388, 2);
             btnAsignarCliente.Name = "btnAsignarCliente";
             btnAsignarCliente.Size = new Size(122, 35);
@@ -414,14 +432,15 @@
             // 
             // btnEliminarTicket
             // 
-            btnEliminarTicket.BackColor = SystemColors.ButtonHighlight;
+            btnEliminarTicket.BackColor = Color.FromArgb(0, 80, 200);
             btnEliminarTicket.BackgroundImageLayout = ImageLayout.None;
             btnEliminarTicket.FlatAppearance.BorderColor = Color.Silver;
             btnEliminarTicket.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnEliminarTicket.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnEliminarTicket.FlatStyle = FlatStyle.Flat;
+            btnEliminarTicket.FlatStyle = FlatStyle.Popup;
             btnEliminarTicket.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEliminarTicket.Image = new Bitmap(Properties.Resources.list_block, 24, 24);
+            btnEliminarTicket.ForeColor = SystemColors.ButtonHighlight;
+            btnEliminarTicket.Image = (Image)resources.GetObject("btnEliminarTicket.Image");
             btnEliminarTicket.Location = new Point(260, 2);
             btnEliminarTicket.Name = "btnEliminarTicket";
             btnEliminarTicket.Size = new Size(122, 35);
@@ -433,14 +452,15 @@
             // 
             // btnPendiente
             // 
-            btnPendiente.BackColor = SystemColors.ButtonHighlight;
+            btnPendiente.BackColor = Color.FromArgb(0, 80, 200);
             btnPendiente.BackgroundImageLayout = ImageLayout.None;
             btnPendiente.FlatAppearance.BorderColor = Color.Silver;
             btnPendiente.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnPendiente.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnPendiente.FlatStyle = FlatStyle.Flat;
+            btnPendiente.FlatStyle = FlatStyle.Popup;
             btnPendiente.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPendiente.Image = new Bitmap(Properties.Resources.list_add, 24, 24);
+            btnPendiente.ForeColor = SystemColors.ButtonHighlight;
+            btnPendiente.Image = (Image)resources.GetObject("btnPendiente.Image");
             btnPendiente.Location = new Point(132, 2);
             btnPendiente.Name = "btnPendiente";
             btnPendiente.Size = new Size(122, 35);
@@ -452,14 +472,15 @@
             // 
             // btnCambiar
             // 
-            btnCambiar.BackColor = SystemColors.ButtonHighlight;
+            btnCambiar.BackColor = Color.FromArgb(0, 80, 200);
             btnCambiar.BackgroundImageLayout = ImageLayout.None;
             btnCambiar.FlatAppearance.BorderColor = Color.Silver;
             btnCambiar.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnCambiar.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnCambiar.FlatStyle = FlatStyle.Flat;
+            btnCambiar.FlatStyle = FlatStyle.Popup;
             btnCambiar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCambiar.Image = new Bitmap(Properties.Resources.refresh, 24, 24);
+            btnCambiar.ForeColor = SystemColors.ButtonHighlight;
+            btnCambiar.Image = (Image)resources.GetObject("btnCambiar.Image");
             btnCambiar.Location = new Point(4, 2);
             btnCambiar.Name = "btnCambiar";
             btnCambiar.Size = new Size(122, 35);
@@ -472,6 +493,7 @@
             // panel4
             // 
             panel4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel4.BackColor = Color.FromArgb(49, 66, 82);
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(txtCodigo);
             panel4.Controls.Add(label1);
@@ -485,6 +507,7 @@
             panel4.Controls.Add(btnSalidas);
             panel4.Controls.Add(btnPorMayor);
             panel4.Dock = DockStyle.Top;
+            panel4.ForeColor = SystemColors.ButtonHighlight;
             panel4.Location = new Point(0, 28);
             panel4.Name = "panel4";
             panel4.Size = new Size(1449, 99);
@@ -504,7 +527,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightGray;
+            BackColor = Color.FromArgb(49, 66, 82);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);

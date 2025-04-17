@@ -69,6 +69,7 @@ namespace PuntoDeVenta.UserControls
             // panelNavbar
             // 
             panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelNavbar.BackColor = Color.FromArgb(49, 66, 82);
             panelNavbar.BorderStyle = BorderStyle.FixedSingle;
             panelNavbar.Controls.Add(btnAgregar);
             panelNavbar.Controls.Add(btnAjustes);
@@ -76,6 +77,7 @@ namespace PuntoDeVenta.UserControls
             panelNavbar.Controls.Add(btnReporteInventario);
             panelNavbar.Controls.Add(btnReporteMovimientos);
             panelNavbar.Dock = DockStyle.Top;
+            panelNavbar.ForeColor = SystemColors.ButtonHighlight;
             panelNavbar.Location = new Point(0, 28);
             panelNavbar.Name = "panelNavbar";
             panelNavbar.Size = new Size(1449, 48);
@@ -83,13 +85,14 @@ namespace PuntoDeVenta.UserControls
             // 
             // btnAgregar
             // 
-            btnAgregar.BackColor = SystemColors.ButtonHighlight;
+            btnAgregar.BackColor = Color.FromArgb(0, 80, 200);
             btnAgregar.BackgroundImageLayout = ImageLayout.None;
             btnAgregar.FlatAppearance.BorderColor = Color.Silver;
             btnAgregar.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnAgregar.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnAgregar.FlatStyle = FlatStyle.Flat;
+            btnAgregar.FlatStyle = FlatStyle.Popup;
             btnAgregar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAgregar.ForeColor = SystemColors.ButtonHighlight;
             btnAgregar.Image = (Image)resources.GetObject("btnAgregar.Image");
             btnAgregar.Location = new Point(3, 5);
             btnAgregar.Name = "btnAgregar";
@@ -103,13 +106,14 @@ namespace PuntoDeVenta.UserControls
             // 
             // btnAjustes
             // 
-            btnAjustes.BackColor = SystemColors.ButtonHighlight;
+            btnAjustes.BackColor = Color.FromArgb(0, 80, 200);
             btnAjustes.BackgroundImageLayout = ImageLayout.None;
             btnAjustes.FlatAppearance.BorderColor = Color.Silver;
             btnAjustes.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnAjustes.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnAjustes.FlatStyle = FlatStyle.Flat;
+            btnAjustes.FlatStyle = FlatStyle.Popup;
             btnAjustes.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAjustes.ForeColor = SystemColors.ButtonHighlight;
             btnAjustes.Image = (Image)resources.GetObject("btnAjustes.Image");
             btnAjustes.Location = new Point(131, 5);
             btnAjustes.Name = "btnAjustes";
@@ -122,13 +126,14 @@ namespace PuntoDeVenta.UserControls
             // 
             // btnProductosBajos
             // 
-            btnProductosBajos.BackColor = SystemColors.ButtonHighlight;
+            btnProductosBajos.BackColor = Color.FromArgb(0, 80, 200);
             btnProductosBajos.BackgroundImageLayout = ImageLayout.None;
             btnProductosBajos.FlatAppearance.BorderColor = Color.Silver;
             btnProductosBajos.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnProductosBajos.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnProductosBajos.FlatStyle = FlatStyle.Flat;
+            btnProductosBajos.FlatStyle = FlatStyle.Popup;
             btnProductosBajos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnProductosBajos.ForeColor = SystemColors.ButtonHighlight;
             btnProductosBajos.Image = (Image)resources.GetObject("btnProductosBajos.Image");
             btnProductosBajos.Location = new Point(259, 5);
             btnProductosBajos.Name = "btnProductosBajos";
@@ -141,13 +146,14 @@ namespace PuntoDeVenta.UserControls
             // 
             // btnReporteInventario
             // 
-            btnReporteInventario.BackColor = SystemColors.ButtonHighlight;
+            btnReporteInventario.BackColor = Color.FromArgb(0, 80, 200);
             btnReporteInventario.BackgroundImageLayout = ImageLayout.None;
             btnReporteInventario.FlatAppearance.BorderColor = Color.Silver;
             btnReporteInventario.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnReporteInventario.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnReporteInventario.FlatStyle = FlatStyle.Flat;
+            btnReporteInventario.FlatStyle = FlatStyle.Popup;
             btnReporteInventario.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReporteInventario.ForeColor = SystemColors.ButtonHighlight;
             btnReporteInventario.Image = (Image)resources.GetObject("btnReporteInventario.Image");
             btnReporteInventario.Location = new Point(460, 5);
             btnReporteInventario.Name = "btnReporteInventario";
@@ -160,13 +166,14 @@ namespace PuntoDeVenta.UserControls
             // 
             // btnReporteMovimientos
             // 
-            btnReporteMovimientos.BackColor = SystemColors.ButtonHighlight;
+            btnReporteMovimientos.BackColor = Color.FromArgb(0, 80, 200);
             btnReporteMovimientos.BackgroundImageLayout = ImageLayout.None;
             btnReporteMovimientos.FlatAppearance.BorderColor = Color.Silver;
             btnReporteMovimientos.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnReporteMovimientos.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnReporteMovimientos.FlatStyle = FlatStyle.Flat;
+            btnReporteMovimientos.FlatStyle = FlatStyle.Popup;
             btnReporteMovimientos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReporteMovimientos.ForeColor = SystemColors.ButtonHighlight;
             btnReporteMovimientos.Image = (Image)resources.GetObject("btnReporteMovimientos.Image");
             btnReporteMovimientos.Location = new Point(641, 5);
             btnReporteMovimientos.Name = "btnReporteMovimientos";
@@ -179,7 +186,9 @@ namespace PuntoDeVenta.UserControls
             // 
             // panelMain
             // 
+            panelMain.BackColor = Color.FromArgb(49, 66, 82);
             panelMain.Dock = DockStyle.Fill;
+            panelMain.ForeColor = SystemColors.ButtonHighlight;
             panelMain.Location = new Point(0, 76);
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(1449, 508);

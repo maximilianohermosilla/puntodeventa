@@ -180,13 +180,16 @@
   <data name="btnAceptar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="btnAceptar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
   <data name="btnAceptar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="btnAceptar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAASpJREFUSEvdlD9uwjAchTNWPQEd6FXYQAqunA7AyCWoegC6oUqVOAA7KomUG3Tq
+        wAAADsABataJCQAAASpJREFUSEvdlD9uwjAchTNWPQEd6FXYQAqunA7AyCWoegC6oUqVOAA7KomUG3Tq
         wgoLZ2Bi6VAU4vpZSeqH42Sp1Cd9Q+L3+/LPSvD/01tNb0QsjyKJMhu5R61duJSDEb+IOHpiklrS0T0U
         1/Owkc902JPB5vEOKh421BSo7LByW6AsIlJxy4o+bLO3bHmYVc5BWyTfcle2ohslN5TPDxM5h1qnvOiL
         EX98Ldj6GWodUnBSI/8Bah1W+Px+tR5dYeRsrQzUOqzARObYdecGqHVYQVG+SBN5/pFPUOuoHxcrKn5f
@@ -227,13 +230,16 @@
   <data name="btnCancelar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="btnCancelar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
   <data name="btnCancelar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
   <data name="btnCancelar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAS5JREFUSEvllLFOwzAURTOz8wvMSDRmo0pdCYQqIfER/A9jv4UBpHZiACmsXZD4
+        vwAADr8BOAVTJAAAAS5JREFUSEvllLFOwzAURTOz8wvMSDRmo0pdCYQqIfER/A9jv4UBpHZiACmsXZD4
         AVJnQIoocXSfbCe3cdKxHOkMfbnvDo7T5P9g5um1ydK8yNSPydRTcXN+ikeHs1tcnBitdjERHwcr6nM7
         S5dYjcMKhljoyRcq9sMWx1jMJ/eo6jL0zGOirgsLWy1sXuXvdF67QWUICTblAptX65dgLqLS0dxzErT6
         +L9/zbaTFVHrMDP1wYJim75yK2odzRdKgr4+7Lkvah3282dBkcFyImod9r+FBa2CHItPOyuiNoQFq7fX

@@ -65,9 +65,11 @@ namespace PuntoDeVenta.UserControls
             // panelNavbar
             // 
             panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelNavbar.BackColor = Color.FromArgb(49, 66, 82);
             panelNavbar.BorderStyle = BorderStyle.FixedSingle;
             panelNavbar.Controls.Add(btnAdministracionClientes);
             panelNavbar.Dock = DockStyle.Top;
+            panelNavbar.ForeColor = SystemColors.ButtonHighlight;
             panelNavbar.Location = new Point(0, 28);
             panelNavbar.Name = "panelNavbar";
             panelNavbar.Size = new Size(1449, 48);
@@ -75,13 +77,14 @@ namespace PuntoDeVenta.UserControls
             // 
             // btnAdministracionClientes
             // 
-            btnAdministracionClientes.BackColor = SystemColors.ButtonHighlight;
+            btnAdministracionClientes.BackColor = Color.FromArgb(0, 80, 200);
             btnAdministracionClientes.BackgroundImageLayout = ImageLayout.None;
             btnAdministracionClientes.FlatAppearance.BorderColor = Color.Silver;
             btnAdministracionClientes.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnAdministracionClientes.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnAdministracionClientes.FlatStyle = FlatStyle.Flat;
+            btnAdministracionClientes.FlatStyle = FlatStyle.Popup;
             btnAdministracionClientes.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAdministracionClientes.ForeColor = SystemColors.ButtonHighlight;
             btnAdministracionClientes.Image = (Image)resources.GetObject("btnAdministracionClientes.Image");
             btnAdministracionClientes.Location = new Point(3, 3);
             btnAdministracionClientes.Name = "btnAdministracionClientes";
@@ -94,7 +97,9 @@ namespace PuntoDeVenta.UserControls
             // 
             // panelMain
             // 
+            panelMain.BackColor = Color.FromArgb(49, 66, 82);
             panelMain.Dock = DockStyle.Fill;
+            panelMain.ForeColor = SystemColors.ButtonHighlight;
             panelMain.Location = new Point(0, 76);
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(1449, 508);

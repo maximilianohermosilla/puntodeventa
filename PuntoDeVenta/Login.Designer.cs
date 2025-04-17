@@ -54,13 +54,15 @@
             // 
             // btnLogin
             // 
-            btnLogin.BackColor = SystemColors.ButtonHighlight;
+            btnLogin.BackColor = Color.FromArgb(0, 80, 200);
             btnLogin.BackgroundImageLayout = ImageLayout.None;
             btnLogin.FlatAppearance.BorderColor = Color.Silver;
+            btnLogin.FlatAppearance.BorderSize = 0;
             btnLogin.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnLogin.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogin.FlatStyle = FlatStyle.Popup;
+            btnLogin.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = SystemColors.ButtonHighlight;
             btnLogin.Location = new Point(246, 324);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(142, 39);
@@ -71,13 +73,14 @@
             // 
             // btnExit
             // 
-            btnExit.BackColor = SystemColors.ButtonHighlight;
+            btnExit.BackColor = Color.FromArgb(0, 80, 200);
             btnExit.BackgroundImageLayout = ImageLayout.None;
             btnExit.FlatAppearance.BorderColor = Color.Silver;
             btnExit.FlatAppearance.MouseDownBackColor = Color.DarkGray;
             btnExit.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnExit.FlatStyle = FlatStyle.Flat;
-            btnExit.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExit.FlatStyle = FlatStyle.Popup;
+            btnExit.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExit.ForeColor = SystemColors.ButtonHighlight;
             btnExit.Location = new Point(413, 324);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(142, 39);
@@ -124,7 +127,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SlateGray;
+            BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(800, 450);
             Controls.Add(pictureBox1);
             Controls.Add(labelPassword);
@@ -133,7 +136,7 @@
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(txtUser);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             MaximizeBox = false;
             Name = "Login";
             ShowIcon = false;

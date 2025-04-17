@@ -34,6 +34,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(49, 66, 82);
+            ForeColor = SystemColors.ButtonHighlight;
             Name = "Compras";
             Size = new Size(1460, 580);
             ResumeLayout(false);
