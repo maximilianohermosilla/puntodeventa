@@ -8,13 +8,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PuntoDeVenta.Domain\PuntoDeVenta.Domain.csproj" />
+	  <ProjectReference Include="..\PuntoDeVenta.Domain\PuntoDeVenta.AccessData.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Helpers\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Models\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>

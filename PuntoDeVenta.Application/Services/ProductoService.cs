@@ -1,0 +1,177 @@
+﻿using AutoMapper;
+using PuntoDeVenta.Application.Interfaces;
+using PuntoDeVenta.AccessData.Interfaces;
+using Microsoft.Extensions.Logging;
+using PuntoDeVenta.Application.DTO;
+using PuntoDeVenta.Domain.Entities;
+
+namespace PuntoDeVenta.Application.Services
+{
+    public class ProductoService: IProductoService
+    {
+        private readonly IProductoRepository _productoRepository;
+        private readonly IMapper _mapper;
+        private readonly ILogger<ProductoService> _logger;
+
+        public ProductoService(IProductoRepository productoRepository, IMapper mapper, ILogger<ProductoService> logger)
+        {
+            _productoRepository = productoRepository;
+            _mapper = mapper;
+            _logger = logger;
+        }
+
+        public async Task<ResponseModel> Delete(int id)
+        {
+            ResponseModel response = new ResponseModel();
+            ProductoResponse productoResponse = new ProductoResponse();
+            try
+            {
+                var producto = await _productoRepository.GetById(id);
+
+                if (producto == null)
+                {
+                    response.statusCode = 404;
+                    response.message = "El producto seleccionado no existe";
+                    response.response = null;
+                    return response;
+                }
+
+                await _productoRepository.Delete(producto);
+                productoResponse = _mapper.Map<ProductoResponse>(producto);
+
+                _logger.LogInformation("Se eliminó el producto: " + id + ", " + producto.Descripcion);
+            }
+            catch (Exception ex)
+            {
+                response.statusCode = 400;
+                response.message = ex.Message;
+                response.response = null;
+            }
+
+            response.statusCode = 200;
+            response.message = "Producto eliminado exitosamente";
+            response.response = productoResponse;
+            return response;
+        }
+
+        public async Task<ResponseModel> GetAll()
+        {
+            ResponseModel response = new ResponseModel();
+
+            try
+            {
+                List<Producto> lista = await _productoRepository.GetAll();
+                List<ProductoResponse> listaDTO = _mapper.Map<List<ProductoResponse>>(lista);
+
+                response.message = "Consulta realizada correctamente";
+                response.statusCode = 200;
+                response.response = listaDTO;
+            }
+            catch (Exception ex)
+            {
+                response.statusCode = 400;
+                response.message = ex.Message;
+                response.response = null;
+            }
+
+            return response;
+        }
+
+
+        public async Task<ResponseModel> GetById(int IdProducto)
+        {
+            ResponseModel response = new ResponseModel();
+
+            try
+            {
+                Producto producto = await _productoRepository.GetById(IdProducto);
+
+                if (producto == null)
+                {
+                    response.statusCode = 404;
+                    response.message = "El producto seleccionado no existe";
+                    response.response = null;
+                    return response;
+                }
+
+                ProductoResponse ProductoResponse = _mapper.Map<ProductoResponse>(producto);
+
+                response.message = "Consulta realizada correctamente";
+                response.statusCode = 200;
+                response.response = ProductoResponse;
+            }
+            catch (Exception ex)
+            {
+                response.statusCode = 400;
+                response.message = ex.Message;
+                response.response = null;
+            }
+
+            return response;
+        }
+
+        public async Task<ResponseModel> Insert(ProductoRequest entity)
+        {
+            ResponseModel response = new ResponseModel();
+            ProductoResponse productoResponse = new ProductoResponse();
+            try
+            {
+                Producto producto = _mapper.Map<Producto>(entity);
+                producto = await _productoRepository.Create(producto);
+                productoResponse = _mapper.Map<ProductoResponse>(producto);
+
+                _logger.LogInformation("Se insertó un nuevo producto: " + producto.Id + ". Nombre: " + producto.Descripcion);
+            }
+            catch (Exception ex)
+            {
+                response.statusCode = 400;
+                response.message = ex.Message;
+                response.response = null;
+                return response;
+            }
+
+            response.statusCode = 201;
+            response.message = "Producto insertado exitosamente";
+            response.response = productoResponse;
+            return response;
+        }
+
+
+        public async Task<ResponseModel> Update(ProductoRequest entity)
+        {
+            ResponseModel response = new ResponseModel();
+            ProductoResponse productoResponse = new ProductoResponse();
+            try
+            {
+                var producto = await _productoRepository.GetById(entity.Id);
+
+                if (producto == null)
+                {
+                    response.statusCode = 404;
+                    response.message = "El producto seleccionado no existe";
+                    response.response = null;
+                    return response;
+                }
+                                
+                producto = _mapper.Map<ProductoRequest, Producto>(entity, producto);
+
+                await _productoRepository.SaveChangesAsync();
+                productoResponse = _mapper.Map<ProductoResponse>(producto);
+
+                _logger.LogInformation("Se actualizó el producto: " + producto.Id + ". Nombre anterior: " + producto.Descripcion + ". Nombre actual: " + entity.Descripcion);
+            }
+            catch (Exception ex)
+            {
+                response.statusCode = 400;
+                response.message = ex.Message;
+                response.response = null;
+                return response;
+            }
+
+            response.statusCode = 200;
+            response.message = "Producto actualizado exitosamente";
+            response.response = productoResponse;
+            return response;
+        }
+    }
+}

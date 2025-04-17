@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PuntoDeVenta.Application\PuntoDeVenta.Application.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Repository\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="PuntoDeVentaDbContext.cs" />
   </ItemGroup>
 

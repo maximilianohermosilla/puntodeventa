@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using PuntoDeVenta.AccessData;
+using PuntoDeVenta.AccessData.Interfaces;
+using PuntoDeVenta.AccessData.Repository;
 
 namespace PuntoDeVenta
 {
@@ -40,8 +42,11 @@ namespace PuntoDeVenta
             // Agrega las interfaces y servicios necesarios
             services.AddScoped<PuntoDeVentaDbContext>();
 
+            services.AddTransient<IProductoRepository, ProductoRepository>();
+
             // Registra el formulario principal
             services.AddTransient<Login>();
+
         }
     }
 }

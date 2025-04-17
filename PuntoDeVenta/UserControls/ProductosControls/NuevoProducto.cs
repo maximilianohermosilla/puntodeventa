@@ -18,8 +18,26 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         }
 
         private void btnGuardarProducto_Click(object sender, EventArgs e)
-        {
-
+        {          
+            
+            //txtDescripcion;
+            
+            //txtCodigo;
+            
+            //comboCategoria;
+            
+            //txtPrecioMayor;
+            
+            //txtPrecioVenta;
+            
+            //txtPrecioCosto;
+            
+            
+            //txtCantidadMinima;
+            
+            //txtCantidadActual;
+            
+            //checkInventario;
         }
     }
 }
