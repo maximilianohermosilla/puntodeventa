@@ -15,4 +15,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="9.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PuntoDeVenta.Domain\PuntoDeVenta.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

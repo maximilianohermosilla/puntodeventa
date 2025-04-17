@@ -7,13 +7,13 @@ using PuntoDeVenta.Domain.Entities;
 
 namespace PuntoDeVenta.Application.Services
 {
-    public class ProductoService: IProductoService
+    public class CategoriaProductoService : ICategoriaProductoService
     {
-        private readonly IProductoRepository _productoRepository;
+        private readonly ICategoriaProductoRepository _productoRepository;
         private readonly IMapper _mapper;
-        private readonly ILogger<ProductoService> _logger;
+        private readonly ILogger<CategoriaProductoService> _logger;
 
-        public ProductoService(IProductoRepository productoRepository, IMapper mapper, ILogger<ProductoService> logger)
+        public CategoriaProductoService(ICategoriaProductoRepository productoRepository, IMapper mapper, ILogger<CategoriaProductoService> logger)
         {
             _productoRepository = productoRepository;
             _mapper = mapper;
@@ -23,7 +23,7 @@ namespace PuntoDeVenta.Application.Services
         public async Task<ResponseModel> Delete(int id)
         {
             ResponseModel response = new ResponseModel();
-            ProductoResponse productoResponse = new ProductoResponse();
+            CategoriaProductoResponse productoResponse = new CategoriaProductoResponse();
             try
             {
                 var producto = await _productoRepository.GetById(id);
@@ -37,7 +37,7 @@ namespace PuntoDeVenta.Application.Services
                 }
 
                 await _productoRepository.Delete(producto);
-                productoResponse = _mapper.Map<ProductoResponse>(producto);
+                productoResponse = _mapper.Map<CategoriaProductoResponse>(producto);
 
                 _logger.LogInformation("Se eliminó el producto: " + id + ", " + producto.Descripcion);
             }
@@ -50,7 +50,7 @@ namespace PuntoDeVenta.Application.Services
             }
 
             response.statusCode = 200;
-            response.message = "Producto eliminado exitosamente";
+            response.message = "CategoriaProducto eliminado exitosamente";
             response.response = productoResponse;
             return response;
         }
@@ -61,8 +61,8 @@ namespace PuntoDeVenta.Application.Services
 
             try
             {
-                List<Producto> lista = await _productoRepository.GetAll();
-                List<ProductoResponse> listaDTO = _mapper.Map<List<ProductoResponse>>(lista);
+                List<CategoriaProducto> lista = await _productoRepository.GetAll();
+                List<CategoriaProductoResponse> listaDTO = _mapper.Map<List<CategoriaProductoResponse>>(lista);
 
                 response.message = "Consulta realizada correctamente";
                 response.statusCode = 200;
@@ -80,13 +80,13 @@ namespace PuntoDeVenta.Application.Services
         }
 
 
-        public async Task<ResponseModel> GetById(int IdProducto)
+        public async Task<ResponseModel> GetById(int IdCategoriaProducto)
         {
             ResponseModel response = new ResponseModel();
 
             try
             {
-                Producto producto = await _productoRepository.GetById(IdProducto);
+                CategoriaProducto producto = await _productoRepository.GetById(IdCategoriaProducto);
 
                 if (producto == null)
                 {
@@ -97,11 +97,11 @@ namespace PuntoDeVenta.Application.Services
                     return response;
                 }
 
-                ProductoResponse ProductoResponse = _mapper.Map<ProductoResponse>(producto);
+                CategoriaProductoResponse CategoriaProductoResponse = _mapper.Map<CategoriaProductoResponse>(producto);
 
                 response.message = "Consulta realizada correctamente";
                 response.statusCode = 200;
-                response.response = ProductoResponse;
+                response.response = CategoriaProductoResponse;
             }
             catch (Exception ex)
             {
@@ -114,15 +114,15 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
-        public async Task<ResponseModel> Insert(ProductoRequest entity)
+        public async Task<ResponseModel> Insert(CategoriaProductoRequest entity)
         {
             ResponseModel response = new ResponseModel();
-            ProductoResponse productoResponse = new ProductoResponse();
+            CategoriaProductoResponse productoResponse = new CategoriaProductoResponse();
             try
             {
-                Producto producto = _mapper.Map<Producto>(entity);
+                CategoriaProducto producto = _mapper.Map<CategoriaProducto>(entity);
                 producto = await _productoRepository.Create(producto);
-                productoResponse = _mapper.Map<ProductoResponse>(producto);
+                productoResponse = _mapper.Map<CategoriaProductoResponse>(producto);
 
                 _logger.LogInformation("Se insertó un nuevo producto: " + producto.Id + ". Nombre: " + producto.Descripcion);
             }
@@ -137,16 +137,16 @@ namespace PuntoDeVenta.Application.Services
 
             response.success = true;
             response.statusCode = 201;
-            response.message = "Producto insertado exitosamente";
+            response.message = "CategoriaProducto insertado exitosamente";
             response.response = productoResponse;
             return response;
         }
 
 
-        public async Task<ResponseModel> Update(ProductoRequest entity)
+        public async Task<ResponseModel> Update(CategoriaProductoRequest entity)
         {
             ResponseModel response = new ResponseModel();
-            ProductoResponse productoResponse = new ProductoResponse();
+            CategoriaProductoResponse productoResponse = new CategoriaProductoResponse();
             try
             {
                 var producto = await _productoRepository.GetById(entity.Id);
@@ -160,10 +160,10 @@ namespace PuntoDeVenta.Application.Services
                     return response;
                 }
                                 
-                producto = _mapper.Map<ProductoRequest, Producto>(entity, producto);
+                producto = _mapper.Map<CategoriaProductoRequest, CategoriaProducto>(entity, producto);
 
                 await _productoRepository.SaveChangesAsync();
-                productoResponse = _mapper.Map<ProductoResponse>(producto);
+                productoResponse = _mapper.Map<CategoriaProductoResponse>(producto);
 
                 _logger.LogInformation("Se actualizó el producto: " + producto.Id + ". Nombre anterior: " + producto.Descripcion + ". Nombre actual: " + entity.Descripcion);
             }
@@ -177,7 +177,7 @@ namespace PuntoDeVenta.Application.Services
             }
 
             response.statusCode = 200;
-            response.message = "Producto actualizado exitosamente";
+            response.message = "CategoriaProducto actualizado exitosamente";
             response.response = productoResponse;
             return response;
         }
