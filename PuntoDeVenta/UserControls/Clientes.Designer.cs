@@ -32,7 +32,7 @@ namespace PuntoDeVenta.UserControls
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
             panelHeader = new Panel();
-            ventasTitle = new Label();
+            clientesTitle = new Label();
             panelNavbar = new Panel();
             btnAdministracionClientes = new Button();
             panelMain = new Panel();
@@ -44,23 +44,23 @@ namespace PuntoDeVenta.UserControls
             // 
             panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelHeader.BackColor = Color.LightSlateGray;
-            panelHeader.Controls.Add(ventasTitle);
+            panelHeader.Controls.Add(clientesTitle);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1449, 28);
             panelHeader.TabIndex = 1;
             // 
-            // ventasTitle
+            // clientesTitle
             // 
-            ventasTitle.AutoSize = true;
-            ventasTitle.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ventasTitle.ForeColor = SystemColors.ButtonHighlight;
-            ventasTitle.Location = new Point(3, 0);
-            ventasTitle.Name = "ventasTitle";
-            ventasTitle.Size = new Size(94, 25);
-            ventasTitle.TabIndex = 0;
-            ventasTitle.Text = "CLIENTES";
+            clientesTitle.AutoSize = true;
+            clientesTitle.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            clientesTitle.ForeColor = SystemColors.ButtonHighlight;
+            clientesTitle.Location = new Point(3, 0);
+            clientesTitle.Name = "clientesTitle";
+            clientesTitle.Size = new Size(94, 25);
+            clientesTitle.TabIndex = 0;
+            clientesTitle.Text = "CLIENTES";
             // 
             // panelNavbar
             // 
@@ -123,7 +123,7 @@ namespace PuntoDeVenta.UserControls
         #endregion
 
         private Panel panelHeader;
-        private Label ventasTitle;
+        private Label clientesTitle;
         private Panel panelNavbar;
         public Button btnAdministracionClientes;
         private Panel panelMain;

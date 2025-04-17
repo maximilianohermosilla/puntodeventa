@@ -134,7 +134,7 @@
             btnReportes.Location = new Point(4, 516);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(122, 45);
-            btnReportes.TabIndex = 9;
+            btnReportes.TabIndex = 8;
             btnReportes.Text = "Reportes";
             btnReportes.TextAlign = ContentAlignment.MiddleRight;
             btnReportes.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -155,7 +155,7 @@
             btnCorte.Location = new Point(4, 465);
             btnCorte.Name = "btnCorte";
             btnCorte.Size = new Size(122, 45);
-            btnCorte.TabIndex = 8;
+            btnCorte.TabIndex = 7;
             btnCorte.Text = "Corte";
             btnCorte.TextAlign = ContentAlignment.MiddleRight;
             btnCorte.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -176,7 +176,7 @@
             btnFacturas.Location = new Point(4, 414);
             btnFacturas.Name = "btnFacturas";
             btnFacturas.Size = new Size(122, 45);
-            btnFacturas.TabIndex = 7;
+            btnFacturas.TabIndex = 6;
             btnFacturas.Text = "Facturas";
             btnFacturas.TextAlign = ContentAlignment.MiddleRight;
             btnFacturas.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -218,7 +218,7 @@
             btnInventario.Location = new Point(4, 159);
             btnInventario.Name = "btnInventario";
             btnInventario.Size = new Size(122, 45);
-            btnInventario.TabIndex = 4;
+            btnInventario.TabIndex = 1;
             btnInventario.Text = "(F2) Inventario";
             btnInventario.TextAlign = ContentAlignment.MiddleRight;
             btnInventario.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -239,7 +239,7 @@
             btnProductos.Location = new Point(4, 210);
             btnProductos.Name = "btnProductos";
             btnProductos.Size = new Size(122, 45);
-            btnProductos.TabIndex = 3;
+            btnProductos.TabIndex = 2;
             btnProductos.Text = "(F3) Productos";
             btnProductos.TextAlign = ContentAlignment.MiddleRight;
             btnProductos.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -260,7 +260,7 @@
             btnClientes.Location = new Point(4, 312);
             btnClientes.Name = "btnClientes";
             btnClientes.Size = new Size(122, 45);
-            btnClientes.TabIndex = 2;
+            btnClientes.TabIndex = 4;
             btnClientes.Text = "Clientes";
             btnClientes.TextAlign = ContentAlignment.MiddleRight;
             btnClientes.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -281,7 +281,7 @@
             btnCreditos.Location = new Point(4, 261);
             btnCreditos.Name = "btnCreditos";
             btnCreditos.Size = new Size(122, 45);
-            btnCreditos.TabIndex = 1;
+            btnCreditos.TabIndex = 3;
             btnCreditos.Text = "(F4) Créditos";
             btnCreditos.TextAlign = ContentAlignment.MiddleRight;
             btnCreditos.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -323,7 +323,7 @@
             btnConfiguracion.Location = new Point(4, 567);
             btnConfiguracion.Name = "btnConfiguracion";
             btnConfiguracion.Size = new Size(122, 45);
-            btnConfiguracion.TabIndex = 6;
+            btnConfiguracion.TabIndex = 9;
             btnConfiguracion.Text = "Configuración";
             btnConfiguracion.TextAlign = ContentAlignment.MiddleRight;
             btnConfiguracion.TextImageRelation = TextImageRelation.ImageBeforeText;
