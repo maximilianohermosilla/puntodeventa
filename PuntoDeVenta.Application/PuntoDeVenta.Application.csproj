@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PuntoDeVenta.Domain\PuntoDeVenta.Domain.csproj" />
-	  <ProjectReference Include="..\PuntoDeVenta.Domain\PuntoDeVenta.AccessData.csproj" />
+    <ProjectReference Include="..\PuntoDeVenta.AccessData\PuntoDeVenta.AccessData.csproj" />
   </ItemGroup>
 
   <ItemGroup>

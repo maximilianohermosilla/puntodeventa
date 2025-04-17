@@ -21,6 +21,9 @@
     <Compile Update="UserControls\Clientes.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Update="UserControls\ProductosControls\CategoriaProducto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
