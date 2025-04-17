@@ -2,7 +2,9 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.Domain.Entities;
 using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace PuntoDeVenta.UserControls.ProductosControls
 {
@@ -15,9 +17,9 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
         public CategoriaProducto()
         {
-            //_categoriaProductoService = new CategoriaProductoService(_context);
+            _categoriaProductoService = new CategoriaProductoService(_context);
             InitializeComponent();
-            //_ = GetAllCategorias();
+            _ = GetAllCategorias();
         }
 
         public async Task GetAllCategorias()
@@ -29,6 +31,10 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                 if (response != null && response.success)
                 {
                     categoriaProductos = (List<CategoriaProductoResponse>)response.response!;
+                    listCategorias.DataSource = categoriaProductos;
+                    listCategorias.DisplayMember = "Descripcion"; // propiedad que se muestra
+                    listCategorias.ValueMember = "Id";
+                    //listCategorias.Items.Add(categoriaProductos.Select(c => c.Descripcion));
                 }
             }
             catch (Exception ex)
@@ -66,6 +72,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                     if (response != null && response.success)
                     {
                         categoriaProductos.Add((CategoriaProductoResponse)response.response!);
+                        listCategorias.Items.Add(((CategoriaProductoResponse)response.response!).Descripcion!);
                     }
                 }
             }
