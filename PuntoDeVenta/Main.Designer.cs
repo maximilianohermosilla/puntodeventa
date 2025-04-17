@@ -1,4 +1,8 @@
-﻿namespace PuntoDeVenta
+﻿using Microsoft.Extensions.DependencyInjection;
+using PuntoDeVenta.Helpers;
+using PuntoDeVenta.UserControls;
+
+namespace PuntoDeVenta
 {
     partial class Main
     {
@@ -47,15 +51,15 @@
             imageList = new ImageList(components);
             panelMain = new Panel();
             ventas1 = new Ventas();
-            productos1 = new UserControls.Productos();
-            reportes1 = new UserControls.Reportes();
-            inventario1 = new UserControls.Inventario();
-            facturas1 = new UserControls.Facturas();
-            creditos1 = new UserControls.Creditos();
-            corte1 = new UserControls.Corte();
-            configuracion1 = new UserControls.Configuracion();
-            compras1 = new UserControls.Compras();
-            clientes1 = new UserControls.Clientes();
+            productos1 = new Productos();
+            reportes1 = new Reportes();
+            inventario1 = new Inventario();
+            facturas1 = new Facturas();
+            creditos1 = new Creditos();
+            corte1 = new Corte();
+            configuracion1 = new Configuracion();
+            compras1 = new Compras();
+            clientes1 = new Clientes();
             panelFooter = new Panel();
             txtDatetime = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -544,15 +548,15 @@
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Ventas ventas1;
-        private UserControls.Reportes reportes1;
-        private UserControls.Productos productos1;
-        private UserControls.Inventario inventario1;
-        private UserControls.Facturas facturas1;
-        private UserControls.Creditos creditos1;
-        private UserControls.Corte corte1;
-        private UserControls.Configuracion configuracion1;
-        private UserControls.Compras compras1;
-        private UserControls.Clientes clientes1;
+        private Reportes reportes1;
+        private Productos productos1;
+        private Inventario inventario1;
+        private Facturas facturas1;
+        private Creditos creditos1;
+        private Corte corte1;
+        private Configuracion configuracion1;
+        private Compras compras1;
+        private Clientes clientes1;
         private Panel panelFooter;
         private Label txtDatetime;
         private System.Windows.Forms.Timer timer1;

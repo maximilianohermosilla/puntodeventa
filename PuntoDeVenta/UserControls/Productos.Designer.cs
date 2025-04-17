@@ -1,4 +1,9 @@
-﻿namespace PuntoDeVenta.UserControls
+﻿using Microsoft.Extensions.DependencyInjection;
+using PuntoDeVenta.AccessData.Interfaces;
+using PuntoDeVenta.Helpers;
+using PuntoDeVenta.UserControls.ProductosControls;
+
+namespace PuntoDeVenta.UserControls
 {
     partial class Productos
     {
@@ -41,7 +46,8 @@
             btnVentasPeriodo = new Button();
             btnPromociones = new Button();
             panelMain = new Panel();
-            nuevoProducto1 = new ProductosControls.NuevoProducto();
+            categoriaProducto1 = new CategoriaProducto();
+            nuevoProducto1 = new NuevoProducto();
             panelHeader.SuspendLayout();
             panelNavbar.SuspendLayout();
             panelMain.SuspendLayout();
@@ -259,12 +265,21 @@
             // 
             // panelMain
             // 
+            panelMain.Controls.Add(categoriaProducto1);
             panelMain.Controls.Add(nuevoProducto1);
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(0, 76);
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(1449, 508);
             panelMain.TabIndex = 17;
+            // 
+            // categoriaProducto1
+            // 
+            categoriaProducto1.Dock = DockStyle.Fill;
+            categoriaProducto1.Location = new Point(0, 0);
+            categoriaProducto1.Name = "categoriaProducto1";
+            categoriaProducto1.Size = new Size(1449, 508);
+            categoriaProducto1.TabIndex = 9;
             // 
             // nuevoProducto1
             // 
@@ -306,7 +321,8 @@
         public Button btnVentasPeriodo;
         public Button btnPromociones;
         private Panel panelMain;
-        private UserControls.ProductosControls.NuevoProducto nuevoProducto1;
+        private NuevoProducto nuevoProducto1;
         public Button btnCatalogo;
+        private CategoriaProducto categoriaProducto1;
     }
 }

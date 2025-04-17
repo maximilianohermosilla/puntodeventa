@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using PuntoDeVenta.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,7 @@ namespace PuntoDeVenta
 {
     public partial class Main : Form
     {
+
         public Main()
         {
             InitializeComponent();
@@ -24,7 +27,7 @@ namespace PuntoDeVenta
 
         private void Main_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
 

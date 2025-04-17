@@ -9,12 +9,12 @@ namespace PuntoDeVenta
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms[nameof(Main)] == null)
+            if (System.Windows.Forms.Application.OpenForms[nameof(Main)] == null)
             {
                 Main form = new Main();
                 form.Show(this);
@@ -22,7 +22,7 @@ namespace PuntoDeVenta
             }
             else
             {
-                Application.OpenForms[nameof(Main)].Focus();
+                System.Windows.Forms.Application.OpenForms[nameof(Main)].Focus();
             }
         }
     }

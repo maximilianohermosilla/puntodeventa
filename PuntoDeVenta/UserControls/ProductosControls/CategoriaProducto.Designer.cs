@@ -42,6 +42,7 @@
             txtDescripcion = new TextBox();
             labelDescripcion = new Label();
             panelAside = new Panel();
+            listCategorias = new ListBox();
             panelNavbar.SuspendLayout();
             panelCategoriaProducto.SuspendLayout();
             panelMain.SuspendLayout();
@@ -54,7 +55,7 @@
             labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTitle.ForeColor = SystemColors.ButtonHighlight;
-            labelTitle.Location = new Point(-1, 0);
+            labelTitle.Location = new Point(3, 6);
             labelTitle.Name = "labelTitle";
             labelTitle.Size = new Size(218, 25);
             labelTitle.TabIndex = 1;
@@ -63,12 +64,11 @@
             // panelNavbar
             // 
             panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelNavbar.BorderStyle = BorderStyle.FixedSingle;
             panelNavbar.Controls.Add(labelTitle);
             panelNavbar.Dock = DockStyle.Top;
             panelNavbar.Location = new Point(0, 0);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(1449, 40);
+            panelNavbar.Size = new Size(1449, 38);
             panelNavbar.TabIndex = 17;
             // 
             // txtBuscar
@@ -114,29 +114,31 @@
             // 
             // panelMain
             // 
-            panelMain.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            panelMain.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelMain.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelMain.BackColor = Color.FromArgb(49, 66, 82);
             panelMain.Controls.Add(panelPrincipal);
             panelMain.Controls.Add(panelAside);
             panelMain.ForeColor = SystemColors.ButtonHighlight;
-            panelMain.Location = new Point(0, 46);
+            panelMain.Location = new Point(0, 29);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1449, 538);
+            panelMain.Size = new Size(1449, 555);
             panelMain.TabIndex = 22;
             // 
             // panelPrincipal
             // 
+            panelPrincipal.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelPrincipal.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelPrincipal.BackColor = Color.FromArgb(49, 66, 82);
             panelPrincipal.Controls.Add(labelCategoria);
             panelPrincipal.Controls.Add(btnGuardar);
             panelPrincipal.Controls.Add(checkHabilitado);
             panelPrincipal.Controls.Add(txtDescripcion);
             panelPrincipal.Controls.Add(labelDescripcion);
-            panelPrincipal.Dock = DockStyle.Fill;
             panelPrincipal.ForeColor = SystemColors.ButtonHighlight;
-            panelPrincipal.Location = new Point(465, 0);
+            panelPrincipal.Location = new Point(351, 5);
             panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(984, 538);
+            panelPrincipal.Size = new Size(1098, 533);
             panelPrincipal.TabIndex = 20;
             // 
             // labelCategoria
@@ -183,15 +185,26 @@
             // 
             // panelAside
             // 
+            panelAside.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panelAside.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelAside.BackColor = Color.FromArgb(29, 32, 40);
+            panelAside.Controls.Add(listCategorias);
             panelAside.Controls.Add(txtBuscar);
-            panelAside.Dock = DockStyle.Left;
             panelAside.ForeColor = SystemColors.ButtonHighlight;
-            panelAside.Location = new Point(0, 0);
+            panelAside.Location = new Point(19, 5);
             panelAside.Name = "panelAside";
-            panelAside.Size = new Size(465, 538);
+            panelAside.Size = new Size(326, 533);
             panelAside.TabIndex = 21;
+            // 
+            // listCategorias
+            // 
+            listCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            listCategorias.FormattingEnabled = true;
+            listCategorias.ItemHeight = 15;
+            listCategorias.Location = new Point(20, 55);
+            listCategorias.Name = "listCategorias";
+            listCategorias.Size = new Size(278, 454);
+            listCategorias.TabIndex = 8;
             // 
             // CategoriaProducto
             // 
@@ -235,5 +248,6 @@
         private Panel panelAside;
         private Panel panelPrincipal;
         private Panel panelMain;
+        private ListBox listCategorias;
     }
 }

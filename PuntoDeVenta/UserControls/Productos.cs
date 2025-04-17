@@ -55,6 +55,7 @@ namespace PuntoDeVenta.UserControls
         private void btnCategorias_Click(object sender, EventArgs e)
         {
 
+            SetActivePanel(categoriaProducto1);
         }
 
         private void btnVentasPeriodo_Click(object sender, EventArgs e)
@@ -80,6 +81,7 @@ namespace PuntoDeVenta.UserControls
         public void SetActivePanel(UserControl? control)
         {
             nuevoProducto1.Visible = false;
+            categoriaProducto1.Visible = false;
 
 
             if (control != null)

@@ -27,6 +27,11 @@ namespace PuntoDeVenta.AccessData
         public DbSet<TipoPermiso> TipoPermiso { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
 
+        public PuntoDeVentaDbContext() : base()
+        {
+
+        }
+
         public PuntoDeVentaDbContext(DbContextOptions options) : base(options)
         {
 
