@@ -35,12 +35,18 @@
             txtBuscar = new TextBox();
             btnGuardar = new Button();
             panelCategoriaProducto = new Panel();
+            panelMain = new Panel();
+            panelPrincipal = new Panel();
+            labelCategoria = new Label();
             checkHabilitado = new CheckBox();
             txtDescripcion = new TextBox();
             labelDescripcion = new Label();
-            labelCategoria = new Label();
+            panelAside = new Panel();
             panelNavbar.SuspendLayout();
             panelCategoriaProducto.SuspendLayout();
+            panelMain.SuspendLayout();
+            panelPrincipal.SuspendLayout();
+            panelAside.SuspendLayout();
             SuspendLayout();
             // 
             // labelTitle
@@ -48,7 +54,7 @@
             labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTitle.ForeColor = SystemColors.ButtonHighlight;
-            labelTitle.Location = new Point(3, 0);
+            labelTitle.Location = new Point(-1, 0);
             labelTitle.Name = "labelTitle";
             labelTitle.Size = new Size(218, 25);
             labelTitle.TabIndex = 1;
@@ -56,18 +62,18 @@
             // 
             // panelNavbar
             // 
+            panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelNavbar.BorderStyle = BorderStyle.FixedSingle;
-            panelNavbar.Controls.Add(txtBuscar);
             panelNavbar.Controls.Add(labelTitle);
             panelNavbar.Dock = DockStyle.Top;
             panelNavbar.Location = new Point(0, 0);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(1449, 81);
+            panelNavbar.Size = new Size(1449, 40);
             panelNavbar.TabIndex = 17;
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(4, 42);
+            txtBuscar.Location = new Point(18, 17);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = "Buscar...";
             txtBuscar.Size = new Size(279, 23);
@@ -84,7 +90,7 @@
             btnGuardar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = SystemColors.ButtonHighlight;
             btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
-            btnGuardar.Location = new Point(5, 228);
+            btnGuardar.Location = new Point(16, 142);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(136, 35);
             btnGuardar.TabIndex = 10;
@@ -97,18 +103,52 @@
             // panelCategoriaProducto
             // 
             panelCategoriaProducto.BackColor = Color.FromArgb(49, 66, 82);
-            panelCategoriaProducto.Controls.Add(labelCategoria);
-            panelCategoriaProducto.Controls.Add(btnGuardar);
             panelCategoriaProducto.Controls.Add(panelNavbar);
-            panelCategoriaProducto.Controls.Add(checkHabilitado);
-            panelCategoriaProducto.Controls.Add(txtDescripcion);
-            panelCategoriaProducto.Controls.Add(labelDescripcion);
+            panelCategoriaProducto.Controls.Add(panelMain);
             panelCategoriaProducto.Dock = DockStyle.Fill;
             panelCategoriaProducto.ForeColor = SystemColors.ButtonHighlight;
             panelCategoriaProducto.Location = new Point(0, 0);
             panelCategoriaProducto.Name = "panelCategoriaProducto";
             panelCategoriaProducto.Size = new Size(1449, 584);
             panelCategoriaProducto.TabIndex = 18;
+            // 
+            // panelMain
+            // 
+            panelMain.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            panelMain.BackColor = Color.FromArgb(49, 66, 82);
+            panelMain.Controls.Add(panelPrincipal);
+            panelMain.Controls.Add(panelAside);
+            panelMain.ForeColor = SystemColors.ButtonHighlight;
+            panelMain.Location = new Point(0, 46);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(1449, 538);
+            panelMain.TabIndex = 22;
+            // 
+            // panelPrincipal
+            // 
+            panelPrincipal.BackColor = Color.FromArgb(49, 66, 82);
+            panelPrincipal.Controls.Add(labelCategoria);
+            panelPrincipal.Controls.Add(btnGuardar);
+            panelPrincipal.Controls.Add(checkHabilitado);
+            panelPrincipal.Controls.Add(txtDescripcion);
+            panelPrincipal.Controls.Add(labelDescripcion);
+            panelPrincipal.Dock = DockStyle.Fill;
+            panelPrincipal.ForeColor = SystemColors.ButtonHighlight;
+            panelPrincipal.Location = new Point(465, 0);
+            panelPrincipal.Name = "panelPrincipal";
+            panelPrincipal.Size = new Size(984, 538);
+            panelPrincipal.TabIndex = 20;
+            // 
+            // labelCategoria
+            // 
+            labelCategoria.AutoSize = true;
+            labelCategoria.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelCategoria.ForeColor = SystemColors.ButtonHighlight;
+            labelCategoria.Location = new Point(15, 12);
+            labelCategoria.Name = "labelCategoria";
+            labelCategoria.Size = new Size(181, 25);
+            labelCategoria.TabIndex = 8;
+            labelCategoria.Text = "NUEVA CATEGORIA";
             // 
             // checkHabilitado
             // 
@@ -117,7 +157,7 @@
             checkHabilitado.Checked = true;
             checkHabilitado.CheckState = CheckState.Checked;
             checkHabilitado.Font = new Font("Segoe UI", 10F);
-            checkHabilitado.Location = new Point(5, 182);
+            checkHabilitado.Location = new Point(16, 96);
             checkHabilitado.Name = "checkHabilitado";
             checkHabilitado.Size = new Size(133, 23);
             checkHabilitado.TabIndex = 19;
@@ -126,7 +166,7 @@
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(127, 147);
+            txtDescripcion.Location = new Point(138, 61);
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(309, 23);
             txtDescripcion.TabIndex = 6;
@@ -135,22 +175,23 @@
             // 
             labelDescripcion.AutoSize = true;
             labelDescripcion.Font = new Font("Segoe UI", 10F);
-            labelDescripcion.Location = new Point(4, 148);
+            labelDescripcion.Location = new Point(15, 62);
             labelDescripcion.Name = "labelDescripcion";
             labelDescripcion.Size = new Size(86, 19);
             labelDescripcion.TabIndex = 5;
             labelDescripcion.Text = "Descripción: ";
             // 
-            // labelCategoria
+            // panelAside
             // 
-            labelCategoria.AutoSize = true;
-            labelCategoria.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelCategoria.ForeColor = SystemColors.ButtonHighlight;
-            labelCategoria.Location = new Point(4, 93);
-            labelCategoria.Name = "labelCategoria";
-            labelCategoria.Size = new Size(114, 25);
-            labelCategoria.TabIndex = 8;
-            labelCategoria.Text = "CATEGORIA";
+            panelAside.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelAside.BackColor = Color.FromArgb(29, 32, 40);
+            panelAside.Controls.Add(txtBuscar);
+            panelAside.Dock = DockStyle.Left;
+            panelAside.ForeColor = SystemColors.ButtonHighlight;
+            panelAside.Location = new Point(0, 0);
+            panelAside.Name = "panelAside";
+            panelAside.Size = new Size(465, 538);
+            panelAside.TabIndex = 21;
             // 
             // CategoriaProducto
             // 
@@ -162,7 +203,11 @@
             panelNavbar.ResumeLayout(false);
             panelNavbar.PerformLayout();
             panelCategoriaProducto.ResumeLayout(false);
-            panelCategoriaProducto.PerformLayout();
+            panelMain.ResumeLayout(false);
+            panelPrincipal.ResumeLayout(false);
+            panelPrincipal.PerformLayout();
+            panelAside.ResumeLayout(false);
+            panelAside.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -187,6 +232,8 @@
         private NumericUpDown txtCantidadActual;
         private Label labelInventario;
         private TextBox txtBuscar;
-        private Label labelCategoria;
+        private Panel panelAside;
+        private Panel panelPrincipal;
+        private Panel panelMain;
     }
 }
