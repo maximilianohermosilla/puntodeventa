@@ -3,11 +3,11 @@
     public partial class Producto
     {
         public int Id { get; set; }
-        public string Codigo { get; set; }
+        public string? Codigo { get; set; } = null;
         public string Descripcion { get; set; }
-        public float PrecioCosto { get; set; }
-        public float PrecioPorMayor { get; set; }
-        public float PrecioVenta { get; set; }
+        public float? PrecioCosto { get; set; } = null;
+        public float? PrecioPorMayor { get; set; } = null;
+        public float? PrecioVenta { get; set; } = null;
         public int? Cantidad { get; set; } = null;
         public int? CantidadMinima { get; set; } = null;
         public int? CantidadMaxima { get; set; } = null;

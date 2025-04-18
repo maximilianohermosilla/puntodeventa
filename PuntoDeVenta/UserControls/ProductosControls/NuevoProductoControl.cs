@@ -45,9 +45,9 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         {
             try
             {
-                if (txtDescripcion.Text == "" || txtCodigo.Text == "")
+                if (txtDescripcion.Text == "")
                 {
-                    MessageBox.Show("Debe ingresar un código y nombre válido");
+                    MessageBox.Show("Debe ingresar un nombre válido");
                 }
                 else
                 {
