@@ -57,14 +57,13 @@
             toastY = ScreenHeight - this.Height + 10;
 
             this.Location = new Point(toastX, toastY);
-
         }
 
         private void timerToast_Tick(object sender, EventArgs e)
         {
-            toastY -= 10;
+            toastY -= 30;
             this.Location = new Point(toastX, toastY);
-            if (toastY < Screen.PrimaryScreen.WorkingArea.Height - 100)
+            if (toastY < 125)
             {
                 timerToast.Stop();
                 toastHide.Start();
@@ -76,10 +75,10 @@
             y--;
             if (y <= 0)
             {
-                toastY += 1;
-                this.Location = new Point(toastX, toastY += 10);
+                toastY += 10;
+                this.Location = new Point(toastX, toastY += 20);
 
-                if(toastY > Screen.PrimaryScreen.WorkingArea.Height - 100)
+                if(toastY > Screen.PrimaryScreen.WorkingArea.Height - 300)
                 {
                     toastHide.Stop();
                     y = 100;
