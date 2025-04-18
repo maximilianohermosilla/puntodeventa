@@ -78,9 +78,10 @@
             btnFacturaPorVentas.BackColor = Color.FromArgb(0, 80, 200);
             btnFacturaPorVentas.BackgroundImageLayout = ImageLayout.None;
             btnFacturaPorVentas.FlatAppearance.BorderColor = Color.Silver;
-            btnFacturaPorVentas.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnFacturaPorVentas.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnFacturaPorVentas.FlatStyle = FlatStyle.Popup;
+            btnFacturaPorVentas.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnFacturaPorVentas.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnFacturaPorVentas.FlatStyle = FlatStyle.Flat;
+            btnFacturaPorVentas.FlatAppearance.BorderSize = 0;
             btnFacturaPorVentas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnFacturaPorVentas.ForeColor = SystemColors.ButtonHighlight;
             btnFacturaPorVentas.Image = (Image)resources.GetObject("btnFacturaPorVentas.Image");
@@ -98,9 +99,10 @@
             btnFacturasGlobales.BackColor = Color.FromArgb(0, 80, 200);
             btnFacturasGlobales.BackgroundImageLayout = ImageLayout.None;
             btnFacturasGlobales.FlatAppearance.BorderColor = Color.Silver;
-            btnFacturasGlobales.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnFacturasGlobales.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnFacturasGlobales.FlatStyle = FlatStyle.Popup;
+            btnFacturasGlobales.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnFacturasGlobales.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnFacturasGlobales.FlatStyle = FlatStyle.Flat;
+            btnFacturasGlobales.FlatAppearance.BorderSize = 0;
             btnFacturasGlobales.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnFacturasGlobales.ForeColor = SystemColors.ButtonHighlight;
             btnFacturasGlobales.Image = (Image)resources.GetObject("btnFacturasGlobales.Image");

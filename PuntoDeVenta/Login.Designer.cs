@@ -58,9 +58,9 @@
             btnLogin.BackgroundImageLayout = ImageLayout.None;
             btnLogin.FlatAppearance.BorderColor = Color.Silver;
             btnLogin.FlatAppearance.BorderSize = 0;
-            btnLogin.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnLogin.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnLogin.FlatStyle = FlatStyle.Popup;
+            btnLogin.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnLogin.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = SystemColors.ButtonHighlight;
             btnLogin.Location = new Point(246, 324);
@@ -76,9 +76,10 @@
             btnExit.BackColor = Color.FromArgb(0, 80, 200);
             btnExit.BackgroundImageLayout = ImageLayout.None;
             btnExit.FlatAppearance.BorderColor = Color.Silver;
-            btnExit.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnExit.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnExit.FlatStyle = FlatStyle.Popup;
+            btnExit.FlatAppearance.BorderSize = 0;
+            btnExit.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnExit.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExit.ForeColor = SystemColors.ButtonHighlight;
             btnExit.Location = new Point(413, 324);

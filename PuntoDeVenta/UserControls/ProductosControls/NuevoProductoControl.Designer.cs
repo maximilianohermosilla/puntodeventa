@@ -69,7 +69,6 @@
             labelTitle.Location = new Point(5, 3);
             labelTitle.Name = "labelTitle";
             labelTitle.Size = new Size(180, 25);
-            labelTitle.TabIndex = 1;
             labelTitle.Text = "NUEVO PRODUCTO";
             // 
             // panelFooter
@@ -80,23 +79,24 @@
             panelFooter.Location = new Point(0, 533);
             panelFooter.Name = "panelFooter";
             panelFooter.Size = new Size(1449, 51);
-            panelFooter.TabIndex = 17;
+            panelFooter.TabIndex = 10;
             // 
             // btnGuardarProducto
             // 
             btnGuardarProducto.BackColor = Color.FromArgb(0, 80, 200);
             btnGuardarProducto.BackgroundImageLayout = ImageLayout.None;
             btnGuardarProducto.FlatAppearance.BorderColor = Color.Silver;
-            btnGuardarProducto.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnGuardarProducto.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnGuardarProducto.FlatStyle = FlatStyle.Popup;
+            btnGuardarProducto.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnGuardarProducto.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnGuardarProducto.FlatStyle = FlatStyle.Flat;
+            btnGuardarProducto.FlatAppearance.BorderSize = 0;
             btnGuardarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGuardarProducto.ForeColor = SystemColors.ButtonHighlight;
             btnGuardarProducto.Image = (Image)resources.GetObject("btnGuardarProducto.Image");
             btnGuardarProducto.Location = new Point(5, 6);
             btnGuardarProducto.Name = "btnGuardarProducto";
             btnGuardarProducto.Size = new Size(136, 35);
-            btnGuardarProducto.TabIndex = 10;
+            btnGuardarProducto.TabIndex = 11;
             btnGuardarProducto.Text = "Guardar Producto";
             btnGuardarProducto.TextAlign = ContentAlignment.MiddleRight;
             btnGuardarProducto.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -131,7 +131,6 @@
             panelNuevoProducto.Location = new Point(0, 0);
             panelNuevoProducto.Name = "panelNuevoProducto";
             panelNuevoProducto.Size = new Size(1449, 584);
-            panelNuevoProducto.TabIndex = 18;
             // 
             // labelInventario
             // 
@@ -141,7 +140,6 @@
             labelInventario.Location = new Point(6, 259);
             labelInventario.Name = "labelInventario";
             labelInventario.Size = new Size(103, 21);
-            labelInventario.TabIndex = 20;
             labelInventario.Text = "INVENTARIO";
             // 
             // checkInventario
@@ -150,7 +148,7 @@
             checkInventario.Location = new Point(11, 287);
             checkInventario.Name = "checkInventario";
             checkInventario.Size = new Size(177, 19);
-            checkInventario.TabIndex = 19;
+            checkInventario.TabIndex = 7;
             checkInventario.Text = "El producto utiliza inventario";
             checkInventario.UseVisualStyleBackColor = true;
             checkInventario.CheckedChanged += checkInventario_CheckedChanged_1;
@@ -162,7 +160,6 @@
             labelCantidadMinima.Location = new Point(5, 359);
             labelCantidadMinima.Name = "labelCantidadMinima";
             labelCantidadMinima.Size = new Size(116, 19);
-            labelCantidadMinima.TabIndex = 18;
             labelCantidadMinima.Text = "Cantidad mínima:";
             // 
             // txtCantidadMinima
@@ -172,7 +169,7 @@
             txtCantidadMinima.Maximum = 1000000;
             txtCantidadMinima.Name = "txtCantidadMinima";
             txtCantidadMinima.Size = new Size(309, 23);
-            txtCantidadMinima.TabIndex = 17;
+            txtCantidadMinima.TabIndex = 9;
             // 
             // labelCantidadActual
             // 
@@ -181,7 +178,6 @@
             labelCantidadActual.Location = new Point(5, 322);
             labelCantidadActual.Name = "labelCantidadActual";
             labelCantidadActual.Size = new Size(107, 19);
-            labelCantidadActual.TabIndex = 16;
             labelCantidadActual.Text = "Cantidad actual:";
             // 
             // txtCantidadActual
@@ -191,7 +187,7 @@
             txtCantidadActual.Maximum = 1000000;
             txtCantidadActual.Name = "txtCantidadActual";
             txtCantidadActual.Size = new Size(309, 23);
-            txtCantidadActual.TabIndex = 15;
+            txtCantidadActual.TabIndex = 8;
             // 
             // labelCategoria
             // 
@@ -200,7 +196,6 @@
             labelCategoria.Location = new Point(5, 212);
             labelCategoria.Name = "labelCategoria";
             labelCategoria.Size = new Size(71, 19);
-            labelCategoria.TabIndex = 14;
             labelCategoria.Text = "Categoría:";
             // 
             // comboCategoria
@@ -209,7 +204,7 @@
             comboCategoria.Location = new Point(128, 211);
             comboCategoria.Name = "comboCategoria";
             comboCategoria.Size = new Size(309, 23);
-            comboCategoria.TabIndex = 13;
+            comboCategoria.TabIndex = 6;
             // 
             // labelPrecioMayor
             // 
@@ -218,7 +213,6 @@
             labelPrecioMayor.Location = new Point(5, 177);
             labelPrecioMayor.Name = "labelPrecioMayor";
             labelPrecioMayor.Size = new Size(117, 19);
-            labelPrecioMayor.TabIndex = 12;
             labelPrecioMayor.Text = "Precio por mayor:";
             // 
             // txtPrecioMayor
@@ -227,7 +221,7 @@
             txtPrecioMayor.Maximum = 1000000;
             txtPrecioMayor.Name = "txtPrecioMayor";
             txtPrecioMayor.Size = new Size(309, 23);
-            txtPrecioMayor.TabIndex = 11;
+            txtPrecioMayor.TabIndex = 5;
             // 
             // labelPrecioVenta
             // 
@@ -236,7 +230,6 @@
             labelPrecioVenta.Location = new Point(5, 142);
             labelPrecioVenta.Name = "labelPrecioVenta";
             labelPrecioVenta.Size = new Size(88, 19);
-            labelPrecioVenta.TabIndex = 10;
             labelPrecioVenta.Text = "Precio Venta:";
             // 
             // txtPrecioVenta
@@ -245,7 +238,7 @@
             txtPrecioVenta.Maximum = 1000000;
             txtPrecioVenta.Name = "txtPrecioVenta";
             txtPrecioVenta.Size = new Size(309, 23);
-            txtPrecioVenta.TabIndex = 9;
+            txtPrecioVenta.TabIndex = 4;
             // 
             // labelPrecioCosto
             // 
@@ -254,7 +247,6 @@
             labelPrecioCosto.Location = new Point(5, 108);
             labelPrecioCosto.Name = "labelPrecioCosto";
             labelPrecioCosto.Size = new Size(89, 19);
-            labelPrecioCosto.TabIndex = 8;
             labelPrecioCosto.Text = "Precio Costo:";
             // 
             // txtPrecioCosto
@@ -263,14 +255,14 @@
             txtPrecioCosto.Maximum = 1000000;
             txtPrecioCosto.Name = "txtPrecioCosto";
             txtPrecioCosto.Size = new Size(309, 23);
-            txtPrecioCosto.TabIndex = 7;
+            txtPrecioCosto.TabIndex = 3;
             // 
             // txtDescripcion
             // 
             txtDescripcion.Location = new Point(128, 70);
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(309, 23);
-            txtDescripcion.TabIndex = 6;
+            txtDescripcion.TabIndex = 2;
             // 
             // labelDescripcion
             // 
@@ -279,7 +271,6 @@
             labelDescripcion.Location = new Point(5, 71);
             labelDescripcion.Name = "labelDescripcion";
             labelDescripcion.Size = new Size(86, 19);
-            labelDescripcion.TabIndex = 5;
             labelDescripcion.Text = "Descripción: ";
             // 
             // txtCodigo
@@ -287,7 +278,7 @@
             txtCodigo.Location = new Point(128, 36);
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(309, 23);
-            txtCodigo.TabIndex = 4;
+            txtCodigo.TabIndex = 1;
             // 
             // labelCodigo
             // 
@@ -296,7 +287,6 @@
             labelCodigo.Location = new Point(5, 37);
             labelCodigo.Name = "labelCodigo";
             labelCodigo.Size = new Size(60, 19);
-            labelCodigo.TabIndex = 3;
             labelCodigo.Text = "Código: ";
             // 
             // NuevoProducto

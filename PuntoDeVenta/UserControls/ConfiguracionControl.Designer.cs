@@ -78,9 +78,10 @@
             btnMostrarOpciones.BackColor = Color.FromArgb(0, 80, 200);
             btnMostrarOpciones.BackgroundImageLayout = ImageLayout.None;
             btnMostrarOpciones.FlatAppearance.BorderColor = Color.Silver;
-            btnMostrarOpciones.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnMostrarOpciones.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnMostrarOpciones.FlatStyle = FlatStyle.Popup;
+            btnMostrarOpciones.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnMostrarOpciones.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnMostrarOpciones.FlatStyle = FlatStyle.Flat;
+            btnMostrarOpciones.FlatAppearance.BorderSize = 0;
             btnMostrarOpciones.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnMostrarOpciones.ForeColor = SystemColors.ButtonHighlight;
             btnMostrarOpciones.Image = (Image)resources.GetObject("btnMostrarOpciones.Image");

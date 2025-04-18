@@ -77,9 +77,10 @@
             btnReporteDeVentas.BackColor = Color.FromArgb(0, 80, 200);
             btnReporteDeVentas.BackgroundImageLayout = ImageLayout.None;
             btnReporteDeVentas.FlatAppearance.BorderColor = Color.Silver;
-            btnReporteDeVentas.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnReporteDeVentas.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnReporteDeVentas.FlatStyle = FlatStyle.Popup;
+            btnReporteDeVentas.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnReporteDeVentas.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnReporteDeVentas.FlatStyle = FlatStyle.Flat;
+            btnReporteDeVentas.FlatAppearance.BorderSize = 0;
             btnReporteDeVentas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReporteDeVentas.ForeColor = SystemColors.ButtonHighlight;
             btnReporteDeVentas.Image = (Image)resources.GetObject("btnReporteDeVentas.Image");
@@ -97,9 +98,10 @@
             btnVentasPorCliente.BackColor = Color.FromArgb(0, 80, 200);
             btnVentasPorCliente.BackgroundImageLayout = ImageLayout.None;
             btnVentasPorCliente.FlatAppearance.BorderColor = Color.Silver;
-            btnVentasPorCliente.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnVentasPorCliente.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnVentasPorCliente.FlatStyle = FlatStyle.Popup;
+            btnVentasPorCliente.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnVentasPorCliente.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnVentasPorCliente.FlatStyle = FlatStyle.Flat;
+            btnVentasPorCliente.FlatAppearance.BorderSize = 0;
             btnVentasPorCliente.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVentasPorCliente.ForeColor = SystemColors.ButtonHighlight;
             btnVentasPorCliente.Image = (Image)resources.GetObject("btnVentasPorCliente.Image");

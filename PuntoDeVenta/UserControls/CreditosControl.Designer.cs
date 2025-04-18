@@ -80,9 +80,10 @@ namespace PuntoDeVenta.UserControls
             btnEstadoCuenta.BackColor = Color.FromArgb(0, 80, 200);
             btnEstadoCuenta.BackgroundImageLayout = ImageLayout.None;
             btnEstadoCuenta.FlatAppearance.BorderColor = Color.Silver;
-            btnEstadoCuenta.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnEstadoCuenta.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnEstadoCuenta.FlatStyle = FlatStyle.Popup;
+            btnEstadoCuenta.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnEstadoCuenta.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnEstadoCuenta.FlatStyle = FlatStyle.Flat;
+            btnEstadoCuenta.FlatAppearance.BorderSize = 0;
             btnEstadoCuenta.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEstadoCuenta.ForeColor = SystemColors.ButtonHighlight;
             btnEstadoCuenta.Image = (Image)resources.GetObject("btnEstadoCuenta.Image");
@@ -101,9 +102,10 @@ namespace PuntoDeVenta.UserControls
             btnReporteSaldo.BackColor = Color.FromArgb(0, 80, 200);
             btnReporteSaldo.BackgroundImageLayout = ImageLayout.None;
             btnReporteSaldo.FlatAppearance.BorderColor = Color.Silver;
-            btnReporteSaldo.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnReporteSaldo.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnReporteSaldo.FlatStyle = FlatStyle.Popup;
+            btnReporteSaldo.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnReporteSaldo.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnReporteSaldo.FlatStyle = FlatStyle.Flat;
+            btnReporteSaldo.FlatAppearance.BorderSize = 0;
             btnReporteSaldo.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReporteSaldo.ForeColor = SystemColors.ButtonHighlight;
             btnReporteSaldo.Image = (Image)resources.GetObject("btnReporteSaldo.Image");

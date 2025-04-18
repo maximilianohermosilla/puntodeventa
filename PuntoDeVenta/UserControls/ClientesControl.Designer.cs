@@ -80,9 +80,10 @@ namespace PuntoDeVenta.UserControls
             btnAdministracionClientes.BackColor = Color.FromArgb(0, 80, 200);
             btnAdministracionClientes.BackgroundImageLayout = ImageLayout.None;
             btnAdministracionClientes.FlatAppearance.BorderColor = Color.Silver;
-            btnAdministracionClientes.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnAdministracionClientes.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnAdministracionClientes.FlatStyle = FlatStyle.Popup;
+            btnAdministracionClientes.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnAdministracionClientes.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnAdministracionClientes.FlatStyle = FlatStyle.Flat;
+            btnAdministracionClientes.FlatAppearance.BorderSize = 0;
             btnAdministracionClientes.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAdministracionClientes.ForeColor = SystemColors.ButtonHighlight;
             btnAdministracionClientes.Image = (Image)resources.GetObject("btnAdministracionClientes.Image");

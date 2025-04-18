@@ -78,9 +78,10 @@
             btnCompras.BackColor = Color.FromArgb(0, 80, 200);
             btnCompras.BackgroundImageLayout = ImageLayout.None;
             btnCompras.FlatAppearance.BorderColor = Color.Silver;
-            btnCompras.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnCompras.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnCompras.FlatStyle = FlatStyle.Popup;
+            btnCompras.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnCompras.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnCompras.FlatStyle = FlatStyle.Flat;
+            btnCompras.FlatAppearance.BorderSize = 0;
             btnCompras.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCompras.ForeColor = SystemColors.ButtonHighlight;
             btnCompras.Image = (Image)resources.GetObject("btnCompras.Image");

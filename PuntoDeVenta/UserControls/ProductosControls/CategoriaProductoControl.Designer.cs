@@ -84,9 +84,10 @@
             btnGuardar.BackColor = Color.FromArgb(0, 80, 200);
             btnGuardar.BackgroundImageLayout = ImageLayout.None;
             btnGuardar.FlatAppearance.BorderColor = Color.Silver;
-            btnGuardar.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnGuardar.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnGuardar.FlatStyle = FlatStyle.Popup;
+            btnGuardar.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnGuardar.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = SystemColors.ButtonHighlight;
             btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");

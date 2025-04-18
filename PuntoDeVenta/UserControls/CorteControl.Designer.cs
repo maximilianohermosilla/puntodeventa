@@ -78,9 +78,10 @@
             btnCorteCajero.BackColor = Color.FromArgb(0, 80, 200);
             btnCorteCajero.BackgroundImageLayout = ImageLayout.None;
             btnCorteCajero.FlatAppearance.BorderColor = Color.Silver;
-            btnCorteCajero.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnCorteCajero.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnCorteCajero.FlatStyle = FlatStyle.Popup;
+            btnCorteCajero.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnCorteCajero.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnCorteCajero.FlatStyle = FlatStyle.Flat;
+            btnCorteCajero.FlatAppearance.BorderSize = 0;
             btnCorteCajero.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCorteCajero.ForeColor = SystemColors.ButtonHighlight;
             btnCorteCajero.Image = (Image)resources.GetObject("btnCorteCajero.Image");
