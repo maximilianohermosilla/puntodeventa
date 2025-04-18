@@ -48,6 +48,7 @@ namespace PuntoDeVenta.UserControls
             panelMain = new Panel();
             categoriaProducto1 = new CategoriaProducto(categoriaProductos);
             nuevoProducto1 = new NuevoProducto(categoriaProductos);
+            catalogoProductos1 = new CatalogoProductosControl(categoriaProductos);
             panelHeader.SuspendLayout();
             panelNavbar.SuspendLayout();
             panelMain.SuspendLayout();
@@ -267,6 +268,7 @@ namespace PuntoDeVenta.UserControls
             // 
             panelMain.Controls.Add(categoriaProducto1);
             panelMain.Controls.Add(nuevoProducto1);
+            panelMain.Controls.Add(catalogoProductos1);
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(0, 76);
             panelMain.Name = "panelMain";
@@ -291,6 +293,17 @@ namespace PuntoDeVenta.UserControls
             nuevoProducto1.Name = "nuevoProducto1";
             nuevoProducto1.Size = new Size(1449, 508);
             nuevoProducto1.TabIndex = 8;
+            // 
+            // catalogoProductos1
+            // 
+            catalogoProductos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            catalogoProductos1.BackColor = Color.FromArgb(49, 66, 82);
+            catalogoProductos1.Dock = DockStyle.Fill;
+            catalogoProductos1.ForeColor = SystemColors.ButtonHighlight;
+            catalogoProductos1.Location = new Point(0, 0);
+            catalogoProductos1.Name = "nuevoProducto1";
+            catalogoProductos1.Size = new Size(1449, 508);
+            catalogoProductos1.TabIndex = 8;
             // 
             // Productos
             // 
@@ -324,5 +337,6 @@ namespace PuntoDeVenta.UserControls
         private NuevoProducto nuevoProducto1;
         public Button btnCatalogo;
         private CategoriaProducto categoriaProducto1;
+        private CatalogoProductosControl catalogoProductos1;
     }
 }

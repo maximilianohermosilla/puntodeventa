@@ -1,4 +1,5 @@
 ﻿using PuntoDeVenta.Domain.Entities;
+using System.Text.Json.Serialization;
 
 namespace PuntoDeVenta.Application.DTO
 {

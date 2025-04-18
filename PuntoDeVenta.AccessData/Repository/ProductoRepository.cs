@@ -46,12 +46,12 @@ namespace PuntoDeVenta.AccessData.Repository
 
         public async Task<List<Producto>> GetAll()
         {
-            return await vGblContext.Producto.ToListAsync();
+            return await vGblContext.Producto.Include(p => p.CategoriaProducto).ToListAsync();
         }
 
         public async Task<Producto> GetById(int pId)
         {
-            return await vGblContext.Producto.Where(p => p.Id == pId).FirstOrDefaultAsync()!;
+            return await vGblContext.Producto.Include(p => p.CategoriaProducto).Where(p => p.Id == pId).FirstOrDefaultAsync()!;
         }
 
         public bool SaveChanges()

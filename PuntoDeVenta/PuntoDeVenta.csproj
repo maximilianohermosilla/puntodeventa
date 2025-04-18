@@ -20,6 +20,9 @@
     <Compile Update="UserControls\ProductosControls\CategoriaProducto.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UserControls\ProductosControls\CatalogoProductosControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

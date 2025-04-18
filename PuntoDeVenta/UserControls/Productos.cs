@@ -31,6 +31,7 @@ namespace PuntoDeVenta.UserControls
                     categoriaProductos = (List<CategoriaProductoResponse>)response.response!;
                     nuevoProducto1.SetearCategorias(categoriaProductos);
                     categoriaProducto1.SetearCategorias(categoriaProductos);
+                    catalogoProductos1.SetearCategorias(categoriaProductos);
                 }
             }
             catch (Exception ex)
@@ -96,6 +97,8 @@ namespace PuntoDeVenta.UserControls
 
         private void btnCatalogo_Click(object sender, EventArgs e)
         {
+            SetActivePanel(catalogoProductos1);
+            _ = GetAllCategorias();
 
         }
 
@@ -103,6 +106,7 @@ namespace PuntoDeVenta.UserControls
         {
             nuevoProducto1.Visible = false;
             categoriaProducto1.Visible = false;
+            catalogoProductos1.Visible = false;
 
 
             if (control != null)
