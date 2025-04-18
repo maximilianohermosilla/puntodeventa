@@ -137,7 +137,7 @@ namespace PuntoDeVenta.Application.Services
             {
                 response.success = false;
                 response.statusCode = 400;
-                response.message = ex.Message;
+                response.message = ex.Message + ": " + (ex.InnerException != null ? ex.InnerException!.Message : "");
                 response.response = null;
                 return response;
             }
@@ -176,7 +176,7 @@ namespace PuntoDeVenta.Application.Services
             {
                 response.success = false;
                 response.statusCode = 400;
-                response.message = ex.Message;
+                response.message = ex.Message + ": " + (ex.InnerException != null ? ex.InnerException!.Message : "");
                 response.response = null;
                 return response;
             }

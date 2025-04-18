@@ -2,6 +2,7 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.Domain.Entities;
 
 namespace PuntoDeVenta.UserControls.ProductosControls
 {
@@ -30,6 +31,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
         public void SetearCategorias(List<CategoriaProductoResponse> categoriaProductos)
         {
+            categoriaProductos.Insert(0, new CategoriaProductoResponse { Id = 0, Descripcion = "-- Seleccionar Categoría --" });
             comboCategoria.DataSource = categoriaProductos;
             comboCategoria.DisplayMember = "Descripcion";
             comboCategoria.ValueMember = "Id";
@@ -44,9 +46,9 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         {
             try
             {
-                if (txtDescripcion.Text == "")
+                if (txtDescripcion.Text == "" || txtCodigo.Text == "")
                 {
-                    MessageBox.Show("Debe ingresar un nombre válido");
+                    MessageBox.Show("Debe ingresar un código y nombre válido");
                 }
                 else
                 {

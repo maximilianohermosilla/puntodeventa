@@ -89,6 +89,8 @@ namespace PuntoDeVenta.AccessData
             {
                 entity.Property(e => e.PrecioCosto).HasColumnType("numeric(25,2)");
                 entity.Property(e => e.PrecioVenta).HasColumnType("numeric(25,2)");
+                entity.Property(e => e.PrecioPorMayor).HasColumnType("numeric(25,2)");
+                entity.HasIndex(e => e.Codigo).IsUnique();
                 entity.HasOne(d => d.CategoriaProducto).WithMany(p => p.Productos).HasForeignKey(d => d.IdCategoriaProducto).OnDelete(DeleteBehavior.NoAction);
             });
 

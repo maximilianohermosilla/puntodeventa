@@ -16,16 +16,32 @@ namespace PuntoDeVenta.AccessData.Repository
 
         public async Task<CategoriaProducto> Create(CategoriaProducto pEntity)
         {
-            vGblContext.Add(pEntity);
-            await vGblContext.SaveChangesAsync();
+            try
+            {
+                vGblContext.Add(pEntity);
+                await vGblContext.SaveChangesAsync();
 
-            return pEntity;      
+                return pEntity;
+            }
+            catch (Exception ex)
+            {
+                vGblContext.ChangeTracker.Clear();
+                throw ex;
+            }   
         }
 
         public async Task Delete(CategoriaProducto pEntity)
         {
-            vGblContext.Remove(pEntity);
-            await vGblContext.SaveChangesAsync();
+            try
+            {
+                vGblContext.Remove(pEntity);
+                await vGblContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                vGblContext.ChangeTracker.Clear();
+                throw ex;
+            }
         }
 
         public async Task<List<CategoriaProducto>> GetAll()
@@ -40,12 +56,28 @@ namespace PuntoDeVenta.AccessData.Repository
 
         public bool SaveChanges()
         {
-            return vGblContext.SaveChanges() > 0;
+            try
+            {
+                return vGblContext.SaveChanges() > 0;
+            }
+            catch (Exception ex)
+            {
+                vGblContext.ChangeTracker.Clear();
+                throw ex;
+            }
         }
 
         public async Task<bool> SaveChangesAsync()
         {
-            return await vGblContext.SaveChangesAsync() > 0;
+            try
+            {
+                return await vGblContext.SaveChangesAsync() > 0;
+            }
+            catch (Exception ex)
+            {
+                vGblContext.ChangeTracker.Clear();
+                throw ex;
+            }
         }
     }
 }
