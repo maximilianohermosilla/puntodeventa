@@ -5,14 +5,14 @@ using PuntoDeVenta.Application.Services;
 
 namespace PuntoDeVenta.UserControls
 {
-    public partial class Productos : UserControl
+    public partial class ProductosControl : UserControl
     {
         private static PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
 
         private readonly ICategoriaProductoService _categoriaProductoService;
         public List<CategoriaProductoResponse> categoriaProductos = new List<CategoriaProductoResponse>();
 
-        public Productos()
+        public ProductosControl()
         {
             _categoriaProductoService = new CategoriaProductoService(_context);
             InitializeComponent();
@@ -98,6 +98,7 @@ namespace PuntoDeVenta.UserControls
         private void btnCatalogo_Click(object sender, EventArgs e)
         {
             SetActivePanel(catalogoProductos1);
+            catalogoProductos1.GetAllProductos();
             _ = GetAllCategorias();
 
         }

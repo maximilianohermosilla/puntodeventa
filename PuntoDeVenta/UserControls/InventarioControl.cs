@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace PuntoDeVenta.UserControls
 {
-    public partial class Creditos : UserControl
+    public partial class InventarioControl : UserControl
     {
-        public Creditos()
+        public InventarioControl()
         {
             InitializeComponent();
         }
 
-        private void btnEstadoCuenta_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
 
         }

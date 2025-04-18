@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta
 {
-    partial class Ventas
+    partial class VentasControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasControl));
             panel1 = new Panel();
             ventasTitle = new Label();
             label1 = new Label();

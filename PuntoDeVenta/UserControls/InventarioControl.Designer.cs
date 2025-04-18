@@ -2,7 +2,7 @@
 
 namespace PuntoDeVenta.UserControls
 {
-    partial class Inventario
+    partial class InventarioControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -30,7 +30,7 @@ namespace PuntoDeVenta.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventario));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventarioControl));
             panelHeader = new Panel();
             ventasTitle = new Label();
             panelNavbar = new Panel();

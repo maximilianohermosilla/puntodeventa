@@ -2,7 +2,7 @@
 
 namespace PuntoDeVenta.UserControls
 {
-    partial class Clientes
+    partial class ClientesControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -30,7 +30,7 @@ namespace PuntoDeVenta.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesControl));
             panelHeader = new Panel();
             clientesTitle = new Label();
             panelNavbar = new Panel();

@@ -5,7 +5,7 @@ using PuntoDeVenta.UserControls.ProductosControls;
 
 namespace PuntoDeVenta.UserControls
 {
-    partial class Productos
+    partial class ProductosControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -33,7 +33,7 @@ namespace PuntoDeVenta.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductosControl));
             panelHeader = new Panel();
             ventasTitle = new Label();
             panelNavbar = new Panel();
@@ -46,8 +46,8 @@ namespace PuntoDeVenta.UserControls
             btnVentasPeriodo = new Button();
             btnPromociones = new Button();
             panelMain = new Panel();
-            categoriaProducto1 = new CategoriaProducto(categoriaProductos);
-            nuevoProducto1 = new NuevoProducto(categoriaProductos);
+            categoriaProducto1 = new CategoriaProductoControl(categoriaProductos);
+            nuevoProducto1 = new NuevoProductoControl(categoriaProductos);
             catalogoProductos1 = new CatalogoProductosControl(categoriaProductos);
             panelHeader.SuspendLayout();
             panelNavbar.SuspendLayout();
@@ -334,9 +334,9 @@ namespace PuntoDeVenta.UserControls
         public Button btnVentasPeriodo;
         public Button btnPromociones;
         private Panel panelMain;
-        private NuevoProducto nuevoProducto1;
+        private NuevoProductoControl nuevoProducto1;
         public Button btnCatalogo;
-        private CategoriaProducto categoriaProducto1;
+        private CategoriaProductoControl categoriaProducto1;
         private CatalogoProductosControl catalogoProductos1;
     }
 }

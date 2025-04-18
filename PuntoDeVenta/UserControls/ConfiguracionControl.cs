@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PuntoDeVenta.UserControls
 {
-    public partial class Corte : UserControl
+    public partial class ConfiguracionControl : UserControl
     {
-        public Corte()
+        public ConfiguracionControl()
         {
             InitializeComponent();
         }

@@ -14,10 +14,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="UserControls\Clientes.cs">
+    <Compile Update="UserControls\ClientesControl.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Update="UserControls\ProductosControls\CategoriaProducto.cs">
+    <Compile Update="UserControls\ProductosControls\CategoriaProductoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\ProductosControls\CatalogoProductosControl.cs">
@@ -39,6 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="UserControls\CommonControls\" />
     <Folder Include="UserControls\CommonControls\" />
   </ItemGroup>
 

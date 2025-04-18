@@ -2,11 +2,10 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
-using PuntoDeVenta.Domain.Entities;
 
 namespace PuntoDeVenta.UserControls.ProductosControls
 {
-    public partial class NuevoProducto : UserControl
+    public partial class NuevoProductoControl : UserControl
     {
 
         private static PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
@@ -14,7 +13,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         private readonly IProductoService _productoService;
         public List<CategoriaProductoResponse> _categoriaProductos;
 
-        public NuevoProducto(List<CategoriaProductoResponse> categoriaProductos)
+        public NuevoProductoControl(List<CategoriaProductoResponse> categoriaProductos)
         {
             _productoService = new ProductoService(_context);
             _categoriaProductos = categoriaProductos;

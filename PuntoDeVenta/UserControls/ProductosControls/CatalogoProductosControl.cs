@@ -2,8 +2,6 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
-using PuntoDeVenta.Domain.Entities;
-using System.ComponentModel;
 
 namespace PuntoDeVenta.UserControls.ProductosControls
 {
@@ -103,13 +101,6 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void checkInventario_CheckedChanged_1(object sender, EventArgs e)
-        {
-            txtCantidadActual.Enabled = checkInventario.Checked == true;
-            txtCantidadMinima.Enabled = checkInventario.Checked == true;
-
         }
 
         private void comboCategoria_SelectedIndexChanged(object sender, EventArgs e)

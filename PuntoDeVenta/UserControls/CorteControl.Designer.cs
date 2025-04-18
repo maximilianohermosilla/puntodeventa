@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta.UserControls
 {
-    partial class Corte
+    partial class CorteControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Corte));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CorteControl));
             panelHeader = new Panel();
             title = new Label();
             panelNavbar = new Panel();

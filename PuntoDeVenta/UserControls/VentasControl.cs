@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PuntoDeVenta.UserControls
+namespace PuntoDeVenta
 {
-    public partial class Inventario : UserControl
+    public partial class VentasControl : UserControl
     {
-        public Inventario()
+        public VentasControl()
         {
             InitializeComponent();
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
 
         }

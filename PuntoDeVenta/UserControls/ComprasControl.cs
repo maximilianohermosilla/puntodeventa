@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PuntoDeVenta.UserControls
 {
-    public partial class Facturas : UserControl
+    public partial class ComprasControl : UserControl
     {
-        public Facturas()
+        public ComprasControl()
         {
             InitializeComponent();
         }

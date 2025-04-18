@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta.UserControls.ProductosControls
 {
-    partial class NuevoProducto
+    partial class NuevoProductoControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -29,7 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoProducto));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevoProductoControl));
             labelTitle = new Label();
             panelFooter = new Panel();
             btnGuardarProducto = new Button();

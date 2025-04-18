@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta.UserControls
 {
-    partial class Compras
+    partial class ComprasControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Compras));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComprasControl));
             panelHeader = new Panel();
             comprasTitle = new Label();
             panelNavbar = new Panel();

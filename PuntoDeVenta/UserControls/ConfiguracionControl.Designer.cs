@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta.UserControls
 {
-    partial class Configuracion
+    partial class ConfiguracionControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Configuracion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfiguracionControl));
             panelHeader = new Panel();
             title = new Label();
             panelNavbar = new Panel();

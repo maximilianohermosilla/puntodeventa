@@ -50,16 +50,16 @@ namespace PuntoDeVenta
             btnConfiguracion = new Button();
             imageList = new ImageList(components);
             panelMain = new Panel();
-            ventas1 = new Ventas();
-            productos1 = new Productos();
-            reportes1 = new Reportes();
-            inventario1 = new Inventario();
-            facturas1 = new Facturas();
-            creditos1 = new Creditos();
-            corte1 = new Corte();
-            configuracion1 = new Configuracion();
-            compras1 = new Compras();
-            clientes1 = new Clientes();
+            ventas1 = new VentasControl();
+            productos1 = new ProductosControl();
+            reportes1 = new ReportesControl();
+            inventario1 = new InventarioControl();
+            facturas1 = new FacturasControl();
+            creditos1 = new CreditosControl();
+            corte1 = new CorteControl();
+            configuracion1 = new ConfiguracionControl();
+            compras1 = new ComprasControl();
+            clientes1 = new ClientesControl();
             panelFooter = new Panel();
             txtDatetime = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -541,22 +541,22 @@ namespace PuntoDeVenta
         private Panel panelMain;
         public void InitializeUserControls()
         {
-            var clientesUserControl = new PuntoDeVenta.UserControls.Clientes();
+            var clientesUserControl = new PuntoDeVenta.UserControls.ClientesControl();
 
             panelMain.Controls.Add(clientesUserControl);
         }
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private Ventas ventas1;
-        private Reportes reportes1;
-        private Productos productos1;
-        private Inventario inventario1;
-        private Facturas facturas1;
-        private Creditos creditos1;
-        private Corte corte1;
-        private Configuracion configuracion1;
-        private Compras compras1;
-        private Clientes clientes1;
+        private VentasControl ventas1;
+        private ReportesControl reportes1;
+        private ProductosControl productos1;
+        private InventarioControl inventario1;
+        private FacturasControl facturas1;
+        private CreditosControl creditos1;
+        private CorteControl corte1;
+        private ConfiguracionControl configuracion1;
+        private ComprasControl compras1;
+        private ClientesControl clientes1;
         private Panel panelFooter;
         private Label txtDatetime;
         private System.Windows.Forms.Timer timer1;

@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta.UserControls.ProductosControls
 {
-    partial class CategoriaProducto
+    partial class CategoriaProductoControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -29,7 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoriaProducto));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoriaProductoControl));
             labelTitle = new Label();
             panelNavbar = new Panel();
             txtBuscar = new TextBox();

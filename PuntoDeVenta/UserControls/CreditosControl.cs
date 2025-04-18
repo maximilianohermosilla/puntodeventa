@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PuntoDeVenta.UserControls
 {
-    public partial class Clientes : UserControl
+    public partial class CreditosControl : UserControl
     {
-        public Clientes()
+        public CreditosControl()
         {
             InitializeComponent();
+        }
+
+        private void btnEstadoCuenta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -65,8 +65,8 @@ namespace PuntoDeVenta
             // Registra el formulario principal
             services.AddTransient<Login>();
             services.AddTransient<Main>();
-            services.AddTransient<Productos>();
-            services.AddTransient<CategoriaProducto>();
+            services.AddTransient<ProductosControl>();
+            services.AddTransient<CategoriaProductoControl>();
 
         }
     }

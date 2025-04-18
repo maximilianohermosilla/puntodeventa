@@ -6,14 +6,14 @@ using PuntoDeVenta.Domain.Entities;
 
 namespace PuntoDeVenta.UserControls.ProductosControls
 {
-    public partial class CategoriaProducto : UserControl
+    public partial class CategoriaProductoControl : UserControl
     {
         private static PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
 
         private readonly ICategoriaProductoService _categoriaProductoService;
         public List<CategoriaProductoResponse> _categoriaProductos;
 
-        public CategoriaProducto(List<CategoriaProductoResponse> categoriaProductos)
+        public CategoriaProductoControl(List<CategoriaProductoResponse> categoriaProductos)
         {
             _categoriaProductoService = new CategoriaProductoService(_context);
             _categoriaProductos = categoriaProductos;

@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta.UserControls
 {
-    partial class Reportes
+    partial class ReportesControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reportes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportesControl));
             panelHeader = new Panel();
             title = new Label();
             panelNavbar = new Panel();

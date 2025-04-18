@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta.UserControls
 {
-    partial class Facturas
+    partial class FacturasControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Facturas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturasControl));
             panelHeader = new Panel();
             title = new Label();
             panelNavbar = new Panel();
