@@ -34,21 +34,29 @@ namespace PuntoDeVenta
         private void btnVentas_Click(object sender, EventArgs e)
         {
             SetActivePanel(ventas1);
+            ToastForm toast = new ToastForm("SUCCESS", "Confirmación exitosa");
+            toast.Show();
         }
 
         private void btnCreditos_Click(object sender, EventArgs e)
         {
             SetActivePanel(creditos1);
+            ToastForm toast = new ToastForm("ERROR", "Ocurrió un error");
+            toast.Show();
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
             SetActivePanel(productos1);
+            ToastForm toast = new ToastForm("INFO", "Información importante");
+            toast.Show();
         }
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
             SetActivePanel(inventario1);
+            ToastForm toast = new ToastForm("WARNING", "Advertencia, tene cuidado");
+            toast.Show();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)

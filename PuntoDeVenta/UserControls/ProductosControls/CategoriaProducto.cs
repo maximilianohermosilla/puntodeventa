@@ -62,7 +62,10 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
                     var response = await _categoriaProductoService.Insert(productoRequest);
 
-                    MessageBox.Show(response.message);
+                    //MessageBox.Show(response.message);
+                    string toastTipo = response.success ? "SUCCESS" : "ERROR";
+                    ToastForm toast = new ToastForm(toastTipo, response.message);
+                    toast.Show();
 
                     if (response != null && response.success)
                     {
