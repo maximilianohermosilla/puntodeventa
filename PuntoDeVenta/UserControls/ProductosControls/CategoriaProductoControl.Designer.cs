@@ -84,6 +84,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             txtBuscar.PlaceholderText = "Buscar...";
             txtBuscar.Size = new Size(280, 23);
             txtBuscar.TabIndex = 7;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // btnGuardar
             // 

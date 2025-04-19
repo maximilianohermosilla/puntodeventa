@@ -12,6 +12,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
         private readonly ICategoriaProductoService _categoriaProductoService;
         public List<CategoriaProductoResponse> _categoriaProductos;
+        public List<CategoriaProductoResponse> _categoriaProductosFiltradas = new List<CategoriaProductoResponse>();
         public CategoriaProductoResponse selectedCategoria = new CategoriaProductoResponse();
 
         public CategoriaProductoControl(List<CategoriaProductoResponse> categoriaProductos)
@@ -23,9 +24,14 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
         public void SetearCategorias(List<CategoriaProductoResponse> categoriaProductos)
         {
-            _categoriaProductos = categoriaProductos;
+            if(_categoriaProductos != null && _categoriaProductos.Count() == 0)
+            {
+                _categoriaProductos = categoriaProductos;
+            }
+
+            _categoriaProductosFiltradas = categoriaProductos;  
             listCategorias.DataSource = null;
-            listCategorias.DataSource = _categoriaProductos;
+            listCategorias.DataSource = _categoriaProductosFiltradas;
             listCategorias.DisplayMember = "Descripcion";
             listCategorias.ValueMember = "Id";
             listCategorias.Refresh();
@@ -57,7 +63,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                     };
 
                     if (selectedCategoria.Id > 0)
-                    {   
+                    {
                         var producto = _categoriaProductos.Where(x => x.Id == selectedCategoria.Id).FirstOrDefault();
                         producto!.Id = selectedCategoria.Id;
                         producto!.Descripcion = txtDescripcion.Text;
@@ -69,7 +75,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                     {
                         response = await _categoriaProductoService.Insert(productoRequest);
                         _categoriaProductos.Add(response.response!);
-                    }                    
+                    }
 
                     string toastTipo = response.success ? "SUCCESS" : "ERROR";
                     ToastForm toast = new ToastForm(toastTipo, response.message);
@@ -151,6 +157,13 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         private void btnEliminarCategoria_Click(object sender, EventArgs e)
         {
             DeleteCategoria(selectedCategoria.Id);
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            _categoriaProductosFiltradas = _categoriaProductos.Where(c => c.Id == 0 ||
+                                            (c.Descripcion.ToLower().Contains(txtBuscar.Text.ToLower()) || txtBuscar.Text == "")).ToList();
+            SetearCategorias(_categoriaProductosFiltradas);
         }
     }
 }

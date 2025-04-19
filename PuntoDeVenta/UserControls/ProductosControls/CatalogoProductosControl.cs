@@ -2,6 +2,7 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.Domain.Entities;
 
 namespace PuntoDeVenta.UserControls.ProductosControls
 {
@@ -11,13 +12,12 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         private static PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
 
         private readonly IProductoService _productoService;
-        private List<CategoriaProductoResponse> _categoriaProductos;
         private List<ProductoResponse> _productos = new List<ProductoResponse>();
+        private List<ProductoResponse> _productosFiltrados = new List<ProductoResponse>();
 
         public CatalogoProductosControl(List<CategoriaProductoResponse> categoriaProductos)
         {
             _productoService = new ProductoService(_context);
-            _categoriaProductos = categoriaProductos;
             InitializeComponent();
             _ = GetAllProductos();
         }
@@ -52,7 +52,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
                 if (response != null && response.success)
                 {
-                    _productos = (List<ProductoResponse>)response.response!;
+                    _productos = response.response!;
                     SetearProductos(_productos);
                 }
             }
@@ -97,7 +97,9 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
         private void comboCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int selectedCategoriaId = Convert.ToInt32(comboCategoria.SelectedValue);
+            var productosFiltrados = _productos.Where(c => c.IdCategoriaProducto == selectedCategoriaId || selectedCategoriaId == 0).ToList();
+            SetearProductos(productosFiltrados);
         }
     }
 }
