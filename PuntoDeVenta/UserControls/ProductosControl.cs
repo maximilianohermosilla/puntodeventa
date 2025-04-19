@@ -24,7 +24,7 @@ namespace PuntoDeVenta.UserControls
         {
             try
             {
-                var response = await _categoriaProductoService.GetAll();
+                var response = await _categoriaProductoService.GetAll(null);
 
                 if (response != null && response.success)
                 {
@@ -44,7 +44,6 @@ namespace PuntoDeVenta.UserControls
         {
             SetActivePanel(nuevoProducto1);
             _ = GetAllCategorias();
-            //nuevoProducto1.SetearCategorias(categoriaProductos);
         }
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
@@ -77,7 +76,6 @@ namespace PuntoDeVenta.UserControls
         {
             _ = GetAllCategorias();
             SetActivePanel(categoriaProducto1);
-            //categoriaProducto1 = new CategoriaProducto(categoriaProductos);
         }
 
         private void btnVentasPeriodo_Click(object sender, EventArgs e)

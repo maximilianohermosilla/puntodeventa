@@ -4,7 +4,7 @@ namespace PuntoDeVenta.Application.Interfaces
 {
     public interface IProductoService
     {
-        Task<ResponseModel> GetAll();
+        Task<ResponseModel> GetAll(bool? habilitados);
         Task<ResponseModel> GetById(int id);
         Task<ResponseModel> Insert(ProductoRequest entity);
         Task<ResponseModel> Update(ProductoRequest entity);

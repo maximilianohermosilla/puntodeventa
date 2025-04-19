@@ -7,7 +7,7 @@ namespace PuntoDeVenta.AccessData.Interfaces
 
         bool SaveChanges();
         Task<bool> SaveChangesAsync();
-        Task<List<Producto>> GetAll();
+        Task<List<Producto>> GetAll(bool? habilitados);
         Task<Producto> Create(Producto pEntity);
         Task Delete(Producto pEntity);
         Task<Producto> GetById(int pId);

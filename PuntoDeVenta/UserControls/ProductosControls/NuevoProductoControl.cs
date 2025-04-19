@@ -18,20 +18,12 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             _productoService = new ProductoService(_context);
             _categoriaProductos = categoriaProductos;
             InitializeComponent();
-            SetearCategorias();
-        }
-
-        public void SetearCategorias()
-        {
-            comboCategoria.DataSource = _categoriaProductos;
-            comboCategoria.DisplayMember = "Descripcion";
-            comboCategoria.ValueMember = "Id";
         }
 
         public void SetearCategorias(List<CategoriaProductoResponse> categoriaProductos)
         {
             categoriaProductos.Insert(0, new CategoriaProductoResponse { Id = 0, Descripcion = "-- Seleccionar Categoría --" });
-            comboCategoria.DataSource = categoriaProductos;
+            comboCategoria.DataSource = categoriaProductos.Where(x => x.Habilitado).ToList();
             comboCategoria.DisplayMember = "Descripcion";
             comboCategoria.ValueMember = "Id";
         }

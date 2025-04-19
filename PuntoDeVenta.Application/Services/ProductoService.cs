@@ -56,6 +56,7 @@ namespace PuntoDeVenta.Application.Services
                 response.statusCode = 400;
                 response.message = ex.Message;
                 response.response = null;
+                return response;
             }
 
             response.statusCode = 200;
@@ -64,13 +65,13 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
-        public async Task<ResponseModel> GetAll()
+        public async Task<ResponseModel> GetAll(bool? habilitados)
         {
             ResponseModel response = new ResponseModel();
 
             try
             {
-                List<Producto> lista = await _productoRepository.GetAll();
+                List<Producto> lista = await _productoRepository.GetAll(habilitados);
                 List<ProductoResponse> listaDTO = _mapper.Map<List<ProductoResponse>>(lista);
 
                 response.message = "Consulta realizada correctamente";

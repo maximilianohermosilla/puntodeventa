@@ -1,4 +1,6 @@
-﻿namespace PuntoDeVenta.UserControls.ProductosControls
+﻿using System.Windows.Forms;
+
+namespace PuntoDeVenta.UserControls.ProductosControls
 {
     partial class CategoriaProductoControl
     {
@@ -42,12 +44,16 @@
             txtDescripcion = new TextBox();
             labelDescripcion = new Label();
             panelAside = new Panel();
+            panel1 = new Panel();
+            btnEliminarCategoria = new Button();
+            btnNuevaCategoria = new Button();
             listCategorias = new ListBox();
             panelNavbar.SuspendLayout();
             panelCategoriaProducto.SuspendLayout();
             panelMain.SuspendLayout();
             panelPrincipal.SuspendLayout();
             panelAside.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // labelTitle
@@ -55,7 +61,7 @@
             labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTitle.ForeColor = SystemColors.ButtonHighlight;
-            labelTitle.Location = new Point(3, 6);
+            labelTitle.Location = new Point(3, 0);
             labelTitle.Name = "labelTitle";
             labelTitle.Size = new Size(218, 25);
             labelTitle.TabIndex = 1;
@@ -76,7 +82,7 @@
             txtBuscar.Location = new Point(18, 17);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = "Buscar...";
-            txtBuscar.Size = new Size(279, 23);
+            txtBuscar.Size = new Size(280, 23);
             txtBuscar.TabIndex = 7;
             // 
             // btnGuardar
@@ -84,10 +90,10 @@
             btnGuardar.BackColor = Color.FromArgb(0, 80, 200);
             btnGuardar.BackgroundImageLayout = ImageLayout.None;
             btnGuardar.FlatAppearance.BorderColor = Color.Silver;
+            btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnGuardar.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = SystemColors.ButtonHighlight;
             btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
@@ -189,6 +195,7 @@
             panelAside.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panelAside.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelAside.BackColor = Color.FromArgb(29, 32, 40);
+            panelAside.Controls.Add(panel1);
             panelAside.Controls.Add(listCategorias);
             panelAside.Controls.Add(txtBuscar);
             panelAside.ForeColor = SystemColors.ButtonHighlight;
@@ -197,6 +204,61 @@
             panelAside.Size = new Size(326, 533);
             panelAside.TabIndex = 21;
             // 
+            // panel1
+            // 
+            panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel1.Controls.Add(btnEliminarCategoria);
+            panel1.Controls.Add(btnNuevaCategoria);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 485);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(326, 48);
+            panel1.TabIndex = 22;
+            // 
+            // btnEliminarCategoria
+            // 
+            btnEliminarCategoria.BackColor = Color.FromArgb(0, 80, 200);
+            btnEliminarCategoria.BackgroundImageLayout = ImageLayout.None;
+            btnEliminarCategoria.FlatAppearance.BorderColor = Color.Silver;
+            btnEliminarCategoria.FlatAppearance.BorderSize = 0;
+            btnEliminarCategoria.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnEliminarCategoria.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnEliminarCategoria.FlatStyle = FlatStyle.Flat;
+            btnEliminarCategoria.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEliminarCategoria.ForeColor = SystemColors.ButtonHighlight;
+            btnEliminarCategoria.Image = (Image)resources.GetObject("btnEliminarCategoria.Image");
+            btnEliminarCategoria.Location = new Point(168, 0);
+            btnEliminarCategoria.Name = "btnEliminarCategoria";
+            btnEliminarCategoria.Size = new Size(130, 35);
+            btnEliminarCategoria.TabIndex = 21;
+            btnEliminarCategoria.Text = "Eliminar";
+            btnEliminarCategoria.TextAlign = ContentAlignment.MiddleRight;
+            btnEliminarCategoria.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnEliminarCategoria.UseVisualStyleBackColor = false;
+            btnEliminarCategoria.Click += btnEliminarCategoria_Click;
+            // 
+            // btnNuevaCategoria
+            // 
+            btnNuevaCategoria.BackColor = Color.FromArgb(0, 80, 200);
+            btnNuevaCategoria.BackgroundImageLayout = ImageLayout.None;
+            btnNuevaCategoria.FlatAppearance.BorderColor = Color.Silver;
+            btnNuevaCategoria.FlatAppearance.BorderSize = 0;
+            btnNuevaCategoria.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnNuevaCategoria.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnNuevaCategoria.FlatStyle = FlatStyle.Flat;
+            btnNuevaCategoria.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnNuevaCategoria.ForeColor = SystemColors.ButtonHighlight;
+            btnNuevaCategoria.Image = (Image)resources.GetObject("btnNuevaCategoria.Image");
+            btnNuevaCategoria.Location = new Point(20, 0);
+            btnNuevaCategoria.Name = "btnNuevaCategoria";
+            btnNuevaCategoria.Size = new Size(127, 35);
+            btnNuevaCategoria.TabIndex = 20;
+            btnNuevaCategoria.Text = "Nuevo";
+            btnNuevaCategoria.TextAlign = ContentAlignment.MiddleRight;
+            btnNuevaCategoria.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNuevaCategoria.UseVisualStyleBackColor = false;
+            btnNuevaCategoria.Click += btnNuevaCategoria_Click;
+            // 
             // listCategorias
             // 
             listCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
@@ -204,15 +266,16 @@
             listCategorias.ItemHeight = 15;
             listCategorias.Location = new Point(20, 55);
             listCategorias.Name = "listCategorias";
-            listCategorias.Size = new Size(278, 454);
+            listCategorias.Size = new Size(278, 424);
             listCategorias.TabIndex = 8;
+            listCategorias.SelectedIndexChanged += listCategorias_SelectedIndexChanged;
             // 
-            // CategoriaProducto
+            // CategoriaProductoControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panelCategoriaProducto);
-            Name = "CategoriaProducto";
+            Name = "CategoriaProductoControl";
             Size = new Size(1449, 584);
             panelNavbar.ResumeLayout(false);
             panelNavbar.PerformLayout();
@@ -222,6 +285,7 @@
             panelPrincipal.PerformLayout();
             panelAside.ResumeLayout(false);
             panelAside.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -250,5 +314,8 @@
         private Panel panelPrincipal;
         private Panel panelMain;
         private ListBox listCategorias;
+        public Button btnNuevaCategoria;
+        public Button btnEliminarCategoria;
+        private Panel panel1;
     }
 }

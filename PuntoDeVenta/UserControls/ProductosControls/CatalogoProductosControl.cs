@@ -12,22 +12,14 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
         private readonly IProductoService _productoService;
         private List<CategoriaProductoResponse> _categoriaProductos;
-        private List<ProductoResponse> _productos;
+        private List<ProductoResponse> _productos = new List<ProductoResponse>();
 
         public CatalogoProductosControl(List<CategoriaProductoResponse> categoriaProductos)
         {
             _productoService = new ProductoService(_context);
             _categoriaProductos = categoriaProductos;
             InitializeComponent();
-            SetearCategorias();
-            GetAllProductos();
-        }
-
-        public void SetearCategorias()
-        {
-            comboCategoria.DataSource = _categoriaProductos;
-            comboCategoria.DisplayMember = "Descripcion";
-            comboCategoria.ValueMember = "Id";
+            _ = GetAllProductos();
         }
 
         public void SetearCategorias(List<CategoriaProductoResponse> categoriaProductos)
@@ -56,7 +48,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         {
             try
             {
-                var response = await _productoService.GetAll();
+                var response = await _productoService.GetAll(null);
 
                 if (response != null && response.success)
                 {

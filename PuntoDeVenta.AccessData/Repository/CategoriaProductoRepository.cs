@@ -44,13 +44,15 @@ namespace PuntoDeVenta.AccessData.Repository
             }
         }
 
-        public async Task<List<CategoriaProducto>> GetAll()
+        public async Task<List<CategoriaProducto>> GetAll(bool? habilitados)
         {
-            return await vGblContext.CategoriaProducto.ToListAsync();
+            vGblContext.ChangeTracker.Clear();
+            return await vGblContext.CategoriaProducto.Where(x => habilitados == null || x.Habilitado == habilitados).ToListAsync();
         }
 
         public async Task<CategoriaProducto> GetById(int pId)
         {
+            vGblContext.ChangeTracker.Clear();
             return await vGblContext.CategoriaProducto.Where(p => p.Id == pId).FirstOrDefaultAsync()!;
         }
 
