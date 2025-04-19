@@ -47,7 +47,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                 }
                 else
                 {
-                    ResponseModel response = new ResponseModel();
+                    ResponseModel<CategoriaProductoResponse> response = new ResponseModel<CategoriaProductoResponse>();
 
                     CategoriaProductoRequest productoRequest = new CategoriaProductoRequest()
                     {
@@ -68,11 +68,9 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                     else
                     {
                         response = await _categoriaProductoService.Insert(productoRequest);
-                        _categoriaProductos.Add((CategoriaProductoResponse)response.response!);
-                    }
-                    
+                        _categoriaProductos.Add(response.response!);
+                    }                    
 
-                    //MessageBox.Show(response.message);
                     string toastTipo = response.success ? "SUCCESS" : "ERROR";
                     ToastForm toast = new ToastForm(toastTipo, response.message);
                     toast.Show();

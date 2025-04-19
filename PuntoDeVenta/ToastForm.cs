@@ -36,7 +36,7 @@
                 case INFO:
                     labelToastTitle.Text = "Información";
                     panelToastBorder.BackColor = Color.FromArgb(18, 136, 191);
-                    pictureToastIcon.Image = Properties.Resources.help;
+                    pictureToastIcon.Image = Properties.Resources.info;
                     break;
                 default:
                     break;

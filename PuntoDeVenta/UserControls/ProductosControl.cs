@@ -2,6 +2,8 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.Domain.Entities;
+using System.Diagnostics.Contracts;
 
 namespace PuntoDeVenta.UserControls
 {
@@ -9,41 +11,24 @@ namespace PuntoDeVenta.UserControls
     {
         private static PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
 
+        private readonly IProductoService _productoService;
         private readonly ICategoriaProductoService _categoriaProductoService;
         public List<CategoriaProductoResponse> categoriaProductos = new List<CategoriaProductoResponse>();
 
         public ProductosControl()
         {
+            _productoService = new ProductoService(_context);
             _categoriaProductoService = new CategoriaProductoService(_context);
             InitializeComponent();
             _ = GetAllCategorias();
             SetActivePanel(nuevoProducto1);
         }
 
-        public async Task GetAllCategorias()
-        {
-            try
-            {
-                var response = await _categoriaProductoService.GetAll(null);
-
-                if (response != null && response.success)
-                {
-                    categoriaProductos = (List<CategoriaProductoResponse>)response.response!;
-                    nuevoProducto1.SetearCategorias(categoriaProductos);
-                    categoriaProducto1.SetearCategorias(categoriaProductos);
-                    catalogoProductos1.SetearCategorias(categoriaProductos);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
             SetActivePanel(nuevoProducto1);
             _ = GetAllCategorias();
+            nuevoProducto1.SetProducto(new ProductoResponse());
         }
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
@@ -52,10 +37,18 @@ namespace PuntoDeVenta.UserControls
             EtiquetaDialog etiquetaDialog = new EtiquetaDialog();
             etiquetaDialog.labelProducto.Text = "Modificar Producto";
 
-            if (etiquetaDialog.ShowDialog(this) == DialogResult.OK)
+            try
             {
-                MessageBox.Show(etiquetaDialog.txtEtiqueta.Text);
+                if (etiquetaDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    _ = ProcessEtiqueta(etiquetaDialog.txtEtiqueta.Text, false);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+
             etiquetaDialog.Dispose();
         }
 
@@ -64,12 +57,20 @@ namespace PuntoDeVenta.UserControls
             SetActivePanel(null);
             EtiquetaDialog etiquetaDialog = new EtiquetaDialog();
             etiquetaDialog.labelProducto.Text = "Eliminar Producto";
-            if (etiquetaDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                MessageBox.Show(etiquetaDialog.txtEtiqueta.Text);
-            }
-            etiquetaDialog.Dispose();
 
+            try
+            {
+                if (etiquetaDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    _ = ProcessEtiqueta(etiquetaDialog.txtEtiqueta.Text, true);                  
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+     
+            etiquetaDialog.Dispose();
         }
 
         private void btnCategorias_Click(object sender, EventArgs e)
@@ -96,8 +97,7 @@ namespace PuntoDeVenta.UserControls
         private void btnCatalogo_Click(object sender, EventArgs e)
         {
             SetActivePanel(catalogoProductos1);
-            catalogoProductos1.GetAllProductos();
-            _ = GetAllCategorias();
+            _ = catalogoProductos1.GetAllProductos();
 
         }
 
@@ -111,6 +111,86 @@ namespace PuntoDeVenta.UserControls
             if (control != null)
             {
                 control.Visible = true;
+            }
+        }
+
+
+        public async Task GetAllCategorias()
+        {
+            try
+            {
+                var response = await _categoriaProductoService.GetAll(null);
+
+                if (response != null && response.success)
+                {
+                    categoriaProductos = (List<CategoriaProductoResponse>)response.response!;
+                    nuevoProducto1.SetearCategorias(categoriaProductos);
+                    categoriaProducto1.SetearCategorias(categoriaProductos);
+                    catalogoProductos1.SetearCategorias(categoriaProductos);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public async Task<ProductoResponse?> GetProductoById(int id)
+        {
+            try
+            {
+                var response = await _productoService.GetById(id);
+
+                if (response != null && response.success)
+                {
+                    return response.response;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+                return null;
+            }
+        }
+
+        public async Task ProcessEtiqueta(string codigo, bool eliminar)
+        {
+            try
+            {
+                var producto = await GetProductoById(Convert.ToInt32(codigo));
+
+                if (producto != null)
+                {
+                    if (eliminar)
+                    {
+                        var response =  await _productoService.Delete(producto.Id);
+                        nuevoProducto1.SetProducto(new ProductoResponse());
+
+                        string toastTipo = response.success ? "SUCCESS" : "ERROR";
+                        ToastForm toast = new ToastForm(toastTipo, response.message);
+                        toast.Show();
+                    }
+                    else
+                    {
+                        nuevoProducto1.SetProducto(producto);
+                        await GetAllCategorias();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el producto.", "Error");
+                }
+
+                SetActivePanel(nuevoProducto1);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
             }
         }
     }

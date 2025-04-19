@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta.Application.DTO
 {
-    public class ResponseModel
+    public class ResponseModel<Object>
     {
         public bool success { get; set; } = true;
         public int? statusCode { get; set; }

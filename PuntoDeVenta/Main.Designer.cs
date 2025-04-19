@@ -127,9 +127,9 @@ namespace PuntoDeVenta
             // btnReportes
             // 
             btnReportes.BackColor = Color.FromArgb(0, 80, 200);
-            btnReportes.FlatAppearance.BorderSize = 0;
             btnReportes.BackgroundImageLayout = ImageLayout.None;
             btnReportes.FlatAppearance.BorderColor = Color.Silver;
+            btnReportes.FlatAppearance.BorderSize = 0;
             btnReportes.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnReportes.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnReportes.FlatStyle = FlatStyle.Flat;
@@ -151,10 +151,10 @@ namespace PuntoDeVenta
             btnCorte.BackColor = Color.FromArgb(0, 80, 200);
             btnCorte.BackgroundImageLayout = ImageLayout.None;
             btnCorte.FlatAppearance.BorderColor = Color.Silver;
+            btnCorte.FlatAppearance.BorderSize = 0;
             btnCorte.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnCorte.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnCorte.FlatStyle = FlatStyle.Flat;
-            btnCorte.FlatAppearance.BorderSize = 0;
             btnCorte.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCorte.ForeColor = SystemColors.ButtonHighlight;
             btnCorte.Image = (Image)resources.GetObject("btnCorte.Image");
@@ -173,10 +173,10 @@ namespace PuntoDeVenta
             btnFacturas.BackColor = Color.FromArgb(0, 80, 200);
             btnFacturas.BackgroundImageLayout = ImageLayout.None;
             btnFacturas.FlatAppearance.BorderColor = Color.Silver;
+            btnFacturas.FlatAppearance.BorderSize = 0;
             btnFacturas.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnFacturas.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnFacturas.FlatStyle = FlatStyle.Flat;
-            btnFacturas.FlatAppearance.BorderSize = 0;
             btnFacturas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnFacturas.ForeColor = SystemColors.ButtonHighlight;
             btnFacturas.Image = (Image)resources.GetObject("btnFacturas.Image");
@@ -195,10 +195,10 @@ namespace PuntoDeVenta
             btnCompras.BackColor = Color.FromArgb(0, 80, 200);
             btnCompras.BackgroundImageLayout = ImageLayout.None;
             btnCompras.FlatAppearance.BorderColor = Color.Silver;
+            btnCompras.FlatAppearance.BorderSize = 0;
             btnCompras.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnCompras.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnCompras.FlatStyle = FlatStyle.Flat;
-            btnCompras.FlatAppearance.BorderSize = 0;
             btnCompras.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCompras.ForeColor = SystemColors.ButtonHighlight;
             btnCompras.Image = (Image)resources.GetObject("btnCompras.Image");
@@ -217,10 +217,10 @@ namespace PuntoDeVenta
             btnInventario.BackColor = Color.FromArgb(0, 80, 200);
             btnInventario.BackgroundImageLayout = ImageLayout.None;
             btnInventario.FlatAppearance.BorderColor = Color.Silver;
+            btnInventario.FlatAppearance.BorderSize = 0;
             btnInventario.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnInventario.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnInventario.FlatStyle = FlatStyle.Flat;
-            btnInventario.FlatAppearance.BorderSize = 0;
             btnInventario.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnInventario.ForeColor = SystemColors.ButtonHighlight;
             btnInventario.Image = (Image)resources.GetObject("btnInventario.Image");
@@ -239,10 +239,10 @@ namespace PuntoDeVenta
             btnProductos.BackColor = Color.FromArgb(0, 80, 200);
             btnProductos.BackgroundImageLayout = ImageLayout.None;
             btnProductos.FlatAppearance.BorderColor = Color.Silver;
+            btnProductos.FlatAppearance.BorderSize = 0;
             btnProductos.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnProductos.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnProductos.FlatStyle = FlatStyle.Flat;
-            btnProductos.FlatAppearance.BorderSize = 0;
             btnProductos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnProductos.ForeColor = SystemColors.ButtonHighlight;
             btnProductos.Image = (Image)resources.GetObject("btnProductos.Image");
@@ -261,10 +261,10 @@ namespace PuntoDeVenta
             btnClientes.BackColor = Color.FromArgb(0, 80, 200);
             btnClientes.BackgroundImageLayout = ImageLayout.None;
             btnClientes.FlatAppearance.BorderColor = Color.Silver;
+            btnClientes.FlatAppearance.BorderSize = 0;
             btnClientes.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnClientes.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnClientes.FlatStyle = FlatStyle.Flat;
-            btnClientes.FlatAppearance.BorderSize = 0;
             btnClientes.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClientes.ForeColor = SystemColors.ButtonHighlight;
             btnClientes.Image = (Image)resources.GetObject("btnClientes.Image");
@@ -283,10 +283,10 @@ namespace PuntoDeVenta
             btnCreditos.BackColor = Color.FromArgb(0, 80, 200);
             btnCreditos.BackgroundImageLayout = ImageLayout.None;
             btnCreditos.FlatAppearance.BorderColor = Color.Silver;
+            btnCreditos.FlatAppearance.BorderSize = 0;
             btnCreditos.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnCreditos.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnCreditos.FlatStyle = FlatStyle.Flat;
-            btnCreditos.FlatAppearance.BorderSize = 0;
             btnCreditos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCreditos.ForeColor = SystemColors.ButtonHighlight;
             btnCreditos.Image = (Image)resources.GetObject("btnCreditos.Image");
@@ -305,10 +305,10 @@ namespace PuntoDeVenta
             btnVentas.BackColor = Color.FromArgb(0, 80, 200);
             btnVentas.BackgroundImageLayout = ImageLayout.None;
             btnVentas.FlatAppearance.BorderColor = Color.Silver;
+            btnVentas.FlatAppearance.BorderSize = 0;
             btnVentas.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnVentas.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnVentas.FlatStyle = FlatStyle.Flat;
-            btnVentas.FlatAppearance.BorderSize = 0;
             btnVentas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVentas.ForeColor = SystemColors.ButtonHighlight;
             btnVentas.Image = (Image)resources.GetObject("btnVentas.Image");
@@ -327,10 +327,10 @@ namespace PuntoDeVenta
             btnConfiguracion.BackColor = Color.FromArgb(0, 80, 200);
             btnConfiguracion.BackgroundImageLayout = ImageLayout.None;
             btnConfiguracion.FlatAppearance.BorderColor = Color.Silver;
+            btnConfiguracion.FlatAppearance.BorderSize = 0;
             btnConfiguracion.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnConfiguracion.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnConfiguracion.FlatStyle = FlatStyle.Flat;
-            btnConfiguracion.FlatAppearance.BorderSize = 0;
             btnConfiguracion.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnConfiguracion.ForeColor = SystemColors.ButtonHighlight;
             btnConfiguracion.Image = (Image)resources.GetObject("btnConfiguracion.Image");

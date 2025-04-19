@@ -33,9 +33,9 @@ namespace PuntoDeVenta.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<ResponseModel> Delete(int id)
+        public async Task<ResponseModel<CategoriaProductoResponse>> Delete(int id)
         {
-            ResponseModel response = new ResponseModel();
+            ResponseModel<CategoriaProductoResponse> response = new ResponseModel<CategoriaProductoResponse>();
             CategoriaProductoResponse productoResponse = new CategoriaProductoResponse();
             try
             {
@@ -67,9 +67,9 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
-        public async Task<ResponseModel> GetAll(bool? habilitados)
+        public async Task<ResponseModel<List<CategoriaProductoResponse>>> GetAll(bool? habilitados)
         {
-            ResponseModel response = new ResponseModel();
+            ResponseModel<List<CategoriaProductoResponse>> response = new ResponseModel<List<CategoriaProductoResponse>>();
 
             try
             {
@@ -92,9 +92,9 @@ namespace PuntoDeVenta.Application.Services
         }
 
 
-        public async Task<ResponseModel> GetById(int IdCategoriaProducto)
+        public async Task<ResponseModel<CategoriaProductoResponse>> GetById(int IdCategoriaProducto)
         {
-            ResponseModel response = new ResponseModel();
+            ResponseModel<CategoriaProductoResponse> response = new ResponseModel<CategoriaProductoResponse>();
 
             try
             {
@@ -126,9 +126,9 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
-        public async Task<ResponseModel> Insert(CategoriaProductoRequest entity)
+        public async Task<ResponseModel<CategoriaProductoResponse>> Insert(CategoriaProductoRequest entity)
         {
-            ResponseModel response = new ResponseModel();
+            ResponseModel<CategoriaProductoResponse> response = new ResponseModel<CategoriaProductoResponse>();
             CategoriaProductoResponse productoResponse = new CategoriaProductoResponse();
             try
             {
@@ -153,9 +153,9 @@ namespace PuntoDeVenta.Application.Services
         }
 
 
-        public async Task<ResponseModel> Update(CategoriaProductoRequest entity)
+        public async Task<ResponseModel<CategoriaProductoResponse>> Update(CategoriaProductoRequest entity)
         {
-            ResponseModel response = new ResponseModel();
+            ResponseModel<CategoriaProductoResponse> response = new ResponseModel<CategoriaProductoResponse>();
             CategoriaProductoResponse productoResponse = new CategoriaProductoResponse();
             try
             {

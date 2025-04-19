@@ -2,6 +2,7 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.Domain.Entities;
 
 namespace PuntoDeVenta.UserControls.ProductosControls
 {
@@ -12,6 +13,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
         private readonly IProductoService _productoService;
         public List<CategoriaProductoResponse> _categoriaProductos;
+        public ProductoResponse selectedProducto = new ProductoResponse();
 
         public NuevoProductoControl(List<CategoriaProductoResponse> categoriaProductos)
         {
@@ -28,6 +30,22 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             comboCategoria.ValueMember = "Id";
         }
 
+        public void SetProducto(ProductoResponse producto)
+        {            
+            selectedProducto = producto;
+            txtCodigo.Text = selectedProducto.Codigo;
+            txtDescripcion.Text = selectedProducto.Descripcion;
+            comboCategoria.SelectedValue = selectedProducto.IdCategoriaProducto != null ? selectedProducto.IdCategoriaProducto : 0;
+            txtPrecioMayor.Value = (decimal)selectedProducto.PrecioPorMayor;
+            txtPrecioVenta.Value = (decimal)selectedProducto.PrecioVenta;
+            txtPrecioCosto.Value = (decimal)selectedProducto.PrecioCosto;
+            txtCantidadMinima.Value = selectedProducto.CantidadMinima;
+            txtCantidadActual.Value = selectedProducto.Cantidad;
+
+            labelTitle.Text = producto.Id > 0 ? "MODIFICAR PRODUCTO" : "NUEVO PRODUCTO";
+            checkInventario.Checked = producto.CantidadMinima > 0 || producto.Cantidad > 0;
+        }
+
         private void btnGuardarProducto_Click(object sender, EventArgs e)
         {
             _ = GuardarProducto();
@@ -37,6 +55,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         {
             try
             {
+                ResponseModel<ProductoResponse> response = new ResponseModel<ProductoResponse>();
                 if (txtDescripcion.Text == "")
                 {
                     MessageBox.Show("Debe ingresar un nombre válido");
@@ -45,6 +64,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                 {
                     ProductoRequest producto = new ProductoRequest()
                     {
+                        Id = selectedProducto.Id > 0 ? selectedProducto.Id : 0,
                         Codigo = txtCodigo.Text,
                         Descripcion = txtDescripcion.Text,
                         IdCategoriaProducto = Convert.ToInt32(comboCategoria.SelectedValue) > 0 ? Convert.ToInt32(comboCategoria.SelectedValue) : null,
@@ -55,9 +75,23 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                         Cantidad = checkInventario.Checked ? Convert.ToInt32(txtCantidadActual.Value) : 0,
                     };
 
-                    var response = await _productoService.Insert(producto);
+                    if(selectedProducto.Id > 0)
+                    {
+                        response = await _productoService.Update(producto);
+                    }
+                    else
+                    {
+                        response = await _productoService.Insert(producto);
+                    }
 
-                    MessageBox.Show(response.message);
+                    if (response.success == true) 
+                    {
+                        SetProducto(new ProductoResponse());
+                    }
+
+                    string toastTipo = response.success ? "SUCCESS" : "ERROR";
+                    ToastForm toast = new ToastForm(toastTipo, response.message);
+                    toast.Show();
                 }
             }
             catch (Exception ex)

@@ -4,10 +4,10 @@ namespace PuntoDeVenta.Application.Interfaces
 {
     public interface IProductoService
     {
-        Task<ResponseModel> GetAll(bool? habilitados);
-        Task<ResponseModel> GetById(int id);
-        Task<ResponseModel> Insert(ProductoRequest entity);
-        Task<ResponseModel> Update(ProductoRequest entity);
-        Task<ResponseModel> Delete(int id);
+        Task<ResponseModel<List<ProductoResponse>>> GetAll(bool? habilitados);
+        Task<ResponseModel<ProductoResponse>> GetById(int id);
+        Task<ResponseModel<ProductoResponse>> Insert(ProductoRequest entity);
+        Task<ResponseModel<ProductoResponse>> Update(ProductoRequest entity);
+        Task<ResponseModel<ProductoResponse>> Delete(int id);
     }
 }

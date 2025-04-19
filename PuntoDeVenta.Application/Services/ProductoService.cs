@@ -31,9 +31,9 @@ namespace PuntoDeVenta.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<ResponseModel> Delete(int id)
+        public async Task<ResponseModel<ProductoResponse>> Delete(int id)
         {
-            ResponseModel response = new ResponseModel();
+            ResponseModel<ProductoResponse> response = new ResponseModel<ProductoResponse>();
             ProductoResponse productoResponse = new ProductoResponse();
             try
             {
@@ -65,9 +65,9 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
-        public async Task<ResponseModel> GetAll(bool? habilitados)
+        public async Task<ResponseModel<List<ProductoResponse>>> GetAll(bool? habilitados)
         {
-            ResponseModel response = new ResponseModel();
+            ResponseModel<List<ProductoResponse>> response = new ResponseModel<List<ProductoResponse>>();
 
             try
             {
@@ -90,9 +90,9 @@ namespace PuntoDeVenta.Application.Services
         }
 
 
-        public async Task<ResponseModel> GetById(int IdProducto)
+        public async Task<ResponseModel<ProductoResponse>> GetById(int IdProducto)
         {
-            ResponseModel response = new ResponseModel();
+            ResponseModel<ProductoResponse> response = new ResponseModel<ProductoResponse>();
 
             try
             {
@@ -124,9 +124,9 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
-        public async Task<ResponseModel> Insert(ProductoRequest entity)
+        public async Task<ResponseModel<ProductoResponse>> Insert(ProductoRequest entity)
         {
-            ResponseModel response = new ResponseModel();
+            ResponseModel<ProductoResponse> response = new ResponseModel<ProductoResponse>();
             ProductoResponse productoResponse = new ProductoResponse();
             try
             {
@@ -151,9 +151,9 @@ namespace PuntoDeVenta.Application.Services
         }
 
 
-        public async Task<ResponseModel> Update(ProductoRequest entity)
+        public async Task<ResponseModel<ProductoResponse>> Update(ProductoRequest entity)
         {
-            ResponseModel response = new ResponseModel();
+            ResponseModel<ProductoResponse> response = new ResponseModel<ProductoResponse>();
             ProductoResponse productoResponse = new ProductoResponse();
             try
             {

@@ -33,6 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="assets\icons\info.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
     <None Update="assets\logo_bedaqui.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
