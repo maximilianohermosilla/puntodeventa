@@ -24,18 +24,21 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
         public void SetearCategorias(List<CategoriaProductoResponse> categoriaProductos)
         {
-            categoriaProductos.Insert(0, new CategoriaProductoResponse { Id = 0, Descripcion = "-- Seleccionar Categoría --" });
+            _categoriaProductos = categoriaProductos;
+            categoriaProductos.Insert(0, new CategoriaProductoResponse { Id = 0, Descripcion = "-- Seleccionar Categoría --", Habilitado = true });
             comboCategoria.DataSource = categoriaProductos.Where(x => x.Habilitado).ToList();
             comboCategoria.DisplayMember = "Descripcion";
             comboCategoria.ValueMember = "Id";
+            comboCategoria.Refresh();
+            comboCategoria.Invalidate();
         }
 
         public void SetProducto(ProductoResponse producto)
-        {            
+        {
             selectedProducto = producto;
             txtCodigo.Text = selectedProducto.Codigo;
             txtDescripcion.Text = selectedProducto.Descripcion;
-            comboCategoria.SelectedValue = selectedProducto.IdCategoriaProducto != null ? selectedProducto.IdCategoriaProducto : 0;
+            comboCategoria.SelectedValue = producto.IdCategoriaProducto > 0 ? producto!.IdCategoriaProducto : 0;
             txtPrecioMayor.Value = (decimal)selectedProducto.PrecioPorMayor;
             txtPrecioVenta.Value = (decimal)selectedProducto.PrecioVenta;
             txtPrecioCosto.Value = (decimal)selectedProducto.PrecioCosto;
@@ -44,6 +47,9 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
             labelTitle.Text = producto.Id > 0 ? "MODIFICAR PRODUCTO" : "NUEVO PRODUCTO";
             checkInventario.Checked = producto.CantidadMinima > 0 || producto.Cantidad > 0;
+
+            comboCategoria.Refresh();
+            comboCategoria.Invalidate();
         }
 
         private void btnGuardarProducto_Click(object sender, EventArgs e)

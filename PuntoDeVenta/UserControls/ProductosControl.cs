@@ -2,8 +2,6 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
-using PuntoDeVenta.Domain.Entities;
-using System.Diagnostics.Contracts;
 
 namespace PuntoDeVenta.UserControls
 {
@@ -176,8 +174,8 @@ namespace PuntoDeVenta.UserControls
                     }
                     else
                     {
-                        nuevoProducto1.SetProducto(producto);
                         await GetAllCategorias();
+                        nuevoProducto1.SetProducto(producto);
                     }
                 }
                 else
