@@ -517,6 +517,7 @@ namespace PuntoDeVenta
             Controls.Add(panelNavbar);
             Controls.Add(panelFooter);
             Controls.Add(panelMain);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Main";
             ShowIcon = false;
             Text = "PuntoDeVenta - Bedaqui";

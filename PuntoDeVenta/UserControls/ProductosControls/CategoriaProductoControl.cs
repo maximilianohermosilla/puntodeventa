@@ -78,7 +78,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                     }
 
                     string toastTipo = response.success ? "SUCCESS" : "ERROR";
-                    ToastForm toast = new ToastForm(toastTipo, response.message);
+                    ToastForm toast = new ToastForm(toastTipo, response.message, this.FindForm());
                     toast.Show();
                     NuevaCategoria();
 
@@ -119,7 +119,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                 }
 
                 string toastTipo = response.success ? "SUCCESS" : "ERROR";
-                ToastForm toast = new ToastForm(toastTipo, response.message);
+                ToastForm toast = new ToastForm(toastTipo, response.message, this.FindForm());
                 toast.Show();
             }
             catch (Exception ex)

@@ -10,9 +10,12 @@
         public int toastX, toastY;
         public int y = 100;
 
-        public ToastForm(string type, string message)
+        private Form _parentForm;
+
+        public ToastForm(string type, string message, Form parentForm)
         {
             InitializeComponent();
+            _parentForm = parentForm;
 
             labelToastMessage.Text = message;
 
@@ -41,50 +44,67 @@
                 default:
                     break;
             }
+
+            _parentForm = parentForm;
         }
 
         private void ToastForm_Load(object sender, EventArgs e)
         {
             Position();
+            timerToast.Interval = 3000;
+            timerToast.Tick += timerToast_Tick;
+            timerToast.Start();
         }
 
         private void Position()
         {
-            int ScreenWidth = Screen.PrimaryScreen.WorkingArea.Width;
-            int ScreenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+            // Obtener el área visible del formulario padre
+            Rectangle parentBounds = _parentForm.Bounds;
 
-            toastX = ScreenWidth - this.Width - 10;
-            toastY = ScreenHeight - this.Height + 10;
+            toastX = parentBounds.Right - this.Width - 10;
+            toastY = parentBounds.Bottom - this.Height - 50;
 
             this.Location = new Point(toastX, toastY);
+
+            //int ScreenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+            //int ScreenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+            //toastX = ScreenWidth - this.Width - 10;
+            //toastY = ScreenHeight - this.Height + 10;
+
+            //this.Location = new Point(toastX, toastY);
         }
 
         private void timerToast_Tick(object sender, EventArgs e)
         {
-            toastY -= 30;
-            this.Location = new Point(toastX, toastY);
-            if (toastY < 125)
-            {
-                timerToast.Stop();
-                toastHide.Start();
-            }
+            timerToast.Stop();
+            this.Close();
+            //toastY -= 30;
+            //this.Location = new Point(toastX, toastY);
+            //if (toastY < 125)
+            //{
+            //    timerToast.Stop();
+            //    toastHide.Start();
+            //}
         }
 
         private void toastHide_Tick(object sender, EventArgs e)
         {
-            y--;
-            if (y <= 0)
-            {
-                toastY += 10;
-                this.Location = new Point(toastX, toastY += 20);
+            //Rectangle parentBounds = _parentForm.Bounds;
+            //y--;
 
-                if(toastY > Screen.PrimaryScreen.WorkingArea.Height - 300)
-                {
-                    toastHide.Stop();
-                    y = 100;
-                    this.Close();
-                }
-            }
+            //if (y <= 0)
+            //{
+            //    toastY += 10;
+            //    this.Location = new Point(toastX, toastY += 20);
+
+            //    if (toastY > parentBounds.Bottom - this.Height - 30)
+            //    {
+            //        toastHide.Stop();
+            //        y = 100;
+            //        this.Close();
+            //    }
+            //}
         }
     }
 }

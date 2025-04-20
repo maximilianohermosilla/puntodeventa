@@ -97,7 +97,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
         private void comboCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int selectedCategoriaId = Convert.ToInt32(comboCategoria.SelectedValue);
+            int selectedCategoriaId = comboCategoria != null && comboCategoria.SelectedItem != null ? ((CategoriaProductoResponse)(comboCategoria.SelectedItem)).Id : 0;
             var productosFiltrados = _productos.Where(c => c.IdCategoriaProducto == selectedCategoriaId || selectedCategoriaId == 0).ToList();
             SetearProductos(productosFiltrados);
         }

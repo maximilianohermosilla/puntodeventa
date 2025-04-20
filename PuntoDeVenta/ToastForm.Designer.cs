@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToastForm));
             panelToastBorder = new Panel();
             pictureToastIcon = new PictureBox();
             labelToastTitle = new Label();
@@ -100,8 +101,9 @@
             Controls.Add(pictureToastIcon);
             Controls.Add(panelToastBorder);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ToastForm";
-            Text = "ToastForm";
+            Text = "Notificación";
             Load += ToastForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureToastIcon).EndInit();
             ResumeLayout(false);

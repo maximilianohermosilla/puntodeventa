@@ -159,32 +159,38 @@ namespace PuntoDeVenta.UserControls
         {
             try
             {
-                var producto = await GetProductoById(Convert.ToInt32(codigo));
-
-                if (producto != null)
+                if (!string.IsNullOrEmpty(codigo))
                 {
-                    if (eliminar)
-                    {
-                        var response =  await _productoService.Delete(producto.Id);
-                        nuevoProducto1.SetProducto(new ProductoResponse());
+                    var producto = await GetProductoById(Convert.ToInt32(codigo));
 
-                        string toastTipo = response.success ? "SUCCESS" : "ERROR";
-                        ToastForm toast = new ToastForm(toastTipo, response.message);
-                        toast.Show();
+                    if (producto != null)
+                    {
+                        if (eliminar)
+                        {
+                            var response = await _productoService.Delete(producto.Id);
+                            nuevoProducto1.SetProducto(new ProductoResponse());
+
+                            string toastTipo = response.success ? "SUCCESS" : "ERROR";
+                            ToastForm toast = new ToastForm(toastTipo, response.message, this.FindForm());
+                            toast.Show();
+                        }
+                        else
+                        {
+                            await GetAllCategorias();
+                            nuevoProducto1.SetProducto(producto);
+                        }
                     }
                     else
                     {
-                        await GetAllCategorias();
-                        nuevoProducto1.SetProducto(producto);
+                        MessageBox.Show("No se encontró el producto.", "Error");
                     }
+
+                    SetActivePanel(nuevoProducto1);
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró el producto.", "Error");
+                    MessageBox.Show("Debe ingresar un código válido.", "Error");
                 }
-
-                SetActivePanel(nuevoProducto1);
-                
             }
             catch (Exception ex)
             {

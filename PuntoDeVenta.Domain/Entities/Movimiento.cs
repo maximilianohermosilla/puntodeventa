@@ -8,6 +8,8 @@
         public float Valor { get; set; }
         public bool? Cancelado { get; set; } = false;
         public int IdTipoMovimiento { get; set; }
+        public bool Entrada { get; set; } = false;
+        public bool Salida { get; set; } = false;
         public int IdUsuario { get; set; }
         
         public virtual TipoMovimiento TipoMovimiento { get; set; }
