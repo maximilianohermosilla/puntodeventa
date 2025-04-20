@@ -7,7 +7,7 @@ namespace PuntoDeVenta.UserControls
 {
     public partial class ProductosControl : UserControl
     {
-        private static PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
+        private PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
 
         private readonly IProductoService _productoService;
         private readonly ICategoriaProductoService _categoriaProductoService;

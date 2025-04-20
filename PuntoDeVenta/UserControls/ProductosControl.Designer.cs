@@ -1,7 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using PuntoDeVenta.AccessData.Interfaces;
-using PuntoDeVenta.Helpers;
-using PuntoDeVenta.UserControls.ProductosControls;
+﻿using PuntoDeVenta.UserControls.ProductosControls;
 
 namespace PuntoDeVenta.UserControls
 {

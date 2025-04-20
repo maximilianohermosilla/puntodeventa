@@ -519,7 +519,6 @@ namespace PuntoDeVenta
             Controls.Add(panelMain);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Main";
-            ShowIcon = false;
             Text = "PuntoDeVenta - Bedaqui";
             WindowState = FormWindowState.Maximized;
             panelHeader.ResumeLayout(false);
