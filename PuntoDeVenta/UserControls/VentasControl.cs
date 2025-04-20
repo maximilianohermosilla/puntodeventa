@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PuntoDeVenta
+namespace PuntoDeVenta.UserControls
 {
     public partial class VentasControl : UserControl
     {

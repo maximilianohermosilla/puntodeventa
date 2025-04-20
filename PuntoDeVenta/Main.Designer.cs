@@ -51,7 +51,6 @@ namespace PuntoDeVenta
             imageList = new ImageList(components);
             panelMain = new Panel();
             ventas1 = new VentasControl();
-            productos1 = new ProductosControl();
             reportes1 = new ReportesControl();
             inventario1 = new InventarioControl();
             facturas1 = new FacturasControl();
@@ -357,7 +356,6 @@ namespace PuntoDeVenta
             panelMain.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelMain.BackColor = Color.FromArgb(49, 66, 82);
             panelMain.Controls.Add(ventas1);
-            panelMain.Controls.Add(productos1);
             panelMain.Controls.Add(reportes1);
             panelMain.Controls.Add(inventario1);
             panelMain.Controls.Add(facturas1);
@@ -382,16 +380,6 @@ namespace PuntoDeVenta
             ventas1.Name = "ventas1";
             ventas1.Size = new Size(1295, 727);
             ventas1.TabIndex = 9;
-            // 
-            // productos1
-            // 
-            productos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            productos1.BackColor = Color.FromArgb(49, 66, 82);
-            productos1.Dock = DockStyle.Fill;
-            productos1.Location = new Point(0, 0);
-            productos1.Name = "productos1";
-            productos1.Size = new Size(1295, 727);
-            productos1.TabIndex = 9;
             // 
             // reportes1
             // 
@@ -529,6 +517,21 @@ namespace PuntoDeVenta
             panelFooter.ResumeLayout(false);
             panelFooter.PerformLayout();
             ResumeLayout(false);
+
+            //Bug elimina productosControl
+            productos1 = new ProductosControl();
+            panelMain.Controls.Add(productos1);
+
+            // productos1
+            // 
+            productos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            productos1.BackColor = Color.FromArgb(49, 66, 82);
+            productos1.Dock = DockStyle.Fill;
+            productos1.Location = new Point(0, 0);
+            productos1.Name = "productos1";
+            productos1.Size = new Size(1295, 727);
+            productos1.TabIndex = 9;
+            // 
         }
 
         #endregion

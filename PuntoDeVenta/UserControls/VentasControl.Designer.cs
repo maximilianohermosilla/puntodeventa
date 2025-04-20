@@ -1,4 +1,4 @@
-﻿namespace PuntoDeVenta
+﻿namespace PuntoDeVenta.UserControls
 {
     partial class VentasControl
     {
