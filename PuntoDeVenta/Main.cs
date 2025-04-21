@@ -54,6 +54,7 @@ namespace PuntoDeVenta
         private void btnClientes_Click(object sender, EventArgs e)
         {
             SetActivePanel(clientes1);
+            _ = clientes1.GetAllClientes();
         }
 
         private void btnCompras_Click(object sender, EventArgs e)

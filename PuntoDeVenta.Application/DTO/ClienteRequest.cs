@@ -1,6 +1,6 @@
-﻿namespace PuntoDeVenta.Domain.Entities
+﻿namespace PuntoDeVenta.Application.DTO
 {
-    public partial class Cliente
+    public partial class ClienteRequest
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
@@ -11,6 +11,5 @@
         public bool Habilitado { get; set; } = true;
         public DateTime FechaCreacion { get; set; } = DateTime.Now;
 
-        public virtual IList<Ticket> Tickets { get; set; }
     }
 }

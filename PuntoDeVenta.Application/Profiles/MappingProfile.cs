@@ -15,6 +15,10 @@ namespace PuntoDeVenta.Application.Profiles
             CreateMap<CategoriaProductoRequest, CategoriaProducto>().ReverseMap();
             CreateMap<CategoriaProductoResponse, CategoriaProducto>().ReverseMap();
             CreateMap<CategoriaProductoResponse, CategoriaProductoRequest>().ReverseMap();
+
+            CreateMap<ClienteRequest, Cliente>().ReverseMap();
+            CreateMap<ClienteResponse, Cliente>().ReverseMap();
+            CreateMap<ClienteResponse, ClienteRequest>().ReverseMap();
         }
     }
 }

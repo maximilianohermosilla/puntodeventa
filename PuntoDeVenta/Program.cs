@@ -58,9 +58,11 @@ namespace PuntoDeVenta
 
             services.AddTransient<IProductoRepository, ProductoRepository>();
             services.AddTransient<ICategoriaProductoRepository, CategoriaProductoRepository>();
+            services.AddTransient<IClienteRepository, ClienteRepository>();
 
             services.AddTransient<IProductoService, ProductoService>();
             services.AddTransient<ICategoriaProductoService, CategoriaProductoService>();
+            services.AddTransient<IClienteService,ClienteService>();
 
             // Registra el formulario principal
             services.AddTransient<Login>();
