@@ -31,7 +31,7 @@ namespace PuntoDeVenta.UserControls
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            SetActivePanel(null);
+            //SetActivePanel(null);
             EtiquetaDialog etiquetaDialog = new EtiquetaDialog();
             etiquetaDialog.labelProducto.Text = "Modificar Producto";
 
@@ -44,7 +44,7 @@ namespace PuntoDeVenta.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             etiquetaDialog.Dispose();
@@ -52,7 +52,7 @@ namespace PuntoDeVenta.UserControls
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
-            SetActivePanel(null);
+            //SetActivePanel(null);
             EtiquetaDialog etiquetaDialog = new EtiquetaDialog();
             etiquetaDialog.labelProducto.Text = "Eliminar Producto";
 
@@ -65,7 +65,7 @@ namespace PuntoDeVenta.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
      
             etiquetaDialog.Dispose();
@@ -129,7 +129,7 @@ namespace PuntoDeVenta.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -150,7 +150,7 @@ namespace PuntoDeVenta.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -178,23 +178,24 @@ namespace PuntoDeVenta.UserControls
                         {
                             await GetAllCategorias();
                             nuevoProducto1.SetProducto(producto);
+                            SetActivePanel(nuevoProducto1);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("No se encontró el producto.", "Error");
+                        MessageBox.Show("No se encontró el producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    SetActivePanel(nuevoProducto1);
+                    //SetActivePanel(nuevoProducto1);
                 }
                 else
                 {
-                    MessageBox.Show("Debe ingresar un código válido.", "Error");
+                    MessageBox.Show("Debe ingresar un código válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

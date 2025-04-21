@@ -64,7 +64,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                 ResponseModel<ProductoResponse> response = new ResponseModel<ProductoResponse>();
                 if (txtDescripcion.Text == "")
                 {
-                    MessageBox.Show("Debe ingresar un nombre válido");
+                    MessageBox.Show("Debe ingresar un nombre válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -102,7 +102,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }            
         }
 

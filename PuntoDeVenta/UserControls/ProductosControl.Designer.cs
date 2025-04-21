@@ -45,7 +45,7 @@ namespace PuntoDeVenta.UserControls
             panelMain = new Panel();
             categoriaProducto1 = new CategoriaProductoControl(categoriaProductos);
             nuevoProducto1 = new NuevoProductoControl(categoriaProductos);
-            catalogoProductos1 = new CatalogoProductosControl(categoriaProductos);
+            catalogoProductos1 = new CatalogoProductosControl(categoriaProductos, this);
             panelHeader.SuspendLayout();
             panelNavbar.SuspendLayout();
             panelMain.SuspendLayout();

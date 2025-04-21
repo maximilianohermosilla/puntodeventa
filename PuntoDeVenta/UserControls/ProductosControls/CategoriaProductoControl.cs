@@ -49,7 +49,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             {
                 if (txtDescripcion.Text == "")
                 {
-                    MessageBox.Show("Debe ingresar un nombre válido");
+                    MessageBox.Show("Debe ingresar un nombre válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -90,7 +90,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -124,7 +124,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -145,7 +145,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -156,7 +156,10 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
         private void btnEliminarCategoria_Click(object sender, EventArgs e)
         {
-            DeleteCategoria(selectedCategoria.Id);
+            if (DialogResult.Yes == MessageBox.Show("¿Está seguro de que desea eliminar esta categoría?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+            {
+                DeleteCategoria(selectedCategoria.Id);
+            }
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
