@@ -12,19 +12,23 @@ namespace PuntoDeVenta.AccessData
         public DbSet<CategoriaProducto> CategoriaProducto { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Estado> Estado { get; set; }
-        public DbSet<TicketEstado> EstadoTicket { get; set; }
         public DbSet<FormaPago> FormaPago { get; set; }
         public DbSet<Movimiento> Movimiento { get; set; }
         public DbSet<Parametro> Parametro { get; set; }
-        public DbSet<Ticket> Ticket { get; set; }
-        public DbSet<TicketDetalle> TicketDetalle { get; set; }
         public DbSet<Perfil> Perfil { get; set; }
+        public DbSet<Permiso> Permiso { get; set; }
+        public DbSet<PermisoPerfil> PermisoPerfil { get; set; }
+        public DbSet<PermisoUsuario> PermisoUsuario { get; set; }
         public DbSet<Producto> Producto { get; set; }
         public DbSet<Promocion> Promocion { get; set; }
         public DbSet<PromocionCategoria> PromocionCategoria { get; set; }
         public DbSet<PromocionProducto> PromocionProducto { get; set; }
+        public DbSet<Ticket> Ticket { get; set; }
+        public DbSet<TicketDetalle> TicketDetalle { get; set; }
+        public DbSet<TicketEstado> TicketEstado { get; set; }
         public DbSet<TipoMovimiento> TipoMovimiento { get; set; }
         public DbSet<TipoPermiso> TipoPermiso { get; set; }
+        public DbSet<Turno> Turno { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
 
         public PuntoDeVentaDbContext() : base()

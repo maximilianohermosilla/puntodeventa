@@ -7,7 +7,6 @@ using PuntoDeVenta.AccessData.Repository;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Profiles;
 using PuntoDeVenta.Application.Services;
-using PuntoDeVenta.Helpers;
 using PuntoDeVenta.UserControls;
 using PuntoDeVenta.UserControls.ProductosControls;
 
@@ -56,13 +55,49 @@ namespace PuntoDeVenta
             // Agrega las interfaces y servicios necesarios
             services.AddScoped<PuntoDeVentaDbContext>();
 
-            services.AddTransient<IProductoRepository, ProductoRepository>();
             services.AddTransient<ICategoriaProductoRepository, CategoriaProductoRepository>();
             services.AddTransient<IClienteRepository, ClienteRepository>();
+            services.AddTransient<IEstadoRepository, EstadoRepository>();
+            services.AddTransient<IFormaPagoRepository, FormaPagoRepository>();
+            services.AddTransient<IMovimientoRepository, MovimientoRepository>();
+            services.AddTransient<IParametroRepository, ParametroRepository>();
+            services.AddTransient<IPerfilRepository, PerfilRepository>();
+            services.AddTransient<IPermisoRepository, PermisoRepository>();
+            services.AddTransient<IPermisoPerfilRepository, PermisoPerfilRepository>();
+            services.AddTransient<IPermisoUsuarioRepository, PermisoUsuarioRepository>();
+            services.AddTransient<IProductoRepository, ProductoRepository>();
+            services.AddTransient<IPromocionRepository, PromocionRepository>();
+            services.AddTransient<IPromocionCategoriaRepository, PromocionCategoriaRepository>();
+            services.AddTransient<IPromocionProductoRepository, PromocionProductoRepository>();
+            services.AddTransient<ITicketRepository, TicketRepository>();
+            services.AddTransient<ITicketDetalleRepository, TicketDetalleRepository>();
+            services.AddTransient<ITicketEstadoRepository, TicketEstadoRepository>();
+            services.AddTransient<ITipoMovimientoRepository, TipoMovimientoRepository>();
+            services.AddTransient<ITipoPermisoRepository, TipoPermisoRepository>();
+            services.AddTransient<ITurnoRepository, TurnoRepository>();
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
-            services.AddTransient<IProductoService, ProductoService>();
             services.AddTransient<ICategoriaProductoService, CategoriaProductoService>();
             services.AddTransient<IClienteService,ClienteService>();
+            services.AddTransient<IEstadoService, EstadoService>();
+            services.AddTransient<IFormaPagoService, FormaPagoService>();
+            services.AddTransient<IMovimientoService, MovimientoService>();
+            services.AddTransient<IParametroService, ParametroService>();
+            services.AddTransient<IPerfilService, PerfilService>();
+            services.AddTransient<IPermisoService, PermisoService>();
+            services.AddTransient<IPermisoPerfilService, PermisoPerfilService>();
+            services.AddTransient<IPermisoUsuarioService, PermisoUsuarioService>();
+            services.AddTransient<IProductoService, ProductoService>();
+            services.AddTransient<IPromocionService, PromocionService>();
+            services.AddTransient<IPromocionCategoriaService, PromocionCategoriaService>();
+            services.AddTransient<IPromocionProductoService, PromocionProductoService>();
+            services.AddTransient<ITicketService, TicketService>();
+            services.AddTransient<ITicketDetalleService, TicketDetalleService>();
+            services.AddTransient<ITicketEstadoService, TicketEstadoService>();
+            services.AddTransient<ITipoMovimientoService, TipoMovimientoService>();
+            services.AddTransient<ITipoPermisoService, TipoPermisoService>();
+            services.AddTransient<ITurnoService, TurnoService>();
+            services.AddTransient<IUsuarioService, UsuarioService>();
 
             // Registra el formulario principal
             services.AddTransient<Login>();
