@@ -71,6 +71,7 @@ namespace PuntoDeVenta.UserControls
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1449, 28);
+            panelHeader.TabIndex = 2;
             // 
             // clientesTitle
             // 
@@ -94,6 +95,7 @@ namespace PuntoDeVenta.UserControls
             panelNavbar.Location = new Point(0, 28);
             panelNavbar.Name = "panelNavbar";
             panelNavbar.Size = new Size(1449, 48);
+            panelNavbar.TabIndex = 1;
             // 
             // labelTitle
             // 
@@ -104,6 +106,7 @@ namespace PuntoDeVenta.UserControls
             labelTitle.Margin = new Padding(3, 6, 3, 0);
             labelTitle.Name = "labelTitle";
             labelTitle.Size = new Size(238, 25);
+            labelTitle.TabIndex = 0;
             labelTitle.Text = "Administración de clientes";
             // 
             // panelMain
@@ -116,6 +119,7 @@ namespace PuntoDeVenta.UserControls
             panelMain.Location = new Point(0, 76);
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(1449, 508);
+            panelMain.TabIndex = 0;
             // 
             // panelPrincipal
             // 
@@ -187,6 +191,7 @@ namespace PuntoDeVenta.UserControls
             labelTelefono.Location = new Point(22, 168);
             labelTelefono.Name = "labelTelefono";
             labelTelefono.Size = new Size(63, 19);
+            labelTelefono.TabIndex = 7;
             labelTelefono.Text = "Teléfono:";
             // 
             // txtEmail
@@ -203,6 +208,7 @@ namespace PuntoDeVenta.UserControls
             labelEmail.Location = new Point(21, 131);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(44, 19);
+            labelEmail.TabIndex = 8;
             labelEmail.Text = "Email:";
             // 
             // txtApellido
@@ -219,6 +225,7 @@ namespace PuntoDeVenta.UserControls
             labelApellido.Location = new Point(21, 98);
             labelApellido.Name = "labelApellido";
             labelApellido.Size = new Size(61, 19);
+            labelApellido.TabIndex = 9;
             labelApellido.Text = "Apellido:";
             // 
             // txtNombre
@@ -235,6 +242,7 @@ namespace PuntoDeVenta.UserControls
             labelNombre.Location = new Point(21, 64);
             labelNombre.Name = "labelNombre";
             labelNombre.Size = new Size(62, 19);
+            labelNombre.TabIndex = 10;
             labelNombre.Text = "Nombre:";
             // 
             // labelTitleCliente
@@ -245,6 +253,7 @@ namespace PuntoDeVenta.UserControls
             labelTitleCliente.Location = new Point(16, 15);
             labelTitleCliente.Name = "labelTitleCliente";
             labelTitleCliente.Size = new Size(153, 25);
+            labelTitleCliente.TabIndex = 11;
             labelTitleCliente.Text = "NUEVO CLIENTE";
             // 
             // panelAside
@@ -270,6 +279,7 @@ namespace PuntoDeVenta.UserControls
             panel2.Location = new Point(0, 457);
             panel2.Name = "panel2";
             panel2.Size = new Size(317, 48);
+            panel2.TabIndex = 0;
             // 
             // btnEliminarCliente
             // 
@@ -320,9 +330,9 @@ namespace PuntoDeVenta.UserControls
             listClientes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             listClientes.FormattingEnabled = true;
             listClientes.ItemHeight = 15;
-            listClientes.Location = new Point(20, 48);
+            listClientes.Location = new Point(18, 48);
             listClientes.Name = "listClientes";
-            listClientes.Size = new Size(278, 394);
+            listClientes.Size = new Size(280, 394);
             listClientes.TabIndex = 9;
             listClientes.SelectedIndexChanged += listClientes_SelectedIndexChanged;
             // 

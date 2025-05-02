@@ -42,11 +42,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UserControls\CommonControls\" />
-    <Folder Include="UserControls\CommonControls\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PuntoDeVenta.Application\PuntoDeVenta.Application.csproj" />
   </ItemGroup>
 

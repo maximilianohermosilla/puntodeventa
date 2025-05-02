@@ -74,7 +74,7 @@ namespace PuntoDeVenta.UserControls
                 if (response != null && response.success)
                 {
                     _clientes = (response.response!);
-                    _clientes.Insert(0, new ClienteResponse { Id = 0, Nombre = "-- Seleccionar Categoría --", Habilitado = true });
+                    _clientes.Insert(0, new ClienteResponse { Id = 0, Nombre = "-- Seleccionar Cliente --", Habilitado = true });
                     SetearClientes(response.response!);
                 }
             }
@@ -88,7 +88,7 @@ namespace PuntoDeVenta.UserControls
         {
             if (_clientes != null && _clientes.Count() == 0)
             {
-                clientes.Insert(0, new ClienteResponse { Id = 0, Nombre = "-- Seleccionar Categoría --", Habilitado = true });
+                clientes.Insert(0, new ClienteResponse { Id = 0, Nombre = "-- Seleccionar Cliente --", Habilitado = true });
                 _clientes = clientes;
             }
 
@@ -123,7 +123,7 @@ namespace PuntoDeVenta.UserControls
                 }
 
                 string toastTipo = response.success ? "SUCCESS" : "ERROR";
-                ToastForm toast = new ToastForm(toastTipo, response.message, this.FindForm());
+                ToastForm toast = new ToastForm(toastTipo, response.message!, this.FindForm()!);
                 toast.Show();
             }
             catch (Exception ex)
@@ -173,7 +173,7 @@ namespace PuntoDeVenta.UserControls
                     }
 
                     string toastTipo = response.success ? "SUCCESS" : "ERROR";
-                    ToastForm toast = new ToastForm(toastTipo, response.message, this.FindForm());
+                    ToastForm toast = new ToastForm(toastTipo, response.message!, this.FindForm()!);
                     toast.Show();
                     NuevoCliente();
 
