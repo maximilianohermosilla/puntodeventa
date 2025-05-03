@@ -302,7 +302,7 @@
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1447, 393);
+            tabControl1.Size = new Size(1445, 391);
             tabControl1.TabIndex = 12;
             // 
             // tabPage1
@@ -312,7 +312,7 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1439, 365);
+            tabPage1.Size = new Size(1437, 363);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Ticket 1";
             // 
@@ -321,7 +321,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1441, 367);
+            tabPage2.Size = new Size(1439, 365);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Ticket 2";
             tabPage2.UseVisualStyleBackColor = true;
@@ -533,6 +533,7 @@
             // panel5
             // 
             panel5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(tabControl1);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(0, 127);

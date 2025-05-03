@@ -38,9 +38,11 @@ namespace PuntoDeVenta.UserControls
                     selectedCliente = (ClienteResponse)listClientes!.SelectedItem!;
                     SetClienteSelected(selectedCliente);
                     labelTitleCliente.Text = "Editar Cliente";
+                    btnEliminarCliente.Enabled = true;
                 }
                 else
                 {
+                    btnEliminarCliente.Enabled = false;
                     NuevoCliente();
                 }
             }

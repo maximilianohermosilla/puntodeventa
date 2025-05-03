@@ -74,12 +74,11 @@
             // 
             // panelFooter
             // 
-            panelFooter.BorderStyle = BorderStyle.FixedSingle;
             panelFooter.Controls.Add(btnGuardarProducto);
             panelFooter.Dock = DockStyle.Bottom;
-            panelFooter.Location = new Point(0, 533);
+            panelFooter.Location = new Point(0, 531);
             panelFooter.Name = "panelFooter";
-            panelFooter.Size = new Size(1449, 51);
+            panelFooter.Size = new Size(1447, 51);
             panelFooter.TabIndex = 10;
             // 
             // btnGuardarProducto
@@ -131,7 +130,7 @@
             panelNuevoProducto.ForeColor = SystemColors.ButtonHighlight;
             panelNuevoProducto.Location = new Point(0, 0);
             panelNuevoProducto.Name = "panelNuevoProducto";
-            panelNuevoProducto.Size = new Size(1449, 584);
+            panelNuevoProducto.Size = new Size(1447, 582);
             panelNuevoProducto.TabIndex = 0;
             // 
             // labelInventario
@@ -304,9 +303,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(panelNuevoProducto);
             Name = "NuevoProductoControl";
-            Size = new Size(1449, 584);
+            Size = new Size(1447, 582);
             panelFooter.ResumeLayout(false);
             panelNuevoProducto.ResumeLayout(false);
             panelNuevoProducto.PerformLayout();

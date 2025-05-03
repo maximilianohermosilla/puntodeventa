@@ -304,6 +304,7 @@ namespace PuntoDeVenta.UserControls
             btnEliminarCliente.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEliminarCliente.UseVisualStyleBackColor = false;
             btnEliminarCliente.Click += btnEliminarCliente_Click;
+            btnEliminarCliente.Enabled = selectedCliente.Id > 0;
             // 
             // btnNuevoCliente
             // 

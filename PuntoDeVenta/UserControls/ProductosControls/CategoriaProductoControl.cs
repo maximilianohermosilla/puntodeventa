@@ -137,9 +137,11 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                     selectedCategoria = (CategoriaProductoResponse)listCategorias!.SelectedItem!;
                     SetCategoriaSelected(selectedCategoria);
                     labelCategoria.Text = "Editar Categoría";
+                    btnEliminarCategoria.Enabled = true;
                 }
                 else
                 {
+                    btnEliminarCategoria.Enabled = false;
                     NuevaCategoria();
                 }
             }

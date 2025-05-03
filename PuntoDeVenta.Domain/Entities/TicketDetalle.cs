@@ -8,10 +8,11 @@
         public float Descuento { get; set; }
         public float PrecioFinal { get; set; }
         public bool PorMayor { get; set; }
-        public int IdProducto { get; set; }
+        public int? IdProducto { get; set; }
         public int IdTicket { get; set; }
-        
-        public virtual Producto Producto { get; set; }
+        public string? ProductoComun { get; set; } = null;
+
+        public virtual Producto? Producto { get; set; }
         public virtual Ticket Ticket { get; set; }
     }
 }

@@ -237,6 +237,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             btnEliminarCategoria.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEliminarCategoria.UseVisualStyleBackColor = false;
             btnEliminarCategoria.Click += btnEliminarCategoria_Click;
+            btnEliminarCategoria.Enabled = selectedCategoria.Id > 0;
             // 
             // btnNuevaCategoria
             // 
