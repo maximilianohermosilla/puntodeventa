@@ -42,11 +42,12 @@
             // 
             panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelHeader.BackColor = Color.FromArgb(50, 50, 50);
+            panelHeader.BorderStyle = BorderStyle.FixedSingle;
             panelHeader.Controls.Add(title);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1458, 28);
+            panelHeader.Size = new Size(1456, 28);
             panelHeader.TabIndex = 3;
             // 
             // title
@@ -70,7 +71,7 @@
             panelNavbar.ForeColor = SystemColors.ButtonHighlight;
             panelNavbar.Location = new Point(0, 28);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(1458, 48);
+            panelNavbar.Size = new Size(1456, 48);
             panelNavbar.TabIndex = 18;
             // 
             // btnMostrarOpciones
@@ -78,10 +79,10 @@
             btnMostrarOpciones.BackColor = Color.FromArgb(0, 80, 200);
             btnMostrarOpciones.BackgroundImageLayout = ImageLayout.None;
             btnMostrarOpciones.FlatAppearance.BorderColor = Color.Silver;
+            btnMostrarOpciones.FlatAppearance.BorderSize = 0;
             btnMostrarOpciones.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnMostrarOpciones.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnMostrarOpciones.FlatStyle = FlatStyle.Flat;
-            btnMostrarOpciones.FlatAppearance.BorderSize = 0;
             btnMostrarOpciones.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnMostrarOpciones.ForeColor = SystemColors.ButtonHighlight;
             btnMostrarOpciones.Image = (Image)resources.GetObject("btnMostrarOpciones.Image");
@@ -97,24 +98,26 @@
             // panelMain
             // 
             panelMain.BackColor = Color.FromArgb(49, 66, 82);
+            panelMain.BorderStyle = BorderStyle.FixedSingle;
             panelMain.Dock = DockStyle.Fill;
             panelMain.ForeColor = SystemColors.ButtonHighlight;
             panelMain.Location = new Point(0, 76);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1458, 514);
+            panelMain.Size = new Size(1456, 512);
             panelMain.TabIndex = 19;
             // 
-            // Configuracion
+            // ConfiguracionControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 66, 82);
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(panelMain);
             Controls.Add(panelNavbar);
             Controls.Add(panelHeader);
             ForeColor = SystemColors.ButtonHighlight;
-            Name = "Configuracion";
-            Size = new Size(1458, 590);
+            Name = "ConfiguracionControl";
+            Size = new Size(1456, 588);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             panelNavbar.ResumeLayout(false);

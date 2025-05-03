@@ -55,11 +55,12 @@ namespace PuntoDeVenta.UserControls
             // 
             panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelHeader.BackColor = Color.SteelBlue;
+            panelHeader.BorderStyle = BorderStyle.FixedSingle;
             panelHeader.Controls.Add(ventasTitle);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1449, 28);
+            panelHeader.Size = new Size(1447, 28);
             panelHeader.TabIndex = 1;
             // 
             // ventasTitle
@@ -90,7 +91,7 @@ namespace PuntoDeVenta.UserControls
             panelNavbar.ForeColor = SystemColors.ButtonHighlight;
             panelNavbar.Location = new Point(0, 28);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(1449, 48);
+            panelNavbar.Size = new Size(1447, 48);
             panelNavbar.TabIndex = 16;
             // 
             // btnCatalogo
@@ -98,10 +99,10 @@ namespace PuntoDeVenta.UserControls
             btnCatalogo.BackColor = Color.FromArgb(0, 80, 200);
             btnCatalogo.BackgroundImageLayout = ImageLayout.None;
             btnCatalogo.FlatAppearance.BorderColor = Color.Silver;
+            btnCatalogo.FlatAppearance.BorderSize = 0;
             btnCatalogo.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnCatalogo.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnCatalogo.FlatStyle = FlatStyle.Flat;
-            btnCatalogo.FlatAppearance.BorderSize = 0;
             btnCatalogo.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCatalogo.ForeColor = SystemColors.ButtonHighlight;
             btnCatalogo.Image = (Image)resources.GetObject("btnCatalogo.Image");
@@ -120,10 +121,10 @@ namespace PuntoDeVenta.UserControls
             btnNuevoProducto.BackColor = Color.FromArgb(0, 80, 200);
             btnNuevoProducto.BackgroundImageLayout = ImageLayout.None;
             btnNuevoProducto.FlatAppearance.BorderColor = Color.Silver;
+            btnNuevoProducto.FlatAppearance.BorderSize = 0;
             btnNuevoProducto.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnNuevoProducto.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnNuevoProducto.FlatStyle = FlatStyle.Flat;
-            btnNuevoProducto.FlatAppearance.BorderSize = 0;
             btnNuevoProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnNuevoProducto.ForeColor = SystemColors.ButtonHighlight;
             btnNuevoProducto.Image = (Image)resources.GetObject("btnNuevoProducto.Image");
@@ -142,10 +143,10 @@ namespace PuntoDeVenta.UserControls
             btnModificarProducto.BackColor = Color.FromArgb(0, 80, 200);
             btnModificarProducto.BackgroundImageLayout = ImageLayout.None;
             btnModificarProducto.FlatAppearance.BorderColor = Color.Silver;
+            btnModificarProducto.FlatAppearance.BorderSize = 0;
             btnModificarProducto.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnModificarProducto.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnModificarProducto.FlatStyle = FlatStyle.Flat;
-            btnModificarProducto.FlatAppearance.BorderSize = 0;
             btnModificarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnModificarProducto.ForeColor = SystemColors.ButtonHighlight;
             btnModificarProducto.Image = (Image)resources.GetObject("btnModificarProducto.Image");
@@ -164,10 +165,10 @@ namespace PuntoDeVenta.UserControls
             btnEliminarProducto.BackColor = Color.FromArgb(0, 80, 200);
             btnEliminarProducto.BackgroundImageLayout = ImageLayout.None;
             btnEliminarProducto.FlatAppearance.BorderColor = Color.Silver;
+            btnEliminarProducto.FlatAppearance.BorderSize = 0;
             btnEliminarProducto.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnEliminarProducto.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnEliminarProducto.FlatStyle = FlatStyle.Flat;
-            btnEliminarProducto.FlatAppearance.BorderSize = 0;
             btnEliminarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminarProducto.ForeColor = SystemColors.ButtonHighlight;
             btnEliminarProducto.Image = (Image)resources.GetObject("btnEliminarProducto.Image");
@@ -186,10 +187,10 @@ namespace PuntoDeVenta.UserControls
             btnCategorias.BackColor = Color.FromArgb(0, 80, 200);
             btnCategorias.BackgroundImageLayout = ImageLayout.None;
             btnCategorias.FlatAppearance.BorderColor = Color.Silver;
+            btnCategorias.FlatAppearance.BorderSize = 0;
             btnCategorias.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnCategorias.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnCategorias.FlatStyle = FlatStyle.Flat;
-            btnCategorias.FlatAppearance.BorderSize = 0;
             btnCategorias.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCategorias.ForeColor = SystemColors.ButtonHighlight;
             btnCategorias.Image = (Image)resources.GetObject("btnCategorias.Image");
@@ -208,10 +209,10 @@ namespace PuntoDeVenta.UserControls
             btnImportar.BackColor = Color.FromArgb(0, 80, 200);
             btnImportar.BackgroundImageLayout = ImageLayout.None;
             btnImportar.FlatAppearance.BorderColor = Color.Silver;
+            btnImportar.FlatAppearance.BorderSize = 0;
             btnImportar.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnImportar.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnImportar.FlatStyle = FlatStyle.Flat;
-            btnImportar.FlatAppearance.BorderSize = 0;
             btnImportar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnImportar.ForeColor = SystemColors.ButtonHighlight;
             btnImportar.Image = (Image)resources.GetObject("btnImportar.Image");
@@ -230,10 +231,10 @@ namespace PuntoDeVenta.UserControls
             btnVentasPeriodo.BackColor = Color.FromArgb(0, 80, 200);
             btnVentasPeriodo.BackgroundImageLayout = ImageLayout.None;
             btnVentasPeriodo.FlatAppearance.BorderColor = Color.Silver;
+            btnVentasPeriodo.FlatAppearance.BorderSize = 0;
             btnVentasPeriodo.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnVentasPeriodo.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnVentasPeriodo.FlatStyle = FlatStyle.Flat;
-            btnVentasPeriodo.FlatAppearance.BorderSize = 0;
             btnVentasPeriodo.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVentasPeriodo.ForeColor = SystemColors.ButtonHighlight;
             btnVentasPeriodo.Image = (Image)resources.GetObject("btnVentasPeriodo.Image");
@@ -252,10 +253,10 @@ namespace PuntoDeVenta.UserControls
             btnPromociones.BackColor = Color.FromArgb(0, 80, 200);
             btnPromociones.BackgroundImageLayout = ImageLayout.None;
             btnPromociones.FlatAppearance.BorderColor = Color.Silver;
+            btnPromociones.FlatAppearance.BorderSize = 0;
             btnPromociones.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnPromociones.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnPromociones.FlatStyle = FlatStyle.Flat;
-            btnPromociones.FlatAppearance.BorderSize = 0;
             btnPromociones.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPromociones.ForeColor = SystemColors.ButtonHighlight;
             btnPromociones.Image = (Image)resources.GetObject("btnPromociones.Image");
@@ -274,11 +275,15 @@ namespace PuntoDeVenta.UserControls
             panelMain.Controls.Add(categoriaProducto1);
             panelMain.Controls.Add(nuevoProducto1);
             panelMain.Controls.Add(catalogoProductos1);
+            panelMain.BackColor = Color.FromArgb(49, 66, 82);
+            panelMain.BorderStyle = BorderStyle.FixedSingle;
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(0, 76);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1449, 508);
+            panelMain.Size = new Size(1447, 506);
             panelMain.TabIndex = 17;
+            // 
+            // ProductosControl
             // 
             // categoriaProducto1
             // 
@@ -311,14 +316,14 @@ namespace PuntoDeVenta.UserControls
             catalogoProductos1.TabIndex = 8;
             // 
             // Productos
-            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(panelMain);
             Controls.Add(panelNavbar);
             Controls.Add(panelHeader);
-            Name = "Productos";
-            Size = new Size(1449, 584);
+            Name = "ProductosControl";
+            Size = new Size(1447, 582);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             panelNavbar.ResumeLayout(false);

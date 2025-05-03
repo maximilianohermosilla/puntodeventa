@@ -42,11 +42,12 @@
             // 
             panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelHeader.BackColor = Color.FromArgb(50, 50, 50);
+            panelHeader.BorderStyle = BorderStyle.FixedSingle;
             panelHeader.Controls.Add(title);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1460, 28);
+            panelHeader.Size = new Size(1458, 28);
             panelHeader.TabIndex = 5;
             // 
             // title
@@ -69,7 +70,7 @@
             panelNavbar.Dock = DockStyle.Top;
             panelNavbar.Location = new Point(0, 28);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(1460, 48);
+            panelNavbar.Size = new Size(1458, 48);
             panelNavbar.TabIndex = 17;
             // 
             // btnReporteDeVentas
@@ -77,10 +78,10 @@
             btnReporteDeVentas.BackColor = Color.FromArgb(0, 80, 200);
             btnReporteDeVentas.BackgroundImageLayout = ImageLayout.None;
             btnReporteDeVentas.FlatAppearance.BorderColor = Color.Silver;
+            btnReporteDeVentas.FlatAppearance.BorderSize = 0;
             btnReporteDeVentas.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnReporteDeVentas.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnReporteDeVentas.FlatStyle = FlatStyle.Flat;
-            btnReporteDeVentas.FlatAppearance.BorderSize = 0;
             btnReporteDeVentas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReporteDeVentas.ForeColor = SystemColors.ButtonHighlight;
             btnReporteDeVentas.Image = (Image)resources.GetObject("btnReporteDeVentas.Image");
@@ -98,10 +99,10 @@
             btnVentasPorCliente.BackColor = Color.FromArgb(0, 80, 200);
             btnVentasPorCliente.BackgroundImageLayout = ImageLayout.None;
             btnVentasPorCliente.FlatAppearance.BorderColor = Color.Silver;
+            btnVentasPorCliente.FlatAppearance.BorderSize = 0;
             btnVentasPorCliente.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnVentasPorCliente.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnVentasPorCliente.FlatStyle = FlatStyle.Flat;
-            btnVentasPorCliente.FlatAppearance.BorderSize = 0;
             btnVentasPorCliente.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVentasPorCliente.ForeColor = SystemColors.ButtonHighlight;
             btnVentasPorCliente.Image = (Image)resources.GetObject("btnVentasPorCliente.Image");
@@ -114,16 +115,17 @@
             btnVentasPorCliente.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnVentasPorCliente.UseVisualStyleBackColor = false;
             // 
-            // Reportes
+            // ReportesControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 66, 82);
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(panelNavbar);
             Controls.Add(panelHeader);
             ForeColor = SystemColors.ButtonHighlight;
-            Name = "Reportes";
-            Size = new Size(1460, 610);
+            Name = "ReportesControl";
+            Size = new Size(1458, 608);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             panelNavbar.ResumeLayout(false);

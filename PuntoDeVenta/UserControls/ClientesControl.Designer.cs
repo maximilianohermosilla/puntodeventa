@@ -66,6 +66,7 @@ namespace PuntoDeVenta.UserControls
             // 
             panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelHeader.BackColor = Color.LightSlateGray;
+            panelHeader.BorderStyle = BorderStyle.FixedSingle;
             panelHeader.Controls.Add(clientesTitle);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
@@ -112,6 +113,7 @@ namespace PuntoDeVenta.UserControls
             // panelMain
             // 
             panelMain.BackColor = Color.FromArgb(49, 66, 82);
+            panelMain.BorderStyle = BorderStyle.FixedSingle;
             panelMain.Controls.Add(panelPrincipal);
             panelMain.Controls.Add(panelAside);
             panelMain.Dock = DockStyle.Fill;
@@ -138,7 +140,7 @@ namespace PuntoDeVenta.UserControls
             panelPrincipal.Controls.Add(labelTitleCliente);
             panelPrincipal.Location = new Point(323, 0);
             panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(1123, 505);
+            panelPrincipal.Size = new Size(1121, 503);
             panelPrincipal.TabIndex = 0;
             // 
             // checkHabilitado
@@ -267,7 +269,7 @@ namespace PuntoDeVenta.UserControls
             panelAside.ForeColor = SystemColors.ButtonHighlight;
             panelAside.Location = new Point(0, 0);
             panelAside.Name = "panelAside";
-            panelAside.Size = new Size(317, 505);
+            panelAside.Size = new Size(317, 507);
             panelAside.TabIndex = 7;
             // 
             // panel2
@@ -276,7 +278,7 @@ namespace PuntoDeVenta.UserControls
             panel2.Controls.Add(btnEliminarCliente);
             panel2.Controls.Add(btnNuevoCliente);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 457);
+            panel2.Location = new Point(0, 459);
             panel2.Name = "panel2";
             panel2.Size = new Size(317, 48);
             panel2.TabIndex = 0;

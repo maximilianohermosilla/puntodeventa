@@ -42,11 +42,12 @@
             // 
             panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelHeader.BackColor = Color.FromArgb(50, 50, 50);
+            panelHeader.BorderStyle = BorderStyle.FixedSingle;
             panelHeader.Controls.Add(title);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1463, 28);
+            panelHeader.Size = new Size(1461, 28);
             panelHeader.TabIndex = 4;
             // 
             // title
@@ -70,7 +71,7 @@
             panelNavbar.ForeColor = SystemColors.ButtonHighlight;
             panelNavbar.Location = new Point(0, 28);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(1463, 48);
+            panelNavbar.Size = new Size(1461, 48);
             panelNavbar.TabIndex = 19;
             // 
             // btnCorteCajero
@@ -78,10 +79,10 @@
             btnCorteCajero.BackColor = Color.FromArgb(0, 80, 200);
             btnCorteCajero.BackgroundImageLayout = ImageLayout.None;
             btnCorteCajero.FlatAppearance.BorderColor = Color.Silver;
+            btnCorteCajero.FlatAppearance.BorderSize = 0;
             btnCorteCajero.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnCorteCajero.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnCorteCajero.FlatStyle = FlatStyle.Flat;
-            btnCorteCajero.FlatAppearance.BorderSize = 0;
             btnCorteCajero.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCorteCajero.ForeColor = SystemColors.ButtonHighlight;
             btnCorteCajero.Image = (Image)resources.GetObject("btnCorteCajero.Image");
@@ -97,24 +98,26 @@
             // panelMain
             // 
             panelMain.BackColor = Color.FromArgb(49, 66, 82);
+            panelMain.BorderStyle = BorderStyle.FixedSingle;
             panelMain.Dock = DockStyle.Fill;
             panelMain.ForeColor = SystemColors.ButtonHighlight;
             panelMain.Location = new Point(0, 76);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1463, 515);
+            panelMain.Size = new Size(1461, 513);
             panelMain.TabIndex = 20;
             // 
-            // Corte
+            // CorteControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 66, 82);
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(panelMain);
             Controls.Add(panelNavbar);
             Controls.Add(panelHeader);
             ForeColor = SystemColors.ButtonHighlight;
-            Name = "Corte";
-            Size = new Size(1463, 591);
+            Name = "CorteControl";
+            Size = new Size(1461, 589);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             panelNavbar.ResumeLayout(false);

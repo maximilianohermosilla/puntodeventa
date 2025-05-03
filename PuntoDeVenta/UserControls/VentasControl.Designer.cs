@@ -68,11 +68,12 @@
             // 
             panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel1.BackColor = Color.MediumSeaGreen;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(ventasTitle);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1449, 28);
+            panel1.Size = new Size(1447, 28);
             panel1.TabIndex = 0;
             // 
             // ventasTitle
@@ -108,10 +109,10 @@
             btnVarios.BackColor = Color.FromArgb(0, 80, 200);
             btnVarios.BackgroundImageLayout = ImageLayout.None;
             btnVarios.FlatAppearance.BorderColor = Color.Silver;
+            btnVarios.FlatAppearance.BorderSize = 0;
             btnVarios.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnVarios.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnVarios.FlatStyle = FlatStyle.Flat;
-            btnVarios.FlatAppearance.BorderSize = 0;
             btnVarios.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVarios.ForeColor = SystemColors.ButtonHighlight;
             btnVarios.Image = (Image)resources.GetObject("btnVarios.Image");
@@ -129,10 +130,10 @@
             btnComun.BackColor = Color.FromArgb(0, 80, 200);
             btnComun.BackgroundImageLayout = ImageLayout.None;
             btnComun.FlatAppearance.BorderColor = Color.Silver;
+            btnComun.FlatAppearance.BorderSize = 0;
             btnComun.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnComun.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnComun.FlatStyle = FlatStyle.Flat;
-            btnComun.FlatAppearance.BorderSize = 0;
             btnComun.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnComun.ForeColor = SystemColors.ButtonHighlight;
             btnComun.Image = (Image)resources.GetObject("btnComun.Image");
@@ -150,10 +151,10 @@
             btnBuscar.BackColor = Color.FromArgb(0, 80, 200);
             btnBuscar.BackgroundImageLayout = ImageLayout.None;
             btnBuscar.FlatAppearance.BorderColor = Color.Silver;
+            btnBuscar.FlatAppearance.BorderSize = 0;
             btnBuscar.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnBuscar.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnBuscar.FlatStyle = FlatStyle.Flat;
-            btnBuscar.FlatAppearance.BorderSize = 0;
             btnBuscar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
             btnBuscar.Image = (Image)resources.GetObject("btnBuscar.Image");
@@ -171,10 +172,10 @@
             btnEntradas.BackColor = Color.FromArgb(0, 80, 200);
             btnEntradas.BackgroundImageLayout = ImageLayout.None;
             btnEntradas.FlatAppearance.BorderColor = Color.Silver;
+            btnEntradas.FlatAppearance.BorderSize = 0;
             btnEntradas.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnEntradas.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnEntradas.FlatStyle = FlatStyle.Flat;
-            btnEntradas.FlatAppearance.BorderSize = 0;
             btnEntradas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEntradas.ForeColor = SystemColors.ButtonHighlight;
             btnEntradas.Image = (Image)resources.GetObject("btnEntradas.Image");
@@ -192,10 +193,10 @@
             btnSalidas.BackColor = Color.FromArgb(0, 80, 200);
             btnSalidas.BackgroundImageLayout = ImageLayout.None;
             btnSalidas.FlatAppearance.BorderColor = Color.Silver;
+            btnSalidas.FlatAppearance.BorderSize = 0;
             btnSalidas.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnSalidas.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnSalidas.FlatStyle = FlatStyle.Flat;
-            btnSalidas.FlatAppearance.BorderSize = 0;
             btnSalidas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSalidas.ForeColor = SystemColors.ButtonHighlight;
             btnSalidas.Image = (Image)resources.GetObject("btnSalidas.Image");
@@ -213,10 +214,10 @@
             btnPorMayor.BackColor = Color.FromArgb(0, 80, 200);
             btnPorMayor.BackgroundImageLayout = ImageLayout.None;
             btnPorMayor.FlatAppearance.BorderColor = Color.Silver;
+            btnPorMayor.FlatAppearance.BorderSize = 0;
             btnPorMayor.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnPorMayor.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnPorMayor.FlatStyle = FlatStyle.Flat;
-            btnPorMayor.FlatAppearance.BorderSize = 0;
             btnPorMayor.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPorMayor.ForeColor = SystemColors.ButtonHighlight;
             btnPorMayor.Image = (Image)resources.GetObject("btnPorMayor.Image");
@@ -234,10 +235,10 @@
             btnVerificador.BackColor = Color.FromArgb(0, 80, 200);
             btnVerificador.BackgroundImageLayout = ImageLayout.None;
             btnVerificador.FlatAppearance.BorderColor = Color.Silver;
+            btnVerificador.FlatAppearance.BorderSize = 0;
             btnVerificador.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnVerificador.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnVerificador.FlatStyle = FlatStyle.Flat;
-            btnVerificador.FlatAppearance.BorderSize = 0;
             btnVerificador.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVerificador.ForeColor = SystemColors.ButtonHighlight;
             btnVerificador.Image = (Image)resources.GetObject("btnVerificador.Image");
@@ -255,10 +256,10 @@
             btnAgregarProducto.BackColor = Color.FromArgb(0, 80, 200);
             btnAgregarProducto.BackgroundImageLayout = ImageLayout.None;
             btnAgregarProducto.FlatAppearance.BorderColor = Color.Silver;
+            btnAgregarProducto.FlatAppearance.BorderSize = 0;
             btnAgregarProducto.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnAgregarProducto.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnAgregarProducto.FlatStyle = FlatStyle.Flat;
-            btnAgregarProducto.FlatAppearance.BorderSize = 0;
             btnAgregarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAgregarProducto.ForeColor = SystemColors.ButtonHighlight;
             btnAgregarProducto.Image = (Image)resources.GetObject("btnAgregarProducto.Image");
@@ -277,10 +278,10 @@
             btnEliminarProducto.BackColor = Color.FromArgb(0, 80, 200);
             btnEliminarProducto.BackgroundImageLayout = ImageLayout.None;
             btnEliminarProducto.FlatAppearance.BorderColor = Color.Silver;
+            btnEliminarProducto.FlatAppearance.BorderSize = 0;
             btnEliminarProducto.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnEliminarProducto.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnEliminarProducto.FlatStyle = FlatStyle.Flat;
-            btnEliminarProducto.FlatAppearance.BorderSize = 0;
             btnEliminarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminarProducto.ForeColor = SystemColors.ButtonHighlight;
             btnEliminarProducto.Image = (Image)resources.GetObject("btnEliminarProducto.Image");
@@ -301,7 +302,7 @@
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1449, 395);
+            tabControl1.Size = new Size(1447, 393);
             tabControl1.TabIndex = 12;
             // 
             // tabPage1
@@ -311,7 +312,7 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1441, 367);
+            tabPage1.Size = new Size(1439, 365);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Ticket 1";
             // 
@@ -334,9 +335,9 @@
             panel2.Controls.Add(btnVentasDevoluciones);
             panel2.Dock = DockStyle.Bottom;
             panel2.ForeColor = SystemColors.ButtonHighlight;
-            panel2.Location = new Point(0, 563);
+            panel2.Location = new Point(0, 561);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1449, 43);
+            panel2.Size = new Size(1447, 43);
             panel2.TabIndex = 13;
             // 
             // btnReimprimir
@@ -345,14 +346,14 @@
             btnReimprimir.BackColor = Color.FromArgb(0, 80, 200);
             btnReimprimir.BackgroundImageLayout = ImageLayout.None;
             btnReimprimir.FlatAppearance.BorderColor = Color.Silver;
+            btnReimprimir.FlatAppearance.BorderSize = 0;
             btnReimprimir.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnReimprimir.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnReimprimir.FlatStyle = FlatStyle.Flat;
-            btnReimprimir.FlatAppearance.BorderSize = 0;
             btnReimprimir.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReimprimir.ForeColor = SystemColors.ButtonHighlight;
             btnReimprimir.Image = (Image)resources.GetObject("btnReimprimir.Image");
-            btnReimprimir.Location = new Point(993, 2);
+            btnReimprimir.Location = new Point(991, 2);
             btnReimprimir.Name = "btnReimprimir";
             btnReimprimir.Size = new Size(223, 36);
             btnReimprimir.TabIndex = 16;
@@ -367,14 +368,14 @@
             btnVentasDevoluciones.BackColor = Color.FromArgb(0, 80, 200);
             btnVentasDevoluciones.BackgroundImageLayout = ImageLayout.None;
             btnVentasDevoluciones.FlatAppearance.BorderColor = Color.Silver;
+            btnVentasDevoluciones.FlatAppearance.BorderSize = 0;
             btnVentasDevoluciones.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnVentasDevoluciones.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnVentasDevoluciones.FlatStyle = FlatStyle.Flat;
-            btnVentasDevoluciones.FlatAppearance.BorderSize = 0;
             btnVentasDevoluciones.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVentasDevoluciones.ForeColor = SystemColors.ButtonHighlight;
             btnVentasDevoluciones.Image = (Image)resources.GetObject("btnVentasDevoluciones.Image");
-            btnVentasDevoluciones.Location = new Point(1222, 2);
+            btnVentasDevoluciones.Location = new Point(1220, 2);
             btnVentasDevoluciones.Name = "btnVentasDevoluciones";
             btnVentasDevoluciones.Size = new Size(222, 36);
             btnVentasDevoluciones.TabIndex = 15;
@@ -395,9 +396,9 @@
             panel3.Controls.Add(btnCambiar);
             panel3.Dock = DockStyle.Bottom;
             panel3.ForeColor = SystemColors.ButtonHighlight;
-            panel3.Location = new Point(0, 522);
+            panel3.Location = new Point(0, 520);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1449, 41);
+            panel3.Size = new Size(1447, 41);
             panel3.TabIndex = 14;
             // 
             // btnCobrar
@@ -406,14 +407,14 @@
             btnCobrar.BackColor = Color.FromArgb(0, 80, 200);
             btnCobrar.BackgroundImageLayout = ImageLayout.None;
             btnCobrar.FlatAppearance.BorderColor = Color.Silver;
+            btnCobrar.FlatAppearance.BorderSize = 0;
             btnCobrar.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnCobrar.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnCobrar.FlatStyle = FlatStyle.Flat;
-            btnCobrar.FlatAppearance.BorderSize = 0;
             btnCobrar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCobrar.ForeColor = SystemColors.ButtonHighlight;
             btnCobrar.Image = (Image)resources.GetObject("btnCobrar.Image");
-            btnCobrar.Location = new Point(1323, 2);
+            btnCobrar.Location = new Point(1321, 2);
             btnCobrar.Name = "btnCobrar";
             btnCobrar.Size = new Size(122, 34);
             btnCobrar.TabIndex = 25;
@@ -427,10 +428,10 @@
             btnAsignarCliente.BackColor = Color.FromArgb(0, 80, 200);
             btnAsignarCliente.BackgroundImageLayout = ImageLayout.None;
             btnAsignarCliente.FlatAppearance.BorderColor = Color.Silver;
+            btnAsignarCliente.FlatAppearance.BorderSize = 0;
             btnAsignarCliente.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnAsignarCliente.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnAsignarCliente.FlatStyle = FlatStyle.Flat;
-            btnAsignarCliente.FlatAppearance.BorderSize = 0;
             btnAsignarCliente.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAsignarCliente.ForeColor = SystemColors.ButtonHighlight;
             btnAsignarCliente.Image = (Image)resources.GetObject("btnAsignarCliente.Image");
@@ -448,10 +449,10 @@
             btnEliminarTicket.BackColor = Color.FromArgb(0, 80, 200);
             btnEliminarTicket.BackgroundImageLayout = ImageLayout.None;
             btnEliminarTicket.FlatAppearance.BorderColor = Color.Silver;
+            btnEliminarTicket.FlatAppearance.BorderSize = 0;
             btnEliminarTicket.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnEliminarTicket.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnEliminarTicket.FlatStyle = FlatStyle.Flat;
-            btnEliminarTicket.FlatAppearance.BorderSize = 0;
             btnEliminarTicket.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminarTicket.ForeColor = SystemColors.ButtonHighlight;
             btnEliminarTicket.Image = (Image)resources.GetObject("btnEliminarTicket.Image");
@@ -469,10 +470,10 @@
             btnPendiente.BackColor = Color.FromArgb(0, 80, 200);
             btnPendiente.BackgroundImageLayout = ImageLayout.None;
             btnPendiente.FlatAppearance.BorderColor = Color.Silver;
+            btnPendiente.FlatAppearance.BorderSize = 0;
             btnPendiente.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnPendiente.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnPendiente.FlatStyle = FlatStyle.Flat;
-            btnPendiente.FlatAppearance.BorderSize = 0;
             btnPendiente.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPendiente.ForeColor = SystemColors.ButtonHighlight;
             btnPendiente.Image = (Image)resources.GetObject("btnPendiente.Image");
@@ -490,10 +491,10 @@
             btnCambiar.BackColor = Color.FromArgb(0, 80, 200);
             btnCambiar.BackgroundImageLayout = ImageLayout.None;
             btnCambiar.FlatAppearance.BorderColor = Color.Silver;
+            btnCambiar.FlatAppearance.BorderSize = 0;
             btnCambiar.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnCambiar.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnCambiar.FlatStyle = FlatStyle.Flat;
-            btnCambiar.FlatAppearance.BorderSize = 0;
             btnCambiar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCambiar.ForeColor = SystemColors.ButtonHighlight;
             btnCambiar.Image = (Image)resources.GetObject("btnCambiar.Image");
@@ -526,7 +527,7 @@
             panel4.ForeColor = SystemColors.ButtonHighlight;
             panel4.Location = new Point(0, 28);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1449, 99);
+            panel4.Size = new Size(1447, 99);
             panel4.TabIndex = 15;
             // 
             // panel5
@@ -536,21 +537,22 @@
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(0, 127);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1449, 395);
+            panel5.Size = new Size(1447, 393);
             panel5.TabIndex = 15;
             // 
-            // Ventas
+            // VentasControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 66, 82);
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Name = "Ventas";
-            Size = new Size(1449, 606);
+            Name = "VentasControl";
+            Size = new Size(1447, 604);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             tabControl1.ResumeLayout(false);

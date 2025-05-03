@@ -45,11 +45,12 @@ namespace PuntoDeVenta.UserControls
             // 
             panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelHeader.BackColor = Color.Teal;
+            panelHeader.BorderStyle = BorderStyle.FixedSingle;
             panelHeader.Controls.Add(ventasTitle);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1449, 28);
+            panelHeader.Size = new Size(1447, 28);
             panelHeader.TabIndex = 1;
             // 
             // ventasTitle
@@ -72,7 +73,7 @@ namespace PuntoDeVenta.UserControls
             panelNavbar.Dock = DockStyle.Top;
             panelNavbar.Location = new Point(0, 28);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(1449, 48);
+            panelNavbar.Size = new Size(1447, 48);
             panelNavbar.TabIndex = 16;
             // 
             // btnEstadoCuenta
@@ -80,10 +81,10 @@ namespace PuntoDeVenta.UserControls
             btnEstadoCuenta.BackColor = Color.FromArgb(0, 80, 200);
             btnEstadoCuenta.BackgroundImageLayout = ImageLayout.None;
             btnEstadoCuenta.FlatAppearance.BorderColor = Color.Silver;
+            btnEstadoCuenta.FlatAppearance.BorderSize = 0;
             btnEstadoCuenta.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnEstadoCuenta.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnEstadoCuenta.FlatStyle = FlatStyle.Flat;
-            btnEstadoCuenta.FlatAppearance.BorderSize = 0;
             btnEstadoCuenta.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEstadoCuenta.ForeColor = SystemColors.ButtonHighlight;
             btnEstadoCuenta.Image = (Image)resources.GetObject("btnEstadoCuenta.Image");
@@ -102,10 +103,10 @@ namespace PuntoDeVenta.UserControls
             btnReporteSaldo.BackColor = Color.FromArgb(0, 80, 200);
             btnReporteSaldo.BackgroundImageLayout = ImageLayout.None;
             btnReporteSaldo.FlatAppearance.BorderColor = Color.Silver;
+            btnReporteSaldo.FlatAppearance.BorderSize = 0;
             btnReporteSaldo.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnReporteSaldo.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnReporteSaldo.FlatStyle = FlatStyle.Flat;
-            btnReporteSaldo.FlatAppearance.BorderSize = 0;
             btnReporteSaldo.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReporteSaldo.ForeColor = SystemColors.ButtonHighlight;
             btnReporteSaldo.Image = (Image)resources.GetObject("btnReporteSaldo.Image");
@@ -120,23 +121,25 @@ namespace PuntoDeVenta.UserControls
             // 
             // panelMain
             // 
+            panelMain.BorderStyle = BorderStyle.FixedSingle;
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(0, 76);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1449, 508);
+            panelMain.Size = new Size(1447, 506);
             panelMain.TabIndex = 17;
             // 
-            // Creditos
+            // CreditosControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 66, 82);
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(panelMain);
             Controls.Add(panelNavbar);
             Controls.Add(panelHeader);
             ForeColor = SystemColors.ButtonHighlight;
-            Name = "Creditos";
-            Size = new Size(1449, 584);
+            Name = "CreditosControl";
+            Size = new Size(1447, 582);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             panelNavbar.ResumeLayout(false);

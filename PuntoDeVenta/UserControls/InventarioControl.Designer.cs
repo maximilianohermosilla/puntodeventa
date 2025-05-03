@@ -48,11 +48,12 @@ namespace PuntoDeVenta.UserControls
             // 
             panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelHeader.BackColor = Color.DarkSlateBlue;
+            panelHeader.BorderStyle = BorderStyle.FixedSingle;
             panelHeader.Controls.Add(ventasTitle);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1449, 28);
+            panelHeader.Size = new Size(1447, 28);
             panelHeader.TabIndex = 1;
             // 
             // ventasTitle
@@ -80,7 +81,7 @@ namespace PuntoDeVenta.UserControls
             panelNavbar.ForeColor = SystemColors.ButtonHighlight;
             panelNavbar.Location = new Point(0, 28);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(1449, 48);
+            panelNavbar.Size = new Size(1447, 48);
             panelNavbar.TabIndex = 16;
             // 
             // btnAgregar
@@ -88,10 +89,10 @@ namespace PuntoDeVenta.UserControls
             btnAgregar.BackColor = Color.FromArgb(0, 80, 200);
             btnAgregar.BackgroundImageLayout = ImageLayout.None;
             btnAgregar.FlatAppearance.BorderColor = Color.Silver;
+            btnAgregar.FlatAppearance.BorderSize = 0;
             btnAgregar.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnAgregar.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnAgregar.FlatStyle = FlatStyle.Flat;
-            btnAgregar.FlatAppearance.BorderSize = 0;
             btnAgregar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAgregar.ForeColor = SystemColors.ButtonHighlight;
             btnAgregar.Image = (Image)resources.GetObject("btnAgregar.Image");
@@ -110,10 +111,10 @@ namespace PuntoDeVenta.UserControls
             btnAjustes.BackColor = Color.FromArgb(0, 80, 200);
             btnAjustes.BackgroundImageLayout = ImageLayout.None;
             btnAjustes.FlatAppearance.BorderColor = Color.Silver;
+            btnAjustes.FlatAppearance.BorderSize = 0;
             btnAjustes.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnAjustes.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnAjustes.FlatStyle = FlatStyle.Flat;
-            btnAjustes.FlatAppearance.BorderSize = 0;
             btnAjustes.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAjustes.ForeColor = SystemColors.ButtonHighlight;
             btnAjustes.Image = (Image)resources.GetObject("btnAjustes.Image");
@@ -131,10 +132,10 @@ namespace PuntoDeVenta.UserControls
             btnProductosBajos.BackColor = Color.FromArgb(0, 80, 200);
             btnProductosBajos.BackgroundImageLayout = ImageLayout.None;
             btnProductosBajos.FlatAppearance.BorderColor = Color.Silver;
+            btnProductosBajos.FlatAppearance.BorderSize = 0;
             btnProductosBajos.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnProductosBajos.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnProductosBajos.FlatStyle = FlatStyle.Flat;
-            btnProductosBajos.FlatAppearance.BorderSize = 0;
             btnProductosBajos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnProductosBajos.ForeColor = SystemColors.ButtonHighlight;
             btnProductosBajos.Image = (Image)resources.GetObject("btnProductosBajos.Image");
@@ -152,10 +153,10 @@ namespace PuntoDeVenta.UserControls
             btnReporteInventario.BackColor = Color.FromArgb(0, 80, 200);
             btnReporteInventario.BackgroundImageLayout = ImageLayout.None;
             btnReporteInventario.FlatAppearance.BorderColor = Color.Silver;
+            btnReporteInventario.FlatAppearance.BorderSize = 0;
             btnReporteInventario.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnReporteInventario.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnReporteInventario.FlatStyle = FlatStyle.Flat;
-            btnReporteInventario.FlatAppearance.BorderSize = 0;
             btnReporteInventario.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReporteInventario.ForeColor = SystemColors.ButtonHighlight;
             btnReporteInventario.Image = (Image)resources.GetObject("btnReporteInventario.Image");
@@ -173,10 +174,10 @@ namespace PuntoDeVenta.UserControls
             btnReporteMovimientos.BackColor = Color.FromArgb(0, 80, 200);
             btnReporteMovimientos.BackgroundImageLayout = ImageLayout.None;
             btnReporteMovimientos.FlatAppearance.BorderColor = Color.Silver;
+            btnReporteMovimientos.FlatAppearance.BorderSize = 0;
             btnReporteMovimientos.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnReporteMovimientos.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnReporteMovimientos.FlatStyle = FlatStyle.Flat;
-            btnReporteMovimientos.FlatAppearance.BorderSize = 0;
             btnReporteMovimientos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReporteMovimientos.ForeColor = SystemColors.ButtonHighlight;
             btnReporteMovimientos.Image = (Image)resources.GetObject("btnReporteMovimientos.Image");
@@ -192,22 +193,24 @@ namespace PuntoDeVenta.UserControls
             // panelMain
             // 
             panelMain.BackColor = Color.FromArgb(49, 66, 82);
+            panelMain.BorderStyle = BorderStyle.FixedSingle;
             panelMain.Dock = DockStyle.Fill;
             panelMain.ForeColor = SystemColors.ButtonHighlight;
             panelMain.Location = new Point(0, 76);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1449, 508);
+            panelMain.Size = new Size(1447, 506);
             panelMain.TabIndex = 17;
             // 
-            // Inventario
+            // InventarioControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(panelMain);
             Controls.Add(panelNavbar);
             Controls.Add(panelHeader);
-            Name = "Inventario";
-            Size = new Size(1449, 584);
+            Name = "InventarioControl";
+            Size = new Size(1447, 582);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             panelNavbar.ResumeLayout(false);

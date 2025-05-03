@@ -42,6 +42,7 @@
             // 
             panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelHeader.BackColor = Color.FromArgb(50, 50, 50);
+            panelHeader.BorderStyle = BorderStyle.FixedSingle;
             panelHeader.Controls.Add(comprasTitle);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
@@ -78,10 +79,10 @@
             btnCompras.BackColor = Color.FromArgb(0, 80, 200);
             btnCompras.BackgroundImageLayout = ImageLayout.None;
             btnCompras.FlatAppearance.BorderColor = Color.Silver;
+            btnCompras.FlatAppearance.BorderSize = 0;
             btnCompras.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnCompras.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnCompras.FlatStyle = FlatStyle.Flat;
-            btnCompras.FlatAppearance.BorderSize = 0;
             btnCompras.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCompras.ForeColor = SystemColors.ButtonHighlight;
             btnCompras.Image = (Image)resources.GetObject("btnCompras.Image");
@@ -97,6 +98,7 @@
             // panelMain
             // 
             panelMain.BackColor = Color.FromArgb(49, 66, 82);
+            panelMain.BorderStyle = BorderStyle.FixedSingle;
             panelMain.Dock = DockStyle.Fill;
             panelMain.ForeColor = SystemColors.ButtonHighlight;
             panelMain.Location = new Point(0, 76);
@@ -104,7 +106,7 @@
             panelMain.Size = new Size(1460, 504);
             panelMain.TabIndex = 18;
             // 
-            // Compras
+            // ComprasControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -113,7 +115,7 @@
             Controls.Add(panelNavbar);
             Controls.Add(panelHeader);
             ForeColor = SystemColors.ButtonHighlight;
-            Name = "Compras";
+            Name = "ComprasControl";
             Size = new Size(1460, 580);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();

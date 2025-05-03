@@ -121,7 +121,7 @@
   <data name="btnEstadoCuenta.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAc9JREFUSEvlkktLAlEYhsfa9g+ESMK/oJVG4qZAhSikRdCmZVGblkFIVFjiBQIt
+        vwAADr8BOAVTJAAAAc9JREFUSEvlkktLAlEYhsfa9g+ESMK/oJVG4qZAhSikRdCmZVGblkFIVFjiBQIt
         kSJvYSFuQtqEiyBoEy26LPsBFYTYkJin+Q7fGc4cNdSRNr3wMDNnvnneM8NI/ydOp7OgQABc6k2YVOAF
         b+uLIpIFsYgFR7tLEyEl65tSz3G08ygPLzMJQIoeDcfrk/oKHA7HhygV0VXQbNciugq+Ts2qaGd2UCNm
         11AAc/hIZ+ELfkPODL/hI52nmVAER7tL/cL1rMqqZULDyUnO24+j0kjQTkYDdjdeth+NkKN+4XnCEckS
@@ -135,7 +135,7 @@
   <data name="btnReporteSaldo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAAQlJREFUSEtjIAX0rjzGOWHJ2i9QLnXB5OXr1CYsWfe/f/F6BxANFSYPOIanKrtG
+        vwAADr8BOAVTJAAAAQlJREFUSEtjIAX0rjzGOWHJ2i9QLnXB5OXr1CYsWfe/f/F6BxANFSYPOIanKrtG
         pRwD4c65K26CcP+iNd/6Fq72B8n3LlzzuXv+iocwOYja5ENgzYSAe3SSOlDDfxgGuZYQRlYPNQY3ACoC
         ufw/DGAzEB3DAEifS3SKBdQo7ADdgu8/f/5/9votTowMQPqcI5MsoUZhB+gWkAJGLSAIyLLg/I07YAwC
         tx4+wYphgGILvnz7jhXDAFkWkAIGpwXWe76BMTGALAuYV34BY2Q2OoYBsiw4/uYPGBMDyLKAFDBCLHCJ

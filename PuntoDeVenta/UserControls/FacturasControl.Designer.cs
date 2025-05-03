@@ -43,11 +43,12 @@
             // 
             panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelHeader.BackColor = Color.FromArgb(50, 50, 50);
+            panelHeader.BorderStyle = BorderStyle.FixedSingle;
             panelHeader.Controls.Add(title);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1451, 28);
+            panelHeader.Size = new Size(1449, 28);
             panelHeader.TabIndex = 5;
             // 
             // title
@@ -70,7 +71,7 @@
             panelNavbar.Dock = DockStyle.Top;
             panelNavbar.Location = new Point(0, 28);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(1451, 48);
+            panelNavbar.Size = new Size(1449, 48);
             panelNavbar.TabIndex = 17;
             // 
             // btnFacturaPorVentas
@@ -78,10 +79,10 @@
             btnFacturaPorVentas.BackColor = Color.FromArgb(0, 80, 200);
             btnFacturaPorVentas.BackgroundImageLayout = ImageLayout.None;
             btnFacturaPorVentas.FlatAppearance.BorderColor = Color.Silver;
+            btnFacturaPorVentas.FlatAppearance.BorderSize = 0;
             btnFacturaPorVentas.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnFacturaPorVentas.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnFacturaPorVentas.FlatStyle = FlatStyle.Flat;
-            btnFacturaPorVentas.FlatAppearance.BorderSize = 0;
             btnFacturaPorVentas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnFacturaPorVentas.ForeColor = SystemColors.ButtonHighlight;
             btnFacturaPorVentas.Image = (Image)resources.GetObject("btnFacturaPorVentas.Image");
@@ -99,10 +100,10 @@
             btnFacturasGlobales.BackColor = Color.FromArgb(0, 80, 200);
             btnFacturasGlobales.BackgroundImageLayout = ImageLayout.None;
             btnFacturasGlobales.FlatAppearance.BorderColor = Color.Silver;
+            btnFacturasGlobales.FlatAppearance.BorderSize = 0;
             btnFacturasGlobales.FlatAppearance.MouseDownBackColor = Color.Navy;
             btnFacturasGlobales.FlatAppearance.MouseOverBackColor = Color.Teal;
             btnFacturasGlobales.FlatStyle = FlatStyle.Flat;
-            btnFacturasGlobales.FlatAppearance.BorderSize = 0;
             btnFacturasGlobales.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnFacturasGlobales.ForeColor = SystemColors.ButtonHighlight;
             btnFacturasGlobales.Image = (Image)resources.GetObject("btnFacturasGlobales.Image");
@@ -117,23 +118,25 @@
             // 
             // panelMain
             // 
+            panelMain.BorderStyle = BorderStyle.FixedSingle;
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(0, 76);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1451, 503);
+            panelMain.Size = new Size(1449, 501);
             panelMain.TabIndex = 18;
             // 
-            // Facturas
+            // FacturasControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 66, 82);
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(panelMain);
             Controls.Add(panelNavbar);
             Controls.Add(panelHeader);
             ForeColor = SystemColors.ButtonHighlight;
-            Name = "Facturas";
-            Size = new Size(1451, 579);
+            Name = "FacturasControl";
+            Size = new Size(1449, 577);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             panelNavbar.ResumeLayout(false);
