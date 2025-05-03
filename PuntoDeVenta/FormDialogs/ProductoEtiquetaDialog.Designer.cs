@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta
 {
-    partial class EtiquetaDialog
+    partial class ProductoEtiquetaDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EtiquetaDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductoEtiquetaDialog));
             labelProducto = new Label();
             txtEtiqueta = new TextBox();
             btnAceptar = new Button();
@@ -71,7 +71,7 @@
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // EtiquetaDialog
+            // ProductoEtiquetaDialog
             // 
             AcceptButton = btnAceptar;
             AllowDrop = true;
@@ -84,7 +84,7 @@
             Controls.Add(labelProducto);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Name = "EtiquetaDialog";
+            Name = "ProductoEtiquetaDialog";
             ResumeLayout(false);
             PerformLayout();
         }

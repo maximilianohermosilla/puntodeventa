@@ -32,7 +32,7 @@ namespace PuntoDeVenta.UserControls
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
             //SetActivePanel(null);
-            EtiquetaDialog etiquetaDialog = new EtiquetaDialog();
+            ProductoEtiquetaDialog etiquetaDialog = new ProductoEtiquetaDialog();
             etiquetaDialog.labelProducto.Text = "Modificar Producto";
 
             try
@@ -53,7 +53,7 @@ namespace PuntoDeVenta.UserControls
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
             //SetActivePanel(null);
-            EtiquetaDialog etiquetaDialog = new EtiquetaDialog();
+            ProductoEtiquetaDialog etiquetaDialog = new ProductoEtiquetaDialog();
             etiquetaDialog.labelProducto.Text = "Eliminar Producto";
 
             try

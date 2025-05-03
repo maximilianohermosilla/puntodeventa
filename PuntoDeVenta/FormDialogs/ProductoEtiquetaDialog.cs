@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PuntoDeVenta
 {
-    public partial class EtiquetaDialog : Form
+    public partial class ProductoEtiquetaDialog : Form
     {
-        public EtiquetaDialog()
+        public ProductoEtiquetaDialog()
         {
             InitializeComponent();
         }
