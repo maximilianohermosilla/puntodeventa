@@ -17,6 +17,7 @@ namespace PuntoDeVenta.Application.DTO
         public DateTime FechaCreacion { get; set; }
         public bool Habilitado { get; set; }
         public int? IdCategoriaProducto { get; set; }
+        public int? IdUnidad { get; set; }
 
         public virtual CategoriaProductoResponse? CategoriaProducto { get; set; }
 

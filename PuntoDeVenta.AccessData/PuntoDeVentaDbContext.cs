@@ -30,6 +30,7 @@ namespace PuntoDeVenta.AccessData
         public DbSet<TipoPermiso> TipoPermiso { get; set; }
         public DbSet<Turno> Turno { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Unidad> Unidad { get; set; }
 
         public PuntoDeVentaDbContext() : base()
         {
@@ -96,6 +97,7 @@ namespace PuntoDeVenta.AccessData
                 entity.Property(e => e.PrecioPorMayor).HasColumnType("numeric(25,2)");
                 entity.HasIndex(e => e.Codigo).IsUnique();
                 entity.HasOne(d => d.CategoriaProducto).WithMany(p => p.Productos).HasForeignKey(d => d.IdCategoriaProducto).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.Unidad).WithMany(p => p.Productos).HasForeignKey(d => d.IdUnidad).OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<Promocion>(entity =>
@@ -150,6 +152,16 @@ namespace PuntoDeVenta.AccessData
                 new Estado { Id = 1, Descripcion = "Iniciado" },
                 new Estado { Id = 2, Descripcion = "Finalizado" },
                 new Estado { Id = 3, Descripcion = "Cancelado" }
+            );
+
+            modelBuilder.Entity<Unidad>().HasData(
+                new Unidad { Id = 1, Nombre = "U", Descripcion = "Unidad", Habilitado = true },
+                new Unidad { Id = 2, Nombre = "Kg", Descripcion = "Kilogramos", Habilitado = false },
+                new Unidad { Id = 3, Nombre = "G", Descripcion = "Gramos", Habilitado = false },
+                new Unidad { Id = 4, Nombre = "L", Descripcion = "Litros", Habilitado = false },
+                new Unidad { Id = 5, Nombre = "M", Descripcion = "Metros", Habilitado = false },
+                new Unidad { Id = 6, Nombre = "Hs", Descripcion = "Horas", Habilitado = false },
+                new Unidad { Id = 7, Nombre = "-", Descripcion = "No Aplica", Habilitado = false }
             );
 
             modelBuilder.Entity<FormaPago>().HasData(

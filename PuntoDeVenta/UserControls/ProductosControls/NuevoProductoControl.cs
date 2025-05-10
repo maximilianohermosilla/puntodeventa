@@ -12,14 +12,41 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         private static PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
 
         private readonly IProductoService _productoService;
+        private readonly IUnidadService _unidadService;
         public List<CategoriaProductoResponse> _categoriaProductos;
+        public List<UnidadResponse> _unidades;
         public ProductoResponse selectedProducto = new ProductoResponse();
 
         public NuevoProductoControl(List<CategoriaProductoResponse> categoriaProductos)
         {
             _productoService = new ProductoService(_context);
+            _unidadService = new UnidadService(_context);
             _categoriaProductos = categoriaProductos;
             InitializeComponent();
+            _ = GetUnidades();
+        }
+
+        public async Task GetUnidades()
+        {
+            try
+            {
+                var response = await _unidadService.GetAll();
+
+                if (response != null && response.success)
+                {
+                    _unidades = (response.response!);
+                    comboUnidad.DataSource = _unidades.Where(x => x.Habilitado).ToList();
+                    comboUnidad.DisplayMember = "Descripcion";
+                    comboUnidad.ValueMember = "Id";
+                    comboUnidad.Refresh();
+                    comboUnidad.Invalidate();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
 
         public void SetearCategorias(List<CategoriaProductoResponse> categoriaProductos)
@@ -74,6 +101,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                         Codigo = txtCodigo.Text,
                         Descripcion = txtDescripcion.Text,
                         IdCategoriaProducto = Convert.ToInt32(comboCategoria.SelectedValue) > 0 ? Convert.ToInt32(comboCategoria.SelectedValue) : null,
+                        IdUnidad = Convert.ToInt32(comboUnidad.SelectedValue) > 0 ? Convert.ToInt32(comboUnidad.SelectedValue) : null,
                         PrecioPorMayor = Convert.ToInt32(txtPrecioMayor.Value),
                         PrecioVenta = Convert.ToInt32(txtPrecioVenta.Value),
                         PrecioCosto = Convert.ToInt32(txtPrecioCosto.Value),

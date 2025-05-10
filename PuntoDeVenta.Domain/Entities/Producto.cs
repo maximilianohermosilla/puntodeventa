@@ -14,8 +14,10 @@
         public DateTime FechaCreacion { get; set; } = DateTime.Today;
         public bool Habilitado { get; set; } = true;
         public int? IdCategoriaProducto { get; set; } = null;
+        public int? IdUnidad { get; set; } = null;
 
         public virtual CategoriaProducto CategoriaProducto { get; set; }
+        public virtual Unidad? Unidad { get; set; }
         public virtual IList<PromocionProducto> PromocionProductos { get; set; }
         public virtual IList<TicketDetalle> TicketDetalles { get; set; }
     }

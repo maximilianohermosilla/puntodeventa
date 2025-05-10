@@ -76,6 +76,7 @@ namespace PuntoDeVenta
             services.AddTransient<ITipoPermisoRepository, TipoPermisoRepository>();
             services.AddTransient<ITurnoRepository, TurnoRepository>();
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            services.AddTransient<IUnidadRepository, UnidadRepository>();
 
             services.AddTransient<ICategoriaProductoService, CategoriaProductoService>();
             services.AddTransient<IClienteService,ClienteService>();
@@ -98,6 +99,7 @@ namespace PuntoDeVenta
             services.AddTransient<ITipoPermisoService, TipoPermisoService>();
             services.AddTransient<ITurnoService, TurnoService>();
             services.AddTransient<IUsuarioService, UsuarioService>();
+            services.AddTransient<IUnidadService, UnidadService>();
 
             // Registra el formulario principal
             services.AddTransient<Login>();

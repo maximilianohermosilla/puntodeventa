@@ -52,6 +52,8 @@
             labelDescripcion = new Label();
             txtCodigo = new TextBox();
             labelCodigo = new Label();
+            labelUnidad = new Label();
+            comboUnidad = new ComboBox();
             panelFooter.SuspendLayout();
             panelNuevoProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtCantidadMinima).BeginInit();
@@ -106,6 +108,8 @@
             // panelNuevoProducto
             // 
             panelNuevoProducto.BackColor = Color.FromArgb(49, 66, 82);
+            panelNuevoProducto.Controls.Add(labelUnidad);
+            panelNuevoProducto.Controls.Add(comboUnidad);
             panelNuevoProducto.Controls.Add(panelFooter);
             panelNuevoProducto.Controls.Add(labelInventario);
             panelNuevoProducto.Controls.Add(checkInventario);
@@ -138,7 +142,7 @@
             labelInventario.AutoSize = true;
             labelInventario.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelInventario.ForeColor = SystemColors.ButtonHighlight;
-            labelInventario.Location = new Point(6, 259);
+            labelInventario.Location = new Point(6, 285);
             labelInventario.Name = "labelInventario";
             labelInventario.Size = new Size(103, 21);
             labelInventario.TabIndex = 11;
@@ -147,7 +151,7 @@
             // checkInventario
             // 
             checkInventario.AutoSize = true;
-            checkInventario.Location = new Point(11, 287);
+            checkInventario.Location = new Point(11, 313);
             checkInventario.Name = "checkInventario";
             checkInventario.Size = new Size(177, 19);
             checkInventario.TabIndex = 7;
@@ -159,7 +163,7 @@
             // 
             labelCantidadMinima.AutoSize = true;
             labelCantidadMinima.Font = new Font("Segoe UI", 10F);
-            labelCantidadMinima.Location = new Point(5, 359);
+            labelCantidadMinima.Location = new Point(5, 385);
             labelCantidadMinima.Name = "labelCantidadMinima";
             labelCantidadMinima.Size = new Size(116, 19);
             labelCantidadMinima.TabIndex = 12;
@@ -168,7 +172,7 @@
             // txtCantidadMinima
             // 
             txtCantidadMinima.Enabled = false;
-            txtCantidadMinima.Location = new Point(128, 355);
+            txtCantidadMinima.Location = new Point(128, 381);
             txtCantidadMinima.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             txtCantidadMinima.Name = "txtCantidadMinima";
             txtCantidadMinima.Size = new Size(309, 23);
@@ -178,7 +182,7 @@
             // 
             labelCantidadActual.AutoSize = true;
             labelCantidadActual.Font = new Font("Segoe UI", 10F);
-            labelCantidadActual.Location = new Point(5, 322);
+            labelCantidadActual.Location = new Point(5, 348);
             labelCantidadActual.Name = "labelCantidadActual";
             labelCantidadActual.Size = new Size(107, 19);
             labelCantidadActual.TabIndex = 13;
@@ -187,7 +191,7 @@
             // txtCantidadActual
             // 
             txtCantidadActual.Enabled = false;
-            txtCantidadActual.Location = new Point(128, 318);
+            txtCantidadActual.Location = new Point(128, 344);
             txtCantidadActual.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             txtCantidadActual.Name = "txtCantidadActual";
             txtCantidadActual.Size = new Size(309, 23);
@@ -299,6 +303,24 @@
             labelCodigo.TabIndex = 19;
             labelCodigo.Text = "Código: ";
             // 
+            // labelUnidad
+            // 
+            labelUnidad.AutoSize = true;
+            labelUnidad.Font = new Font("Segoe UI", 10F);
+            labelUnidad.Location = new Point(5, 251);
+            labelUnidad.Name = "labelUnidad";
+            labelUnidad.Size = new Size(56, 19);
+            labelUnidad.TabIndex = 22;
+            labelUnidad.Text = "Unidad:";
+            // 
+            // comboUnidad
+            // 
+            comboUnidad.FormattingEnabled = true;
+            comboUnidad.Location = new Point(128, 250);
+            comboUnidad.Name = "comboUnidad";
+            comboUnidad.Size = new Size(309, 23);
+            comboUnidad.TabIndex = 21;
+            // 
             // NuevoProductoControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -342,5 +364,7 @@
         private NumericUpDown txtCantidadActual;
         private Label labelInventario;
         private CheckBox checkInventario;
+        private Label labelUnidad;
+        private ComboBox comboUnidad;
     }
 }

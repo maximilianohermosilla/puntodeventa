@@ -26,6 +26,7 @@ namespace PuntoDeVenta.UserControls
         {
             SetActivePanel(nuevoProducto1);
             _ = GetAllCategorias();
+            _ = nuevoProducto1.GetUnidades();
             nuevoProducto1.SetProducto(new ProductoResponse());
         }
 

@@ -14,6 +14,7 @@
         public DateTime FechaCreacion { get; set; } = DateTime.Now;
         public bool Habilitado { get; set; } = true;
         public int? IdCategoriaProducto { get; set; } = null;
+        public int? IdUnidad { get; set; } = null;
 
     }
 }
