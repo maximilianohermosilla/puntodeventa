@@ -34,10 +34,8 @@ namespace PuntoDeVenta
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            panelHeader = new Panel();
-            labelTitulo = new Label();
-            pictureBox1 = new PictureBox();
             panelNavbar = new Panel();
+            pictureBox2 = new PictureBox();
             btnReportes = new Button();
             btnCorte = new Button();
             btnFacturas = new Button();
@@ -54,6 +52,7 @@ namespace PuntoDeVenta
             reportes1 = new ReportesControl();
             inventario1 = new InventarioControl();
             facturas1 = new FacturasControl();
+            productos1 = new ProductosControl();
             creditos1 = new CreditosControl();
             corte1 = new CorteControl();
             configuracion1 = new ConfiguracionControl();
@@ -63,51 +62,18 @@ namespace PuntoDeVenta
             txtDatetime = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             timer1 = new System.Windows.Forms.Timer(components);
-            panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelNavbar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panelMain.SuspendLayout();
             panelFooter.SuspendLayout();
             SuspendLayout();
-            // 
-            // panelHeader
-            // 
-            panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelHeader.BackColor = Color.FromArgb(26, 32, 40);
-            panelHeader.Controls.Add(labelTitulo);
-            panelHeader.Controls.Add(pictureBox1);
-            panelHeader.Dock = DockStyle.Top;
-            panelHeader.ForeColor = SystemColors.ButtonHighlight;
-            panelHeader.Location = new Point(0, 0);
-            panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1438, 44);
-            panelHeader.TabIndex = 0;
-            // 
-            // labelTitulo
-            // 
-            labelTitulo.AutoSize = true;
-            labelTitulo.Font = new Font("Bauhaus 93", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelTitulo.Location = new Point(47, 8);
-            labelTitulo.Name = "labelTitulo";
-            labelTitulo.Size = new Size(214, 30);
-            labelTitulo.TabIndex = 1;
-            labelTitulo.Text = "PUNTO DE VENTA";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.logo_bedaqui;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(38, 36);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // panelNavbar
             // 
             panelNavbar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelNavbar.BackColor = Color.FromArgb(26, 32, 40);
+            panelNavbar.Controls.Add(pictureBox2);
             panelNavbar.Controls.Add(btnReportes);
             panelNavbar.Controls.Add(btnCorte);
             panelNavbar.Controls.Add(btnFacturas);
@@ -118,10 +84,20 @@ namespace PuntoDeVenta
             panelNavbar.Controls.Add(btnCreditos);
             panelNavbar.Controls.Add(btnVentas);
             panelNavbar.Controls.Add(btnConfiguracion);
-            panelNavbar.Location = new Point(0, 44);
+            panelNavbar.Location = new Point(0, 0);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(137, 727);
+            panelNavbar.Size = new Size(137, 771);
             panelNavbar.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.logo_bedaqui;
+            pictureBox2.Location = new Point(4, 6);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(122, 96);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 10;
+            pictureBox2.TabStop = false;
             // 
             // btnReportes
             // 
@@ -365,84 +341,91 @@ namespace PuntoDeVenta
             panelMain.Controls.Add(compras1);
             panelMain.Controls.Add(clientes1);
             panelMain.ForeColor = SystemColors.ButtonHighlight;
-            panelMain.Location = new Point(143, 44);
+            panelMain.Location = new Point(143, 0);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1295, 727);
+            panelMain.Size = new Size(1295, 771);
             panelMain.TabIndex = 2;
             // 
             // ventas1
             // 
             ventas1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ventas1.BackColor = Color.FromArgb(49, 66, 82);
+            ventas1.BorderStyle = BorderStyle.FixedSingle;
             ventas1.Dock = DockStyle.Fill;
             ventas1.ForeColor = SystemColors.ButtonHighlight;
             ventas1.Location = new Point(0, 0);
             ventas1.Name = "ventas1";
-            ventas1.Size = new Size(1295, 727);
+            ventas1.Size = new Size(1295, 771);
             ventas1.TabIndex = 9;
             // 
             // reportes1
             // 
             reportes1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             reportes1.BackColor = Color.FromArgb(49, 66, 82);
+            reportes1.BorderStyle = BorderStyle.FixedSingle;
             reportes1.Dock = DockStyle.Fill;
             reportes1.ForeColor = SystemColors.ButtonHighlight;
             reportes1.Location = new Point(0, 0);
             reportes1.Name = "reportes1";
-            reportes1.Size = new Size(1295, 727);
+            reportes1.Size = new Size(1295, 771);
             reportes1.TabIndex = 8;
             // 
             // inventario1
             // 
             inventario1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            inventario1.BorderStyle = BorderStyle.FixedSingle;
             inventario1.Dock = DockStyle.Fill;
             inventario1.Location = new Point(0, 0);
             inventario1.Name = "inventario1";
-            inventario1.Size = new Size(1295, 727);
+            inventario1.Size = new Size(1295, 771);
             inventario1.TabIndex = 6;
             // 
             // facturas1
             // 
             facturas1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             facturas1.BackColor = Color.FromArgb(49, 66, 82);
+            facturas1.BorderStyle = BorderStyle.FixedSingle;
             facturas1.Dock = DockStyle.Fill;
             facturas1.ForeColor = SystemColors.ButtonHighlight;
             facturas1.Location = new Point(0, 0);
             facturas1.Name = "facturas1";
-            facturas1.Size = new Size(1295, 727);
+            facturas1.Size = new Size(1295, 771);
             facturas1.TabIndex = 5;
             // 
             // creditos1
             // 
             creditos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             creditos1.BackColor = Color.FromArgb(49, 66, 82);
+            creditos1.BorderStyle = BorderStyle.FixedSingle;
             creditos1.Dock = DockStyle.Fill;
             creditos1.ForeColor = SystemColors.ButtonHighlight;
             creditos1.Location = new Point(0, 0);
             creditos1.Name = "creditos1";
-            creditos1.Size = new Size(1295, 727);
+            creditos1.Size = new Size(1295, 771);
             creditos1.TabIndex = 4;
             // 
             // corte1
             // 
             corte1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             corte1.BackColor = Color.FromArgb(49, 66, 82);
+            corte1.BorderStyle = BorderStyle.FixedSingle;
             corte1.Dock = DockStyle.Fill;
             corte1.ForeColor = SystemColors.ButtonHighlight;
             corte1.Location = new Point(0, 0);
             corte1.Name = "corte1";
-            corte1.Size = new Size(1295, 727);
+            corte1.Size = new Size(1295, 771);
             corte1.TabIndex = 3;
             // 
             // configuracion1
             // 
             configuracion1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             configuracion1.BackColor = Color.FromArgb(49, 66, 82);
+            configuracion1.BorderStyle = BorderStyle.FixedSingle;
             configuracion1.Dock = DockStyle.Fill;
             configuracion1.ForeColor = SystemColors.ButtonHighlight;
             configuracion1.Location = new Point(0, 0);
             configuracion1.Name = "configuracion1";
-            configuracion1.Size = new Size(1295, 727);
+            configuracion1.Size = new Size(1295, 771);
             configuracion1.TabIndex = 2;
             // 
             // compras1
@@ -453,7 +436,7 @@ namespace PuntoDeVenta
             compras1.ForeColor = SystemColors.ButtonHighlight;
             compras1.Location = new Point(0, 0);
             compras1.Name = "compras1";
-            compras1.Size = new Size(1295, 727);
+            compras1.Size = new Size(1295, 771);
             compras1.TabIndex = 1;
             // 
             // clientes1
@@ -501,7 +484,6 @@ namespace PuntoDeVenta
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(1438, 807);
-            Controls.Add(panelHeader);
             Controls.Add(panelNavbar);
             Controls.Add(panelFooter);
             Controls.Add(panelMain);
@@ -509,10 +491,8 @@ namespace PuntoDeVenta
             Name = "Main";
             Text = "PuntoDeVenta - Bedaqui";
             WindowState = FormWindowState.Maximized;
-            panelHeader.ResumeLayout(false);
-            panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelNavbar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panelMain.ResumeLayout(false);
             panelFooter.ResumeLayout(false);
             panelFooter.PerformLayout();
@@ -535,11 +515,7 @@ namespace PuntoDeVenta
         }
 
         #endregion
-
-        private Panel panelHeader;
         private Panel panelNavbar;
-        private Label labelTitulo;
-        private PictureBox pictureBox1;
         public Button btnVentas;
         private ImageList imageList;
         public Button btnCreditos;
@@ -573,5 +549,6 @@ namespace PuntoDeVenta
         private Panel panelFooter;
         private Label txtDatetime;
         private System.Windows.Forms.Timer timer1;
+        private PictureBox pictureBox2;
     }    
 }
