@@ -124,6 +124,40 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
+        public async Task<ResponseModel<ProductoResponse>> GetByCodigo(string codigo)
+        {
+            ResponseModel<ProductoResponse> response = new ResponseModel<ProductoResponse>();
+
+            try
+            {
+                Producto producto = await _productoRepository.GetByCodigo(codigo);
+
+                if (producto == null)
+                {
+                    response.success = false;
+                    response.statusCode = 404;
+                    response.message = "El producto seleccionado no existe";
+                    response.response = null;
+                    return response;
+                }
+
+                ProductoResponse ProductoResponse = _mapper.Map<ProductoResponse>(producto);
+
+                response.message = "Consulta realizada correctamente";
+                response.statusCode = 200;
+                response.response = ProductoResponse;
+            }
+            catch (Exception ex)
+            {
+                response.success = false;
+                response.statusCode = 400;
+                response.message = ex.Message;
+                response.response = null;
+            }
+
+            return response;
+        }
+
         public async Task<ResponseModel<ProductoResponse>> Insert(ProductoRequest entity)
         {
             ResponseModel<ProductoResponse> response = new ResponseModel<ProductoResponse>();

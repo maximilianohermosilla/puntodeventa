@@ -56,6 +56,12 @@ namespace PuntoDeVenta.AccessData.Repository
             return await vGblContext.Producto.Include(p => p.CategoriaProducto).Where(p => p.Id == pId).FirstOrDefaultAsync()!;
         }
 
+        public async Task<Producto> GetByCodigo(string pCodigo)
+        {
+            vGblContext.ChangeTracker.Clear();
+            return await vGblContext.Producto.Include(p => p.CategoriaProducto).Where(p => p.Codigo == pCodigo).FirstOrDefaultAsync()!;
+        }
+
         public bool SaveChanges()
         {
             try

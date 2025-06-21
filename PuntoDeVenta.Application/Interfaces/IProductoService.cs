@@ -6,6 +6,7 @@ namespace PuntoDeVenta.Application.Interfaces
     {
         Task<ResponseModel<List<ProductoResponse>>> GetAll(bool? habilitados);
         Task<ResponseModel<ProductoResponse>> GetById(int id);
+        Task<ResponseModel<ProductoResponse>> GetByCodigo(string codigo);
         Task<ResponseModel<ProductoResponse>> Insert(ProductoRequest entity);
         Task<ResponseModel<ProductoResponse>> Update(ProductoRequest entity);
         Task<ResponseModel<ProductoResponse>> Delete(int id);

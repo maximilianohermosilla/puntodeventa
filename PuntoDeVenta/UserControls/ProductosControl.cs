@@ -156,13 +156,35 @@ namespace PuntoDeVenta.UserControls
             }
         }
 
+        public async Task<ProductoResponse?> GetProductoByCodigo(string codigo)
+        {
+            try
+            {
+                var response = await _productoService.GetByCodigo(codigo);
+
+                if (response != null && response.success)
+                {
+                    return response.response;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
+
         public async Task ProcessEtiqueta(string codigo, bool eliminar)
         {
             try
             {
                 if (!string.IsNullOrEmpty(codigo))
                 {
-                    var producto = await GetProductoById(Convert.ToInt32(codigo));
+                    var producto = await GetProductoByCodigo(codigo);
 
                     if (producto != null)
                     {
@@ -172,7 +194,7 @@ namespace PuntoDeVenta.UserControls
                             nuevoProducto1.SetProducto(new ProductoResponse());
 
                             string toastTipo = response.success ? "SUCCESS" : "ERROR";
-                            ToastForm toast = new ToastForm(toastTipo, response.message, this.FindForm());
+                            ToastForm toast = new ToastForm(toastTipo, response.message!, this.FindForm()!);
                             toast.Show();
                         }
                         else
