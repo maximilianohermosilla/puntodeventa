@@ -1,17 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using PuntoDeVenta.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace PuntoDeVenta
+﻿namespace PuntoDeVenta
 {
     public partial class Main : Form
     {
@@ -23,6 +10,8 @@ namespace PuntoDeVenta
             timer1.Interval = 1;
             timer1.Tick += timer1_Tick;
             timer1.Start();
+            //SetAllControlsFont(this.Controls, new Font("Verdana", 8F, FontStyle.Regular));
+
         }
 
         private void Main_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -106,6 +95,19 @@ namespace PuntoDeVenta
         private void panelNavbar_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void SetAllControlsFont(Control.ControlCollection controls, Font newFont)
+        {
+            foreach (Control control in controls)
+            {
+                control.Font = newFont;
+
+                if (control.HasChildren)
+                {
+                    SetAllControlsFont(control.Controls, newFont);
+                }
+            }
         }
     }
 }

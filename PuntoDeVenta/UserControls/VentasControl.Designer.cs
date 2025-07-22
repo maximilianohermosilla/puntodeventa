@@ -44,7 +44,7 @@
             btnEliminarProducto = new Button();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
+            dataGridView1 = new DataGridView();
             panel2 = new Panel();
             btnReimprimir = new Button();
             btnVentasDevoluciones = new Button();
@@ -58,6 +58,8 @@
             panel5 = new Panel();
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -293,11 +295,11 @@
             btnEliminarProducto.TextAlign = ContentAlignment.MiddleRight;
             btnEliminarProducto.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEliminarProducto.UseVisualStyleBackColor = false;
+            btnEliminarProducto.Click += btnEliminarProducto_Click;
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
@@ -308,6 +310,7 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.Transparent;
+            tabPage1.Controls.Add(dataGridView1);
             tabPage1.ForeColor = SystemColors.ControlText;
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
@@ -316,15 +319,18 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Ticket 1";
             // 
-            // tabPage2
+            // dataGridView1
             // 
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1439, 365);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Ticket 2";
-            tabPage2.UseVisualStyleBackColor = true;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(3, 3);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.ShowEditingIcon = false;
+            dataGridView1.Size = new Size(1431, 357);
+            dataGridView1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -557,6 +563,8 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
@@ -582,7 +590,6 @@
         public Button btnEliminarProducto;
         private TabControl tabControl1;
         private TabPage tabPage1;
-        private TabPage tabPage2;
         private Panel panel2;
         private Panel panel3;
         private Panel panel5;
@@ -597,5 +604,6 @@
         public Button btnCobrar;
         public Button btnReimprimir;
         public Button btnVentasDevoluciones;
+        private DataGridView dataGridView1;
     }
 }
