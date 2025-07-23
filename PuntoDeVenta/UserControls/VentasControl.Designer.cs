@@ -105,6 +105,7 @@
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(483, 23);
             txtCodigo.TabIndex = 2;
+            txtCodigo.KeyUp += txtCodigo_KeyPress;
             // 
             // btnVarios
             // 

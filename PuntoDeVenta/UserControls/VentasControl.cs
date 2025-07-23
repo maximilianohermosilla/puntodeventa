@@ -39,6 +39,14 @@ namespace PuntoDeVenta.UserControls
             _ = EliminarProducto();
         }
 
+        protected void txtCodigo_KeyPress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _ = AgregarProducto();
+            }
+        }
+
         public async Task AgregarProducto()
         {
             try
@@ -68,6 +76,7 @@ namespace PuntoDeVenta.UserControls
                         }
 
                         dataGridView1.DataSource = productosDataTable;
+                        txtCodigo.Text = "";
                     }
                     else
                     {
