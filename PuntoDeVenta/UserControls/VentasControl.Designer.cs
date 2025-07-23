@@ -44,7 +44,7 @@
             btnEliminarProducto = new Button();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            dataGridView1 = new DataGridView();
+            dataGridViewVentas = new DataGridView();
             panel2 = new Panel();
             btnReimprimir = new Button();
             btnVentasDevoluciones = new Button();
@@ -59,7 +59,7 @@
             panel1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewVentas).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -311,7 +311,7 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.Transparent;
-            tabPage1.Controls.Add(dataGridView1);
+            tabPage1.Controls.Add(dataGridViewVentas);
             tabPage1.ForeColor = SystemColors.ControlText;
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
@@ -320,18 +320,19 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Ticket 1";
             // 
-            // dataGridView1
+            // dataGridViewVentas
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.ShowEditingIcon = false;
-            dataGridView1.Size = new Size(1431, 357);
-            dataGridView1.TabIndex = 0;
+            dataGridViewVentas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewVentas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewVentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewVentas.Dock = DockStyle.Fill;
+            dataGridViewVentas.Location = new Point(3, 3);
+            dataGridViewVentas.Name = "dataGridViewVentas";
+            dataGridViewVentas.ReadOnly = true;
+            dataGridViewVentas.ShowEditingIcon = false;
+            dataGridViewVentas.Size = new Size(1431, 357);
+            dataGridViewVentas.TabIndex = 0;
+            dataGridViewVentas.CellDoubleClick += dataGridViewVentas_CellDoubleClick;
             // 
             // panel2
             // 
@@ -565,7 +566,7 @@
             panel1.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewVentas).EndInit();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
@@ -605,6 +606,6 @@
         public Button btnCobrar;
         public Button btnReimprimir;
         public Button btnVentasDevoluciones;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewVentas;
     }
 }

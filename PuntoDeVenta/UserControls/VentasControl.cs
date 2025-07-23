@@ -36,7 +36,7 @@ namespace PuntoDeVenta.UserControls
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
-            _ = EliminarProducto();
+            _ = EliminarProducto(txtCodigo.Text);
         }
 
         protected void txtCodigo_KeyPress(object sender, KeyEventArgs e)
@@ -75,7 +75,7 @@ namespace PuntoDeVenta.UserControls
                             productosDataTable.Rows.Add(producto.Codigo, producto.Descripcion, producto.PrecioVenta, 1, producto.PrecioVenta);
                         }
 
-                        dataGridView1.DataSource = productosDataTable;
+                        dataGridViewVentas.DataSource = productosDataTable;
                         txtCodigo.Text = "";
                     }
                     else
@@ -94,17 +94,17 @@ namespace PuntoDeVenta.UserControls
             }
         }
 
-        public async Task EliminarProducto()
+        public async Task EliminarProducto(string txtCodigo)
         {
             try
             {
-                if (!string.IsNullOrEmpty(txtCodigo.Text))
+                if (!string.IsNullOrEmpty(txtCodigo))
                 {
-                    var producto = await GetProductoByCodigo(txtCodigo.Text);
+                    var producto = await GetProductoByCodigo(txtCodigo);
 
                     if (producto != null)
                     {
-                        DataRow[] foundRows = productosDataTable.Select($@"Código = '{txtCodigo.Text}'");
+                        DataRow[] foundRows = productosDataTable.Select($@"Código = '{txtCodigo}'");
                         DataRow productoExistente = foundRows.FirstOrDefault()!;
 
                         if (productoExistente != null)
@@ -127,6 +127,12 @@ namespace PuntoDeVenta.UserControls
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        
+        private void dataGridViewVentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string codigoProducto = dataGridViewVentas.Rows[e.RowIndex].Cells[0].Value.ToString();
+            _ = EliminarProducto(codigoProducto);
         }
 
         public async Task<ProductoResponse?> GetProductoByCodigo(string codigo)

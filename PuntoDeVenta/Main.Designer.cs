@@ -60,7 +60,6 @@ namespace PuntoDeVenta
             // 
             // panelNavbar
             // 
-            panelNavbar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelNavbar.BackColor = Color.FromArgb(26, 32, 40);
             panelNavbar.Controls.Add(pictureBox2);
@@ -74,9 +73,10 @@ namespace PuntoDeVenta
             panelNavbar.Controls.Add(btnCreditos);
             panelNavbar.Controls.Add(btnVentas);
             panelNavbar.Controls.Add(btnConfiguracion);
+            panelNavbar.Dock = DockStyle.Left;
             panelNavbar.Location = new Point(0, 0);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(137, 771);
+            panelNavbar.Size = new Size(137, 807);
             panelNavbar.TabIndex = 1;
             // 
             // pictureBox2
@@ -101,7 +101,7 @@ namespace PuntoDeVenta
             btnReportes.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReportes.ForeColor = SystemColors.ButtonHighlight;
             btnReportes.Image = (Image)resources.GetObject("btnReportes.Image");
-            btnReportes.Location = new Point(4, 516);
+            btnReportes.Location = new Point(4, 531);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(122, 45);
             btnReportes.TabIndex = 8;
@@ -123,7 +123,7 @@ namespace PuntoDeVenta
             btnCorte.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCorte.ForeColor = SystemColors.ButtonHighlight;
             btnCorte.Image = (Image)resources.GetObject("btnCorte.Image");
-            btnCorte.Location = new Point(4, 465);
+            btnCorte.Location = new Point(4, 480);
             btnCorte.Name = "btnCorte";
             btnCorte.Size = new Size(122, 45);
             btnCorte.TabIndex = 7;
@@ -145,7 +145,7 @@ namespace PuntoDeVenta
             btnFacturas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnFacturas.ForeColor = SystemColors.ButtonHighlight;
             btnFacturas.Image = (Image)resources.GetObject("btnFacturas.Image");
-            btnFacturas.Location = new Point(4, 414);
+            btnFacturas.Location = new Point(4, 429);
             btnFacturas.Name = "btnFacturas";
             btnFacturas.Size = new Size(122, 45);
             btnFacturas.TabIndex = 6;
@@ -167,7 +167,7 @@ namespace PuntoDeVenta
             btnCompras.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCompras.ForeColor = SystemColors.ButtonHighlight;
             btnCompras.Image = (Image)resources.GetObject("btnCompras.Image");
-            btnCompras.Location = new Point(4, 363);
+            btnCompras.Location = new Point(4, 378);
             btnCompras.Name = "btnCompras";
             btnCompras.Size = new Size(122, 45);
             btnCompras.TabIndex = 5;
@@ -189,7 +189,7 @@ namespace PuntoDeVenta
             btnInventario.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnInventario.ForeColor = SystemColors.ButtonHighlight;
             btnInventario.Image = (Image)resources.GetObject("btnInventario.Image");
-            btnInventario.Location = new Point(4, 159);
+            btnInventario.Location = new Point(4, 174);
             btnInventario.Name = "btnInventario";
             btnInventario.Size = new Size(122, 45);
             btnInventario.TabIndex = 1;
@@ -211,7 +211,7 @@ namespace PuntoDeVenta
             btnProductos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnProductos.ForeColor = SystemColors.ButtonHighlight;
             btnProductos.Image = (Image)resources.GetObject("btnProductos.Image");
-            btnProductos.Location = new Point(4, 210);
+            btnProductos.Location = new Point(4, 225);
             btnProductos.Name = "btnProductos";
             btnProductos.Size = new Size(122, 45);
             btnProductos.TabIndex = 2;
@@ -233,7 +233,7 @@ namespace PuntoDeVenta
             btnClientes.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClientes.ForeColor = SystemColors.ButtonHighlight;
             btnClientes.Image = (Image)resources.GetObject("btnClientes.Image");
-            btnClientes.Location = new Point(4, 312);
+            btnClientes.Location = new Point(4, 327);
             btnClientes.Name = "btnClientes";
             btnClientes.Size = new Size(122, 45);
             btnClientes.TabIndex = 4;
@@ -255,7 +255,7 @@ namespace PuntoDeVenta
             btnCreditos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCreditos.ForeColor = SystemColors.ButtonHighlight;
             btnCreditos.Image = (Image)resources.GetObject("btnCreditos.Image");
-            btnCreditos.Location = new Point(4, 261);
+            btnCreditos.Location = new Point(4, 276);
             btnCreditos.Name = "btnCreditos";
             btnCreditos.Size = new Size(122, 45);
             btnCreditos.TabIndex = 3;
@@ -277,7 +277,7 @@ namespace PuntoDeVenta
             btnVentas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVentas.ForeColor = SystemColors.ButtonHighlight;
             btnVentas.Image = (Image)resources.GetObject("btnVentas.Image");
-            btnVentas.Location = new Point(4, 108);
+            btnVentas.Location = new Point(4, 123);
             btnVentas.Name = "btnVentas";
             btnVentas.Size = new Size(122, 45);
             btnVentas.TabIndex = 0;
@@ -299,7 +299,7 @@ namespace PuntoDeVenta
             btnConfiguracion.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnConfiguracion.ForeColor = SystemColors.ButtonHighlight;
             btnConfiguracion.Image = (Image)resources.GetObject("btnConfiguracion.Image");
-            btnConfiguracion.Location = new Point(4, 567);
+            btnConfiguracion.Location = new Point(4, 582);
             btnConfiguracion.Name = "btnConfiguracion";
             btnConfiguracion.Size = new Size(122, 45);
             btnConfiguracion.TabIndex = 9;
@@ -322,31 +322,32 @@ namespace PuntoDeVenta
             panelMain.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelMain.BackColor = Color.FromArgb(49, 66, 82);
             panelMain.ForeColor = SystemColors.ButtonHighlight;
-            panelMain.Location = new Point(143, 0);
+            panelMain.Location = new Point(138, 0);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1295, 771);
+            panelMain.Size = new Size(1300, 771);
             panelMain.TabIndex = 2;
             // 
             // panelFooter
             // 
             panelFooter.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelFooter.BackColor = Color.FromArgb(26, 32, 40);
+            panelFooter.BackColor = Color.FromArgb(16, 22, 30);
             panelFooter.Controls.Add(txtDatetime);
             panelFooter.Dock = DockStyle.Bottom;
             panelFooter.ForeColor = SystemColors.ButtonHighlight;
-            panelFooter.Location = new Point(0, 773);
+            panelFooter.Location = new Point(137, 773);
             panelFooter.Name = "panelFooter";
-            panelFooter.Size = new Size(1438, 34);
+            panelFooter.Size = new Size(1301, 34);
             panelFooter.TabIndex = 3;
             // 
             // txtDatetime
             // 
             txtDatetime.AutoSize = true;
             txtDatetime.Dock = DockStyle.Right;
-            txtDatetime.Font = new Font("Segoe UI Light", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtDatetime.Location = new Point(1241, 0);
+            txtDatetime.Font = new Font("Segoe UI Light", 14F, FontStyle.Bold);
+            txtDatetime.Location = new Point(1124, 0);
+            txtDatetime.Margin = new Padding(3, 3, 3, 0);
             txtDatetime.Name = "txtDatetime";
-            txtDatetime.Size = new Size(197, 30);
+            txtDatetime.Size = new Size(177, 25);
             txtDatetime.TabIndex = 1;
             txtDatetime.Text = "22/1/2025 21:17:39";
             // 
@@ -362,8 +363,8 @@ namespace PuntoDeVenta
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(1438, 807);
-            Controls.Add(panelNavbar);
             Controls.Add(panelFooter);
+            Controls.Add(panelNavbar);
             Controls.Add(panelMain);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Main";

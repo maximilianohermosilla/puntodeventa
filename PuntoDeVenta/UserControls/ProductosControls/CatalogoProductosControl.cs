@@ -100,7 +100,6 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         {
             var listaProductos = productos.Select(x => new
             {
-                x.Id,
                 x.Codigo,
                 x.Descripcion,
                 x.PrecioCosto,
