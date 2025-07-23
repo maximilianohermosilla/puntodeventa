@@ -1,11 +1,34 @@
-﻿using PuntoDeVenta.UserControls;
+﻿using PuntoDeVenta.AccessData;
+using PuntoDeVenta.Application.DTO;
+using PuntoDeVenta.Application.Interfaces;
+using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.UserControls;
+using System.Security.Cryptography.X509Certificates;
 
 namespace PuntoDeVenta
 {
     public partial class Main : Form
     {
+        private PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
+        private readonly ITurnoService _turnoService;
+
+        public int IdUsuario;
+        public TurnoResponse turnoActual;
 
         public Main()
+        {
+            _turnoService = new TurnoService(_context);
+            InitializeMain();
+        }
+
+        public Main(int idUsuario)
+        {
+            _turnoService = new TurnoService(_context);
+            IdUsuario = idUsuario;
+            InitializeMain();
+        }
+
+        public void InitializeMain()
         {
             InitializeComponent();
             InitializeUserControlsMain();
@@ -13,8 +36,8 @@ namespace PuntoDeVenta
             timer1.Interval = 1;
             timer1.Tick += timer1_Tick;
             timer1.Start();
+            _ = GetUltimoTurno();
             //SetAllControlsFont(this.Controls, new Font("Verdana", 8F, FontStyle.Regular));
-
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
@@ -87,11 +110,6 @@ namespace PuntoDeVenta
         private void timer1_Tick(object sender, EventArgs e)
         {
             txtDatetime.Text = DateTime.Now.ToString("dd/MM/yyyy - HH:mm:ss");
-        }
-
-        private void panelNavbar_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void InitializeUserControlsMain()
@@ -222,6 +240,74 @@ namespace PuntoDeVenta
                 {
                     SetAllControlsFont(control.Controls, newFont);
                 }
+            }
+        }
+
+        private async Task GetUltimoTurno()
+        {
+            try
+            {
+                var ultimoTurno = await _turnoService.GetByIdUsuario(IdUsuario, false);
+
+                if(ultimoTurno != null && ultimoTurno.success)
+                {
+                    turnoActual = ultimoTurno!.response!;
+                    if (DialogResult.Yes == MessageBox.Show(@$"¿Desea reanudar el turno iniciado {turnoActual!.FechaInicio.ToString()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+                    {
+
+                    }
+                }
+                else
+                {
+                    if (DialogResult.Yes == MessageBox.Show("¿Desea iniciar un nuevo turno?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+                    {
+                        TurnoRequest turnoRequest = new TurnoRequest()
+                        {
+                            CantidadInicio = 0, CantidadFin = 0, ValorTotal = 0, ValorGanancia = 0, Finalizado = false, 
+                            FechaInicio = DateTime.Now, FechaFin = new DateTime(), IdUsuario = IdUsuario
+                        };
+
+                        var response = await _turnoService.Insert(turnoRequest);
+                        if (response != null && response.success)
+                        {
+                            turnoActual = response!.response!;
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+        private async Task FinalizarTurno()
+        {
+            try
+            {
+                TurnoRequest turnoRequest = new TurnoRequest()
+                {
+                    Id = turnoActual.Id,
+                    CantidadInicio = turnoActual.CantidadInicio,
+                    CantidadFin = turnoActual.CantidadFin,
+                    ValorTotal = turnoActual.ValorTotal,
+                    ValorGanancia = turnoActual.ValorGanancia,
+                    Finalizado = true,
+                    FechaInicio = turnoActual.FechaInicio,
+                    FechaFin = DateTime.Now,
+                    IdUsuario = IdUsuario
+                };
+
+                var response = await _turnoService.Update(turnoRequest);
+                if (response != null && response.success)
+                {
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
         }
     }

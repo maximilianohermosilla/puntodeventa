@@ -178,6 +178,20 @@ namespace PuntoDeVenta.AccessData
                 new TipoMovimiento { Id = 3, Descripcion = "Ajuste" },
                 new TipoMovimiento { Id = 4, Descripcion = "Devolución" }
             );
+
+            modelBuilder.Entity<Perfil>().HasData(
+                new Perfil { Id = 1, Descripcion = "Administrador", Habilitado = true }
+            );
+
+            modelBuilder.Entity<Usuario>().HasData(
+                new Usuario
+                {
+                    Id = 1, User = "admin", Password = "admin", Nombre = "Administrador", Apellido = "Sistemas",
+                    Email = "maximiliano_hermosilla@hotmail.com", Telefono = null, Imagen = null, Habilitado = true,
+                    FechaCreacion = DateTime.Now, IdPerfil = 1
+                }
+            );
+
         }
     }
 }

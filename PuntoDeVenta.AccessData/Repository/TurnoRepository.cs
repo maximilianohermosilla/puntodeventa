@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PuntoDeVenta.AccessData.Interfaces;
 using PuntoDeVenta.Domain.Entities;
+using System.Security.Cryptography;
 
 namespace PuntoDeVenta.AccessData.Repository
 {
@@ -54,6 +55,13 @@ namespace PuntoDeVenta.AccessData.Repository
         {
             vGblContext.ChangeTracker.Clear();
             return await vGblContext.Turno.Where(p => p.Id == pId).FirstOrDefaultAsync()!;
+        }
+
+        public async Task<Turno> GetByIdUsuario(int pIdUsuario, bool? pFinalizado)
+        {
+            vGblContext.ChangeTracker.Clear();
+            return await vGblContext.Turno.Where(p => p.IdUsuario == pIdUsuario && (pFinalizado == null || p.Finalizado == pFinalizado))
+                .OrderByDescending(t => t.Id).FirstOrDefaultAsync()!;
         }
 
         public bool SaveChanges()

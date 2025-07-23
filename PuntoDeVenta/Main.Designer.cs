@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using PuntoDeVenta.Helpers;
+﻿using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.UserControls;
 
 namespace PuntoDeVenta
@@ -15,13 +14,22 @@ namespace PuntoDeVenta
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+        protected override async void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
                 components.Dispose();
             }
             base.Dispose(disposing);
+
+            if(turnoActual != null)
+            {
+                if (DialogResult.Yes == MessageBox.Show(@$"¿Desea finalizar el turno iniciado {turnoActual!.FechaInicio.ToString()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+                {
+                    await FinalizarTurno();
+                }
+            }
+            
             System.Windows.Forms.Application.Exit();
         }
 

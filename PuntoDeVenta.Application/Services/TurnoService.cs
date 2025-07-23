@@ -124,6 +124,40 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
+        public async Task<ResponseModel<TurnoResponse>> GetByIdUsuario(int IdUsuario, bool? Finalizado)
+        {
+            ResponseModel<TurnoResponse> response = new ResponseModel<TurnoResponse>();
+
+            try
+            {
+                Turno turno = await _turnoRepository.GetByIdUsuario(IdUsuario, Finalizado);
+
+                if (turno == null)
+                {
+                    response.success = false;
+                    response.statusCode = 404;
+                    response.message = "No existe ningún turno para el usuario";
+                    response.response = null;
+                    return response;
+                }
+
+                TurnoResponse TurnoResponse = _mapper.Map<TurnoResponse>(turno);
+
+                response.message = "Consulta realizada correctamente";
+                response.statusCode = 200;
+                response.response = TurnoResponse;
+            }
+            catch (Exception ex)
+            {
+                response.success = false;
+                response.statusCode = 400;
+                response.message = ex.Message;
+                response.response = null;
+            }
+
+            return response;
+        }
+
         public async Task<ResponseModel<TurnoResponse>> Insert(TurnoRequest entity)
         {
             ResponseModel<TurnoResponse> response = new ResponseModel<TurnoResponse>();

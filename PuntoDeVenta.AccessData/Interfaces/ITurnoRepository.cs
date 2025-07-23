@@ -11,5 +11,6 @@ namespace PuntoDeVenta.AccessData.Interfaces
         Task<Turno> Create(Turno pEntity);
         Task Delete(Turno pEntity);
         Task<Turno> GetById(int pId);
+        Task<Turno> GetByIdUsuario(int pIdUsuario, bool? pFinalizado);
     }
 }

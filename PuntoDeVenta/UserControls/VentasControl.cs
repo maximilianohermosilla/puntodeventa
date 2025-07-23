@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
-using PuntoDeVenta.AccessData;
+﻿using PuntoDeVenta.AccessData;
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
@@ -131,8 +130,11 @@ namespace PuntoDeVenta.UserControls
         
         private void dataGridViewVentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string codigoProducto = dataGridViewVentas.Rows[e.RowIndex].Cells[0].Value.ToString();
-            _ = EliminarProducto(codigoProducto);
+            if (DialogResult.Yes == MessageBox.Show("¿Está seguro de que desea eliminar este producto?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+            {
+                string codigoProducto = dataGridViewVentas.Rows[e.RowIndex].Cells[0].Value.ToString()!;
+                _ = EliminarProducto(codigoProducto!);
+            }
         }
 
         public async Task<ProductoResponse?> GetProductoByCodigo(string codigo)

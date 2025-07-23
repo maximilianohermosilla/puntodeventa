@@ -16,7 +16,7 @@ namespace PuntoDeVenta
         {
             if (System.Windows.Forms.Application.OpenForms[nameof(Main)] == null)
             {
-                Main form = new Main();
+                Main form = new Main(1);
                 form.Show(this);
                 this.Hide();
             }
