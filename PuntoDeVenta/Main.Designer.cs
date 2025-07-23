@@ -22,6 +22,7 @@ namespace PuntoDeVenta
                 components.Dispose();
             }
             base.Dispose(disposing);
+            System.Windows.Forms.Application.Exit();
         }
 
         #region Windows Form Designer generated code
@@ -48,23 +49,12 @@ namespace PuntoDeVenta
             btnConfiguracion = new Button();
             imageList = new ImageList(components);
             panelMain = new Panel();
-            ventas1 = new VentasControl();
-            reportes1 = new ReportesControl();
-            inventario1 = new InventarioControl();
-            facturas1 = new FacturasControl();
-            productos1 = new ProductosControl();
-            creditos1 = new CreditosControl();
-            corte1 = new CorteControl();
-            configuracion1 = new ConfiguracionControl();
-            compras1 = new ComprasControl();
-            clientes1 = new ClientesControl();
             panelFooter = new Panel();
             txtDatetime = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             timer1 = new System.Windows.Forms.Timer(components);
             panelNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panelMain.SuspendLayout();
             panelFooter.SuspendLayout();
             SuspendLayout();
             // 
@@ -331,123 +321,11 @@ namespace PuntoDeVenta
             panelMain.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelMain.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelMain.BackColor = Color.FromArgb(49, 66, 82);
-            panelMain.Controls.Add(ventas1);
-            panelMain.Controls.Add(reportes1);
-            panelMain.Controls.Add(inventario1);
-            panelMain.Controls.Add(facturas1);
-            panelMain.Controls.Add(creditos1);
-            panelMain.Controls.Add(corte1);
-            panelMain.Controls.Add(configuracion1);
-            panelMain.Controls.Add(compras1);
-            panelMain.Controls.Add(clientes1);
             panelMain.ForeColor = SystemColors.ButtonHighlight;
             panelMain.Location = new Point(143, 0);
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(1295, 771);
             panelMain.TabIndex = 2;
-            // 
-            // ventas1
-            // 
-            ventas1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            ventas1.BackColor = Color.FromArgb(49, 66, 82);
-            ventas1.BorderStyle = BorderStyle.FixedSingle;
-            ventas1.Dock = DockStyle.Fill;
-            ventas1.ForeColor = SystemColors.ButtonHighlight;
-            ventas1.Location = new Point(0, 0);
-            ventas1.Name = "ventas1";
-            ventas1.Size = new Size(1295, 771);
-            ventas1.TabIndex = 9;
-            // 
-            // reportes1
-            // 
-            reportes1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            reportes1.BackColor = Color.FromArgb(49, 66, 82);
-            reportes1.BorderStyle = BorderStyle.FixedSingle;
-            reportes1.Dock = DockStyle.Fill;
-            reportes1.ForeColor = SystemColors.ButtonHighlight;
-            reportes1.Location = new Point(0, 0);
-            reportes1.Name = "reportes1";
-            reportes1.Size = new Size(1295, 771);
-            reportes1.TabIndex = 8;
-            // 
-            // inventario1
-            // 
-            inventario1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            inventario1.BorderStyle = BorderStyle.FixedSingle;
-            inventario1.Dock = DockStyle.Fill;
-            inventario1.Location = new Point(0, 0);
-            inventario1.Name = "inventario1";
-            inventario1.Size = new Size(1295, 771);
-            inventario1.TabIndex = 6;
-            // 
-            // facturas1
-            // 
-            facturas1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            facturas1.BackColor = Color.FromArgb(49, 66, 82);
-            facturas1.BorderStyle = BorderStyle.FixedSingle;
-            facturas1.Dock = DockStyle.Fill;
-            facturas1.ForeColor = SystemColors.ButtonHighlight;
-            facturas1.Location = new Point(0, 0);
-            facturas1.Name = "facturas1";
-            facturas1.Size = new Size(1295, 771);
-            facturas1.TabIndex = 5;
-            // 
-            // creditos1
-            // 
-            creditos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            creditos1.BackColor = Color.FromArgb(49, 66, 82);
-            creditos1.BorderStyle = BorderStyle.FixedSingle;
-            creditos1.Dock = DockStyle.Fill;
-            creditos1.ForeColor = SystemColors.ButtonHighlight;
-            creditos1.Location = new Point(0, 0);
-            creditos1.Name = "creditos1";
-            creditos1.Size = new Size(1295, 771);
-            creditos1.TabIndex = 4;
-            // 
-            // corte1
-            // 
-            corte1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            corte1.BackColor = Color.FromArgb(49, 66, 82);
-            corte1.BorderStyle = BorderStyle.FixedSingle;
-            corte1.Dock = DockStyle.Fill;
-            corte1.ForeColor = SystemColors.ButtonHighlight;
-            corte1.Location = new Point(0, 0);
-            corte1.Name = "corte1";
-            corte1.Size = new Size(1295, 771);
-            corte1.TabIndex = 3;
-            // 
-            // configuracion1
-            // 
-            configuracion1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            configuracion1.BackColor = Color.FromArgb(49, 66, 82);
-            configuracion1.BorderStyle = BorderStyle.FixedSingle;
-            configuracion1.Dock = DockStyle.Fill;
-            configuracion1.ForeColor = SystemColors.ButtonHighlight;
-            configuracion1.Location = new Point(0, 0);
-            configuracion1.Name = "configuracion1";
-            configuracion1.Size = new Size(1295, 771);
-            configuracion1.TabIndex = 2;
-            // 
-            // compras1
-            // 
-            compras1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            compras1.BackColor = Color.FromArgb(49, 66, 82);
-            compras1.Dock = DockStyle.Fill;
-            compras1.ForeColor = SystemColors.ButtonHighlight;
-            compras1.Location = new Point(0, 0);
-            compras1.Name = "compras1";
-            compras1.Size = new Size(1295, 771);
-            compras1.TabIndex = 1;
-            // 
-            // clientes1
-            // 
-            clientes1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            clientes1.BackColor = Color.FromArgb(49, 66, 82);
-            clientes1.Dock = DockStyle.Fill;
-            clientes1.Location = new Point(0, 0);
-            clientes1.Name = "clientes1";
-            clientes1.Size = new Size(1295, 727);
-            clientes1.TabIndex = 0;
             // 
             // panelFooter
             // 
@@ -493,25 +371,9 @@ namespace PuntoDeVenta
             WindowState = FormWindowState.Maximized;
             panelNavbar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panelMain.ResumeLayout(false);
             panelFooter.ResumeLayout(false);
             panelFooter.PerformLayout();
             ResumeLayout(false);
-
-            //Bug elimina productosControl
-            productos1 = new ProductosControl();
-            panelMain.Controls.Add(productos1);
-
-            // productos1
-            // 
-            productos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            productos1.BackColor = Color.FromArgb(49, 66, 82);
-            productos1.Dock = DockStyle.Fill;
-            productos1.Location = new Point(0, 0);
-            productos1.Name = "productos1";
-            productos1.Size = new Size(1295, 727);
-            productos1.TabIndex = 9;
-            // 
         }
 
         #endregion
@@ -528,14 +390,6 @@ namespace PuntoDeVenta
         public Button btnReportes;
         public Button btnCorte;
         private Panel panelMain;
-        public void InitializeUserControls()
-        {
-            var clientesUserControl = new PuntoDeVenta.UserControls.ClientesControl();
-
-            panelMain.Controls.Add(clientesUserControl);
-        }
-
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private VentasControl ventas1;
         private ReportesControl reportes1;
         private ProductosControl productos1;
@@ -550,5 +404,14 @@ namespace PuntoDeVenta
         private Label txtDatetime;
         private System.Windows.Forms.Timer timer1;
         private PictureBox pictureBox2;
+
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+
+        public void InitializeUserControls()
+        {
+            var clientesUserControl = new PuntoDeVenta.UserControls.ClientesControl();
+
+            panelMain.Controls.Add(clientesUserControl);
+        }
     }    
 }

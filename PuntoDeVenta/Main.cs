@@ -1,4 +1,6 @@
-﻿namespace PuntoDeVenta
+﻿using PuntoDeVenta.UserControls;
+
+namespace PuntoDeVenta
 {
     public partial class Main : Form
     {
@@ -6,6 +8,7 @@
         public Main()
         {
             InitializeComponent();
+            InitializeUserControlsMain();
             timer1 = new System.Windows.Forms.Timer();
             timer1.Interval = 1;
             timer1.Tick += timer1_Tick;
@@ -14,14 +17,8 @@
 
         }
 
-        private void Main_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
-        }
-
-
         private void btnVentas_Click(object sender, EventArgs e)
-        {
+        {            
             SetActivePanel(ventas1);
         }
 
@@ -95,6 +92,124 @@
         private void panelNavbar_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void InitializeUserControlsMain()
+        {
+            ventas1 = new VentasControl();
+            clientes1 = new ClientesControl();
+            productos1 = new ProductosControl();
+            inventario1 = new InventarioControl();
+            reportes1 = new ReportesControl();
+            facturas1 = new FacturasControl();
+            creditos1 = new CreditosControl();
+            corte1 = new CorteControl();
+            configuracion1 = new ConfiguracionControl();
+            compras1 = new ComprasControl();
+
+            panelMain.Controls.Add(ventas1);
+            panelMain.Controls.Add(clientes1);
+            panelMain.Controls.Add(productos1);
+            panelMain.Controls.Add(inventario1);
+            panelMain.Controls.Add(reportes1);
+            panelMain.Controls.Add(facturas1);
+            panelMain.Controls.Add(creditos1);
+            panelMain.Controls.Add(corte1);
+            panelMain.Controls.Add(configuracion1);
+            panelMain.Controls.Add(compras1);
+
+            ventas1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ventas1.BackColor = Color.FromArgb(49, 66, 82);
+            ventas1.BorderStyle = BorderStyle.FixedSingle;
+            ventas1.Dock = DockStyle.Fill;
+            ventas1.ForeColor = SystemColors.ButtonHighlight;
+            ventas1.Location = new Point(0, 0);
+            ventas1.Name = "ventas1";
+            ventas1.Size = new Size(1295, 771);
+            ventas1.TabIndex = 9;
+       
+            reportes1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            reportes1.BackColor = Color.FromArgb(49, 66, 82);
+            reportes1.BorderStyle = BorderStyle.FixedSingle;
+            reportes1.Dock = DockStyle.Fill;
+            reportes1.ForeColor = SystemColors.ButtonHighlight;
+            reportes1.Location = new Point(0, 0);
+            reportes1.Name = "reportes1";
+            reportes1.Size = new Size(1295, 771);
+            reportes1.TabIndex = 8;
+      
+            inventario1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            inventario1.BorderStyle = BorderStyle.FixedSingle;
+            inventario1.Dock = DockStyle.Fill;
+            inventario1.Location = new Point(0, 0);
+            inventario1.Name = "inventario1";
+            inventario1.Size = new Size(1295, 771);
+            inventario1.TabIndex = 6;
+     
+            facturas1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            facturas1.BackColor = Color.FromArgb(49, 66, 82);
+            facturas1.BorderStyle = BorderStyle.FixedSingle;
+            facturas1.Dock = DockStyle.Fill;
+            facturas1.ForeColor = SystemColors.ButtonHighlight;
+            facturas1.Location = new Point(0, 0);
+            facturas1.Name = "facturas1";
+            facturas1.Size = new Size(1295, 771);
+            facturas1.TabIndex = 5;
+     
+            creditos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            creditos1.BackColor = Color.FromArgb(49, 66, 82);
+            creditos1.BorderStyle = BorderStyle.FixedSingle;
+            creditos1.Dock = DockStyle.Fill;
+            creditos1.ForeColor = SystemColors.ButtonHighlight;
+            creditos1.Location = new Point(0, 0);
+            creditos1.Name = "creditos1";
+            creditos1.Size = new Size(1295, 771);
+            creditos1.TabIndex = 4;
+  
+            corte1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            corte1.BackColor = Color.FromArgb(49, 66, 82);
+            corte1.BorderStyle = BorderStyle.FixedSingle;
+            corte1.Dock = DockStyle.Fill;
+            corte1.ForeColor = SystemColors.ButtonHighlight;
+            corte1.Location = new Point(0, 0);
+            corte1.Name = "corte1";
+            corte1.Size = new Size(1295, 771);
+            corte1.TabIndex = 3;
+   
+            configuracion1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            configuracion1.BackColor = Color.FromArgb(49, 66, 82);
+            configuracion1.BorderStyle = BorderStyle.FixedSingle;
+            configuracion1.Dock = DockStyle.Fill;
+            configuracion1.ForeColor = SystemColors.ButtonHighlight;
+            configuracion1.Location = new Point(0, 0);
+            configuracion1.Name = "configuracion1";
+            configuracion1.Size = new Size(1295, 771);
+            configuracion1.TabIndex = 2;
+         
+            compras1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            compras1.BackColor = Color.FromArgb(49, 66, 82);
+            compras1.Dock = DockStyle.Fill;
+            compras1.ForeColor = SystemColors.ButtonHighlight;
+            compras1.Location = new Point(0, 0);
+            compras1.Name = "compras1";
+            compras1.Size = new Size(1295, 771);
+            compras1.TabIndex = 1;
+
+            clientes1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            clientes1.BackColor = Color.FromArgb(49, 66, 82);
+            clientes1.Dock = DockStyle.Fill;
+            clientes1.Location = new Point(0, 0);
+            clientes1.Name = "clientes1";
+            clientes1.Size = new Size(1295, 727);
+            clientes1.TabIndex = 0;
+
+            productos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            productos1.BackColor = Color.FromArgb(49, 66, 82);
+            productos1.Dock = DockStyle.Fill;
+            productos1.Location = new Point(0, 0);
+            productos1.Name = "productos1";
+            productos1.Size = new Size(1295, 727);
+            productos1.TabIndex = 9;
         }
 
         private void SetAllControlsFont(Control.ControlCollection controls, Font newFont)
