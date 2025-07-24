@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasControl));
             panel1 = new Panel();
             ventasTitle = new Label();
-            label1 = new Label();
+            labelCodigo = new Label();
             txtCodigo = new TextBox();
             btnVarios = new Button();
             btnComun = new Button();
@@ -42,9 +42,7 @@
             btnVerificador = new Button();
             btnAgregarProducto = new Button();
             btnEliminarProducto = new Button();
-            tabControl1 = new TabControl();
-            tabPage1 = new TabPage();
-            dataGridViewVentas = new DataGridView();
+            tabControlTickets = new TabControl();
             panel2 = new Panel();
             btnReimprimir = new Button();
             btnVentasDevoluciones = new Button();
@@ -57,9 +55,6 @@
             panel4 = new Panel();
             panel5 = new Panel();
             panel1.SuspendLayout();
-            tabControl1.SuspendLayout();
-            tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewVentas).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -89,15 +84,15 @@
             ventasTitle.TabIndex = 0;
             ventasTitle.Text = "VENTA - Ticket 1";
             // 
-            // label1
+            // labelCodigo
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10F);
-            label1.Location = new Point(7, 14);
-            label1.Name = "label1";
-            label1.Size = new Size(142, 19);
-            label1.TabIndex = 1;
-            label1.Text = "Código del producto: ";
+            labelCodigo.AutoSize = true;
+            labelCodigo.Font = new Font("Segoe UI", 10F);
+            labelCodigo.Location = new Point(7, 14);
+            labelCodigo.Name = "labelCodigo";
+            labelCodigo.Size = new Size(142, 19);
+            labelCodigo.TabIndex = 1;
+            labelCodigo.Text = "Código del producto: ";
             // 
             // txtCodigo
             // 
@@ -298,41 +293,14 @@
             btnEliminarProducto.UseVisualStyleBackColor = false;
             btnEliminarProducto.Click += btnEliminarProducto_Click;
             // 
-            // tabControl1
+            // tabControlTickets
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Dock = DockStyle.Fill;
-            tabControl1.Location = new Point(0, 0);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1445, 391);
-            tabControl1.TabIndex = 12;
-            // 
-            // tabPage1
-            // 
-            tabPage1.BackColor = Color.Transparent;
-            tabPage1.Controls.Add(dataGridViewVentas);
-            tabPage1.ForeColor = SystemColors.ControlText;
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1437, 363);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Ticket 1";
-            // 
-            // dataGridViewVentas
-            // 
-            dataGridViewVentas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewVentas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewVentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewVentas.Dock = DockStyle.Fill;
-            dataGridViewVentas.Location = new Point(3, 3);
-            dataGridViewVentas.Name = "dataGridViewVentas";
-            dataGridViewVentas.ReadOnly = true;
-            dataGridViewVentas.ShowEditingIcon = false;
-            dataGridViewVentas.Size = new Size(1431, 357);
-            dataGridViewVentas.TabIndex = 0;
-            dataGridViewVentas.CellDoubleClick += dataGridViewVentas_CellDoubleClick;
+            tabControlTickets.Dock = DockStyle.Fill;
+            tabControlTickets.Location = new Point(0, 0);
+            tabControlTickets.Name = "tabControlTickets";
+            tabControlTickets.SelectedIndex = 0;
+            tabControlTickets.Size = new Size(1445, 391);
+            tabControlTickets.TabIndex = 12;
             // 
             // panel2
             // 
@@ -430,6 +398,7 @@
             btnCobrar.TextAlign = ContentAlignment.MiddleRight;
             btnCobrar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCobrar.UseVisualStyleBackColor = false;
+            btnCobrar.Click += btnCobrar_Click;
             // 
             // btnAsignarCliente
             // 
@@ -493,6 +462,7 @@
             btnPendiente.TextAlign = ContentAlignment.MiddleRight;
             btnPendiente.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnPendiente.UseVisualStyleBackColor = false;
+            btnPendiente.Click += btnPendiente_Click;
             // 
             // btnCambiar
             // 
@@ -521,7 +491,7 @@
             panel4.BackColor = Color.FromArgb(49, 66, 82);
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(txtCodigo);
-            panel4.Controls.Add(label1);
+            panel4.Controls.Add(labelCodigo);
             panel4.Controls.Add(btnVarios);
             panel4.Controls.Add(btnComun);
             panel4.Controls.Add(btnEliminarProducto);
@@ -542,7 +512,7 @@
             // 
             panel5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(tabControl1);
+            panel5.Controls.Add(tabControlTickets);
             panel5.Dock = DockStyle.Fill;
             panel5.Location = new Point(0, 127);
             panel5.Name = "panel5";
@@ -564,9 +534,6 @@
             Size = new Size(1447, 604);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            tabControl1.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridViewVentas).EndInit();
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
@@ -579,7 +546,7 @@
 
         private Panel panel1;
         private Label ventasTitle;
-        private Label label1;
+        private Label labelCodigo;
         private TextBox txtCodigo;
         public Button btnVarios;
         public Button btnComun;
@@ -590,8 +557,7 @@
         public Button btnVerificador;
         public Button btnAgregarProducto;
         public Button btnEliminarProducto;
-        private TabControl tabControl1;
-        private TabPage tabPage1;
+        private TabControl tabControlTickets;
         private Panel panel2;
         private Panel panel3;
         private Panel panel5;
@@ -606,6 +572,5 @@
         public Button btnCobrar;
         public Button btnReimprimir;
         public Button btnVentasDevoluciones;
-        private DataGridView dataGridViewVentas;
     }
 }
