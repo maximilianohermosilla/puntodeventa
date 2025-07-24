@@ -31,12 +31,12 @@ namespace PuntoDeVenta
         public void InitializeMain()
         {
             InitializeComponent();
+            _ = GetUltimoTurno();
             InitializeUserControlsMain();
             timer1 = new System.Windows.Forms.Timer();
             timer1.Interval = 1;
             timer1.Tick += timer1_Tick;
             timer1.Start();
-            _ = GetUltimoTurno();
             //SetAllControlsFont(this.Controls, new Font("Verdana", 8F, FontStyle.Regular));
         }
 
@@ -114,7 +114,7 @@ namespace PuntoDeVenta
 
         private void InitializeUserControlsMain()
         {
-            ventas1 = new VentasControl();
+            ventas1 = new VentasControl(turnoActual.Id);
             clientes1 = new ClientesControl();
             productos1 = new ProductosControl();
             inventario1 = new InventarioControl();

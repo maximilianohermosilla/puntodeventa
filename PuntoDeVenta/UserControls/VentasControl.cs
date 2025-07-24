@@ -2,7 +2,11 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.Domain.Entities;
 using System.Data;
+using System.Security.Policy;
+using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PuntoDeVenta.UserControls
 {
@@ -11,12 +15,22 @@ namespace PuntoDeVenta.UserControls
         private PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
 
         private readonly IProductoService _productoService;
-
+        private readonly ITicketService _ticketService;
+        private int IdTurno = 0;
 
         public VentasControl()
         {
             _productoService = new ProductoService(_context);
+            _ticketService = new TicketService(_context);
+            InitializeComponent();
+            AgregarTicket();
+        }
 
+        public VentasControl(int idTurno)
+        {
+            IdTurno = idTurno;
+            _productoService = new ProductoService(_context);
+            _ticketService = new TicketService(_context);
             InitializeComponent();
             AgregarTicket();
         }
@@ -63,6 +77,7 @@ namespace PuntoDeVenta.UserControls
         {
 
             DataTable productosDataTable = new DataTable();
+            productosDataTable.Columns.Add("Id");
             productosDataTable.Columns.Add("Código");
             productosDataTable.Columns.Add("Nombre");
             productosDataTable.Columns.Add("Precio");
@@ -114,9 +129,9 @@ namespace PuntoDeVenta.UserControls
                     {
                         var dataGridView = GetDataGridView();
                         var dataTable = (DataTable)(dataGridView!.DataSource! ?? NewDataTable());
-                        
+
                         DataRow[] foundRows = dataTable.Select($@"Código = '{txtCodigo.Text}'");
-                        DataRow productoExistente = foundRows.FirstOrDefault()!;                        
+                        DataRow productoExistente = foundRows.FirstOrDefault()!;
 
                         if (productoExistente != null)
                         {
@@ -128,7 +143,7 @@ namespace PuntoDeVenta.UserControls
                         }
                         else
                         {
-                            dataTable.Rows.Add(producto.Codigo, producto.Descripcion, producto.PrecioVenta, 1, producto.PrecioVenta);
+                            dataTable.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.PrecioVenta, 1, producto.PrecioVenta);
                         }
 
                         dataGridView.DataSource = dataTable;
@@ -215,10 +230,60 @@ namespace PuntoDeVenta.UserControls
         {
             try
             {
+                List<TicketDetalleRequest> productos = new List<TicketDetalleRequest>();
+
                 var dataGridView = GetDataGridView();
-                var dataTable = (DataTable)(dataGridView!.DataSource);
+                var dataTable = (DataTable)(dataGridView!.DataSource ?? NewDataTable());
 
+                if (dataTable != null && dataTable.Rows.Count > 0)
+                {
+                    DataRow rowHeader = dataTable.NewRow();
 
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        string vId = row["Id"].ToString()!;
+                        string vCodigo = row["Código"].ToString()!;
+                        string vNombre = row["Nombre"].ToString()!;
+                        string vPrecio = row["Precio"].ToString()!;
+                        string vCantidad = row["Cantidad"].ToString()!;
+                        string vImporte = row["Importe"].ToString()!;
+
+                        TicketDetalleRequest producto = new TicketDetalleRequest();
+                        producto.Cantidad = Convert.ToInt32(vCantidad);
+                        producto.Precio = Convert.ToInt32(vPrecio);
+                        producto.Descuento = 0;
+                        producto.PrecioFinal = Convert.ToInt32(vImporte);
+                        producto.PorMayor = false;
+                        producto.IdProducto = Convert.ToInt32(vId);
+                        producto.IdTicket = 0;
+                        producto.ProductoComun = "";
+
+                        productos.Add(producto);
+                    }
+
+                    //TicketEstadoRequest ticketEstado = new TicketEstadoRequest()
+                    //{                        
+                    //    Fecha = DateTime.Now,
+                    //    IdTicket = 0,
+                    //    IdEstado = 2
+                    //};
+
+                    TicketRequest ticketRequest = new TicketRequest()
+                    {
+                        Nombre = $@"{IdTurno}_{tabControlTickets!.SelectedTab!.Name}_{DateTime.Now.ToString()}",
+                        FechaCreacion = DateTime.Now,
+                        FechaFinalizacion = DateTime.Now,
+                        PrecioTotal = productos.Sum(x => x.PrecioFinal),
+                        IdEstado = 2,
+                        IdFormaPago = 1,
+                        IdTurno = IdTurno,
+                        IdCliente = null,
+                        TicketDetalles = productos,
+                        TicketEstados = new List<TicketEstadoRequest>() { new TicketEstadoRequest() { Fecha = DateTime.Now, IdTicket = 0, IdEstado = 2 } }
+                    };
+
+                    var response = await _ticketService.Insert(ticketRequest);
+                }
             }
             catch (Exception ex)
             {
@@ -258,7 +323,7 @@ namespace PuntoDeVenta.UserControls
         {
             try
             {
-                if(selectedDataGridView != null)
+                if (selectedDataGridView != null)
                 {
                     return (DataTable)(selectedDataGridView!.DataSource);
                 }

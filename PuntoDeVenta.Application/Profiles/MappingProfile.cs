@@ -76,6 +76,10 @@ namespace PuntoDeVenta.Application.Profiles
             CreateMap<TicketEstadoResponse, TicketEstado>().ReverseMap();
             CreateMap<TicketEstadoResponse, TicketEstadoRequest>().ReverseMap();
 
+            CreateMap<TicketRequest, Ticket>().ReverseMap();
+            CreateMap<TicketResponse, Ticket>().ReverseMap();
+            CreateMap<TicketResponse, TicketRequest>().ReverseMap();
+
             CreateMap<TipoMovimientoRequest, TipoMovimiento>().ReverseMap();
             CreateMap<TipoMovimientoResponse, TipoMovimiento>().ReverseMap();
             CreateMap<TipoMovimientoResponse, TipoMovimientoRequest>().ReverseMap();

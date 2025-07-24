@@ -77,6 +77,7 @@ namespace PuntoDeVenta.AccessData
                 entity.HasOne(d => d.Estado).WithMany(p => p.Tickets).HasForeignKey(d => d.IdEstado).OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(d => d.FormaPago).WithMany(p => p.Tickets).HasForeignKey(d => d.IdFormaPago).OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(d => d.Turno).WithMany(p => p.Tickets).HasForeignKey(d => d.IdTurno).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.Cliente).WithMany(p => p.Tickets).HasForeignKey(d => d.IdCliente).OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<TicketDetalle>(entity =>
