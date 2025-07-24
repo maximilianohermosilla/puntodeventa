@@ -16,19 +16,20 @@ namespace PuntoDeVenta
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override async void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-
-            if(turnoActual != null)
+            if (turnoActual != null)
             {
                 if (DialogResult.Yes == MessageBox.Show(@$"¿Desea finalizar el turno iniciado {turnoActual!.FechaInicio.ToString()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
                 {
                     await FinalizarTurno();
                 }
             }
+
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+
             
             System.Windows.Forms.Application.Exit();
         }

@@ -2,8 +2,8 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.FormDialogs;
 using PuntoDeVenta.UserControls;
-using System.Security.Cryptography.X509Certificates;
 
 namespace PuntoDeVenta
 {
@@ -247,23 +247,26 @@ namespace PuntoDeVenta
         {
             try
             {
+                int cantidad = 0;
                 var ultimoTurno = await _turnoService.GetByIdUsuario(IdUsuario, false);
 
                 if(ultimoTurno != null && ultimoTurno.success)
                 {
-                    turnoActual = ultimoTurno!.response!;
-                    if (DialogResult.Yes == MessageBox.Show(@$"¿Desea reanudar el turno iniciado {turnoActual!.FechaInicio.ToString()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+                    if (DialogResult.Yes == MessageBox.Show(@$"¿Desea reanudar el turno iniciado {ultimoTurno!.response!.FechaInicio.ToString()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
                     {
-
+                        turnoActual = ultimoTurno!.response!;
+                        //cantidad = ObtenerCantidad();
                     }
                 }
                 else
                 {
                     if (DialogResult.Yes == MessageBox.Show("¿Desea iniciar un nuevo turno?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
                     {
+                        cantidad = ObtenerCantidad();
+
                         TurnoRequest turnoRequest = new TurnoRequest()
                         {
-                            CantidadInicio = 0, CantidadFin = 0, ValorTotal = 0, ValorGanancia = 0, Finalizado = false, 
+                            CantidadInicio = cantidad, CantidadFin = 0, ValorTotal = 0, ValorGanancia = 0, Finalizado = false, 
                             FechaInicio = DateTime.Now, FechaFin = new DateTime(), IdUsuario = IdUsuario
                         };
 
@@ -278,19 +281,20 @@ namespace PuntoDeVenta
             }
             catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private async Task FinalizarTurno()
         {
             try
             {
+                int cantidad = ObtenerCantidad();
+
                 TurnoRequest turnoRequest = new TurnoRequest()
                 {
                     Id = turnoActual.Id,
                     CantidadInicio = turnoActual.CantidadInicio,
-                    CantidadFin = turnoActual.CantidadFin,
+                    CantidadFin = cantidad,
                     ValorTotal = turnoActual.ValorTotal,
                     ValorGanancia = turnoActual.ValorGanancia,
                     Finalizado = true,
@@ -306,9 +310,30 @@ namespace PuntoDeVenta
             }
             catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private int ObtenerCantidad()
+        {
+            NumberDialog numberDialog = new NumberDialog();
+            int cantidad = 0;
+
+            try
+            {
+                if (numberDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    string txtCantidad = numberDialog.txtNumber.Text;
+                    int.TryParse(txtCantidad, out cantidad);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            numberDialog.Close();
+            return cantidad;
         }
     }
 }

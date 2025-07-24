@@ -1,12 +1,11 @@
-﻿namespace PuntoDeVenta
+﻿namespace PuntoDeVenta.FormDialogs
 {
-    public partial class ProductoEtiquetaDialog : Form
+    public partial class NumberDialog : Form
     {
-        public ProductoEtiquetaDialog()
+        public NumberDialog()
         {
             InitializeComponent();
         }
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;

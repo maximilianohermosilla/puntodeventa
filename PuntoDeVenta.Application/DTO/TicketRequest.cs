@@ -9,7 +9,7 @@
         public float PrecioTotal { get; set; }
         public int IdEstado { get; set; }
         public int IdFormaPago { get; set; }
-        public int IdTurno { get; set; }
+        public int? IdTurno { get; set; }
         public int? IdCliente { get; set; }
         public virtual ICollection<TicketDetalleRequest> TicketDetalles { get; set; }
         public virtual ICollection<TicketEstadoRequest> TicketEstados { get; set; }
