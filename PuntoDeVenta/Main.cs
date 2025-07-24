@@ -267,7 +267,7 @@ namespace PuntoDeVenta
                         TurnoRequest turnoRequest = new TurnoRequest()
                         {
                             CantidadInicio = cantidad, CantidadFin = 0, ValorTotal = 0, ValorGanancia = 0, Finalizado = false, 
-                            FechaInicio = DateTime.Now, FechaFin = new DateTime(), IdUsuario = IdUsuario
+                            FechaInicio = DateTime.Now, FechaFin = null, IdUsuario = IdUsuario
                         };
 
                         var response = await _turnoService.Insert(turnoRequest);

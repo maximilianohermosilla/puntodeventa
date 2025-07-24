@@ -9,7 +9,7 @@
         public int? ValorGanancia { get; set; }
         public bool Finalizado { get; set; }
         public DateTime FechaInicio { get; set; } = DateTime.Now;
-        public DateTime FechaFin { get; set; }
+        public DateTime? FechaFin { get; set; }
         public int IdUsuario { get; set; }
     }
 }
