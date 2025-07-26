@@ -70,7 +70,7 @@ namespace PuntoDeVenta.UserControls
             // panelNavbar
             // 
             panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelNavbar.BackColor = Color.FromArgb(49, 66, 82);
+            panelNavbar.BackColor = Color.FromArgb(26, 32, 40);
             panelNavbar.BorderStyle = BorderStyle.FixedSingle;
             panelNavbar.Controls.Add(btnAgregar);
             panelNavbar.Controls.Add(btnAjustes);

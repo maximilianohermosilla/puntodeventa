@@ -2,6 +2,8 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.FormDialogs;
+using PuntoDeVenta.UserControls.ProductosControls;
 
 namespace PuntoDeVenta.UserControls
 {
@@ -18,8 +20,44 @@ namespace PuntoDeVenta.UserControls
             _productoService = new ProductoService(_context);
             _categoriaProductoService = new CategoriaProductoService(_context);
             InitializeComponent();
+            InitializeControls();
             _ = GetAllCategorias();
             SetActivePanel(nuevoProducto1);
+        }
+
+        public void InitializeControls()
+        {
+            categoriaProducto1 = new CategoriaProductoControl(categoriaProductos);
+            nuevoProducto1 = new NuevoProductoControl(categoriaProductos);
+            catalogoProductos1 = new CatalogoProductosControl(categoriaProductos, this);
+
+            panelMain.Controls.Add(categoriaProducto1);
+            panelMain.Controls.Add(nuevoProducto1);
+            panelMain.Controls.Add(catalogoProductos1);
+
+            categoriaProducto1.Dock = DockStyle.Fill;
+            categoriaProducto1.Location = new Point(0, 0);
+            categoriaProducto1.Name = "categoriaProducto1";
+            categoriaProducto1.Size = new Size(1449, 508);
+            categoriaProducto1.TabIndex = 9;
+
+            nuevoProducto1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            nuevoProducto1.BackColor = Color.FromArgb(49, 66, 82);
+            nuevoProducto1.Dock = DockStyle.Fill;
+            nuevoProducto1.ForeColor = SystemColors.ButtonHighlight;
+            nuevoProducto1.Location = new Point(0, 0);
+            nuevoProducto1.Name = "nuevoProducto1";
+            nuevoProducto1.Size = new Size(1449, 508);
+            nuevoProducto1.TabIndex = 8;
+
+            catalogoProductos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            catalogoProductos1.BackColor = Color.FromArgb(49, 66, 82);
+            catalogoProductos1.Dock = DockStyle.Fill;
+            catalogoProductos1.ForeColor = SystemColors.ButtonHighlight;
+            catalogoProductos1.Location = new Point(0, 0);
+            catalogoProductos1.Name = "nuevoProducto1";
+            catalogoProductos1.Size = new Size(1449, 508);
+            catalogoProductos1.TabIndex = 8;
         }
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)
@@ -34,7 +72,7 @@ namespace PuntoDeVenta.UserControls
         {
             //SetActivePanel(null);
             ProductoEtiquetaDialog etiquetaDialog = new ProductoEtiquetaDialog();
-            etiquetaDialog.labelProducto.Text = "Modificar Producto";
+            etiquetaDialog.Text = "Modificar Producto";
 
             try
             {
@@ -55,7 +93,7 @@ namespace PuntoDeVenta.UserControls
         {
             //SetActivePanel(null);
             ProductoEtiquetaDialog etiquetaDialog = new ProductoEtiquetaDialog();
-            etiquetaDialog.labelProducto.Text = "Eliminar Producto";
+            etiquetaDialog.Text = "Eliminar Producto";
 
             try
             {

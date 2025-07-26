@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta.FormDialogs
 {
-    partial class VentasVariosDialog
+    partial class ProductoComunDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,22 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductoEtiquetaDialog));
-            labelProducto = new Label();
-            txtEtiqueta = new TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductoComunDialog));
+            labelDescripcion = new Label();
+            txtDescripcion = new TextBox();
             btnAceptar = new Button();
             btnCancelar = new Button();
+            txtCantidad = new TextBox();
+            txtPrecio = new TextBox();
+            labelCantidad = new Label();
+            labelPrecio = new Label();
+            labelOperator = new Label();
             SuspendLayout();
             // 
-            // labelProducto
+            // labelDescripcion
             // 
-            resources.ApplyResources(labelProducto, "labelProducto");
-            labelProducto.Name = "labelProducto";
+            resources.ApplyResources(labelDescripcion, "labelDescripcion");
+            labelDescripcion.Name = "labelDescripcion";
             // 
-            // txtEtiqueta
+            // txtDescripcion
             // 
-            resources.ApplyResources(txtEtiqueta, "txtEtiqueta");
-            txtEtiqueta.Name = "txtEtiqueta";
+            resources.ApplyResources(txtDescripcion, "txtDescripcion");
+            txtDescripcion.Name = "txtDescripcion";
             // 
             // btnAceptar
             // 
@@ -56,6 +61,7 @@
             btnAceptar.ForeColor = SystemColors.ButtonHighlight;
             btnAceptar.Name = "btnAceptar";
             btnAceptar.UseVisualStyleBackColor = false;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // btnCancelar
             // 
@@ -68,30 +74,72 @@
             btnCancelar.ForeColor = SystemColors.ButtonHighlight;
             btnCancelar.Name = "btnCancelar";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
-            // VentasVariosDialog
+            // txtCantidad
             // 
+            resources.ApplyResources(txtCantidad, "txtCantidad");
+            txtCantidad.Name = "txtCantidad";
+            // 
+            // txtPrecio
+            // 
+            resources.ApplyResources(txtPrecio, "txtPrecio");
+            txtPrecio.Name = "txtPrecio";
+            // 
+            // labelCantidad
+            // 
+            resources.ApplyResources(labelCantidad, "labelCantidad");
+            labelCantidad.Name = "labelCantidad";
+            // 
+            // labelPrecio
+            // 
+            resources.ApplyResources(labelPrecio, "labelPrecio");
+            labelPrecio.Name = "labelPrecio";
+            // 
+            // labelOperator
+            // 
+            resources.ApplyResources(labelOperator, "labelOperator");
+            labelOperator.Name = "labelOperator";
+            // 
+            // ProductoComunDialog
+            // 
+            txtDescripcion.TabIndex = 0;
+            txtCantidad.TabIndex = 1;
+            txtPrecio.TabIndex = 2;
+            btnAceptar.TabIndex = 3;
+            btnCancelar.TabIndex = 4;
+
             AcceptButton = btnAceptar;
             AllowDrop = true;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(49, 66, 82);
+            BackColor = Color.FromArgb(26, 32, 40);
+            Controls.Add(labelOperator);
+            Controls.Add(labelPrecio);
+            Controls.Add(labelCantidad);
+            Controls.Add(txtPrecio);
+            Controls.Add(txtCantidad);
             Controls.Add(btnCancelar);
             Controls.Add(btnAceptar);
-            Controls.Add(txtEtiqueta);
-            Controls.Add(labelProducto);
+            Controls.Add(txtDescripcion);
+            Controls.Add(labelDescripcion);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Name = "VentasVariosDialog";
+            Name = "ProductoComunDialog";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        public Label labelProducto;
-        public TextBox txtEtiqueta;
+        public Label labelDescripcion;
+        public TextBox txtDescripcion;
         public Button btnAceptar;
         public Button btnCancelar;
+        public TextBox txtCantidad;
+        public TextBox txtPrecio;
+        public Label labelCantidad;
+        public Label labelPrecio;
+        public Label labelOperator;
     }
 }

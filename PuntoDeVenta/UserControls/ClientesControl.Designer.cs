@@ -65,7 +65,7 @@ namespace PuntoDeVenta.UserControls
             // panelHeader
             // 
             panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelHeader.BackColor = Color.LightSlateGray;
+            panelHeader.BackColor = Color.DodgerBlue;
             panelHeader.BorderStyle = BorderStyle.FixedSingle;
             panelHeader.Controls.Add(clientesTitle);
             panelHeader.Dock = DockStyle.Top;
@@ -88,7 +88,7 @@ namespace PuntoDeVenta.UserControls
             // panelNavbar
             // 
             panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelNavbar.BackColor = Color.FromArgb(49, 66, 82);
+            panelNavbar.BackColor = Color.FromArgb(26, 32, 40);
             panelNavbar.BorderStyle = BorderStyle.FixedSingle;
             panelNavbar.Controls.Add(labelTitle);
             panelNavbar.Dock = DockStyle.Top;
@@ -267,9 +267,9 @@ namespace PuntoDeVenta.UserControls
             panelAside.Controls.Add(listClientes);
             panelAside.Controls.Add(txtBuscar);
             panelAside.ForeColor = SystemColors.ButtonHighlight;
-            panelAside.Location = new Point(0, 0);
+            panelAside.Location = new Point(3, 5);
             panelAside.Name = "panelAside";
-            panelAside.Size = new Size(317, 507);
+            panelAside.Size = new Size(314, 498);
             panelAside.TabIndex = 7;
             // 
             // panel2
@@ -278,9 +278,9 @@ namespace PuntoDeVenta.UserControls
             panel2.Controls.Add(btnEliminarCliente);
             panel2.Controls.Add(btnNuevoCliente);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 459);
+            panel2.Location = new Point(0, 450);
             panel2.Name = "panel2";
-            panel2.Size = new Size(317, 48);
+            panel2.Size = new Size(314, 48);
             panel2.TabIndex = 0;
             // 
             // btnEliminarCliente
@@ -304,7 +304,6 @@ namespace PuntoDeVenta.UserControls
             btnEliminarCliente.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEliminarCliente.UseVisualStyleBackColor = false;
             btnEliminarCliente.Click += btnEliminarCliente_Click;
-            btnEliminarCliente.Enabled = selectedCliente.Id > 0;
             // 
             // btnNuevoCliente
             // 
@@ -335,7 +334,7 @@ namespace PuntoDeVenta.UserControls
             listClientes.ItemHeight = 15;
             listClientes.Location = new Point(18, 48);
             listClientes.Name = "listClientes";
-            listClientes.Size = new Size(280, 394);
+            listClientes.Size = new Size(280, 379);
             listClientes.TabIndex = 9;
             listClientes.SelectedIndexChanged += listClientes_SelectedIndexChanged;
             // 

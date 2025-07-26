@@ -64,7 +64,7 @@
             // panel1
             // 
             panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panel1.BackColor = Color.MediumSeaGreen;
+            panel1.BackColor = Color.SeaGreen;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(ventasTitle);
             panel1.Dock = DockStyle.Top;
@@ -80,9 +80,9 @@
             ventasTitle.ForeColor = SystemColors.ButtonHighlight;
             ventasTitle.Location = new Point(3, 0);
             ventasTitle.Name = "ventasTitle";
-            ventasTitle.Size = new Size(153, 25);
+            ventasTitle.Size = new Size(81, 25);
             ventasTitle.TabIndex = 0;
-            ventasTitle.Text = "VENTA - Ticket 1";
+            ventasTitle.Text = "VENTAS";
             // 
             // labelCodigo
             // 
@@ -118,10 +118,11 @@
             btnVarios.Name = "btnVarios";
             btnVarios.Size = new Size(122, 35);
             btnVarios.TabIndex = 3;
-            btnVarios.Text = "(INS) Varios";
+            btnVarios.Text = "Varios";
             btnVarios.TextAlign = ContentAlignment.MiddleRight;
             btnVarios.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnVarios.UseVisualStyleBackColor = false;
+            btnVarios.Click += btnVarios_Click;
             // 
             // btnComun
             // 
@@ -139,10 +140,11 @@
             btnComun.Name = "btnComun";
             btnComun.Size = new Size(122, 35);
             btnComun.TabIndex = 4;
-            btnComun.Text = "(INI) Producto";
+            btnComun.Text = "Prod. Común";
             btnComun.TextAlign = ContentAlignment.MiddleRight;
             btnComun.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnComun.UseVisualStyleBackColor = false;
+            btnComun.Click += btnComun_Click;
             // 
             // btnBuscar
             // 
@@ -488,7 +490,7 @@
             // panel4
             // 
             panel4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panel4.BackColor = Color.FromArgb(49, 66, 82);
+            panel4.BackColor = Color.FromArgb(26, 32, 40);
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(txtCodigo);
             panel4.Controls.Add(labelCodigo);

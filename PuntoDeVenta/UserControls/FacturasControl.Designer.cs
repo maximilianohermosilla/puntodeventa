@@ -42,7 +42,7 @@
             // panelHeader
             // 
             panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelHeader.BackColor = Color.FromArgb(50, 50, 50);
+            panelHeader.BackColor = Color.DarkKhaki;
             panelHeader.BorderStyle = BorderStyle.FixedSingle;
             panelHeader.Controls.Add(title);
             panelHeader.Dock = DockStyle.Top;
@@ -65,6 +65,7 @@
             // panelNavbar
             // 
             panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelNavbar.BackColor = Color.FromArgb(26, 32, 40);
             panelNavbar.BorderStyle = BorderStyle.FixedSingle;
             panelNavbar.Controls.Add(btnFacturaPorVentas);
             panelNavbar.Controls.Add(btnFacturasGlobales);

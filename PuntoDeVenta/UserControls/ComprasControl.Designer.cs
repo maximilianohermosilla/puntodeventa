@@ -41,7 +41,7 @@
             // panelHeader
             // 
             panelHeader.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelHeader.BackColor = Color.FromArgb(50, 50, 50);
+            panelHeader.BackColor = Color.DeepPink;
             panelHeader.BorderStyle = BorderStyle.FixedSingle;
             panelHeader.Controls.Add(comprasTitle);
             panelHeader.Dock = DockStyle.Top;
@@ -64,7 +64,7 @@
             // panelNavbar
             // 
             panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelNavbar.BackColor = Color.FromArgb(49, 66, 82);
+            panelNavbar.BackColor = Color.FromArgb(26, 32, 40);
             panelNavbar.BorderStyle = BorderStyle.FixedSingle;
             panelNavbar.Controls.Add(btnCompras);
             panelNavbar.Dock = DockStyle.Top;
@@ -86,7 +86,7 @@
             btnCompras.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCompras.ForeColor = SystemColors.ButtonHighlight;
             btnCompras.Image = (Image)resources.GetObject("btnCompras.Image");
-            btnCompras.Location = new Point(3, 3);
+            btnCompras.Location = new Point(2, 6);
             btnCompras.Name = "btnCompras";
             btnCompras.Size = new Size(193, 35);
             btnCompras.TabIndex = 3;

@@ -1,8 +1,8 @@
 ﻿namespace PuntoDeVenta.FormDialogs
 {
-    public partial class ProductoEtiquetaDialog : Form
+    public partial class ProductoComunDialog : Form
     {
-        public ProductoEtiquetaDialog()
+        public ProductoComunDialog()
         {
             InitializeComponent();
         }

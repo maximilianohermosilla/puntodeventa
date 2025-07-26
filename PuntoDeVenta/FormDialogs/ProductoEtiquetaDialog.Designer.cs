@@ -1,4 +1,4 @@
-﻿namespace PuntoDeVenta
+﻿namespace PuntoDeVenta.FormDialogs
 {
     partial class ProductoEtiquetaDialog
     {
@@ -33,6 +33,8 @@
             txtEtiqueta = new TextBox();
             btnAceptar = new Button();
             btnCancelar = new Button();
+            labelCantidad = new Label();
+            txtCantidad = new TextBox();
             SuspendLayout();
             // 
             // labelProducto
@@ -44,6 +46,7 @@
             // 
             resources.ApplyResources(txtEtiqueta, "txtEtiqueta");
             txtEtiqueta.Name = "txtEtiqueta";
+            txtEtiqueta.TabIndex = 0;
             // 
             // btnAceptar
             // 
@@ -57,6 +60,7 @@
             btnAceptar.Name = "btnAceptar";
             btnAceptar.UseVisualStyleBackColor = false;
             btnAceptar.Click += btnAceptar_Click;
+            btnAceptar.TabIndex = 2;
             // 
             // btnCancelar
             // 
@@ -70,6 +74,18 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
+            btnCancelar.TabIndex = 3;
+            // 
+            // labelCantidad
+            // 
+            resources.ApplyResources(labelCantidad, "labelCantidad");
+            labelCantidad.Name = "labelCantidad";
+            // 
+            // txtCantidad
+            // 
+            resources.ApplyResources(txtCantidad, "txtCantidad");
+            txtCantidad.Name = "txtCantidad";
+            txtCantidad.TabIndex = 1;
             // 
             // ProductoEtiquetaDialog
             // 
@@ -77,7 +93,9 @@
             AllowDrop = true;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(49, 66, 82);
+            BackColor = Color.FromArgb(26, 32, 40);
+            Controls.Add(txtCantidad);
+            Controls.Add(labelCantidad);
             Controls.Add(btnCancelar);
             Controls.Add(btnAceptar);
             Controls.Add(txtEtiqueta);
@@ -95,5 +113,7 @@
         public TextBox txtEtiqueta;
         public Button btnAceptar;
         public Button btnCancelar;
+        public Label labelCantidad;
+        public TextBox txtCantidad;
     }
 }

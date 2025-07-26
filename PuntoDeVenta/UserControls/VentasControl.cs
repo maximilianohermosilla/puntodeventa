@@ -3,6 +3,7 @@ using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
 using PuntoDeVenta.Domain.Entities;
+using PuntoDeVenta.FormDialogs;
 using System.Data;
 using System.Security.Policy;
 using System.Windows.Forms;
@@ -37,7 +38,7 @@ namespace PuntoDeVenta.UserControls
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            _ = AgregarProducto(1);
+            _ = AgregarProducto(txtCodigo.Text, 1);
         }
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
@@ -49,7 +50,7 @@ namespace PuntoDeVenta.UserControls
         {
             if (e.KeyCode == Keys.Enter)
             {
-                _ = AgregarProducto(1);
+                _ = AgregarProducto(txtCodigo.Text, 1);
             }
         }
 
@@ -64,7 +65,13 @@ namespace PuntoDeVenta.UserControls
             {
                 var dataGridView = GetDataGridView();
                 string codigoProducto = dataGridView.Rows[e.RowIndex].Cells[0].Value.ToString()!;
-                _ = EliminarProducto(codigoProducto!);
+
+                bool esProductoComun = codigoProducto == "0";
+                if (esProductoComun)
+                {
+                    codigoProducto = dataGridView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString()!;
+                }
+                _ = EliminarProducto(codigoProducto!, esProductoComun);
             }
         }
 
@@ -116,13 +123,13 @@ namespace PuntoDeVenta.UserControls
         }
 
 
-        public async Task AgregarProducto(int cantidad)
+        public async Task AgregarProducto(string codigo, int cantidad)
         {
             try
             {
-                if (!string.IsNullOrEmpty(txtCodigo.Text))
+                if (!string.IsNullOrEmpty(codigo))
                 {
-                    var producto = await GetProductoByCodigo(txtCodigo.Text);
+                    var producto = await GetProductoByCodigo(codigo);
                     int cantidadActual = 1;
 
                     if (producto != null)
@@ -130,7 +137,7 @@ namespace PuntoDeVenta.UserControls
                         var dataGridView = GetDataGridView();
                         var dataTable = (DataTable)(dataGridView!.DataSource! ?? NewDataTable());
 
-                        DataRow[] foundRows = dataTable.Select($@"Código = '{txtCodigo.Text}'");
+                        DataRow[] foundRows = dataTable.Select($@"Código = '{codigo}'");
                         DataRow productoExistente = foundRows.FirstOrDefault()!;
 
                         if (productoExistente != null)
@@ -143,7 +150,7 @@ namespace PuntoDeVenta.UserControls
                         }
                         else
                         {
-                            dataTable.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.PrecioVenta, 1, producto.PrecioVenta);
+                            dataTable.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.PrecioVenta, cantidad, cantidad * producto.PrecioVenta);
                         }
 
                         dataGridView.DataSource = dataTable;
@@ -165,32 +172,50 @@ namespace PuntoDeVenta.UserControls
             }
         }
 
-        public async Task EliminarProducto(string txtCodigo)
+        public async Task AgregarProductoComun(string descripcion, int precio, int cantidad)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(descripcion))
+                {
+                    var dataGridView = GetDataGridView();
+                    var dataTable = (DataTable)(dataGridView!.DataSource! ?? NewDataTable());
+
+                    dataTable.Rows.Add(0, 0, descripcion, precio, cantidad, precio * cantidad);             
+
+                    dataGridView.DataSource = dataTable;
+                    txtCodigo.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar una descripción para el producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public async Task EliminarProducto(string txtCodigo, bool? esProductoComun = false)
         {
             try
             {
                 if (!string.IsNullOrEmpty(txtCodigo))
                 {
-                    var producto = await GetProductoByCodigo(txtCodigo);
+                    var dataGridView = GetDataGridView();
+                    var dataTable = (DataTable)(dataGridView!.DataSource! ?? NewDataTable());
 
-                    if (producto != null)
+                    var filtro = esProductoComun == true ? $@"Nombre = '{txtCodigo}'" : $@"Id = '{txtCodigo}'";
+                    DataRow[] foundRows = dataTable.Select(filtro);
+                    DataRow productoExistente = foundRows.FirstOrDefault()!;
+
+                    if (productoExistente != null)
                     {
-                        var dataGridView = GetDataGridView();
-                        var dataTable = (DataTable)(dataGridView!.DataSource! ?? NewDataTable());
-
-                        DataRow[] foundRows = dataTable.Select($@"Código = '{txtCodigo}'");
-                        DataRow productoExistente = foundRows.FirstOrDefault()!;
-
-                        if (productoExistente != null)
-                        {
-                            dataTable.Rows.Remove(productoExistente);
-                            dataTable.AcceptChanges();
-                        }
+                        dataTable.Rows.Remove(productoExistente);
+                        dataTable.AcceptChanges();
                     }
-                    else
-                    {
-                        MessageBox.Show("No se encontró el producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    
                 }
                 else
                 {
@@ -260,13 +285,6 @@ namespace PuntoDeVenta.UserControls
 
                         productos.Add(producto);
                     }
-
-                    //TicketEstadoRequest ticketEstado = new TicketEstadoRequest()
-                    //{                        
-                    //    Fecha = DateTime.Now,
-                    //    IdTicket = 0,
-                    //    IdEstado = 2
-                    //};
 
                     TicketRequest ticketRequest = new TicketRequest()
                     {
@@ -340,5 +358,53 @@ namespace PuntoDeVenta.UserControls
             }
         }
 
+        private void btnVarios_Click(object sender, EventArgs e)
+        {
+            //SetActivePanel(null);
+            ProductoEtiquetaDialog etiquetaDialog = new ProductoEtiquetaDialog();
+            etiquetaDialog.Text = "Varios Productos";
+            etiquetaDialog.labelCantidad.Visible = true;
+            etiquetaDialog.txtCantidad.Visible = true;
+
+            try
+            {
+                if (etiquetaDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    int cantidad = 1;
+                    int.TryParse(etiquetaDialog.txtCantidad.Text, out cantidad);
+                    _ = AgregarProducto(etiquetaDialog.txtEtiqueta.Text, cantidad);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            etiquetaDialog.Dispose();
+
+        }
+
+        private void btnComun_Click(object sender, EventArgs e)
+        {
+            ProductoComunDialog productoComunDialog = new ProductoComunDialog();
+
+            try
+            {
+                if (productoComunDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    int precio = 0;
+                    int cantidad = 1;
+                    int.TryParse(productoComunDialog.txtPrecio.Text, out precio);
+                    int.TryParse(productoComunDialog.txtCantidad.Text, out cantidad);
+                    _ = AgregarProductoComun(productoComunDialog.txtDescripcion.Text, precio, cantidad);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            productoComunDialog.Dispose();
+        }
     }
 }

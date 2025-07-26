@@ -339,7 +339,7 @@ namespace PuntoDeVenta
             // panelFooter
             // 
             panelFooter.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelFooter.BackColor = Color.FromArgb(16, 22, 30);
+            panelFooter.BackColor = Color.FromArgb(49, 66, 82);
             panelFooter.Controls.Add(txtDatetime);
             panelFooter.Dock = DockStyle.Bottom;
             panelFooter.ForeColor = SystemColors.ButtonHighlight;
