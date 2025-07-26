@@ -5,9 +5,7 @@ using PuntoDeVenta.Application.Services;
 using PuntoDeVenta.Domain.Entities;
 using PuntoDeVenta.FormDialogs;
 using System.Data;
-using System.Security.Policy;
 using System.Windows.Forms;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PuntoDeVenta.UserControls
 {
@@ -18,6 +16,8 @@ namespace PuntoDeVenta.UserControls
         private readonly IProductoService _productoService;
         private readonly ITicketService _ticketService;
         private int IdTurno = 0;
+        private int? IdCliente = null;
+        private string? NombreCliente = null;
 
         public VentasControl()
         {
@@ -80,6 +80,89 @@ namespace PuntoDeVenta.UserControls
             AgregarTicket();
         }
 
+
+        private void btnVarios_Click(object sender, EventArgs e)
+        {
+            //SetActivePanel(null);
+            ProductoEtiquetaDialog etiquetaDialog = new ProductoEtiquetaDialog();
+            etiquetaDialog.Text = "Varios Productos";
+            etiquetaDialog.labelCantidad.Visible = true;
+            etiquetaDialog.txtCantidad.Visible = true;
+
+            try
+            {
+                if (etiquetaDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    int cantidad = (int)etiquetaDialog.txtCantidad.Value;
+                    //int.TryParse(etiquetaDialog.txtCantidad.Text, out cantidad);
+                    _ = AgregarProducto(etiquetaDialog.txtEtiqueta.Text, cantidad);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            etiquetaDialog.Dispose();
+
+        }
+
+        private void btnComun_Click(object sender, EventArgs e)
+        {
+            ProductoComunDialog productoComunDialog = new ProductoComunDialog();
+
+            try
+            {
+                if (productoComunDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    int precio = (int)productoComunDialog.txtPrecio.Value;
+                    int cantidad = (int)productoComunDialog.txtCantidad.Value;
+                    //int.TryParse(productoComunDialog.txtPrecio.Text, out precio);
+                    //int.TryParse(productoComunDialog.txtCantidad.Text, out cantidad);
+                    _ = AgregarProductoComun(productoComunDialog.txtDescripcion.Text, precio, cantidad);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            productoComunDialog.Dispose();
+        }
+
+        private void btnEliminarTicket_Click(object sender, EventArgs e)
+        {
+            if (tabControlTickets.SelectedTab != null)
+            {
+                tabControlTickets.TabPages.Remove(tabControlTickets.SelectedTab);
+            }
+        }
+
+        private void tabControlTickets_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CalcularTotal();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        private void btnAsignarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+        #region Funciones
+
         public DataTable NewDataTable()
         {
 
@@ -89,6 +172,7 @@ namespace PuntoDeVenta.UserControls
             productosDataTable.Columns.Add("Nombre");
             productosDataTable.Columns.Add("Precio");
             productosDataTable.Columns.Add("Cantidad");
+            productosDataTable.Columns.Add("Stock");
             productosDataTable.Columns.Add("Importe");
 
             return productosDataTable;
@@ -103,6 +187,7 @@ namespace PuntoDeVenta.UserControls
             newTabPage.Location = new Point(4, 24);
             newTabPage.Padding = new Padding(3);
             newTabPage.Size = new Size(1437, 363);
+            newTabPage.BackColor = Color.FromArgb(26, 32, 40);
 
             tabControlTickets.TabPages.Add(newTabPage);
 
@@ -118,6 +203,7 @@ namespace PuntoDeVenta.UserControls
             newDataGridView.Size = new Size(1431, 357);
             newDataGridView.TabIndex = 0;
             newDataGridView.CellDoubleClick += dataGridViewVentas_CellDoubleClick!;
+            newDataGridView.BackColor = Color.FromArgb(26, 32, 40);
 
             newTabPage.Controls.Add(newDataGridView);
         }
@@ -131,6 +217,7 @@ namespace PuntoDeVenta.UserControls
                 {
                     var producto = await GetProductoByCodigo(codigo);
                     int cantidadActual = 1;
+                    int stock = 0;
 
                     if (producto != null)
                     {
@@ -144,17 +231,37 @@ namespace PuntoDeVenta.UserControls
                         {
                             Int32.TryParse(productoExistente["Cantidad"].ToString(), out cantidadActual);
                             cantidadActual += cantidad;
+                            stock = producto.Cantidad > 0 ? producto.Cantidad - cantidadActual : 0;
+
+                            if (stock < 0)
+                            {
+                                MessageBox.Show($@"No se puede completar la solicitud. Stock insuficiente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
                             productoExistente["Cantidad"] = cantidadActual;
+                            productoExistente["Stock"] = stock;
                             productoExistente["Importe"] = cantidadActual * Convert.ToInt32(productoExistente["Precio"].ToString());
                             productoExistente.AcceptChanges();
                         }
                         else
                         {
-                            dataTable.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.PrecioVenta, cantidad, cantidad * producto.PrecioVenta);
+                            stock = producto.Cantidad > 0 ? producto.Cantidad - cantidad : 0;
+
+                            if (stock < 0)
+                            {
+                                MessageBox.Show($@"No se puede completar la solicitud. Stock insuficiente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+                            dataTable.Rows.Add(producto.Id, producto.Codigo, producto.Descripcion, producto.PrecioVenta, cantidad, stock, cantidad * producto.PrecioVenta);
                         }
 
                         dataGridView.DataSource = dataTable;
+                        dataGridView.Columns["Id"].Visible = false;
                         txtCodigo.Text = "";
+
+                        CalcularTotal();
                     }
                     else
                     {
@@ -181,10 +288,12 @@ namespace PuntoDeVenta.UserControls
                     var dataGridView = GetDataGridView();
                     var dataTable = (DataTable)(dataGridView!.DataSource! ?? NewDataTable());
 
-                    dataTable.Rows.Add(0, 0, descripcion, precio, cantidad, precio * cantidad);             
+                    dataTable.Rows.Add(0, 0, descripcion, precio, cantidad, 0, precio * cantidad);
 
                     dataGridView.DataSource = dataTable;
                     txtCodigo.Text = "";
+
+                    CalcularTotal();
                 }
                 else
                 {
@@ -215,7 +324,9 @@ namespace PuntoDeVenta.UserControls
                         dataTable.Rows.Remove(productoExistente);
                         dataTable.AcceptChanges();
                     }
-                    
+
+                    CalcularTotal();
+
                 }
                 else
                 {
@@ -295,7 +406,7 @@ namespace PuntoDeVenta.UserControls
                         IdEstado = 2,
                         IdFormaPago = 1,
                         IdTurno = IdTurno,
-                        IdCliente = null,
+                        IdCliente = IdCliente,
                         TicketDetalles = productos,
                         TicketEstados = new List<TicketEstadoRequest>() { new TicketEstadoRequest() { Fecha = DateTime.Now, IdTicket = 0, IdEstado = 2 } }
                     };
@@ -358,53 +469,33 @@ namespace PuntoDeVenta.UserControls
             }
         }
 
-        private void btnVarios_Click(object sender, EventArgs e)
+        public void CalcularTotal()
         {
-            //SetActivePanel(null);
-            ProductoEtiquetaDialog etiquetaDialog = new ProductoEtiquetaDialog();
-            etiquetaDialog.Text = "Varios Productos";
-            etiquetaDialog.labelCantidad.Visible = true;
-            etiquetaDialog.txtCantidad.Visible = true;
-
             try
             {
-                if (etiquetaDialog.ShowDialog(this) == DialogResult.OK)
+                int total = 0;
+                var dataGridView = GetDataGridView();
+                var dataTable = (DataTable)(dataGridView!.DataSource ?? NewDataTable());
+
+                if (dataTable != null && dataTable.Rows.Count > 0)
                 {
-                    int cantidad = 1;
-                    int.TryParse(etiquetaDialog.txtCantidad.Text, out cantidad);
-                    _ = AgregarProducto(etiquetaDialog.txtEtiqueta.Text, cantidad);
+                    DataRow rowHeader = dataTable.NewRow();
+
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        string vImporte = row["Importe"].ToString()!;
+                        total += Convert.ToInt32(vImporte);
+                    }
                 }
+
+                labelTotal.Text = $@"$ {total.ToString()}";
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            etiquetaDialog.Dispose();
-
+            }            
         }
 
-        private void btnComun_Click(object sender, EventArgs e)
-        {
-            ProductoComunDialog productoComunDialog = new ProductoComunDialog();
-
-            try
-            {
-                if (productoComunDialog.ShowDialog(this) == DialogResult.OK)
-                {
-                    int precio = 0;
-                    int cantidad = 1;
-                    int.TryParse(productoComunDialog.txtPrecio.Text, out precio);
-                    int.TryParse(productoComunDialog.txtCantidad.Text, out cantidad);
-                    _ = AgregarProductoComun(productoComunDialog.txtDescripcion.Text, precio, cantidad);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            productoComunDialog.Dispose();
-        }
+        #endregion
     }
 }

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -123,13 +123,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="labelProducto.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt, style=Bold</value>
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="labelProducto.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 42</value>
+    <value>122, 52</value>
   </data>
   <data name="labelProducto.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 21</value>
+    <value>60, 21</value>
   </data>
   <data name="labelProducto.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -157,13 +157,13 @@
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="txtEtiqueta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 66</value>
+    <value>207, 52</value>
   </data>
   <data name="txtEtiqueta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 25</value>
+    <value>189, 25</value>
   </data>
   <data name="txtEtiqueta.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;txtEtiqueta.Name" xml:space="preserve">
     <value>txtEtiqueta</value>
@@ -204,7 +204,7 @@
     <value>112, 35</value>
   </data>
   <data name="btnAceptar.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+    <value>2</value>
   </data>
   <data name="btnAceptar.Text" xml:space="preserve">
     <value>Aceptar</value>
@@ -254,7 +254,7 @@
     <value>112, 35</value>
   </data>
   <data name="btnCancelar.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>3</value>
   </data>
   <data name="btnCancelar.Text" xml:space="preserve">
     <value>Cancelar</value>
@@ -281,16 +281,16 @@
     <value>True</value>
   </data>
   <data name="labelCantidad.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt, style=Bold</value>
+    <value>Segoe UI, 12pt</value>
   </data>
   <data name="labelCantidad.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="labelCantidad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 101</value>
+    <value>122, 87</value>
   </data>
   <data name="labelCantidad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 21</value>
+    <value>72, 21</value>
   </data>
   <data name="labelCantidad.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -313,17 +313,11 @@
   <data name="&gt;&gt;labelCantidad.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="txtCantidad.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="txtCantidad.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt</value>
-  </data>
   <data name="txtCantidad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>266, 97</value>
+    <value>207, 87</value>
   </data>
   <data name="txtCantidad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 25</value>
+    <value>189, 23</value>
   </data>
   <data name="txtCantidad.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -335,7 +329,7 @@
     <value>txtCantidad</value>
   </data>
   <data name="&gt;&gt;txtCantidad.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtCantidad.Parent" xml:space="preserve">
     <value>$this</value>
@@ -343,17 +337,14 @@
   <data name="&gt;&gt;txtCantidad.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
+  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>537, 214</value>
-  </data>
-  <data name="$this.StartPosition" xml:space="preserve">
-    <value />
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Producto</value>

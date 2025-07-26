@@ -317,14 +317,14 @@ namespace PuntoDeVenta
         private int ObtenerCantidad()
         {
             NumberDialog numberDialog = new NumberDialog();
-            int cantidad = 0;
+            int cantidad = 1;
 
             try
             {
                 if (numberDialog.ShowDialog(this) == DialogResult.OK)
                 {
-                    string txtCantidad = numberDialog.txtNumber.Text;
-                    int.TryParse(txtCantidad, out cantidad);
+                    cantidad = (int)numberDialog.txtNumber.Value;
+                    //int.TryParse(txtCantidad, out cantidad);
                 }
             }
             catch (Exception ex)

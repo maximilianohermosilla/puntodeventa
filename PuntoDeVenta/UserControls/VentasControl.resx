@@ -223,13 +223,6 @@
         cy+yBdD5PkIyAVS9CKnvBt1yDqh6eZV1APUfkyB0B5k+KRw0OOcrAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnVentasDevoluciones.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAFFJREFUSEtjGAWDB+y69/vY7nu//1MLb7/9yxJqNATQ1QL7wK1k4xFiATXwwFqg
-        OO0zVjzz3E+wvPOyr1jlQXjUglELhosF1MD0t2AUYAcMDABSH1DBGUtNqgAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="btnCobrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -238,6 +231,13 @@
         cVacZuWJilxQebnB7GepbH5XRWkACEovJ+x7yqT5MsEqUTEZaYErdg67uFSxOJNpOBqLRV2A32HB+xUQ
         8MVrQQhYx2WbjpeJNz+2IASs45LMfcA6LtuktX5iz+0zzGaQvqAs1nGRAZAK22eYey8IAeu4JHMfsO4r
         FEUPHZcBLHmJbQIAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnVentasDevoluciones.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAFFJREFUSEtjGAWDB+y69/vY7nu//1MLb7/9yxJqNATQ1QL7wK1k4xFiATXwwFqg
+        OO0zVjzz3E+wvPOyr1jlQXjUglELhosF1MD0t2AUYAcMDABSH1DBGUtNqgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btnAsignarCliente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

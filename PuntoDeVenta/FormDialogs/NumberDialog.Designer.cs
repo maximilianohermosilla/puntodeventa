@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NumberDialog));
             labelHeader = new Label();
-            txtNumber = new TextBox();
             btnAceptar = new Button();
             btnCancelar = new Button();
+            txtNumber = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)txtNumber).BeginInit();
             SuspendLayout();
             // 
             // labelHeader
@@ -40,11 +41,6 @@
             resources.ApplyResources(labelHeader, "labelHeader");
             labelHeader.Name = "labelHeader";
             labelHeader.Tag = "";
-            // 
-            // txtNumber
-            // 
-            resources.ApplyResources(txtNumber, "txtNumber");
-            txtNumber.Name = "txtNumber";
             // 
             // btnAceptar
             // 
@@ -72,29 +68,35 @@
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
+            // txtNumber
+            // 
+            resources.ApplyResources(txtNumber, "txtNumber");
+            txtNumber.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
+            txtNumber.Name = "txtNumber";
+            // 
             // NumberDialog
             // 
             AcceptButton = btnAceptar;
             AllowDrop = true;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(49, 66, 82);
+            BackColor = Color.FromArgb(26, 32, 40);
+            Controls.Add(txtNumber);
             Controls.Add(btnCancelar);
             Controls.Add(btnAceptar);
-            Controls.Add(txtNumber);
             Controls.Add(labelHeader);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "NumberDialog";
+            ((System.ComponentModel.ISupportInitialize)txtNumber).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         public Label labelHeader;
-        public TextBox txtNumber;
         public Button btnAceptar;
         public Button btnCancelar;
+        public NumericUpDown txtNumber;
     }
 }

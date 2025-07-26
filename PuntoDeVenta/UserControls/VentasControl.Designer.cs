@@ -45,9 +45,10 @@
             tabControlTickets = new TabControl();
             panel2 = new Panel();
             btnReimprimir = new Button();
+            btnCobrar = new Button();
             btnVentasDevoluciones = new Button();
             panel3 = new Panel();
-            btnCobrar = new Button();
+            labelTotal = new Label();
             btnAsignarCliente = new Button();
             btnEliminarTicket = new Button();
             btnPendiente = new Button();
@@ -303,6 +304,7 @@
             tabControlTickets.SelectedIndex = 0;
             tabControlTickets.Size = new Size(1445, 391);
             tabControlTickets.TabIndex = 12;
+            tabControlTickets.SelectedIndexChanged += tabControlTickets_SelectedIndexChanged;
             // 
             // panel2
             // 
@@ -310,6 +312,7 @@
             panel2.BackColor = Color.FromArgb(49, 66, 82);
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(btnReimprimir);
+            panel2.Controls.Add(btnCobrar);
             panel2.Controls.Add(btnVentasDevoluciones);
             panel2.Dock = DockStyle.Bottom;
             panel2.ForeColor = SystemColors.ButtonHighlight;
@@ -320,7 +323,6 @@
             // 
             // btnReimprimir
             // 
-            btnReimprimir.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnReimprimir.BackColor = Color.FromArgb(0, 80, 200);
             btnReimprimir.BackgroundImageLayout = ImageLayout.None;
             btnReimprimir.FlatAppearance.BorderColor = Color.Silver;
@@ -331,7 +333,7 @@
             btnReimprimir.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReimprimir.ForeColor = SystemColors.ButtonHighlight;
             btnReimprimir.Image = (Image)resources.GetObject("btnReimprimir.Image");
-            btnReimprimir.Location = new Point(991, 2);
+            btnReimprimir.Location = new Point(3, 3);
             btnReimprimir.Name = "btnReimprimir";
             btnReimprimir.Size = new Size(223, 36);
             btnReimprimir.TabIndex = 16;
@@ -340,9 +342,31 @@
             btnReimprimir.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnReimprimir.UseVisualStyleBackColor = false;
             // 
+            // btnCobrar
+            // 
+            btnCobrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCobrar.BackColor = Color.FromArgb(0, 80, 200);
+            btnCobrar.BackgroundImageLayout = ImageLayout.None;
+            btnCobrar.FlatAppearance.BorderColor = Color.Silver;
+            btnCobrar.FlatAppearance.BorderSize = 0;
+            btnCobrar.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnCobrar.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnCobrar.FlatStyle = FlatStyle.Flat;
+            btnCobrar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCobrar.ForeColor = SystemColors.ButtonHighlight;
+            btnCobrar.Image = (Image)resources.GetObject("btnCobrar.Image");
+            btnCobrar.Location = new Point(1282, 3);
+            btnCobrar.Name = "btnCobrar";
+            btnCobrar.Size = new Size(160, 34);
+            btnCobrar.TabIndex = 25;
+            btnCobrar.Text = "(F12) Cobrar";
+            btnCobrar.TextAlign = ContentAlignment.MiddleRight;
+            btnCobrar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCobrar.UseVisualStyleBackColor = false;
+            btnCobrar.Click += btnCobrar_Click;
+            // 
             // btnVentasDevoluciones
             // 
-            btnVentasDevoluciones.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnVentasDevoluciones.BackColor = Color.FromArgb(0, 80, 200);
             btnVentasDevoluciones.BackgroundImageLayout = ImageLayout.None;
             btnVentasDevoluciones.FlatAppearance.BorderColor = Color.Silver;
@@ -353,7 +377,7 @@
             btnVentasDevoluciones.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVentasDevoluciones.ForeColor = SystemColors.ButtonHighlight;
             btnVentasDevoluciones.Image = (Image)resources.GetObject("btnVentasDevoluciones.Image");
-            btnVentasDevoluciones.Location = new Point(1220, 2);
+            btnVentasDevoluciones.Location = new Point(232, 3);
             btnVentasDevoluciones.Name = "btnVentasDevoluciones";
             btnVentasDevoluciones.Size = new Size(222, 36);
             btnVentasDevoluciones.TabIndex = 15;
@@ -367,7 +391,7 @@
             panel3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel3.BackColor = Color.FromArgb(49, 66, 82);
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(btnCobrar);
+            panel3.Controls.Add(labelTotal);
             panel3.Controls.Add(btnAsignarCliente);
             panel3.Controls.Add(btnEliminarTicket);
             panel3.Controls.Add(btnPendiente);
@@ -379,28 +403,18 @@
             panel3.Size = new Size(1447, 41);
             panel3.TabIndex = 14;
             // 
-            // btnCobrar
+            // labelTotal
             // 
-            btnCobrar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCobrar.BackColor = Color.FromArgb(0, 80, 200);
-            btnCobrar.BackgroundImageLayout = ImageLayout.None;
-            btnCobrar.FlatAppearance.BorderColor = Color.Silver;
-            btnCobrar.FlatAppearance.BorderSize = 0;
-            btnCobrar.FlatAppearance.MouseDownBackColor = Color.Navy;
-            btnCobrar.FlatAppearance.MouseOverBackColor = Color.Teal;
-            btnCobrar.FlatStyle = FlatStyle.Flat;
-            btnCobrar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCobrar.ForeColor = SystemColors.ButtonHighlight;
-            btnCobrar.Image = (Image)resources.GetObject("btnCobrar.Image");
-            btnCobrar.Location = new Point(1321, 2);
-            btnCobrar.Name = "btnCobrar";
-            btnCobrar.Size = new Size(122, 34);
-            btnCobrar.TabIndex = 25;
-            btnCobrar.Text = "(F12) Cobrar";
-            btnCobrar.TextAlign = ContentAlignment.MiddleRight;
-            btnCobrar.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnCobrar.UseVisualStyleBackColor = false;
-            btnCobrar.Click += btnCobrar_Click;
+            labelTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            labelTotal.BackColor = Color.White;
+            labelTotal.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTotal.ForeColor = SystemColors.ActiveCaptionText;
+            labelTotal.Location = new Point(1282, 3);
+            labelTotal.Name = "labelTotal";
+            labelTotal.Size = new Size(160, 34);
+            labelTotal.TabIndex = 12;
+            labelTotal.Text = "$ 0.00";
+            labelTotal.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnAsignarCliente
             // 
@@ -422,6 +436,7 @@
             btnAsignarCliente.TextAlign = ContentAlignment.MiddleRight;
             btnAsignarCliente.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAsignarCliente.UseVisualStyleBackColor = false;
+            btnAsignarCliente.Click += btnAsignarCliente_Click;
             // 
             // btnEliminarTicket
             // 
@@ -443,6 +458,7 @@
             btnEliminarTicket.TextAlign = ContentAlignment.MiddleRight;
             btnEliminarTicket.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEliminarTicket.UseVisualStyleBackColor = false;
+            btnEliminarTicket.Click += btnEliminarTicket_Click;
             // 
             // btnPendiente
             // 
@@ -478,7 +494,7 @@
             btnCambiar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCambiar.ForeColor = SystemColors.ButtonHighlight;
             btnCambiar.Image = (Image)resources.GetObject("btnCambiar.Image");
-            btnCambiar.Location = new Point(4, 2);
+            btnCambiar.Location = new Point(3, 3);
             btnCambiar.Name = "btnCambiar";
             btnCambiar.Size = new Size(122, 35);
             btnCambiar.TabIndex = 12;
@@ -574,5 +590,6 @@
         public Button btnCobrar;
         public Button btnReimprimir;
         public Button btnVentasDevoluciones;
+        private Label labelTotal;
     }
 }

@@ -5,6 +5,11 @@
         public ProductoComunDialog()
         {
             InitializeComponent();
+            txtDescripcion.TabIndex = 0;
+            txtCantidad.TabIndex = 1;
+            txtPrecio.TabIndex = 2;
+            btnAceptar.TabIndex = 3;
+            btnCancelar.TabIndex = 4;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

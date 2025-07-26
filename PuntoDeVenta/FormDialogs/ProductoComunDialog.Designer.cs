@@ -33,11 +33,13 @@
             txtDescripcion = new TextBox();
             btnAceptar = new Button();
             btnCancelar = new Button();
-            txtCantidad = new TextBox();
-            txtPrecio = new TextBox();
             labelCantidad = new Label();
             labelPrecio = new Label();
             labelOperator = new Label();
+            txtCantidad = new NumericUpDown();
+            txtPrecio = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)txtCantidad).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtPrecio).BeginInit();
             SuspendLayout();
             // 
             // labelDescripcion
@@ -76,16 +78,6 @@
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // txtCantidad
-            // 
-            resources.ApplyResources(txtCantidad, "txtCantidad");
-            txtCantidad.Name = "txtCantidad";
-            // 
-            // txtPrecio
-            // 
-            resources.ApplyResources(txtPrecio, "txtPrecio");
-            txtPrecio.Name = "txtPrecio";
-            // 
             // labelCantidad
             // 
             resources.ApplyResources(labelCantidad, "labelCantidad");
@@ -101,24 +93,30 @@
             resources.ApplyResources(labelOperator, "labelOperator");
             labelOperator.Name = "labelOperator";
             // 
+            // txtCantidad
+            // 
+            resources.ApplyResources(txtCantidad, "txtCantidad");
+            txtCantidad.Name = "txtCantidad";
+            txtCantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // txtPrecio
+            // 
+            resources.ApplyResources(txtPrecio, "txtPrecio");
+            txtPrecio.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
+            txtPrecio.Name = "txtPrecio";
+            // 
             // ProductoComunDialog
             // 
-            txtDescripcion.TabIndex = 0;
-            txtCantidad.TabIndex = 1;
-            txtPrecio.TabIndex = 2;
-            btnAceptar.TabIndex = 3;
-            btnCancelar.TabIndex = 4;
-
             AcceptButton = btnAceptar;
             AllowDrop = true;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
+            Controls.Add(txtPrecio);
+            Controls.Add(txtCantidad);
             Controls.Add(labelOperator);
             Controls.Add(labelPrecio);
             Controls.Add(labelCantidad);
-            Controls.Add(txtPrecio);
-            Controls.Add(txtCantidad);
             Controls.Add(btnCancelar);
             Controls.Add(btnAceptar);
             Controls.Add(txtDescripcion);
@@ -126,6 +124,8 @@
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "ProductoComunDialog";
+            ((System.ComponentModel.ISupportInitialize)txtCantidad).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtPrecio).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -136,10 +136,10 @@
         public TextBox txtDescripcion;
         public Button btnAceptar;
         public Button btnCancelar;
-        public TextBox txtCantidad;
-        public TextBox txtPrecio;
         public Label labelCantidad;
         public Label labelPrecio;
         public Label labelOperator;
+        public NumericUpDown txtCantidad;
+        public NumericUpDown txtPrecio;
     }
 }

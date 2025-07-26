@@ -5,6 +5,10 @@
         public ProductoEtiquetaDialog()
         {
             InitializeComponent();
+            txtEtiqueta.TabIndex = 0;
+            txtCantidad.TabIndex = 1;
+            btnAceptar.TabIndex = 2;
+            btnCancelar.TabIndex = 3;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

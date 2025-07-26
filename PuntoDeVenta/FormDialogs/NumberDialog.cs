@@ -5,6 +5,9 @@
         public NumberDialog()
         {
             InitializeComponent();
+            txtNumber.TabIndex = 0;
+            btnAceptar.TabIndex = 1;
+            btnCancelar.TabIndex = 2;
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {

@@ -34,7 +34,8 @@
             btnAceptar = new Button();
             btnCancelar = new Button();
             labelCantidad = new Label();
-            txtCantidad = new TextBox();
+            txtCantidad = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)txtCantidad).BeginInit();
             SuspendLayout();
             // 
             // labelProducto
@@ -46,7 +47,6 @@
             // 
             resources.ApplyResources(txtEtiqueta, "txtEtiqueta");
             txtEtiqueta.Name = "txtEtiqueta";
-            txtEtiqueta.TabIndex = 0;
             // 
             // btnAceptar
             // 
@@ -60,7 +60,6 @@
             btnAceptar.Name = "btnAceptar";
             btnAceptar.UseVisualStyleBackColor = false;
             btnAceptar.Click += btnAceptar_Click;
-            btnAceptar.TabIndex = 2;
             // 
             // btnCancelar
             // 
@@ -74,7 +73,6 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
-            btnCancelar.TabIndex = 3;
             // 
             // labelCantidad
             // 
@@ -85,7 +83,7 @@
             // 
             resources.ApplyResources(txtCantidad, "txtCantidad");
             txtCantidad.Name = "txtCantidad";
-            txtCantidad.TabIndex = 1;
+            txtCantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // ProductoEtiquetaDialog
             // 
@@ -103,6 +101,7 @@
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "ProductoEtiquetaDialog";
+            ((System.ComponentModel.ISupportInitialize)txtCantidad).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -114,6 +113,6 @@
         public Button btnAceptar;
         public Button btnCancelar;
         public Label labelCantidad;
-        public TextBox txtCantidad;
+        public NumericUpDown txtCantidad;
     }
 }
