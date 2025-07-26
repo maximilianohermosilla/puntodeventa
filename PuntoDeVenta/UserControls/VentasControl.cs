@@ -154,6 +154,21 @@ namespace PuntoDeVenta.UserControls
 
         private void btnAsignarCliente_Click(object sender, EventArgs e)
         {
+            ClientesDialog clientesDialog = new ClientesDialog();
+
+            try
+            {
+                if (clientesDialog.ShowDialog(this) == DialogResult.OK)
+                {
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            clientesDialog.Dispose();
 
         }
 
