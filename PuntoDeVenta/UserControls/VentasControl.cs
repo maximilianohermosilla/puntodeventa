@@ -2,10 +2,8 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
-using PuntoDeVenta.Domain.Entities;
 using PuntoDeVenta.FormDialogs;
 using System.Data;
-using System.Windows.Forms;
 
 namespace PuntoDeVenta.UserControls
 {
@@ -16,8 +14,6 @@ namespace PuntoDeVenta.UserControls
         private readonly IProductoService _productoService;
         private readonly ITicketService _ticketService;
         private int IdTurno = 0;
-        private int? IdCliente = null;
-        private string? NombreCliente = null;
 
         public VentasControl()
         {
@@ -160,6 +156,26 @@ namespace PuntoDeVenta.UserControls
             {
                 if (clientesDialog.ShowDialog(this) == DialogResult.OK)
                 {
+                    var dataGridView = GetDataGridView();
+                    int? idCliente = null;
+                    string? nombreCliente = null;
+
+                    if(clientesDialog.selectedCliente != null)
+                    {
+                        idCliente = clientesDialog.selectedCliente?.Id;
+                        nombreCliente = clientesDialog.selectedCliente?.NombreApellido;
+                    }
+
+                    foreach (DataGridViewRow row in dataGridView.Rows)
+                    {
+                        if (!row.IsNewRow)
+                        {
+                            row.Cells["IdCliente"].Value = idCliente;
+                            row.Cells["NombreCliente"].Value = nombreCliente;
+                        }
+                    }
+
+                    tabControlTickets!.SelectedTab!.Text = nombreCliente != null ? nombreCliente : "Ticket";
 
                 }
             }
@@ -189,6 +205,8 @@ namespace PuntoDeVenta.UserControls
             productosDataTable.Columns.Add("Cantidad");
             productosDataTable.Columns.Add("Stock");
             productosDataTable.Columns.Add("Importe");
+            productosDataTable.Columns.Add("IdCliente");
+            productosDataTable.Columns.Add("NombreCliente");
 
             return productosDataTable;
         }
@@ -274,6 +292,8 @@ namespace PuntoDeVenta.UserControls
 
                         dataGridView.DataSource = dataTable;
                         dataGridView.Columns["Id"].Visible = false;
+                        dataGridView.Columns["IdCliente"].Visible = false;
+                        dataGridView.Columns["NombreCliente"].Visible = false;
                         txtCodigo.Text = "";
 
                         CalcularTotal();
@@ -405,23 +425,25 @@ namespace PuntoDeVenta.UserControls
                         producto.Descuento = 0;
                         producto.PrecioFinal = Convert.ToInt32(vImporte);
                         producto.PorMayor = false;
-                        producto.IdProducto = Convert.ToInt32(vId);
+                        producto.IdProducto = vId == "0" ? null : Convert.ToInt32(vId);
                         producto.IdTicket = 0;
-                        producto.ProductoComun = "";
+                        producto.ProductoComun = vId == "0" ? vNombre : "";
 
                         productos.Add(producto);
                     }
 
+                    string vIdCliente = dataGridView.Rows[0].Cells["IdCliente"].Value != null ? dataGridView.Rows[0].Cells["IdCliente"].Value.ToString()!: "";
+
                     TicketRequest ticketRequest = new TicketRequest()
                     {
-                        Nombre = $@"{IdTurno}_{tabControlTickets!.SelectedTab!.Name}_{DateTime.Now.ToString()}",
+                        Nombre = $@"{IdTurno}_{tabControlTickets!.SelectedTab!.Text}_{DateTime.Now.ToShortDateString()}_{DateTime.Now.ToShortTimeString()}",
                         FechaCreacion = DateTime.Now,
                         FechaFinalizacion = DateTime.Now,
                         PrecioTotal = productos.Sum(x => x.PrecioFinal),
                         IdEstado = 2,
                         IdFormaPago = 1,
                         IdTurno = IdTurno,
-                        IdCliente = IdCliente,
+                        IdCliente = !string.IsNullOrEmpty(vIdCliente) ? Convert.ToInt32(vIdCliente) : null,
                         TicketDetalles = productos,
                         TicketEstados = new List<TicketEstadoRequest>() { new TicketEstadoRequest() { Fecha = DateTime.Now, IdTicket = 0, IdEstado = 2 } }
                     };

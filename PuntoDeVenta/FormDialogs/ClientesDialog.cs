@@ -22,6 +22,39 @@ namespace PuntoDeVenta.FormDialogs
             _ = GetAllClientes();
         }
 
+
+
+        private void btnNuevoCliente_Click_1(object sender, EventArgs e)
+        {
+            panelMain.Visible = false;
+            panelNewClient.Visible = true;
+        }
+
+        private void btnAsignar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            SetClienteSelected(null);
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            panelNewClient.Visible = false;
+            panelMain.Visible = true;
+        }
+
+        private void btnGuardarCliente_Click_1(object sender, EventArgs e)
+        {
+            _ = GuardarCliente();
+            panelNewClient.Visible = false;
+            panelMain.Visible = true;
+            this.DialogResult = DialogResult.OK;
+        }
+
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             _clientesFiltrados = _clientes.Where(c => c.Id == 0 ||
@@ -44,15 +77,6 @@ namespace PuntoDeVenta.FormDialogs
             }
         }
 
-        private void btnNuevoCliente_Click(object sender, EventArgs e)
-        {
-            NuevoCliente();
-        }
-
-        private void btnGuardarCliente_Click(object sender, EventArgs e)
-        {
-            _ = GuardarCliente();
-        }
 
         public async Task GetAllClientes()
         {
@@ -63,8 +87,8 @@ namespace PuntoDeVenta.FormDialogs
                 if (response != null && response.success)
                 {
                     _clientes = (response.response!);
-                    //_clientes.Insert(0, new ClienteResponse { Id = 0, Nombre = "-- Seleccionar Cliente --", Habilitado = true });
                     SetearClientes(response.response!);
+                    SetClienteSelected(response!.response!.FirstOrDefault()!);
                 }
             }
             catch (Exception ex)
@@ -77,7 +101,6 @@ namespace PuntoDeVenta.FormDialogs
         {
             if (_clientes != null && _clientes.Count() == 0)
             {
-                clientes.Insert(0, new ClienteResponse { Id = 0, Nombre = "-- Seleccionar Cliente --", Habilitado = true });
                 _clientes = clientes;
             }
 
@@ -109,7 +132,7 @@ namespace PuntoDeVenta.FormDialogs
 
                     ClienteRequest clienteRequest = new ClienteRequest()
                     {
-                        Id = selectedCliente.Id,
+                        Id = 0,
                         Nombre = txtNombre.Text,
                         Apellido = txtApellido.Text,
                         Email = txtEmail.Text,
@@ -138,11 +161,12 @@ namespace PuntoDeVenta.FormDialogs
                     string toastTipo = response.success ? "SUCCESS" : "ERROR";
                     ToastForm toast = new ToastForm(toastTipo, response.message!, this.FindForm()!);
                     toast.Show();
-                    NuevoCliente();
+                    //NuevoCliente();
 
                     if (response != null && response.success)
                     {
                         SetearClientes(_clientes);
+                        SetClienteSelected(response.response!);
                     }
                 }
             }
@@ -154,36 +178,8 @@ namespace PuntoDeVenta.FormDialogs
 
         public void NuevoCliente()
         {
-            listClientes!.SelectedIndex = 0;
+            //listClientes!.SelectedIndex = 0;
             SetClienteSelected(new ClienteResponse() { Habilitado = true });
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            panelNewClient.Visible = false;
-            panelMain.Visible = true;
-        }
-
-        private void btnGuardarCliente_Click_1(object sender, EventArgs e)
-        {
-            panelNewClient.Visible = false;
-            panelMain.Visible = true;
-        }
-
-        private void btnNuevoCliente_Click_1(object sender, EventArgs e)
-        {
-            panelMain.Visible = false;
-            panelNewClient.Visible = true;
-        }
-
-        private void btnAsignar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnQuitar_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

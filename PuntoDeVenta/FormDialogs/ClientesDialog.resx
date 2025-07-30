@@ -140,7 +140,7 @@
   <data name="btnAsignar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAAVZJREFUSEvlkjFLw0AUxyPSzcXVuUpdnOwe7rBBCnYKnd39BH4ARRxcBYemOAhC
+        vAAADrwBlbxySQAAAVZJREFUSEvlkjFLw0AUxyPSzcXVuUpdnOwe7rBBCnYKnd39BH4ARRxcBYemOAhC
         QVAHkaLSQVFw1dFdI4hgioPXe/Iu3j2PlNy5+YcfJC/vfv8QEvyvMMaOJALA0d9ESQlP+NgvUpQRsQHn
         vI6rbrFJgYPtxfwaV8tHHl5TEkDc1gySjbpfQRiGb1RK8SqwvTXFqyDt/4g24xlDrO6hAPbwSLnoBUU8
         9+de8Ej52IQUXHXL103t0SbNOQwmcdU9VrFElj/gin/ez6cNeXpayT8NS5Z6PIk+WRKt46h80pOKoEip
@@ -419,7 +419,7 @@
   <data name="btnCancelar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAS5JREFUSEvllLFOwzAURTOz8wvMSDRmo0pdCYQqIfER/A9jv4UBpHZiACmsXZD4
+        vgAADr4B6kKxwAAAAS5JREFUSEvllLFOwzAURTOz8wvMSDRmo0pdCYQqIfER/A9jv4UBpHZiACmsXZD4
         AVJnQIoocXSfbCe3cdKxHOkMfbnvDo7T5P9g5um1ydK8yNSPydRTcXN+ikeHs1tcnBitdjERHwcr6nM7
         S5dYjcMKhljoyRcq9sMWx1jMJ/eo6jL0zGOirgsLWy1sXuXvdF67QWUICTblAptX65dgLqLS0dxzErT6
         +L9/zbaTFVHrMDP1wYJim75yK2odzRdKgr4+7Lkvah3282dBkcFyImod9r+FBa2CHItPOyuiNoQFq7fX
@@ -431,7 +431,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCancelar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 378</value>
+    <value>14, 509</value>
   </data>
   <data name="btnCancelar.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 35</value>
@@ -511,7 +511,7 @@
 </value>
   </data>
   <data name="btnGuardarCliente.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 378</value>
+    <value>313, 509</value>
   </data>
   <data name="btnGuardarCliente.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 35</value>

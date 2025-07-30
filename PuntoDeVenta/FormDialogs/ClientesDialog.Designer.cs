@@ -213,6 +213,7 @@
             resources.ApplyResources(listClientes, "listClientes");
             listClientes.FormattingEnabled = true;
             listClientes.Name = "listClientes";
+            listClientes.SelectedIndexChanged += listClientes_SelectedIndexChanged;
             // 
             // txtBuscar
             // 
