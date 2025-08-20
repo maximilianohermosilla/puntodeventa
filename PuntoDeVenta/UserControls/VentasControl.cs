@@ -138,7 +138,12 @@ namespace PuntoDeVenta.UserControls
         {
             try
             {
-                CalcularTotal();
+                CalcularTotal();   
+                
+                if(tabControlTickets.SelectedTab == null)
+                {
+                    AgregarTicket();
+                }
             }
             catch (Exception ex)
             {
@@ -160,7 +165,7 @@ namespace PuntoDeVenta.UserControls
                     int? idCliente = null;
                     string? nombreCliente = null;
 
-                    if(clientesDialog.selectedCliente != null)
+                    if (clientesDialog.selectedCliente != null)
                     {
                         idCliente = clientesDialog.selectedCliente?.Id;
                         nombreCliente = clientesDialog.selectedCliente?.NombreApellido;
@@ -187,9 +192,6 @@ namespace PuntoDeVenta.UserControls
             clientesDialog.Dispose();
 
         }
-
-
-
 
 
         #region Funciones
@@ -404,51 +406,63 @@ namespace PuntoDeVenta.UserControls
                 List<TicketDetalleRequest> productos = new List<TicketDetalleRequest>();
 
                 var dataGridView = GetDataGridView();
-                var dataTable = (DataTable)(dataGridView!.DataSource ?? NewDataTable());
 
-                if (dataTable != null && dataTable.Rows.Count > 0)
+                if (dataGridView != null)
                 {
-                    DataRow rowHeader = dataTable.NewRow();
+                    var dataTable = (DataTable)(dataGridView!.DataSource ?? NewDataTable());
 
-                    foreach (DataRow row in dataTable.Rows)
+                    if (dataTable != null && dataTable.Rows.Count > 0)
                     {
-                        string vId = row["Id"].ToString()!;
-                        string vCodigo = row["Código"].ToString()!;
-                        string vNombre = row["Nombre"].ToString()!;
-                        string vPrecio = row["Precio"].ToString()!;
-                        string vCantidad = row["Cantidad"].ToString()!;
-                        string vImporte = row["Importe"].ToString()!;
+                        DataRow rowHeader = dataTable.NewRow();
 
-                        TicketDetalleRequest producto = new TicketDetalleRequest();
-                        producto.Cantidad = Convert.ToInt32(vCantidad);
-                        producto.Precio = Convert.ToInt32(vPrecio);
-                        producto.Descuento = 0;
-                        producto.PrecioFinal = Convert.ToInt32(vImporte);
-                        producto.PorMayor = false;
-                        producto.IdProducto = vId == "0" ? null : Convert.ToInt32(vId);
-                        producto.IdTicket = 0;
-                        producto.ProductoComun = vId == "0" ? vNombre : "";
+                        foreach (DataRow row in dataTable.Rows)
+                        {
+                            string vId = row["Id"].ToString()!;
+                            string vCodigo = row["Código"].ToString()!;
+                            string vNombre = row["Nombre"].ToString()!;
+                            string vPrecio = row["Precio"].ToString()!;
+                            string vCantidad = row["Cantidad"].ToString()!;
+                            string vImporte = row["Importe"].ToString()!;
 
-                        productos.Add(producto);
+                            TicketDetalleRequest producto = new TicketDetalleRequest();
+                            producto.Cantidad = Convert.ToInt32(vCantidad);
+                            producto.Precio = Convert.ToInt32(vPrecio);
+                            producto.Descuento = 0;
+                            producto.PrecioFinal = Convert.ToInt32(vImporte);
+                            producto.PorMayor = false;
+                            producto.IdProducto = vId == "0" ? null : Convert.ToInt32(vId);
+                            producto.IdTicket = 0;
+                            producto.ProductoComun = vId == "0" ? vNombre : "";
+
+                            productos.Add(producto);
+                        }
+
+                        string vIdCliente = dataGridView.Rows[0].Cells["IdCliente"].Value != null ? dataGridView.Rows[0].Cells["IdCliente"].Value.ToString()! : "";
+
+                        TicketRequest ticketRequest = new TicketRequest()
+                        {
+                            Nombre = $@"{IdTurno}_{tabControlTickets!.SelectedTab!.Text}_{DateTime.Now.ToShortDateString()}_{DateTime.Now.ToShortTimeString()}",
+                            FechaCreacion = DateTime.Now,
+                            FechaFinalizacion = DateTime.Now,
+                            PrecioTotal = productos.Sum(x => x.PrecioFinal),
+                            IdEstado = 2,
+                            IdFormaPago = 1,
+                            IdTurno = IdTurno != 0 ? IdTurno : null,
+                            IdCliente = !string.IsNullOrEmpty(vIdCliente) ? Convert.ToInt32(vIdCliente) : null,
+                            TicketDetalles = productos,
+                            TicketEstados = new List<TicketEstadoRequest>() { new TicketEstadoRequest() { Fecha = DateTime.Now, IdTicket = 0, IdEstado = 2 } }
+                        };
+
+                        var response = await _ticketService.Insert(ticketRequest);
+                        string toastTipo = response.success ? "SUCCESS" : "ERROR";
+                        ToastForm toast = new ToastForm(toastTipo, response!.message!, this.FindForm()!);
+                        toast.Show();
+
+                        if (tabControlTickets.SelectedTab != null)
+                        {
+                            tabControlTickets.TabPages.Remove(tabControlTickets.SelectedTab);
+                        }
                     }
-
-                    string vIdCliente = dataGridView.Rows[0].Cells["IdCliente"].Value != null ? dataGridView.Rows[0].Cells["IdCliente"].Value.ToString()!: "";
-
-                    TicketRequest ticketRequest = new TicketRequest()
-                    {
-                        Nombre = $@"{IdTurno}_{tabControlTickets!.SelectedTab!.Text}_{DateTime.Now.ToShortDateString()}_{DateTime.Now.ToShortTimeString()}",
-                        FechaCreacion = DateTime.Now,
-                        FechaFinalizacion = DateTime.Now,
-                        PrecioTotal = productos.Sum(x => x.PrecioFinal),
-                        IdEstado = 2,
-                        IdFormaPago = 1,
-                        IdTurno = IdTurno,
-                        IdCliente = !string.IsNullOrEmpty(vIdCliente) ? Convert.ToInt32(vIdCliente) : null,
-                        TicketDetalles = productos,
-                        TicketEstados = new List<TicketEstadoRequest>() { new TicketEstadoRequest() { Fecha = DateTime.Now, IdTicket = 0, IdEstado = 2 } }
-                    };
-
-                    var response = await _ticketService.Insert(ticketRequest);
                 }
             }
             catch (Exception ex)
@@ -512,16 +526,20 @@ namespace PuntoDeVenta.UserControls
             {
                 int total = 0;
                 var dataGridView = GetDataGridView();
-                var dataTable = (DataTable)(dataGridView!.DataSource ?? NewDataTable());
 
-                if (dataTable != null && dataTable.Rows.Count > 0)
+                if (dataGridView != null)
                 {
-                    DataRow rowHeader = dataTable.NewRow();
+                    var dataTable = (DataTable)(dataGridView!.DataSource ?? NewDataTable());
 
-                    foreach (DataRow row in dataTable.Rows)
+                    if (dataTable != null && dataTable.Rows.Count > 0)
                     {
-                        string vImporte = row["Importe"].ToString()!;
-                        total += Convert.ToInt32(vImporte);
+                        DataRow rowHeader = dataTable.NewRow();
+
+                        foreach (DataRow row in dataTable.Rows)
+                        {
+                            string vImporte = row["Importe"].ToString()!;
+                            total += Convert.ToInt32(vImporte);
+                        }
                     }
                 }
 
@@ -530,7 +548,7 @@ namespace PuntoDeVenta.UserControls
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }            
+            }
         }
 
         #endregion

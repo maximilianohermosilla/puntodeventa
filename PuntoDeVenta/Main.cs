@@ -114,7 +114,8 @@ namespace PuntoDeVenta
 
         private void InitializeUserControlsMain()
         {
-            ventas1 = new VentasControl(turnoActual.Id);
+            int idTurno = turnoActual != null ? turnoActual!.Id : 0;
+            ventas1 = new VentasControl(idTurno);
             clientes1 = new ClientesControl();
             productos1 = new ProductosControl();
             inventario1 = new InventarioControl();
@@ -247,7 +248,6 @@ namespace PuntoDeVenta
         {
             try
             {
-                int cantidad = 0;
                 var ultimoTurno = await _turnoService.GetByIdUsuario(IdUsuario, false);
 
                 if(ultimoTurno != null && ultimoTurno.success)
@@ -255,27 +255,17 @@ namespace PuntoDeVenta
                     if (DialogResult.Yes == MessageBox.Show(@$"¿Desea reanudar el turno iniciado {ultimoTurno!.response!.FechaInicio.ToString()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
                     {
                         turnoActual = ultimoTurno!.response!;
-                        //cantidad = ObtenerCantidad();
+                    }
+                    else
+                    {
+                        turnoActual = ultimoTurno!.response!;
+                        await FinalizarTurno();
+                        await IniciarTurno();
                     }
                 }
                 else
                 {
-                    if (DialogResult.Yes == MessageBox.Show("¿Desea iniciar un nuevo turno?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
-                    {
-                        cantidad = ObtenerCantidad();
-
-                        TurnoRequest turnoRequest = new TurnoRequest()
-                        {
-                            CantidadInicio = cantidad, CantidadFin = 0, ValorTotal = 0, ValorGanancia = 0, Finalizado = false, 
-                            FechaInicio = DateTime.Now, FechaFin = null, IdUsuario = IdUsuario
-                        };
-
-                        var response = await _turnoService.Insert(turnoRequest);
-                        if (response != null && response.success)
-                        {
-                            turnoActual = response!.response!;
-                        }
-                    }
+                    await IniciarTurno();
                 }
 
             }
@@ -284,6 +274,35 @@ namespace PuntoDeVenta
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public async Task IniciarTurno()
+        {
+            turnoActual = null;
+
+            if (DialogResult.Yes == MessageBox.Show("¿Desea iniciar un nuevo turno?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+            {
+                int cantidad = ObtenerCantidad();
+
+                TurnoRequest turnoRequest = new TurnoRequest()
+                {
+                    CantidadInicio = cantidad,
+                    CantidadFin = 0,
+                    ValorTotal = 0,
+                    ValorGanancia = 0,
+                    Finalizado = false,
+                    FechaInicio = DateTime.Now,
+                    FechaFin = null,
+                    IdUsuario = IdUsuario
+                };
+
+                var response = await _turnoService.Insert(turnoRequest);
+                if (response != null && response.success)
+                {
+                    turnoActual = response!.response!;
+                }
+            }
+        }
+
         private async Task FinalizarTurno()
         {
             try
