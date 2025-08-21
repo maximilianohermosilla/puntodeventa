@@ -21,5 +21,25 @@
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void txtPrecio_Enter(object sender, EventArgs e)
+        {
+            NumericUpDown numericUpDown = sender as NumericUpDown;
+
+            if (numericUpDown != null)
+            {
+                numericUpDown.Select(0, numericUpDown.Text.Length);
+            }
+        }
+
+        private void txtCantidad_Enter(object sender, EventArgs e)
+        {
+            NumericUpDown numericUpDown = sender as NumericUpDown;
+
+            if (numericUpDown != null)
+            {
+                numericUpDown.Select(0, numericUpDown.Text.Length);
+            }
+        }
     }
 }

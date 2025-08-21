@@ -73,6 +73,7 @@
             resources.ApplyResources(txtNumber, "txtNumber");
             txtNumber.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
             txtNumber.Name = "txtNumber";
+            txtNumber.Enter += txtNumber_Enter;
             // 
             // NumberDialog
             // 

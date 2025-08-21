@@ -10,6 +10,15 @@
             btnAceptar.TabIndex = 2;
             btnCancelar.TabIndex = 3;
         }
+        private void txtCantidad_Enter(object sender, EventArgs e)
+        {
+            NumericUpDown numericUpDown = sender as NumericUpDown;
+
+            if (numericUpDown != null)
+            {
+                numericUpDown.Select(0, numericUpDown.Text.Length);
+            }
+        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {

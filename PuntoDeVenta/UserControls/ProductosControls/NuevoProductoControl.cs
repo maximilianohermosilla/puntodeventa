@@ -25,6 +25,16 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             _ = GetUnidades();
         }
 
+        private void txtNumber_Enter(object sender, EventArgs e)
+        {
+            NumericUpDown numericUpDown = sender as NumericUpDown;
+
+            if (numericUpDown != null)
+            {
+                numericUpDown.Select(0, numericUpDown.Text.Length);
+            }
+        }
+
         public async Task GetUnidades()
         {
             try

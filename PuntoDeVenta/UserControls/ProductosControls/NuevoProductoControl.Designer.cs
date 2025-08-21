@@ -177,6 +177,7 @@
             txtCantidadMinima.Name = "txtCantidadMinima";
             txtCantidadMinima.Size = new Size(309, 23);
             txtCantidadMinima.TabIndex = 9;
+            txtCantidadMinima.Enter += txtNumber_Enter;
             // 
             // labelCantidadActual
             // 
@@ -196,6 +197,7 @@
             txtCantidadActual.Name = "txtCantidadActual";
             txtCantidadActual.Size = new Size(309, 23);
             txtCantidadActual.TabIndex = 8;
+            txtCantidadActual.Enter += txtNumber_Enter;
             // 
             // labelCategoria
             // 
@@ -232,6 +234,7 @@
             txtPrecioMayor.Name = "txtPrecioMayor";
             txtPrecioMayor.Size = new Size(309, 23);
             txtPrecioMayor.TabIndex = 5;
+            txtPrecioMayor.Enter += txtNumber_Enter;
             // 
             // labelPrecioVenta
             // 
@@ -250,6 +253,7 @@
             txtPrecioVenta.Name = "txtPrecioVenta";
             txtPrecioVenta.Size = new Size(309, 23);
             txtPrecioVenta.TabIndex = 4;
+            txtPrecioVenta.Enter += txtNumber_Enter;
             // 
             // labelPrecioCosto
             // 
@@ -268,6 +272,7 @@
             txtPrecioCosto.Name = "txtPrecioCosto";
             txtPrecioCosto.Size = new Size(309, 23);
             txtPrecioCosto.TabIndex = 3;
+            txtPrecioCosto.Enter += txtNumber_Enter;
             // 
             // txtDescripcion
             // 

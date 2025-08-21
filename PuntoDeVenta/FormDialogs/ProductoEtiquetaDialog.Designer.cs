@@ -84,6 +84,7 @@
             resources.ApplyResources(txtCantidad, "txtCantidad");
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            txtCantidad.Enter += txtCantidad_Enter;
             // 
             // ProductoEtiquetaDialog
             // 

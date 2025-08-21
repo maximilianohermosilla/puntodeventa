@@ -98,12 +98,14 @@
             resources.ApplyResources(txtCantidad, "txtCantidad");
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            txtCantidad.Enter += txtCantidad_Enter;
             // 
             // txtPrecio
             // 
             resources.ApplyResources(txtPrecio, "txtPrecio");
             txtPrecio.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
             txtPrecio.Name = "txtPrecio";
+            txtPrecio.Enter += txtPrecio_Enter;
             // 
             // ProductoComunDialog
             // 
