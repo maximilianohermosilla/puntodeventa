@@ -51,7 +51,7 @@
             labelTotal = new Label();
             btnAsignarCliente = new Button();
             btnEliminarTicket = new Button();
-            btnPendiente = new Button();
+            btnNuevoTicket = new Button();
             btnCambiar = new Button();
             panel4 = new Panel();
             panel5 = new Panel();
@@ -394,7 +394,7 @@
             panel3.Controls.Add(labelTotal);
             panel3.Controls.Add(btnAsignarCliente);
             panel3.Controls.Add(btnEliminarTicket);
-            panel3.Controls.Add(btnPendiente);
+            panel3.Controls.Add(btnNuevoTicket);
             panel3.Controls.Add(btnCambiar);
             panel3.Dock = DockStyle.Bottom;
             panel3.ForeColor = SystemColors.ButtonHighlight;
@@ -428,7 +428,7 @@
             btnAsignarCliente.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAsignarCliente.ForeColor = SystemColors.ButtonHighlight;
             btnAsignarCliente.Image = (Image)resources.GetObject("btnAsignarCliente.Image");
-            btnAsignarCliente.Location = new Point(388, 2);
+            btnAsignarCliente.Location = new Point(396, 2);
             btnAsignarCliente.Name = "btnAsignarCliente";
             btnAsignarCliente.Size = new Size(122, 35);
             btnAsignarCliente.TabIndex = 24;
@@ -450,7 +450,7 @@
             btnEliminarTicket.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminarTicket.ForeColor = SystemColors.ButtonHighlight;
             btnEliminarTicket.Image = (Image)resources.GetObject("btnEliminarTicket.Image");
-            btnEliminarTicket.Location = new Point(260, 2);
+            btnEliminarTicket.Location = new Point(268, 2);
             btnEliminarTicket.Name = "btnEliminarTicket";
             btnEliminarTicket.Size = new Size(122, 35);
             btnEliminarTicket.TabIndex = 23;
@@ -460,27 +460,27 @@
             btnEliminarTicket.UseVisualStyleBackColor = false;
             btnEliminarTicket.Click += btnEliminarTicket_Click;
             // 
-            // btnPendiente
+            // btnNuevoTicket
             // 
-            btnPendiente.BackColor = Color.FromArgb(0, 80, 200);
-            btnPendiente.BackgroundImageLayout = ImageLayout.None;
-            btnPendiente.FlatAppearance.BorderColor = Color.Silver;
-            btnPendiente.FlatAppearance.BorderSize = 0;
-            btnPendiente.FlatAppearance.MouseDownBackColor = Color.Navy;
-            btnPendiente.FlatAppearance.MouseOverBackColor = Color.Teal;
-            btnPendiente.FlatStyle = FlatStyle.Flat;
-            btnPendiente.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPendiente.ForeColor = SystemColors.ButtonHighlight;
-            btnPendiente.Image = (Image)resources.GetObject("btnPendiente.Image");
-            btnPendiente.Location = new Point(132, 2);
-            btnPendiente.Name = "btnPendiente";
-            btnPendiente.Size = new Size(122, 35);
-            btnPendiente.TabIndex = 22;
-            btnPendiente.Text = "(F6) Pendiente";
-            btnPendiente.TextAlign = ContentAlignment.MiddleRight;
-            btnPendiente.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnPendiente.UseVisualStyleBackColor = false;
-            btnPendiente.Click += btnPendiente_Click;
+            btnNuevoTicket.BackColor = Color.FromArgb(0, 80, 200);
+            btnNuevoTicket.BackgroundImageLayout = ImageLayout.None;
+            btnNuevoTicket.FlatAppearance.BorderColor = Color.Silver;
+            btnNuevoTicket.FlatAppearance.BorderSize = 0;
+            btnNuevoTicket.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnNuevoTicket.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnNuevoTicket.FlatStyle = FlatStyle.Flat;
+            btnNuevoTicket.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnNuevoTicket.ForeColor = SystemColors.ButtonHighlight;
+            btnNuevoTicket.Image = (Image)resources.GetObject("btnNuevoTicket.Image");
+            btnNuevoTicket.Location = new Point(132, 2);
+            btnNuevoTicket.Name = "btnNuevoTicket";
+            btnNuevoTicket.Size = new Size(130, 35);
+            btnNuevoTicket.TabIndex = 22;
+            btnNuevoTicket.Text = "Nuevo Ticket";
+            btnNuevoTicket.TextAlign = ContentAlignment.MiddleRight;
+            btnNuevoTicket.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNuevoTicket.UseVisualStyleBackColor = false;
+            btnNuevoTicket.Click += btnPendiente_Click;
             // 
             // btnCambiar
             // 
@@ -502,6 +502,7 @@
             btnCambiar.TextAlign = ContentAlignment.MiddleRight;
             btnCambiar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCambiar.UseVisualStyleBackColor = false;
+            btnCambiar.Click += btnCambiar_Click;
             // 
             // panel4
             // 
@@ -586,7 +587,7 @@
         public Button btnCambiarTicket;
         public Button btnCambiar;
         public Button btnAsignarCliente;
-        public Button btnPendiente;
+        public Button btnNuevoTicket;
         public Button btnCobrar;
         public Button btnReimprimir;
         public Button btnVentasDevoluciones;

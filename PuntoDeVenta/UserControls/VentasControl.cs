@@ -4,6 +4,7 @@ using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
 using PuntoDeVenta.FormDialogs;
 using System.Data;
+using System.Windows.Forms;
 
 namespace PuntoDeVenta.UserControls
 {
@@ -128,19 +129,21 @@ namespace PuntoDeVenta.UserControls
 
         private void btnEliminarTicket_Click(object sender, EventArgs e)
         {
-            if (tabControlTickets.SelectedTab != null)
+            if (tabControlTickets.SelectedTab != null && 
+                DialogResult.Yes == MessageBox.Show(@$"¿Está seguro de que desea eliminar {tabControlTickets.SelectedTab.Text}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
             {
                 tabControlTickets.TabPages.Remove(tabControlTickets.SelectedTab);
             }
+
         }
 
         private void tabControlTickets_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                CalcularTotal();   
-                
-                if(tabControlTickets.SelectedTab == null)
+                CalcularTotal();
+
+                if (tabControlTickets.SelectedTab == null)
                 {
                     AgregarTicket();
                 }
@@ -552,5 +555,17 @@ namespace PuntoDeVenta.UserControls
         }
 
         #endregion
+
+        private void btnCambiar_Click(object sender, EventArgs e)
+        {
+            if (tabControlTickets.SelectedIndex < tabControlTickets.TabCount - 1)
+            {
+                tabControlTickets.SelectedIndex++;
+            }
+            else
+            {
+                tabControlTickets.SelectedIndex = 0;
+            }
+        }
     }
 }
