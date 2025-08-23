@@ -219,6 +219,7 @@
             // 
             resources.ApplyResources(txtBuscar, "txtBuscar");
             txtBuscar.Name = "txtBuscar";
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // ClientesDialog
             // 

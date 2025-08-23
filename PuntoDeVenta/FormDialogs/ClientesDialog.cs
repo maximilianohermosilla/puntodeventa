@@ -26,6 +26,7 @@ namespace PuntoDeVenta.FormDialogs
 
         private void btnNuevoCliente_Click_1(object sender, EventArgs e)
         {
+            selectedCliente.Id = 0;
             panelMain.Visible = false;
             panelNewClient.Visible = true;
         }
@@ -140,7 +141,7 @@ namespace PuntoDeVenta.FormDialogs
                         Habilitado = checkHabilitado.Checked
                     };
 
-                    if (selectedCliente.Id > 0)
+                    if (selectedCliente != null && selectedCliente.Id > 0)
                     {
                         var cliente = _clientes.Where(x => x.Id == selectedCliente.Id).FirstOrDefault();
                         cliente!.Id = selectedCliente.Id;
@@ -158,9 +159,9 @@ namespace PuntoDeVenta.FormDialogs
                         _clientes.Add(response.response!);
                     }
 
-                    string toastTipo = response.success ? "SUCCESS" : "ERROR";
-                    ToastForm toast = new ToastForm(toastTipo, response.message!, this.FindForm()!);
-                    toast.Show();
+                    //string toastTipo = response.success ? "SUCCESS" : "ERROR";
+                    //ToastForm toast = new ToastForm(toastTipo, response.message!, this.FindForm()!);
+                    //toast.Show();
                     //NuevoCliente();
 
                     if (response != null && response.success)
