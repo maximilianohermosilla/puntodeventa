@@ -45,7 +45,7 @@ namespace PuntoDeVenta
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             panelNavbar = new Panel();
-            pictureBox2 = new PictureBox();
+            pictureBoxLogo = new PictureBox();
             btnReportes = new Button();
             btnCorte = new Button();
             btnFacturas = new Button();
@@ -63,7 +63,7 @@ namespace PuntoDeVenta
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             timer1 = new System.Windows.Forms.Timer(components);
             panelNavbar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             panelFooter.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,7 +71,7 @@ namespace PuntoDeVenta
             // 
             panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelNavbar.BackColor = Color.FromArgb(26, 32, 40);
-            panelNavbar.Controls.Add(pictureBox2);
+            panelNavbar.Controls.Add(pictureBoxLogo);
             panelNavbar.Controls.Add(btnReportes);
             panelNavbar.Controls.Add(btnCorte);
             panelNavbar.Controls.Add(btnFacturas);
@@ -88,15 +88,15 @@ namespace PuntoDeVenta
             panelNavbar.Size = new Size(137, 807);
             panelNavbar.TabIndex = 1;
             // 
-            // pictureBox2
+            // pictureBoxLogo
             // 
-            pictureBox2.Image = Properties.Resources.logo_bedaqui;
-            pictureBox2.Location = new Point(4, 6);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(122, 96);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 10;
-            pictureBox2.TabStop = false;
+            pictureBoxLogo.Image = Properties.Resources.logo_bedaqui;
+            pictureBoxLogo.Location = new Point(4, 6);
+            pictureBoxLogo.Name = "pictureBoxLogo";
+            pictureBoxLogo.Size = new Size(122, 96);
+            pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxLogo.TabIndex = 10;
+            pictureBoxLogo.TabStop = false;
             // 
             // btnReportes
             // 
@@ -380,7 +380,7 @@ namespace PuntoDeVenta
             Text = "PuntoDeVenta - Bedaqui";
             WindowState = FormWindowState.Maximized;
             panelNavbar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             panelFooter.ResumeLayout(false);
             panelFooter.PerformLayout();
             ResumeLayout(false);
@@ -413,7 +413,7 @@ namespace PuntoDeVenta
         private Panel panelFooter;
         private Label txtDatetime;
         private System.Windows.Forms.Timer timer1;
-        private PictureBox pictureBox2;
+        private PictureBox pictureBoxLogo;
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
 

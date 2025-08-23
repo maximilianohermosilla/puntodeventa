@@ -56,6 +56,12 @@ namespace PuntoDeVenta.AccessData.Repository
             return await vGblContext.Parametro.Where(p => p.Id == pId).FirstOrDefaultAsync()!;
         }
 
+        public async Task<Parametro> GetByClave(string pClave)
+        {
+            vGblContext.ChangeTracker.Clear();
+            return await vGblContext.Parametro.Where(p => p.Clave == pClave).FirstOrDefaultAsync()!;
+        }
+
         public bool SaveChanges()
         {
             try

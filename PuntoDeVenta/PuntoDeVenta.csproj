@@ -51,8 +51,11 @@
     <None Update="assets\icons\info.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
-    <None Update="assets\logo_bedaqui.jpg">
+    <None Update="assets\logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="assets\logo_bedaqui.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

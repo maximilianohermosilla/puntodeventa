@@ -94,6 +94,7 @@
             btnMostrarOpciones.TextAlign = ContentAlignment.MiddleRight;
             btnMostrarOpciones.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnMostrarOpciones.UseVisualStyleBackColor = false;
+            btnMostrarOpciones.Click += btnMostrarOpciones_Click;
             // 
             // panelMain
             // 

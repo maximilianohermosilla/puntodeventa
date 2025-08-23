@@ -11,5 +11,6 @@ namespace PuntoDeVenta.AccessData.Interfaces
         Task<Parametro> Create(Parametro pEntity);
         Task Delete(Parametro pEntity);
         Task<Parametro> GetById(int pId);
+        Task<Parametro> GetByClave(string pClave);
     }
 }

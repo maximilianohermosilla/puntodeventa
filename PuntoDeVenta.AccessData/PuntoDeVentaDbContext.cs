@@ -154,6 +154,11 @@ namespace PuntoDeVenta.AccessData
 
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Parametro>().HasData(
+                new Parametro { Id = 1, Clave = "Logo", Valor = "logo.png" },
+                new Parametro { Id = 2, Clave= "NombreEmpresa", Valor = "MayiStorage" }
+            );
+
             modelBuilder.Entity<Estado>().HasData(
                 new Estado { Id = 1, Descripcion = "Iniciado" },
                 new Estado { Id = 2, Descripcion = "Finalizado" },

@@ -124,6 +124,40 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
+        public async Task<ResponseModel<ParametroResponse>> GetByClave(string clave)
+        {
+            ResponseModel<ParametroResponse> response = new ResponseModel<ParametroResponse>();
+
+            try
+            {
+                Parametro parametro = await _parametroRepository.GetByClave(clave);
+
+                if (parametro == null)
+                {
+                    response.success = false;
+                    response.statusCode = 404;
+                    response.message = "El parametro seleccionado no existe";
+                    response.response = null;
+                    return response;
+                }
+
+                ParametroResponse ParametroResponse = _mapper.Map<ParametroResponse>(parametro);
+
+                response.success = true;
+                response.message = "Consulta realizada correctamente";
+                response.statusCode = 200;
+                response.response = ParametroResponse;
+            }
+            catch (Exception ex)
+            {
+                response.success = false;
+                response.statusCode = 400;
+                response.message = ex.Message;
+                response.response = null;
+            }
+
+            return response;
+        }
         public async Task<ResponseModel<ParametroResponse>> Insert(ParametroRequest entity)
         {
             ResponseModel<ParametroResponse> response = new ResponseModel<ParametroResponse>();

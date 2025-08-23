@@ -11,6 +11,7 @@ namespace PuntoDeVenta
     {
         private PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
         private readonly ITurnoService _turnoService;
+        private readonly IParametroService _parametroService;
 
         public int IdUsuario;
         public TurnoResponse turnoActual;
@@ -18,12 +19,14 @@ namespace PuntoDeVenta
         public Main()
         {
             _turnoService = new TurnoService(_context);
+            _parametroService = new ParametroService(_context);
             InitializeMain();
         }
 
         public Main(int idUsuario)
         {
             _turnoService = new TurnoService(_context);
+            _parametroService = new ParametroService(_context);
             IdUsuario = idUsuario;
             InitializeMain();
         }
@@ -32,7 +35,7 @@ namespace PuntoDeVenta
         {
             InitializeComponent();
             _ = GetUltimoTurno();
-            InitializeUserControlsMain();
+            _ = InitializeUserControlsMain();
             timer1 = new System.Windows.Forms.Timer();
             timer1.Interval = 1;
             timer1.Tick += timer1_Tick;
@@ -112,7 +115,7 @@ namespace PuntoDeVenta
             txtDatetime.Text = DateTime.Now.ToString("dd/MM/yyyy - HH:mm:ss");
         }
 
-        private void InitializeUserControlsMain()
+        private async Task InitializeUserControlsMain()
         {
             int idTurno = turnoActual != null ? turnoActual!.Id : 0;
             ventas1 = new VentasControl(idTurno);
@@ -229,6 +232,28 @@ namespace PuntoDeVenta
             productos1.Name = "productos1";
             productos1.Size = new Size(1295, 727);
             productos1.TabIndex = 9;
+
+            pictureBoxLogo.ImageLocation = await GetParametroLogo();
+        }
+
+        public async Task<string> GetParametroLogo()
+        {
+            string path = Path.Combine(System.Windows.Forms.Application.StartupPath, "assets");
+            string nombreLogo = "logo.png";
+            try
+            {
+                var response = await _parametroService.GetByClave("Logo");
+                if (response != null && response!.success)
+                {
+                    nombreLogo = response!.response!.Valor;
+                }
+            }
+            catch (Exception ex)
+            {
+                nombreLogo = "logo.png";
+            }
+
+            return Path.Combine(path, nombreLogo);
         }
 
         private void SetAllControlsFont(Control.ControlCollection controls, Font newFont)
