@@ -167,6 +167,7 @@
             btnBuscar.TextAlign = ContentAlignment.MiddleRight;
             btnBuscar.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnBuscar.UseVisualStyleBackColor = false;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // btnEntradas
             // 
@@ -188,6 +189,7 @@
             btnEntradas.TextAlign = ContentAlignment.MiddleRight;
             btnEntradas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEntradas.UseVisualStyleBackColor = false;
+            btnEntradas.Click += btnEntradas_Click;
             // 
             // btnSalidas
             // 
@@ -209,6 +211,7 @@
             btnSalidas.TextAlign = ContentAlignment.MiddleRight;
             btnSalidas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSalidas.UseVisualStyleBackColor = false;
+            btnSalidas.Click += btnSalidas_Click;
             // 
             // btnPorMayor
             // 
@@ -230,6 +233,7 @@
             btnPorMayor.TextAlign = ContentAlignment.MiddleRight;
             btnPorMayor.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnPorMayor.UseVisualStyleBackColor = false;
+            btnPorMayor.Click += btnPorMayor_Click;
             // 
             // btnVerificador
             // 
@@ -251,6 +255,7 @@
             btnVerificador.TextAlign = ContentAlignment.MiddleRight;
             btnVerificador.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnVerificador.UseVisualStyleBackColor = false;
+            btnVerificador.Click += btnVerificador_Click;
             // 
             // btnAgregarProducto
             // 
@@ -341,6 +346,7 @@
             btnReimprimir.TextAlign = ContentAlignment.MiddleRight;
             btnReimprimir.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnReimprimir.UseVisualStyleBackColor = false;
+            btnReimprimir.Click += btnReimprimir_Click;
             // 
             // btnCobrar
             // 
@@ -385,6 +391,7 @@
             btnVentasDevoluciones.TextAlign = ContentAlignment.MiddleRight;
             btnVentasDevoluciones.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnVentasDevoluciones.UseVisualStyleBackColor = false;
+            btnVentasDevoluciones.Click += btnVentasDevoluciones_Click;
             // 
             // panel3
             // 
@@ -409,7 +416,7 @@
             labelTotal.BackColor = Color.White;
             labelTotal.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTotal.ForeColor = SystemColors.ActiveCaptionText;
-            labelTotal.Location = new Point(1282, 3);
+            labelTotal.Location = new Point(1282, 2);
             labelTotal.Name = "labelTotal";
             labelTotal.Size = new Size(160, 34);
             labelTotal.TabIndex = 12;
@@ -428,7 +435,7 @@
             btnAsignarCliente.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAsignarCliente.ForeColor = SystemColors.ButtonHighlight;
             btnAsignarCliente.Image = (Image)resources.GetObject("btnAsignarCliente.Image");
-            btnAsignarCliente.Location = new Point(396, 2);
+            btnAsignarCliente.Location = new Point(266, 2);
             btnAsignarCliente.Name = "btnAsignarCliente";
             btnAsignarCliente.Size = new Size(122, 35);
             btnAsignarCliente.TabIndex = 24;
@@ -450,7 +457,7 @@
             btnEliminarTicket.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminarTicket.ForeColor = SystemColors.ButtonHighlight;
             btnEliminarTicket.Image = (Image)resources.GetObject("btnEliminarTicket.Image");
-            btnEliminarTicket.Location = new Point(268, 2);
+            btnEliminarTicket.Location = new Point(138, 2);
             btnEliminarTicket.Name = "btnEliminarTicket";
             btnEliminarTicket.Size = new Size(122, 35);
             btnEliminarTicket.TabIndex = 23;
@@ -472,7 +479,7 @@
             btnNuevoTicket.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnNuevoTicket.ForeColor = SystemColors.ButtonHighlight;
             btnNuevoTicket.Image = (Image)resources.GetObject("btnNuevoTicket.Image");
-            btnNuevoTicket.Location = new Point(132, 2);
+            btnNuevoTicket.Location = new Point(2, 2);
             btnNuevoTicket.Name = "btnNuevoTicket";
             btnNuevoTicket.Size = new Size(130, 35);
             btnNuevoTicket.TabIndex = 22;
@@ -494,7 +501,7 @@
             btnCambiar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCambiar.ForeColor = SystemColors.ButtonHighlight;
             btnCambiar.Image = (Image)resources.GetObject("btnCambiar.Image");
-            btnCambiar.Location = new Point(3, 3);
+            btnCambiar.Location = new Point(394, 2);
             btnCambiar.Name = "btnCambiar";
             btnCambiar.Size = new Size(122, 35);
             btnCambiar.TabIndex = 12;

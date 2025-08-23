@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Update="FormDialogs\ProductoVerificadorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormDialogs\ProductoEtiquetaDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -33,6 +36,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Update="FormDialogs\ClientesDialog.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FormDialogs\ProductoVerificadorDialog.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">

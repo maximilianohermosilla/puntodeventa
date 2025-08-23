@@ -4,7 +4,6 @@ using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
 using PuntoDeVenta.FormDialogs;
 using System.Data;
-using System.Windows.Forms;
 
 namespace PuntoDeVenta.UserControls
 {
@@ -114,8 +113,6 @@ namespace PuntoDeVenta.UserControls
                 {
                     int precio = (int)productoComunDialog.txtPrecio.Value;
                     int cantidad = (int)productoComunDialog.txtCantidad.Value;
-                    //int.TryParse(productoComunDialog.txtPrecio.Text, out precio);
-                    //int.TryParse(productoComunDialog.txtCantidad.Text, out cantidad);
                     _ = AgregarProductoComun(productoComunDialog.txtDescripcion.Text, precio, cantidad);
                 }
             }
@@ -129,7 +126,7 @@ namespace PuntoDeVenta.UserControls
 
         private void btnEliminarTicket_Click(object sender, EventArgs e)
         {
-            if (tabControlTickets.SelectedTab != null && 
+            if (tabControlTickets.SelectedTab != null &&
                 DialogResult.Yes == MessageBox.Show(@$"¿Está seguro de que desea eliminar {tabControlTickets.SelectedTab.Text}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
             {
                 tabControlTickets.TabPages.Remove(tabControlTickets.SelectedTab);
@@ -196,6 +193,63 @@ namespace PuntoDeVenta.UserControls
 
         }
 
+        private void btnCambiar_Click(object sender, EventArgs e)
+        {
+            if (tabControlTickets.SelectedIndex < tabControlTickets.TabCount - 1)
+            {
+                tabControlTickets.SelectedIndex++;
+            }
+            else
+            {
+                tabControlTickets.SelectedIndex = 0;
+            }
+        }
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEntradas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalidas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPorMayor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVerificador_Click(object sender, EventArgs e)
+        {
+            ProductoVerificadorDialog productoVerificadorDialog = new ProductoVerificadorDialog();
+
+            try
+            {
+                if (productoVerificadorDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    MessageBox.Show("Enter", "Success");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnReimprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVentasDevoluciones_Click(object sender, EventArgs e)
+        {
+
+        }
 
         #region Funciones
 
@@ -556,16 +610,5 @@ namespace PuntoDeVenta.UserControls
 
         #endregion
 
-        private void btnCambiar_Click(object sender, EventArgs e)
-        {
-            if (tabControlTickets.SelectedIndex < tabControlTickets.TabCount - 1)
-            {
-                tabControlTickets.SelectedIndex++;
-            }
-            else
-            {
-                tabControlTickets.SelectedIndex = 0;
-            }
-        }
     }
 }
