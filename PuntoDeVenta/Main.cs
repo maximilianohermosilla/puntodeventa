@@ -4,6 +4,7 @@ using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
 using PuntoDeVenta.FormDialogs;
 using PuntoDeVenta.UserControls;
+using System.Windows.Forms;
 
 namespace PuntoDeVenta
 {
@@ -40,6 +41,9 @@ namespace PuntoDeVenta
             timer1.Interval = 1;
             timer1.Tick += timer1_Tick;
             timer1.Start();
+            configuracion1.PictureChanged += configuracion1_PictureChanged;
+            configuracion1.TextUpdateRequested += configuracion1_TextUpdateRequested;
+
             //SetAllControlsFont(this.Controls, new Font("Verdana", 8F, FontStyle.Regular));
         }
 
@@ -234,6 +238,20 @@ namespace PuntoDeVenta
             productos1.TabIndex = 9;
 
             pictureBoxLogo.ImageLocation = await GetParametroLogo();
+            Text = await GetParametroNombre();
+        }
+
+        private void configuracion1_PictureChanged(object sender, Image newImage)
+        {
+            pictureBoxLogo.Image = newImage;
+        }
+        private void configuracion1_TextUpdateRequested(object sender, EventArgs e)
+        {
+            ConfiguracionControl userControl = sender as ConfiguracionControl;
+            if (userControl != null)
+            {
+                Text = userControl.txtNombre.Text;
+            }
         }
 
         public async Task<string> GetParametroLogo()
@@ -254,6 +272,25 @@ namespace PuntoDeVenta
             }
 
             return Path.Combine(path, nombreLogo);
+        }
+
+        public async Task<string> GetParametroNombre()
+        {
+            string nombreEmpresa = "PuntoDeVenta";
+            try
+            {
+                var response = await _parametroService.GetByClave("NombreEmpresa");
+                if (response != null && response!.success)
+                {
+                    nombreEmpresa = response!.response!.Valor;
+                }
+            }
+            catch (Exception ex)
+            {
+                nombreEmpresa = "logo.png";
+            }
+
+            return nombreEmpresa;
         }
 
         private void SetAllControlsFont(Control.ControlCollection controls, Font newFont)

@@ -93,7 +93,7 @@ namespace PuntoDeVenta
             pictureBoxLogo.Image = Properties.Resources.logo_bedaqui;
             pictureBoxLogo.Location = new Point(4, 6);
             pictureBoxLogo.Name = "pictureBoxLogo";
-            pictureBoxLogo.Size = new Size(122, 96);
+            pictureBoxLogo.Size = new Size(120, 120);
             pictureBoxLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxLogo.TabIndex = 10;
             pictureBoxLogo.TabStop = false;
@@ -110,7 +110,7 @@ namespace PuntoDeVenta
             btnReportes.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnReportes.ForeColor = SystemColors.ButtonHighlight;
             btnReportes.Image = (Image)resources.GetObject("btnReportes.Image");
-            btnReportes.Location = new Point(4, 531);
+            btnReportes.Location = new Point(4, 540);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(122, 45);
             btnReportes.TabIndex = 8;
@@ -132,7 +132,7 @@ namespace PuntoDeVenta
             btnCorte.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCorte.ForeColor = SystemColors.ButtonHighlight;
             btnCorte.Image = (Image)resources.GetObject("btnCorte.Image");
-            btnCorte.Location = new Point(4, 480);
+            btnCorte.Location = new Point(4, 489);
             btnCorte.Name = "btnCorte";
             btnCorte.Size = new Size(122, 45);
             btnCorte.TabIndex = 7;
@@ -154,7 +154,7 @@ namespace PuntoDeVenta
             btnFacturas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnFacturas.ForeColor = SystemColors.ButtonHighlight;
             btnFacturas.Image = (Image)resources.GetObject("btnFacturas.Image");
-            btnFacturas.Location = new Point(4, 429);
+            btnFacturas.Location = new Point(4, 438);
             btnFacturas.Name = "btnFacturas";
             btnFacturas.Size = new Size(122, 45);
             btnFacturas.TabIndex = 6;
@@ -176,7 +176,7 @@ namespace PuntoDeVenta
             btnCompras.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCompras.ForeColor = SystemColors.ButtonHighlight;
             btnCompras.Image = (Image)resources.GetObject("btnCompras.Image");
-            btnCompras.Location = new Point(4, 378);
+            btnCompras.Location = new Point(4, 387);
             btnCompras.Name = "btnCompras";
             btnCompras.Size = new Size(122, 45);
             btnCompras.TabIndex = 5;
@@ -198,7 +198,7 @@ namespace PuntoDeVenta
             btnInventario.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnInventario.ForeColor = SystemColors.ButtonHighlight;
             btnInventario.Image = (Image)resources.GetObject("btnInventario.Image");
-            btnInventario.Location = new Point(4, 174);
+            btnInventario.Location = new Point(4, 183);
             btnInventario.Name = "btnInventario";
             btnInventario.Size = new Size(122, 45);
             btnInventario.TabIndex = 1;
@@ -220,7 +220,7 @@ namespace PuntoDeVenta
             btnProductos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnProductos.ForeColor = SystemColors.ButtonHighlight;
             btnProductos.Image = (Image)resources.GetObject("btnProductos.Image");
-            btnProductos.Location = new Point(4, 225);
+            btnProductos.Location = new Point(4, 234);
             btnProductos.Name = "btnProductos";
             btnProductos.Size = new Size(122, 45);
             btnProductos.TabIndex = 2;
@@ -242,7 +242,7 @@ namespace PuntoDeVenta
             btnClientes.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnClientes.ForeColor = SystemColors.ButtonHighlight;
             btnClientes.Image = (Image)resources.GetObject("btnClientes.Image");
-            btnClientes.Location = new Point(4, 327);
+            btnClientes.Location = new Point(4, 336);
             btnClientes.Name = "btnClientes";
             btnClientes.Size = new Size(122, 45);
             btnClientes.TabIndex = 4;
@@ -264,7 +264,7 @@ namespace PuntoDeVenta
             btnCreditos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCreditos.ForeColor = SystemColors.ButtonHighlight;
             btnCreditos.Image = (Image)resources.GetObject("btnCreditos.Image");
-            btnCreditos.Location = new Point(4, 276);
+            btnCreditos.Location = new Point(4, 285);
             btnCreditos.Name = "btnCreditos";
             btnCreditos.Size = new Size(122, 45);
             btnCreditos.TabIndex = 3;
@@ -286,7 +286,7 @@ namespace PuntoDeVenta
             btnVentas.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVentas.ForeColor = SystemColors.ButtonHighlight;
             btnVentas.Image = (Image)resources.GetObject("btnVentas.Image");
-            btnVentas.Location = new Point(4, 123);
+            btnVentas.Location = new Point(4, 132);
             btnVentas.Name = "btnVentas";
             btnVentas.Size = new Size(122, 45);
             btnVentas.TabIndex = 0;
@@ -308,7 +308,7 @@ namespace PuntoDeVenta
             btnConfiguracion.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnConfiguracion.ForeColor = SystemColors.ButtonHighlight;
             btnConfiguracion.Image = (Image)resources.GetObject("btnConfiguracion.Image");
-            btnConfiguracion.Location = new Point(4, 582);
+            btnConfiguracion.Location = new Point(4, 591);
             btnConfiguracion.Name = "btnConfiguracion";
             btnConfiguracion.Size = new Size(122, 45);
             btnConfiguracion.TabIndex = 9;
@@ -377,7 +377,7 @@ namespace PuntoDeVenta
             Controls.Add(panelMain);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Main";
-            Text = "PuntoDeVenta - Bedaqui";
+            Text = "PuntoDeVenta";
             WindowState = FormWindowState.Maximized;
             panelNavbar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();

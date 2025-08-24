@@ -115,9 +115,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.logo_bedaqui;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Image = Properties.Resources.logo_bedaqui1;
             pictureBox1.Location = new Point(334, 26);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(130, 130);

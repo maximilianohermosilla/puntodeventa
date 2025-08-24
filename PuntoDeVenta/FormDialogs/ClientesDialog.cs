@@ -26,7 +26,10 @@ namespace PuntoDeVenta.FormDialogs
 
         private void btnNuevoCliente_Click_1(object sender, EventArgs e)
         {
-            selectedCliente.Id = 0;
+            if (selectedCliente != null)
+            {
+                selectedCliente.Id = 0;
+            }
             panelMain.Visible = false;
             panelNewClient.Visible = true;
         }
