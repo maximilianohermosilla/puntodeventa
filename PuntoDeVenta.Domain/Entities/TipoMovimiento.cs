@@ -6,5 +6,6 @@
         public string Descripcion { get; set; }
 
         public virtual ICollection<Movimiento> Movimientos { get; set; }
+        public virtual ICollection<ProductoMovimiento> ProductoMovimientos { get; set; }
     }
 }

@@ -20,5 +20,6 @@
         public virtual Unidad? Unidad { get; set; }
         public virtual IList<PromocionProducto> PromocionProductos { get; set; }
         public virtual IList<TicketDetalle> TicketDetalles { get; set; }
+        public virtual ICollection<ProductoMovimiento> ProductoMovimientos { get; set; }
     }
 }

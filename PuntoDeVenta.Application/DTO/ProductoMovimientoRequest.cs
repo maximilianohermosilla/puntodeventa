@@ -1,6 +1,6 @@
-﻿namespace PuntoDeVenta.Domain.Entities
+﻿namespace PuntoDeVenta.Application.DTO
 {
-    public partial class ProductoMovimiento
+    public partial class ProductoMovimientoRequest
     {
         public int Id { get; set; }
         public DateTime Fecha { get; set; }
@@ -12,9 +12,5 @@
         public int IdTipoMovimiento { get; set; }
         public int IdUsuario { get; set; }
         public int IdProducto { get; set; }
-
-        public virtual TipoMovimiento TipoMovimiento { get; set; }
-        public virtual Usuario Usuario { get; set; }
-        public virtual Producto Producto { get; set; }
     }
 }

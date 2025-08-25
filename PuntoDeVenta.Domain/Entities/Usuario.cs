@@ -18,6 +18,7 @@
         public virtual ICollection<Ticket> Tickets { get; set; }
         public virtual ICollection<Turno> Turnos { get; set; }
         public virtual ICollection<Movimiento> Movimientos { get; set; }
+        public virtual ICollection<ProductoMovimiento> ProductoMovimientos { get; set; }
         public virtual ICollection<PermisoUsuario> PermisoUsuarios { get; } = new List<PermisoUsuario>();
     }
 }

@@ -152,11 +152,18 @@ namespace PuntoDeVenta.AccessData
                 entity.HasOne(d => d.TipoMovimiento).WithMany(p => p.Movimientos).HasForeignKey(d => d.IdTipoMovimiento).OnDelete(DeleteBehavior.NoAction);
             });
 
+            modelBuilder.Entity<ProductoMovimiento>(entity =>
+            {
+                entity.HasOne(d => d.Usuario).WithMany(p => p.ProductoMovimientos).HasForeignKey(d => d.IdUsuario).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.TipoMovimiento).WithMany(p => p.ProductoMovimientos).HasForeignKey(d => d.IdTipoMovimiento).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.Producto).WithMany(p => p.ProductoMovimientos).HasForeignKey(d => d.IdProducto).OnDelete(DeleteBehavior.NoAction);
+            });
+
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Parametro>().HasData(
                 new Parametro { Id = 1, Clave = "Logo", Valor = "logo.png" },
-                new Parametro { Id = 2, Clave= "NombreEmpresa", Valor = "MayiStorage" }
+                new Parametro { Id = 2, Clave = "NombreEmpresa", Valor = "PuntoDeVenta" }
             );
 
             modelBuilder.Entity<Estado>().HasData(

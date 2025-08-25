@@ -21,7 +21,7 @@ namespace PuntoDeVenta
         [STAThread]
         static void Main()
         {
-
+            //File.Delete(Path.Combine(System.Windows.Forms.Application.StartupPath, "PuntoDeVenta.db"));
             var services = new ServiceCollection();
             ConfigureServices(services);
 

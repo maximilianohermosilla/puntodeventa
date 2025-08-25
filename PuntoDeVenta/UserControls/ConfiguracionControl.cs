@@ -85,7 +85,7 @@ namespace PuntoDeVenta.UserControls
             }
             catch (Exception ex)
             {
-                nombreEmpresa = "logo.png";
+                nombreEmpresa = "PuntoDeVenta";
             }
 
             txtNombre.Text = nombreEmpresa;
