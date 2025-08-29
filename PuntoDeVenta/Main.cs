@@ -12,6 +12,7 @@ namespace PuntoDeVenta
     {
         private PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
         private readonly ITurnoService _turnoService;
+        private readonly ITicketService _ticketService;
         private readonly IParametroService _parametroService;
 
         public int IdUsuario;
@@ -19,14 +20,13 @@ namespace PuntoDeVenta
 
         public Main()
         {
-            _turnoService = new TurnoService(_context);
-            _parametroService = new ParametroService(_context);
             InitializeMain();
         }
 
         public Main(int idUsuario)
         {
             _turnoService = new TurnoService(_context);
+            _ticketService = new TicketService(_context);
             _parametroService = new ParametroService(_context);
             IdUsuario = idUsuario;
             InitializeMain();
@@ -370,13 +370,14 @@ namespace PuntoDeVenta
             try
             {
                 int cantidad = ObtenerCantidad();
+                var valorTotalTickets = await _ticketService.GetAllByIdTurno(turnoActual.Id);
 
                 TurnoRequest turnoRequest = new TurnoRequest()
                 {
                     Id = turnoActual.Id,
                     CantidadInicio = turnoActual.CantidadInicio,
                     CantidadFin = cantidad,
-                    ValorTotal = turnoActual.ValorTotal,
+                    ValorTotal = valorTotalTickets != null && valorTotalTickets!.response != null ? valorTotalTickets!.response!.Select(t => t.PrecioTotal).Sum() : 0,
                     ValorGanancia = turnoActual.ValorGanancia,
                     Finalizado = true,
                     FechaInicio = turnoActual.FechaInicio,

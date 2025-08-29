@@ -50,6 +50,12 @@ namespace PuntoDeVenta.AccessData.Repository
             return await vGblContext.Ticket.ToListAsync();
         }
 
+        public async Task<List<Ticket>> GetAllByIdTurno(int pIdTurno)
+        {
+            vGblContext.ChangeTracker.Clear();
+            return await vGblContext.Ticket.Where(t => t.IdTurno == pIdTurno).ToListAsync();
+        }
+
         public async Task<Ticket> GetById(int pId)
         {
             vGblContext.ChangeTracker.Clear();
