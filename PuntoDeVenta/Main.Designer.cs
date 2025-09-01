@@ -90,7 +90,7 @@ namespace PuntoDeVenta
             // 
             // pictureBoxLogo
             // 
-            pictureBoxLogo.Image = Properties.Resources.logo_bedaqui;
+            pictureBoxLogo.Image = Properties.Resources.shop;
             pictureBoxLogo.Location = new Point(4, 6);
             pictureBoxLogo.Name = "pictureBoxLogo";
             pictureBoxLogo.Size = new Size(120, 120);

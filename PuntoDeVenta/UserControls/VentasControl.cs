@@ -12,12 +12,14 @@ namespace PuntoDeVenta.UserControls
         private PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
 
         private readonly IProductoService _productoService;
+        private readonly IProductoMovimientoService _productoMovimientoService;
         private readonly ITicketService _ticketService;
         private int IdTurno = 0;
 
         public VentasControl()
         {
             _productoService = new ProductoService(_context);
+            _productoMovimientoService = new ProductoMovimientoService(_context);
             _ticketService = new TicketService(_context);
             InitializeComponent();
             AgregarTicket();
@@ -27,6 +29,7 @@ namespace PuntoDeVenta.UserControls
         {
             IdTurno = idTurno;
             _productoService = new ProductoService(_context);
+            _productoMovimientoService = new ProductoMovimientoService(_context);
             _ticketService = new TicketService(_context);
             InitializeComponent();
             AgregarTicket();
@@ -461,6 +464,7 @@ namespace PuntoDeVenta.UserControls
             try
             {
                 List<TicketDetalleRequest> productos = new List<TicketDetalleRequest>();
+                List<ProductoMovimientoRequest> productosMovimientos = new List<ProductoMovimientoRequest>();
 
                 var dataGridView = GetDataGridView();
 
@@ -492,6 +496,23 @@ namespace PuntoDeVenta.UserControls
                             producto.ProductoComun = vId == "0" ? vNombre : "";
 
                             productos.Add(producto);
+
+                            if (vId != "0")
+                            {
+                                ProductoMovimientoRequest productoMovimiento = new ProductoMovimientoRequest();
+                                productoMovimiento.Fecha = DateTime.Now;
+                                productoMovimiento.Descripcion = "";
+                                productoMovimiento.Cantidad = Convert.ToInt32(vCantidad);
+                                productoMovimiento.CantidadInicio = Convert.ToInt32(vCantidad);
+                                productoMovimiento.CantidadFin = Convert.ToInt32(vCantidad);
+                                productoMovimiento.Valor = Convert.ToInt32(vImporte);
+                                productoMovimiento.IdTipoMovimiento = 1;
+                                productoMovimiento.IdUsuario = 1;
+                                productoMovimiento.IdProducto = Convert.ToInt32(vId);
+
+                                productosMovimientos.Add(productoMovimiento);
+                                await _productoMovimientoService.Insert(productoMovimiento);
+                            }
                         }
 
                         string vIdCliente = dataGridView.Rows[0].Cells["IdCliente"].Value != null ? dataGridView.Rows[0].Cells["IdCliente"].Value.ToString()! : "";

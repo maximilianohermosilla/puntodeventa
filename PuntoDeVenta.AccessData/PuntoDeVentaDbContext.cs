@@ -20,6 +20,7 @@ namespace PuntoDeVenta.AccessData
         public DbSet<PermisoPerfil> PermisoPerfil { get; set; }
         public DbSet<PermisoUsuario> PermisoUsuario { get; set; }
         public DbSet<Producto> Producto { get; set; }
+        public DbSet<ProductoMovimiento> ProductoMovimiento { get; set; }
         public DbSet<Promocion> Promocion { get; set; }
         public DbSet<PromocionCategoria> PromocionCategoria { get; set; }
         public DbSet<PromocionProducto> PromocionProducto { get; set; }

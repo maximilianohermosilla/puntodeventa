@@ -66,6 +66,7 @@ namespace PuntoDeVenta
             services.AddTransient<IPermisoPerfilRepository, PermisoPerfilRepository>();
             services.AddTransient<IPermisoUsuarioRepository, PermisoUsuarioRepository>();
             services.AddTransient<IProductoRepository, ProductoRepository>();
+            services.AddTransient<IProductoMovimientoRepository, ProductoMovimientoRepository>();
             services.AddTransient<IPromocionRepository, PromocionRepository>();
             services.AddTransient<IPromocionCategoriaRepository, PromocionCategoriaRepository>();
             services.AddTransient<IPromocionProductoRepository, PromocionProductoRepository>();
@@ -89,6 +90,7 @@ namespace PuntoDeVenta
             services.AddTransient<IPermisoPerfilService, PermisoPerfilService>();
             services.AddTransient<IPermisoUsuarioService, PermisoUsuarioService>();
             services.AddTransient<IProductoService, ProductoService>();
+            services.AddTransient<IProductoMovimientoService, ProductoMovimientoService>();
             services.AddTransient<IPromocionService, PromocionService>();
             services.AddTransient<IPromocionCategoriaService, PromocionCategoriaService>();
             services.AddTransient<IPromocionProductoService, PromocionProductoService>();
