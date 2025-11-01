@@ -34,6 +34,7 @@
             labelSinResultados = new Label();
             dvMovimientos = new DataGridView();
             panelHeader = new Panel();
+            btnExportar = new Button();
             btnBuscar = new Button();
             labelHasta = new Label();
             labelDesde = new Label();
@@ -44,6 +45,7 @@
             chartDias = new System.Windows.Forms.DataVisualization.Charting.Chart();
             chartCategorias = new System.Windows.Forms.DataVisualization.Charting.Chart();
             chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            labelTotal = new Label();
             panelMain.SuspendLayout();
             panelDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dvMovimientos).BeginInit();
@@ -103,6 +105,8 @@
             // 
             // panelHeader
             // 
+            panelHeader.Controls.Add(labelTotal);
+            panelHeader.Controls.Add(btnExportar);
             panelHeader.Controls.Add(btnBuscar);
             panelHeader.Controls.Add(labelHasta);
             panelHeader.Controls.Add(labelDesde);
@@ -114,6 +118,28 @@
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1447, 108);
             panelHeader.TabIndex = 28;
+            // 
+            // btnExportar
+            // 
+            btnExportar.BackColor = Color.FromArgb(0, 80, 200);
+            btnExportar.BackgroundImageLayout = ImageLayout.None;
+            btnExportar.FlatAppearance.BorderColor = Color.Silver;
+            btnExportar.FlatAppearance.BorderSize = 0;
+            btnExportar.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnExportar.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnExportar.FlatStyle = FlatStyle.Flat;
+            btnExportar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnExportar.ForeColor = SystemColors.ButtonHighlight;
+            btnExportar.Image = (Image)resources.GetObject("btnExportar.Image");
+            btnExportar.Location = new Point(623, 56);
+            btnExportar.Name = "btnExportar";
+            btnExportar.Size = new Size(114, 35);
+            btnExportar.TabIndex = 23;
+            btnExportar.Text = "Exportar";
+            btnExportar.TextAlign = ContentAlignment.MiddleRight;
+            btnExportar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnExportar.UseVisualStyleBackColor = false;
+            btnExportar.Click += btnExportar_Click;
             // 
             // btnBuscar
             // 
@@ -220,6 +246,18 @@
             chartProductos.TabIndex = 26;
             chartProductos.Text = "chart2";
             // 
+            // labelTotal
+            // 
+            labelTotal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelTotal.AutoSize = true;
+            labelTotal.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTotal.ForeColor = SystemColors.ButtonHighlight;
+            labelTotal.Location = new Point(1274, 58);
+            labelTotal.Name = "labelTotal";
+            labelTotal.Size = new Size(97, 25);
+            labelTotal.TabIndex = 24;
+            labelTotal.Text = "TOTAL: $0";
+            // 
             // ReporteVentasControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -258,5 +296,7 @@
         private Panel panelCharts;
         private Panel panelHeader;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDias;
+        public Button btnExportar;
+        private Label labelTotal;
     }
 }

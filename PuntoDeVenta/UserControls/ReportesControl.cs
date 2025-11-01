@@ -32,6 +32,7 @@ namespace PuntoDeVenta.UserControls
             reporteVentasControl1.TabIndex = 18;
 
             SetActivePanel(reporteVentasControl1);
+            _ = reporteVentasControl1.GetAllMovimientos();
         }
 
         public void SetActivePanel(UserControl? control)
