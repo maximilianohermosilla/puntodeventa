@@ -6,7 +6,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>assets\store.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="assets\store.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="WinForms.DataVisualization" Version="1.10.0" />
