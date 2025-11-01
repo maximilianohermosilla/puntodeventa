@@ -9,11 +9,17 @@ namespace PuntoDeVenta
     {
         private PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
         private readonly IParametroService _parametroService;
+        private readonly IUsuarioService _usuarioService;
 
         public Login()
         {
             _parametroService = new ParametroService(_context);
+            _usuarioService = new UsuarioService(_context);
             InitializeComponent();
+
+            txtPassword.PasswordChar = '*';
+            txtPassword.UseSystemPasswordChar = true;
+
             _ = GetParametroLogo();
         }
 
@@ -26,13 +32,37 @@ namespace PuntoDeVenta
         {
             if (System.Windows.Forms.Application.OpenForms[nameof(Main)] == null)
             {
-                Main form = new Main(1);
-                form.Show(this);
-                this.Hide();
+                labelErrors.Visible = false;
+                _ = LoginUser();
             }
             else
             {
-                System.Windows.Forms.Application.OpenForms[nameof(Main)].Focus();
+                System.Windows.Forms.Application.OpenForms[nameof(Main)]!.Focus();
+            }
+        }
+
+        private async Task LoginUser()
+        {
+            try
+            {
+                var usuario = await _usuarioService.GetByUserAndPassword(txtUser.Text, txtPassword.Text);
+
+                if (usuario != null == usuario!.success)
+                {
+                    Main form = new Main(1);
+                    form.Show(this);
+                    this.Hide();
+                }
+                else
+                {
+                    labelErrors.Text = "Credenciales incorrectas";
+                    labelErrors.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                labelErrors.Text = ex.Message;
+                labelErrors.Visible = true;
             }
         }
 
@@ -54,6 +84,14 @@ namespace PuntoDeVenta
             }
 
             pictureBox1.ImageLocation = Path.Combine(path, nombreLogo);
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _ = LoginUser();
+            }
         }
     }
 }

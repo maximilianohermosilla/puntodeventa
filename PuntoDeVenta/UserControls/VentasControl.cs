@@ -497,22 +497,20 @@ namespace PuntoDeVenta.UserControls
 
                             productos.Add(producto);
 
-                            if (vId != "0")
-                            {
-                                ProductoMovimientoRequest productoMovimiento = new ProductoMovimientoRequest();
-                                productoMovimiento.Fecha = DateTime.Now;
-                                productoMovimiento.Descripcion = "";
-                                productoMovimiento.Cantidad = Convert.ToInt32(vCantidad);
-                                productoMovimiento.CantidadInicio = Convert.ToInt32(vCantidad);
-                                productoMovimiento.CantidadFin = Convert.ToInt32(vCantidad);
-                                productoMovimiento.Valor = Convert.ToInt32(vImporte);
-                                productoMovimiento.IdTipoMovimiento = 1;
-                                productoMovimiento.IdUsuario = 1;
-                                productoMovimiento.IdProducto = Convert.ToInt32(vId);
+                            ProductoMovimientoRequest productoMovimiento = new ProductoMovimientoRequest();
+                            productoMovimiento.Fecha = DateTime.Now;
+                            productoMovimiento.Descripcion = vNombre;
+                            productoMovimiento.Cantidad = Convert.ToInt32(vCantidad);
+                            productoMovimiento.CantidadInicio = Convert.ToInt32(vCantidad);
+                            productoMovimiento.CantidadFin = Convert.ToInt32(vCantidad);
+                            productoMovimiento.Valor = Convert.ToInt32(vImporte);
+                            productoMovimiento.IdTipoMovimiento = 2;
+                            productoMovimiento.IdUsuario = 1;
+                            productoMovimiento.IdProducto = vId != "0" ? Convert.ToInt32(vId) : null;
 
-                                productosMovimientos.Add(productoMovimiento);
-                                await _productoMovimientoService.Insert(productoMovimiento);
-                            }
+                            productosMovimientos.Add(productoMovimiento);
+                            await _productoMovimientoService.Insert(productoMovimiento);
+
                         }
 
                         string vIdCliente = dataGridView.Rows[0].Cells["IdCliente"].Value != null ? dataGridView.Rows[0].Cells["IdCliente"].Value.ToString()! : "";

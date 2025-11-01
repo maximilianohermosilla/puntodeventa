@@ -32,7 +32,7 @@ namespace PuntoDeVenta.UserControls.ReportesControls
             {
                 var desde = new DateTime(dateDesde.Value.Year, dateDesde.Value.Month, dateDesde.Value.Day, 0, 0, 0);
                 var hasta = new DateTime(dateHasta.Value.Year, dateHasta.Value.Month, dateHasta.Value.Day, 23, 59, 0);
-                var response = await _productoMovimientoService.GetAllByFechaAndTipoMovimiento(desde, hasta, 1);
+                var response = await _productoMovimientoService.GetAllByFechaAndTipoMovimiento(desde, hasta, 2);
 
                 if (response != null && response.success)
                 {
@@ -52,9 +52,9 @@ namespace PuntoDeVenta.UserControls.ReportesControls
             {
                 var listaMovimientos = movimientos.Select(x => new
                 {
-                    x.Producto.Codigo,
-                    Producto = x.Producto.Descripcion ?? "",
-                    Categoria = x.Producto?.CategoriaProducto?.Descripcion ?? "",
+                    Código = x.Producto != null ? x.Producto!.Codigo : "",
+                    Producto = x.Descripcion ?? "",
+                    Categoria = x.Producto != null && x.Producto?.CategoriaProducto != null ? x.Producto?.CategoriaProducto?.Descripcion : "Producto Común",
                     x.Cantidad,
                     x.Valor,
                     TipoMovimiento = x.TipoMovimiento.Descripcion ?? "",
@@ -65,31 +65,37 @@ namespace PuntoDeVenta.UserControls.ReportesControls
                 dvMovimientos.Refresh();
                 dvMovimientos.Invalidate();
                 dvMovimientos.Visible = true;
-                chart1.Visible = true;
+                chartCategorias.Visible = true;
+                chartProductos.Visible = true;
+                chartDias.Visible = true;
                 labelSinResultados.Visible = false;
 
-                LoadChartData(movimientos);
+                LoadChartDataProductos(movimientos);
+                LoadChartDataCategorias(movimientos);
+                LoadChartDataDias(movimientos);
             }
             else
             {
                 dvMovimientos.Visible = false;
-                chart1.Visible = false;
+                chartCategorias.Visible = false;
+                chartProductos.Visible = false;
+                chartDias.Visible = false;
                 labelSinResultados.Visible = true;
             }
         }
-        private void LoadChartData(List<ProductoMovimientoResponse> movimientos)
-        {
-            var movimientosAgrupados = movimientos.GroupBy(mov => mov.Producto.Descripcion)
-                .Select(m => new { Nombre = m.Key, Cantidad = m.Sum(item => item.Cantidad) }).ToList();
 
-            chart1.Series.Clear();
-            chart1.ChartAreas.Clear();
-            chart1.Legends.Clear();
+        private void LoadChartDataProductos(List<ProductoMovimientoResponse> movimientos)
+        {
+            var movimientosAgrupados = movimientos.GroupBy(mov => mov.Descripcion)
+                .Select(m => new ChartResponse  { Nombre = m.Key!, Cantidad = m.Sum(item => item.Cantidad) }).ToList();
+
+            chartCategorias.Series.Clear();
+            chartCategorias.ChartAreas.Clear();
+            chartCategorias.Legends.Clear();
 
             ChartArea chartArea1 = new ChartArea("Productos");
-            chart1.ChartAreas.Add(chartArea1);
+            chartCategorias.ChartAreas.Add(chartArea1);
 
-            int index = 0;
             foreach (var item in movimientosAgrupados)
             {
                 Series series = new Series(item.Nombre);
@@ -97,20 +103,101 @@ namespace PuntoDeVenta.UserControls.ReportesControls
                 series.ChartArea = "Productos";
                 series.Points.AddXY(item.Nombre, item.Cantidad);
                 series.IsVisibleInLegend = true;
-                chart1.Series.Add(series); 
-                chart1.Legends.Add(new Legend(item.Nombre));
-                chart1.Legends[item.Nombre].Docking = Docking.Bottom;
-
+                chartCategorias.Series.Add(series); 
+                chartCategorias.Legends.Add(new Legend(item.Nombre));
+                chartCategorias.Legends[item.Nombre].Docking = Docking.Bottom;
             }
-            chart1.ChartAreas["Productos"].AxisX.LabelStyle.Enabled = false;
-            chart1.ChartAreas["Productos"].AxisX.Title = "Productos";
-            chart1.ChartAreas["Productos"].AxisY.Title = "Cantidad";
-            chart1.ChartAreas["Productos"].AxisX.Interval = 1;
-            chart1.ChartAreas["Productos"].AxisX.MajorGrid.Enabled = true;
-            chart1.ChartAreas["Productos"].AxisX.MajorTickMark.Enabled = true;
 
-            chart1.Titles.Clear();
-            chart1.Titles.Add("Productos");
+            chartCategorias.ChartAreas["Productos"].AxisX.LabelStyle.Enabled = false;
+            chartCategorias.ChartAreas["Productos"].AxisX.Title = "Productos";
+            chartCategorias.ChartAreas["Productos"].AxisY.Title = "Cantidad";
+            chartCategorias.ChartAreas["Productos"].AxisX.Interval = 1;
+            chartCategorias.ChartAreas["Productos"].AxisX.MajorGrid.Enabled = true;
+            chartCategorias.ChartAreas["Productos"].AxisX.MajorTickMark.Enabled = true;
+
+            chartCategorias.Titles.Clear();
+            chartCategorias.Titles.Add("Productos");
+        }
+
+        private void LoadChartDataCategorias(List<ProductoMovimientoResponse> movimientos)
+        {
+            var movimientosAgrupados = movimientos.GroupBy(mov => mov.Producto?.CategoriaProducto?.Descripcion)
+                .Select(m => new ChartResponse { Nombre = m.Key ?? "Producto Común", Cantidad = m.Sum(item => item.Cantidad) }).ToList();
+
+            chartProductos.Series.Clear();
+            chartProductos.ChartAreas.Clear();
+            chartProductos.Legends.Clear();
+
+            ChartArea chartArea1 = new ChartArea("Categorías");
+            chartProductos.ChartAreas.Add(chartArea1);
+
+            foreach (var item in movimientosAgrupados)
+            {
+                Series series = new Series(item.Nombre);
+                series.ChartType = SeriesChartType.Column;
+                series.ChartArea = "Categorías";
+                series.Points.AddXY(item.Nombre, item.Cantidad);
+                series.IsVisibleInLegend = true;
+                chartProductos.Series.Add(series);
+                chartProductos.Legends.Add(new Legend(item.Nombre));
+                chartProductos.Legends[item.Nombre].Docking = Docking.Bottom;
+            }
+
+            chartProductos.ChartAreas["Categorías"].AxisX.LabelStyle.Enabled = false;
+            chartProductos.ChartAreas["Categorías"].AxisX.Title = "Categorías";
+            chartProductos.ChartAreas["Categorías"].AxisY.Title = "Cantidad";
+            chartProductos.ChartAreas["Categorías"].AxisX.Interval = 1;
+            chartProductos.ChartAreas["Categorías"].AxisX.MajorGrid.Enabled = true;
+            chartProductos.ChartAreas["Categorías"].AxisX.MajorTickMark.Enabled = true;
+
+            chartProductos.Titles.Clear();
+            chartProductos.Titles.Add("Categorías");
+        }
+
+        private void LoadChartDataDias(List<ProductoMovimientoResponse> movimientos)
+        {
+            List<ChartResponse> movimientosAgrupados = new List<ChartResponse>();
+            var diasDiferencia = (dateHasta.Value - dateDesde.Value).TotalDays;
+
+            if (diasDiferencia > 15)
+            {
+                movimientosAgrupados = movimientos.GroupBy(mov => $"{mov.Fecha.Month.ToString()}/{mov.Fecha.Year.ToString()}")
+                    .Select(m => new ChartResponse { Nombre = m.Key, Cantidad = Convert.ToInt32(m.Sum(item => item.Valor)) }).ToList();
+            }
+            else
+            {
+                movimientosAgrupados = movimientos.GroupBy(mov => $"{mov.Fecha.Day.ToString()}/{mov.Fecha.Month.ToString()}/{mov.Fecha.Year.ToString()}")
+                    .Select(m => new ChartResponse  { Nombre = m.Key, Cantidad = Convert.ToInt32(m.Sum(item => item.Valor)) }).ToList();
+            }
+
+            chartDias.Series.Clear();
+            chartDias.ChartAreas.Clear();
+            chartDias.Legends.Clear();
+
+            ChartArea chartArea1 = new ChartArea("Fecha");
+            chartDias.ChartAreas.Add(chartArea1);
+
+            foreach (var item in movimientosAgrupados)
+            {
+                Series series = new Series(item.Nombre);
+                series.ChartType = SeriesChartType.Column;
+                series.ChartArea = "Fecha";
+                series.Points.AddXY(item.Nombre, item.Cantidad);
+                series.IsVisibleInLegend = true;
+                chartDias.Series.Add(series);
+                chartDias.Legends.Add(new Legend(item.Nombre));
+                chartDias.Legends[item.Nombre].Docking = Docking.Bottom;
+            }
+
+            chartDias.ChartAreas["Fecha"].AxisX.LabelStyle.Enabled = false;
+            chartDias.ChartAreas["Fecha"].AxisX.Title = "Fecha";
+            chartDias.ChartAreas["Fecha"].AxisY.Title = "Valor";
+            chartDias.ChartAreas["Fecha"].AxisX.Interval = 1;
+            chartDias.ChartAreas["Fecha"].AxisX.MajorGrid.Enabled = true;
+            chartDias.ChartAreas["Fecha"].AxisX.MajorTickMark.Enabled = true;
+
+            chartDias.Titles.Clear();
+            chartDias.Titles.Add("Fecha");
         }
     }
 }

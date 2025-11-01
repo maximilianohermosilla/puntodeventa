@@ -11,10 +11,10 @@
         public float Valor { get; set; }
         public int IdTipoMovimiento { get; set; }
         public int IdUsuario { get; set; }
-        public int IdProducto { get; set; }
+        public int? IdProducto { get; set; } = null;
 
         public virtual TipoMovimientoResponse TipoMovimiento { get; set; }
         public virtual UsuarioResponse Usuario { get; set; }
-        public virtual ProductoResponse Producto { get; set; }
+        public virtual ProductoResponse? Producto { get; set; } = null;
     }
 }

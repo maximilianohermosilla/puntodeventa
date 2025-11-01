@@ -205,7 +205,7 @@ namespace PuntoDeVenta.AccessData
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
                 {
-                    Id = 1, User = "admin", Password = "admin", Nombre = "Administrador", Apellido = "Sistemas",
+                    Id = 1, User = "admin", Password = "12345", Nombre = "Administrador", Apellido = "Sistemas",
                     Email = "maximiliano_hermosilla@hotmail.com", Telefono = null, Imagen = null, Habilitado = true,
                     FechaCreacion = DateTime.Now, IdPerfil = 1
                 }

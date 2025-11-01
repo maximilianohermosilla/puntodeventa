@@ -124,6 +124,40 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
+        public async Task<ResponseModel<UsuarioResponse>> GetByUserAndPassword(string user, string password)
+        {
+            ResponseModel<UsuarioResponse> response = new ResponseModel<UsuarioResponse>();
+
+            try
+            {
+                Usuario usuario = await _usuarioRepository.GetByUserAndPassword(user, password);
+
+                if (usuario == null)
+                {
+                    response.success = false;
+                    response.statusCode = 404;
+                    response.message = "El usuario seleccionado no existe";
+                    response.response = null;
+                    return response;
+                }
+
+                UsuarioResponse UsuarioResponse = _mapper.Map<UsuarioResponse>(usuario);
+
+                response.message = "Consulta realizada correctamente";
+                response.statusCode = 200;
+                response.response = UsuarioResponse;
+            }
+            catch (Exception ex)
+            {
+                response.success = false;
+                response.statusCode = 400;
+                response.message = ex.Message;
+                response.response = null;
+            }
+
+            return response;
+        }
+
         public async Task<ResponseModel<UsuarioResponse>> Insert(UsuarioRequest entity)
         {
             ResponseModel<UsuarioResponse> response = new ResponseModel<UsuarioResponse>();

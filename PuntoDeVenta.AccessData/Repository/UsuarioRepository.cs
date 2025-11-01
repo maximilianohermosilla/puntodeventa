@@ -56,6 +56,12 @@ namespace PuntoDeVenta.AccessData.Repository
             return await vGblContext.Usuario.Where(p => p.Id == pId).FirstOrDefaultAsync()!;
         }
 
+        public async Task<Usuario> GetByUserAndPassword(string user, string password)
+        {
+            vGblContext.ChangeTracker.Clear();
+            return await vGblContext.Usuario.Where(p => p.User == user && p.Password == password).FirstOrDefaultAsync()!;
+        }
+        
         public bool SaveChanges()
         {
             try

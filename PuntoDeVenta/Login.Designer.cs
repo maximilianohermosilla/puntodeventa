@@ -36,6 +36,7 @@
             labelUser = new Label();
             labelPassword = new Label();
             pictureBox1 = new PictureBox();
+            labelErrors = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -52,6 +53,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(309, 23);
             txtPassword.TabIndex = 1;
+            txtPassword.KeyUp += txtPassword_KeyPress;
             // 
             // btnLogin
             // 
@@ -123,12 +125,25 @@
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
+            // labelErrors
+            // 
+            labelErrors.AutoSize = true;
+            labelErrors.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelErrors.ForeColor = Color.Red;
+            labelErrors.Location = new Point(297, 377);
+            labelErrors.Name = "labelErrors";
+            labelErrors.Size = new Size(218, 25);
+            labelErrors.TabIndex = 7;
+            labelErrors.Text = "Credenciales incorrectas";
+            labelErrors.Visible = false;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
             ClientSize = new Size(800, 450);
+            Controls.Add(labelErrors);
             Controls.Add(pictureBox1);
             Controls.Add(labelPassword);
             Controls.Add(labelUser);
@@ -140,7 +155,6 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Login";
-            ShowIcon = true;
             Text = "Login";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -156,5 +170,6 @@
         private Label labelUser;
         private Label labelPassword;
         private PictureBox pictureBox1;
+        private Label labelErrors;
     }
 }

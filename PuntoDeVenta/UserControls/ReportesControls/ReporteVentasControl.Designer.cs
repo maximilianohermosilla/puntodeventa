@@ -33,30 +33,33 @@
             panelDataGrid = new Panel();
             labelSinResultados = new Label();
             dvMovimientos = new DataGridView();
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            panelHeader = new Panel();
             btnBuscar = new Button();
             labelHasta = new Label();
             labelDesde = new Label();
             dateHasta = new DateTimePicker();
             dateDesde = new DateTimePicker();
             labelTitle = new Label();
+            panelCharts = new Panel();
+            chartDias = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            chartCategorias = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panelMain.SuspendLayout();
             panelDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dvMovimientos).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
+            panelHeader.SuspendLayout();
+            panelCharts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartDias).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartCategorias).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartProductos).BeginInit();
             SuspendLayout();
             // 
             // panelMain
             // 
             panelMain.BackColor = Color.FromArgb(49, 66, 82);
             panelMain.Controls.Add(panelDataGrid);
-            panelMain.Controls.Add(chart1);
-            panelMain.Controls.Add(btnBuscar);
-            panelMain.Controls.Add(labelHasta);
-            panelMain.Controls.Add(labelDesde);
-            panelMain.Controls.Add(dateHasta);
-            panelMain.Controls.Add(dateDesde);
-            panelMain.Controls.Add(labelTitle);
+            panelMain.Controls.Add(panelHeader);
+            panelMain.Controls.Add(panelCharts);
             panelMain.Dock = DockStyle.Fill;
             panelMain.ForeColor = SystemColors.ButtonHighlight;
             panelMain.Location = new Point(0, 0);
@@ -66,18 +69,20 @@
             // 
             // panelDataGrid
             // 
+            panelDataGrid.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelDataGrid.Controls.Add(labelSinResultados);
             panelDataGrid.Controls.Add(dvMovimientos);
-            panelDataGrid.Location = new Point(13, 114);
+            panelDataGrid.Dock = DockStyle.Top;
+            panelDataGrid.Location = new Point(0, 108);
             panelDataGrid.Name = "panelDataGrid";
-            panelDataGrid.Size = new Size(978, 455);
+            panelDataGrid.Size = new Size(1447, 251);
             panelDataGrid.TabIndex = 25;
             // 
             // labelSinResultados
             // 
             labelSinResultados.AutoSize = true;
             labelSinResultados.Font = new Font("Segoe UI", 16F);
-            labelSinResultados.Location = new Point(125, 175);
+            labelSinResultados.Location = new Point(6, 13);
             labelSinResultados.Name = "labelSinResultados";
             labelSinResultados.Size = new Size(298, 30);
             labelSinResultados.TabIndex = 24;
@@ -86,24 +91,29 @@
             // 
             // dvMovimientos
             // 
-            dvMovimientos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dvMovimientos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dvMovimientos.BackgroundColor = Color.FromArgb(26, 32, 40);
+            dvMovimientos.BackgroundColor = Color.FromArgb(49, 66, 82);
             dvMovimientos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dvMovimientos.Location = new Point(3, 0);
+            dvMovimientos.Dock = DockStyle.Fill;
+            dvMovimientos.Location = new Point(0, 0);
             dvMovimientos.Name = "dvMovimientos";
             dvMovimientos.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
-            dvMovimientos.Size = new Size(975, 455);
+            dvMovimientos.Size = new Size(1447, 251);
             dvMovimientos.TabIndex = 23;
             // 
-            // chart1
+            // panelHeader
             // 
-            chart1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            chart1.Location = new Point(997, 114);
-            chart1.Name = "chart1";
-            chart1.Size = new Size(438, 455);
-            chart1.TabIndex = 24;
-            chart1.Text = "chart1";
+            panelHeader.Controls.Add(btnBuscar);
+            panelHeader.Controls.Add(labelHasta);
+            panelHeader.Controls.Add(labelDesde);
+            panelHeader.Controls.Add(dateHasta);
+            panelHeader.Controls.Add(dateDesde);
+            panelHeader.Controls.Add(labelTitle);
+            panelHeader.Dock = DockStyle.Top;
+            panelHeader.Location = new Point(0, 0);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Size = new Size(1447, 108);
+            panelHeader.TabIndex = 28;
             // 
             // btnBuscar
             // 
@@ -117,7 +127,7 @@
             btnBuscar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
             btnBuscar.Image = (Image)resources.GetObject("btnBuscar.Image");
-            btnBuscar.Location = new Point(525, 57);
+            btnBuscar.Location = new Point(511, 56);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(93, 35);
             btnBuscar.TabIndex = 22;
@@ -131,7 +141,7 @@
             // 
             labelHasta.AutoSize = true;
             labelHasta.Font = new Font("Segoe UI", 10F);
-            labelHasta.Location = new Point(270, 47);
+            labelHasta.Location = new Point(261, 46);
             labelHasta.Name = "labelHasta";
             labelHasta.Size = new Size(47, 19);
             labelHasta.TabIndex = 21;
@@ -141,7 +151,7 @@
             // 
             labelDesde.AutoSize = true;
             labelDesde.Font = new Font("Segoe UI", 10F);
-            labelDesde.Location = new Point(13, 47);
+            labelDesde.Location = new Point(10, 46);
             labelDesde.Name = "labelDesde";
             labelDesde.Size = new Size(54, 19);
             labelDesde.TabIndex = 20;
@@ -149,14 +159,14 @@
             // 
             // dateHasta
             // 
-            dateHasta.Location = new Point(270, 69);
+            dateHasta.Location = new Point(261, 68);
             dateHasta.Name = "dateHasta";
             dateHasta.Size = new Size(227, 23);
             dateHasta.TabIndex = 4;
             // 
             // dateDesde
             // 
-            dateDesde.Location = new Point(13, 69);
+            dateDesde.Location = new Point(10, 68);
             dateDesde.Name = "dateDesde";
             dateDesde.Size = new Size(227, 23);
             dateDesde.TabIndex = 3;
@@ -166,11 +176,49 @@
             labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelTitle.ForeColor = SystemColors.ButtonHighlight;
-            labelTitle.Location = new Point(13, 12);
+            labelTitle.Location = new Point(10, 10);
             labelTitle.Name = "labelTitle";
             labelTitle.Size = new Size(194, 25);
             labelTitle.TabIndex = 2;
             labelTitle.Text = "REPORTE DE VENTAS";
+            // 
+            // panelCharts
+            // 
+            panelCharts.Controls.Add(chartDias);
+            panelCharts.Controls.Add(chartCategorias);
+            panelCharts.Controls.Add(chartProductos);
+            panelCharts.Dock = DockStyle.Fill;
+            panelCharts.Location = new Point(0, 0);
+            panelCharts.Name = "panelCharts";
+            panelCharts.Size = new Size(1447, 582);
+            panelCharts.TabIndex = 27;
+            // 
+            // chartDias
+            // 
+            chartDias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            chartDias.Location = new Point(939, 365);
+            chartDias.Name = "chartDias";
+            chartDias.Size = new Size(496, 204);
+            chartDias.TabIndex = 27;
+            chartDias.Text = "chart2";
+            // 
+            // chartCategorias
+            // 
+            chartCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            chartCategorias.Location = new Point(450, 365);
+            chartCategorias.Name = "chartCategorias";
+            chartCategorias.Size = new Size(472, 204);
+            chartCategorias.TabIndex = 24;
+            chartCategorias.Text = "chart1";
+            // 
+            // chartProductos
+            // 
+            chartProductos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            chartProductos.Location = new Point(10, 365);
+            chartProductos.Name = "chartProductos";
+            chartProductos.Size = new Size(415, 204);
+            chartProductos.TabIndex = 26;
+            chartProductos.Text = "chart2";
             // 
             // ReporteVentasControl
             // 
@@ -181,11 +229,15 @@
             Name = "ReporteVentasControl";
             Size = new Size(1447, 582);
             panelMain.ResumeLayout(false);
-            panelMain.PerformLayout();
             panelDataGrid.ResumeLayout(false);
             panelDataGrid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dvMovimientos).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
+            panelHeader.ResumeLayout(false);
+            panelHeader.PerformLayout();
+            panelCharts.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)chartDias).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartCategorias).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartProductos).EndInit();
             ResumeLayout(false);
         }
 
@@ -199,8 +251,12 @@
         private Label labelDesde;
         private DataGridView dvMovimientos;
         public Button btnBuscar;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartCategorias;
         private Panel panelDataGrid;
         private Label labelSinResultados;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartProductos;
+        private Panel panelCharts;
+        private Panel panelHeader;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartDias;
     }
 }
