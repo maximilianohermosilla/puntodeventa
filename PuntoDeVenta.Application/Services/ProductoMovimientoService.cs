@@ -65,13 +65,13 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
-        public async Task<ResponseModel<List<ProductoMovimientoResponse>>> GetAllByFechaAndTipoMovimiento(DateTime pFecha, int pIdTipoMovimiento)
+        public async Task<ResponseModel<List<ProductoMovimientoResponse>>> GetAllByFechaAndTipoMovimiento(DateTime pFechaDesde, DateTime pFechaHasta, int pIdTipoMovimiento)
         {
             ResponseModel<List<ProductoMovimientoResponse>> response = new ResponseModel<List<ProductoMovimientoResponse>>();
 
             try
             {
-                List<ProductoMovimiento> lista = await _productoRepository.GetAllByFechaAndTipoMovimiento(pFecha, pIdTipoMovimiento);
+                List<ProductoMovimiento> lista = await _productoRepository.GetAllByFechaAndTipoMovimiento(pFechaDesde, pFechaHasta, pIdTipoMovimiento);
                 List<ProductoMovimientoResponse> listaDTO = _mapper.Map<List<ProductoMovimientoResponse>>(lista);
 
                 response.message = "Consulta realizada correctamente";

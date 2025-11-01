@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PuntoDeVenta.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,39 @@ namespace PuntoDeVenta.UserControls
         public ReportesControl()
         {
             InitializeComponent();
+        }
+
+        public void InitializeControls()
+        {
+            reporteVentasControl1 = new ReportesControls.ReporteVentasControl();
+
+            panelMain.Controls.Add(reporteVentasControl1);
+            
+            reporteVentasControl1.BackColor = SystemColors.ControlLight;
+            reporteVentasControl1.Dock = DockStyle.Fill;
+            reporteVentasControl1.Location = new Point(0, 0);
+            reporteVentasControl1.Name = "reporteVentasControl1";
+            reporteVentasControl1.Size = new Size(1458, 532);
+            reporteVentasControl1.TabIndex = 18;
+
+            SetActivePanel(reporteVentasControl1);
+        }
+
+        public void SetActivePanel(UserControl? control)
+        {
+            //nuevoProducto1.Visible = false;
+            //categoriaProducto1.Visible = false;
+            //catalogoProductos1.Visible = false;
+
+            if (control != null)
+            {
+                control.Visible = true;
+            }
+        }
+
+        private void btnReporteDeVentas_Click(object sender, EventArgs e)
+        {
+            SetActivePanel(reporteVentasControl1);
         }
     }
 }

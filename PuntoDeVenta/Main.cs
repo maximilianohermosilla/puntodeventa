@@ -96,6 +96,7 @@ namespace PuntoDeVenta
         private void btnReportes_Click(object sender, EventArgs e)
         {
             SetActivePanel(reportes1);
+            reportes1.InitializeControls();
         }
 
         public void SetActivePanel(UserControl control)

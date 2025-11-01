@@ -34,8 +34,10 @@
             panelNavbar = new Panel();
             btnReporteDeVentas = new Button();
             btnVentasPorCliente = new Button();
+            panelMain = new Panel();
             panelHeader.SuspendLayout();
             panelNavbar.SuspendLayout();
+            panelMain.SuspendLayout();
             SuspendLayout();
             // 
             // panelHeader
@@ -94,6 +96,7 @@
             btnReporteDeVentas.TextAlign = ContentAlignment.MiddleRight;
             btnReporteDeVentas.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnReporteDeVentas.UseVisualStyleBackColor = false;
+            btnReporteDeVentas.Click += btnReporteDeVentas_Click;
             // 
             // btnVentasPorCliente
             // 
@@ -107,7 +110,7 @@
             btnVentasPorCliente.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVentasPorCliente.ForeColor = SystemColors.ButtonHighlight;
             btnVentasPorCliente.Image = (Image)resources.GetObject("btnVentasPorCliente.Image");
-            btnVentasPorCliente.Location = new Point(176, 5);
+            btnVentasPorCliente.Location = new Point(176, 6);
             btnVentasPorCliente.Name = "btnVentasPorCliente";
             btnVentasPorCliente.Size = new Size(145, 35);
             btnVentasPorCliente.TabIndex = 4;
@@ -116,12 +119,21 @@
             btnVentasPorCliente.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnVentasPorCliente.UseVisualStyleBackColor = false;
             // 
+            // panelMain
+            // 
+            panelMain.Dock = DockStyle.Fill;
+            panelMain.Location = new Point(0, 76);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(1458, 532);
+            panelMain.TabIndex = 5;
+            // 
             // ReportesControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 66, 82);
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(panelMain);
             Controls.Add(panelNavbar);
             Controls.Add(panelHeader);
             ForeColor = SystemColors.ButtonHighlight;
@@ -130,6 +142,7 @@
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             panelNavbar.ResumeLayout(false);
+            panelMain.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -140,5 +153,7 @@
         private Panel panelNavbar;
         public Button btnReporteDeVentas;
         public Button btnVentasPorCliente;
+        private ReportesControls.ReporteVentasControl reporteVentasControl1;
+        private Panel panelMain;
     }
 }

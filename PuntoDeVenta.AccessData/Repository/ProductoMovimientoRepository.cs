@@ -44,10 +44,10 @@ namespace PuntoDeVenta.AccessData.Repository
             }
         }
 
-        public async Task<List<ProductoMovimiento>> GetAllByFechaAndTipoMovimiento(DateTime pFecha, int pIdTipoMovimiento)
+        public async Task<List<ProductoMovimiento>> GetAllByFechaAndTipoMovimiento(DateTime pFechaDesde, DateTime pFechahasta, int pIdTipoMovimiento)
         {
             vGblContext.ChangeTracker.Clear();
-            return await vGblContext.ProductoMovimiento.Where(x => x.Fecha == pFecha && (pIdTipoMovimiento == 0 || x.IdTipoMovimiento == pIdTipoMovimiento))
+            return await vGblContext.ProductoMovimiento.Where(x => x.Fecha >= pFechaDesde && x.Fecha <= pFechahasta && (pIdTipoMovimiento == 0 || x.IdTipoMovimiento == pIdTipoMovimiento))
                 .Include(p => p.TipoMovimiento).Include(p => p.Usuario).Include(p => p.Producto).ThenInclude(p => p.CategoriaProducto)
                 .ToListAsync();
         }
