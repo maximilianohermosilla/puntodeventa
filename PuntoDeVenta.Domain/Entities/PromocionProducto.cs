@@ -8,7 +8,7 @@
         public int IdProducto { get; set; }
         public int IdPromocion { get; set; }
 
-        public virtual Producto Producto { get; set; }
-        public virtual Promocion Promocion { get; set; }
+        public required Producto Producto { get; set; }
+        public required Promocion Promocion { get; set; }
     }
 }

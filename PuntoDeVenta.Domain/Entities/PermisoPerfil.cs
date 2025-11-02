@@ -7,7 +7,7 @@
         public int IdPermiso { get; set; }
         public bool Habilitado { get; set; }
 
-        public virtual Perfil Perfil { get; set; }
-        public virtual Permiso Permiso { get; set; }
+        public required Perfil Perfil { get; set; }
+        public required Permiso Permiso { get; set; }
     }
 }

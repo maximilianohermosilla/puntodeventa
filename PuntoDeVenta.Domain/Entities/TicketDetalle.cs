@@ -13,6 +13,6 @@
         public string? ProductoComun { get; set; } = null;
 
         public virtual Producto? Producto { get; set; }
-        public virtual Ticket Ticket { get; set; }
+        public required Ticket Ticket { get; set; }
     }
 }

@@ -68,6 +68,10 @@ namespace PuntoDeVenta.Application.Profiles
             CreateMap<PromocionResponse, Promocion>().ReverseMap();
             CreateMap<PromocionResponse, PromocionRequest>().ReverseMap();
 
+            CreateMap<SubCategoriaProductoRequest, SubCategoriaProducto>().ReverseMap();
+            CreateMap<SubCategoriaProductoResponse, SubCategoriaProducto>().ReverseMap();
+            CreateMap<SubCategoriaProductoResponse, SubCategoriaProductoRequest>().ReverseMap();
+
             CreateMap<TicketDetalleRequest, TicketDetalle>().ReverseMap();
             CreateMap<TicketDetalleResponse, TicketDetalle>().ReverseMap();
             CreateMap<TicketDetalleResponse, TicketDetalleRequest>().ReverseMap();

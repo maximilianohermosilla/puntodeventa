@@ -8,7 +8,7 @@
         public int IdCategoriaProducto { get; set; }
         public int IdPromocion { get; set; }
 
-        public virtual CategoriaProducto CategoriaProducto { get; set; }
-        public virtual Promocion Promocion { get; set; }
+        public required CategoriaProducto CategoriaProducto { get; set; }
+        public required Promocion Promocion { get; set; }
     }
 }

@@ -12,7 +12,7 @@
         public bool Salida { get; set; } = false;
         public int IdUsuario { get; set; }
         
-        public virtual TipoMovimiento TipoMovimiento { get; set; }
-        public virtual Usuario Usuario { get; set; }
+        public required TipoMovimiento TipoMovimiento { get; set; }
+        public required Usuario Usuario { get; set; }
     }
 }

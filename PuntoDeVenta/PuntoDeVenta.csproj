@@ -30,7 +30,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Update="UserControls\ClientesControl.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
     <Compile Update="UserControls\ProductosControls\CategoriaProductoControl.cs">
       <SubType>UserControl</SubType>

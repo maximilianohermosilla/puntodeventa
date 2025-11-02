@@ -11,7 +11,7 @@
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
 
-        public virtual IList<PromocionCategoria> PromocionCategorias { get; set; }
-        public virtual IList<PromocionProducto> PromocionProductos { get; set; }
+        public virtual IList<PromocionCategoria> PromocionCategorias { get; set; } = new List<PromocionCategoria>();
+        public virtual IList<PromocionProducto> PromocionProductos { get; set; } = new List<PromocionProducto>();
     }
 }

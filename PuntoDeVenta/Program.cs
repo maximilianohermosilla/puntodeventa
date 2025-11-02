@@ -70,6 +70,7 @@ namespace PuntoDeVenta
             services.AddTransient<IPromocionRepository, PromocionRepository>();
             services.AddTransient<IPromocionCategoriaRepository, PromocionCategoriaRepository>();
             services.AddTransient<IPromocionProductoRepository, PromocionProductoRepository>();
+            services.AddTransient<ISubCategoriaProductoRepository, SubCategoriaProductoRepository>();
             services.AddTransient<ITicketRepository, TicketRepository>();
             services.AddTransient<ITicketDetalleRepository, TicketDetalleRepository>();
             services.AddTransient<ITicketEstadoRepository, TicketEstadoRepository>();
@@ -94,6 +95,7 @@ namespace PuntoDeVenta
             services.AddTransient<IPromocionService, PromocionService>();
             services.AddTransient<IPromocionCategoriaService, PromocionCategoriaService>();
             services.AddTransient<IPromocionProductoService, PromocionProductoService>();
+            services.AddTransient<ISubCategoriaProductoService, SubCategoriaProductoService>();
             services.AddTransient<ITicketService, TicketService>();
             services.AddTransient<ITicketDetalleService, TicketDetalleService>();
             services.AddTransient<ITicketEstadoService, TicketEstadoService>();

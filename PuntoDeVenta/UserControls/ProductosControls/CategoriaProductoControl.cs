@@ -15,27 +15,50 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         public List<CategoriaProductoResponse> _categoriaProductosFiltradas = new List<CategoriaProductoResponse>();
         public CategoriaProductoResponse selectedCategoria = new CategoriaProductoResponse();
 
+        private readonly ISubCategoriaProductoService _subCategoriaProductoService;
+        public List<SubCategoriaProductoResponse> _subCategoriaProductos;
+        public List<SubCategoriaProductoResponse> _subCategoriaProductosFiltradas = new List<SubCategoriaProductoResponse>();
+        public SubCategoriaProductoResponse selectedSubCategoria = new SubCategoriaProductoResponse();
+
         public CategoriaProductoControl(List<CategoriaProductoResponse> categoriaProductos)
         {
             _categoriaProductoService = new CategoriaProductoService(_context);
+            _subCategoriaProductoService = new SubCategoriaProductoService(_context);
             _categoriaProductos = categoriaProductos;
+            _subCategoriaProductos = new List<SubCategoriaProductoResponse>();
             InitializeComponent();
         }
 
         public void SetearCategorias(List<CategoriaProductoResponse> categoriaProductos)
         {
-            if(_categoriaProductos != null && _categoriaProductos.Count() == 0)
+            if (_categoriaProductos != null && _categoriaProductos.Count() == 0)
             {
                 _categoriaProductos = categoriaProductos;
             }
 
-            _categoriaProductosFiltradas = categoriaProductos;  
+            comboCategoria.DataSource = categoriaProductos;
+            comboCategoria.DisplayMember = "Descripcion";
+            comboCategoria.ValueMember = "Id";
+
+            _categoriaProductosFiltradas = categoriaProductos;
             listCategorias.DataSource = null;
             listCategorias.DataSource = _categoriaProductosFiltradas;
             listCategorias.DisplayMember = "Descripcion";
             listCategorias.ValueMember = "Id";
             listCategorias.Refresh();
             listCategorias.Invalidate();
+        }
+
+        public void SetearSubCategorias(List<SubCategoriaProductoResponse> subCategoriaProductos)
+        {
+            _subCategoriaProductos = subCategoriaProductos;
+            _subCategoriaProductosFiltradas = subCategoriaProductos;
+            listSubCategorias.DataSource = null;
+            listSubCategorias.DataSource = _subCategoriaProductosFiltradas;
+            listSubCategorias.DisplayMember = "Descripcion";
+            listSubCategorias.ValueMember = "Id";
+            listSubCategorias.Refresh();
+            listSubCategorias.Invalidate();
         }
 
         private void btnGuardarProducto_Click(object sender, EventArgs e)
@@ -78,7 +101,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                     }
 
                     string toastTipo = response.success ? "SUCCESS" : "ERROR";
-                    ToastForm toast = new ToastForm(toastTipo, response.message, this.FindForm());
+                    ToastForm toast = new ToastForm(toastTipo, response.message!, this.FindForm()!);
                     toast.Show();
                     NuevaCategoria();
 
@@ -101,12 +124,13 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             labelCategoria.Text = "Nueva Categoría";
         }
 
-        public void SetCategoriaSelected(CategoriaProductoResponse productoRequest)
+        public void SetCategoriaSelected(CategoriaProductoResponse categoria)
         {
-            selectedCategoria = productoRequest;
+            selectedCategoria = categoria;
             txtDescripcion.Text = selectedCategoria!.Descripcion;
             checkHabilitado.Checked = selectedCategoria!.Habilitado;
         }
+
         private async Task DeleteCategoria(int id)
         {
             try
@@ -119,7 +143,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                 }
 
                 string toastTipo = response.success ? "SUCCESS" : "ERROR";
-                ToastForm toast = new ToastForm(toastTipo, response.message, this.FindForm());
+                ToastForm toast = new ToastForm(toastTipo, response.message!, this.FindForm()!);
                 toast.Show();
             }
             catch (Exception ex)
@@ -138,6 +162,8 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                     SetCategoriaSelected(selectedCategoria);
                     labelCategoria.Text = "Editar Categoría";
                     btnEliminarCategoria.Enabled = true;
+                    comboCategoria.SelectedIndex = listCategorias!.SelectedIndex;
+                    SetearSubCategorias((List<SubCategoriaProductoResponse>)(selectedCategoria.SubCategoriaProductos));
                 }
                 else
                 {
@@ -160,7 +186,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         {
             if (DialogResult.Yes == MessageBox.Show("¿Está seguro de que desea eliminar esta categoría?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
             {
-                DeleteCategoria(selectedCategoria.Id);
+                _ = DeleteCategoria(selectedCategoria.Id);
             }
         }
 
@@ -170,5 +196,137 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                                             (c.Descripcion.ToLower().Contains(txtBuscar.Text.ToLower()) || txtBuscar.Text == "")).ToList();
             SetearCategorias(_categoriaProductosFiltradas);
         }
+
+        private void btnGuardarSubCategoria_Click(object sender, EventArgs e)
+        {
+            _ = GuardarSubCategoriaProducto();
+        }
+
+        private void listSubCategorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listSubCategorias != null && listSubCategorias!.SelectedIndex > 0)
+                {
+                    selectedSubCategoria = (SubCategoriaProductoResponse)listSubCategorias!.SelectedItem!;
+                    SetSubCategoriaSelected(selectedSubCategoria);
+                    labelSubCategoria.Text = "Editar SubCategoría";
+                    btnEliminarSubCategoria.Enabled = true;
+                }
+                else
+                {
+                    btnEliminarCategoria.Enabled = false;
+                    NuevaCategoria();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnNuevaSubCategoria_Click(object sender, EventArgs e)
+        {
+            NuevaSubCategoria();
+        }
+
+        private void btnEliminarSubCategoria_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("¿Está seguro de que desea eliminar esta subcategoría?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+            {
+                _ = DeleteSubCategoria(selectedSubCategoria.Id);
+            }
+        }
+
+        public async Task GuardarSubCategoriaProducto()
+        {
+            try
+            {
+                if (txtDescripcionSubCategoria.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar un nombre válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    ResponseModel<SubCategoriaProductoResponse> response = new ResponseModel<SubCategoriaProductoResponse>();
+
+                    SubCategoriaProductoRequest subCategoriaProductoRequest = new SubCategoriaProductoRequest()
+                    {
+                        Id = selectedSubCategoria.Id,
+                        Descripcion = txtDescripcionSubCategoria.Text,
+                        Habilitado = checkHabilitadoSubCategoria.Checked,
+                        IdCategoriaProducto = comboCategoria.SelectedIndex
+                    };
+
+                    if (selectedSubCategoria.Id > 0)
+                    {
+                        var subCategoria = _subCategoriaProductos.Where(x => x.Id == selectedSubCategoria.Id).FirstOrDefault();
+                        subCategoria!.Id = selectedSubCategoria.Id;
+                        subCategoria!.Descripcion = txtDescripcionSubCategoria.Text;
+                        subCategoria!.Habilitado = checkHabilitadoSubCategoria.Checked;
+
+                        response = await _subCategoriaProductoService.Update(subCategoriaProductoRequest);
+                    }
+                    else
+                    {
+                        response = await _subCategoriaProductoService.Insert(subCategoriaProductoRequest);
+                        _subCategoriaProductos.Add(response.response!);
+                    }
+
+                    string toastTipo = response.success ? "SUCCESS" : "ERROR";
+                    ToastForm toast = new ToastForm(toastTipo, response.message!, this.FindForm()!);
+                    toast.Show();
+                    NuevaSubCategoria();
+
+                    if (response != null && response.success)
+                    {
+                        SetearSubCategorias(_subCategoriaProductos);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void NuevaSubCategoria()
+        {
+            if (listSubCategorias != null && listSubCategorias.Items.Count > 0)
+            {
+                listSubCategorias!.SelectedIndex = 0;
+                SetSubCategoriaSelected(new SubCategoriaProductoResponse() { Habilitado = true });
+                labelSubCategoria.Text = "Nueva SubCategoría";
+            }
+        }
+
+        public void SetSubCategoriaSelected(SubCategoriaProductoResponse subCategoria)
+        {
+            selectedSubCategoria = subCategoria;
+            txtDescripcionSubCategoria.Text = selectedSubCategoria!.Descripcion;
+            checkHabilitadoSubCategoria.Checked = selectedSubCategoria!.Habilitado;
+        }
+
+        private async Task DeleteSubCategoria(int id)
+        {
+            try
+            {
+                var response = await _subCategoriaProductoService.Delete(id);
+
+                if (response.success)
+                {
+                    SetearSubCategorias(_subCategoriaProductos.Where(x => x.Id != id)!.ToList());
+                }
+
+                string toastTipo = response.success ? "SUCCESS" : "ERROR";
+                ToastForm toast = new ToastForm(toastTipo, response.message!, this.FindForm()!);
+                toast.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

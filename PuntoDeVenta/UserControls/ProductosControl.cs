@@ -163,6 +163,7 @@ namespace PuntoDeVenta.UserControls
                     categoriaProductos = (List<CategoriaProductoResponse>)response.response!;
                     nuevoProducto1.SetearCategorias(categoriaProductos);
                     categoriaProducto1.SetearCategorias(categoriaProductos);
+                    categoriaProducto1.SetearSubCategorias(new List<SubCategoriaProductoResponse>());
                     catalogoProductos1.SetearCategorias(categoriaProductos);
                 }
             }

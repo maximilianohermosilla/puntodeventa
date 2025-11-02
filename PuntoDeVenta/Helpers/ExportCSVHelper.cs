@@ -11,12 +11,12 @@ namespace PuntoDeVenta.Helpers
             DateTime datetime = DateTime.Now;
             string date = datetime.ToString("yyyy-MM-dd");
 
-            if (!Directory.Exists(saveLocation + $"Reportes_{date}\\"))
+            if (!Directory.Exists(saveLocation))
             {
-                Directory.CreateDirectory(saveLocation + $"Reportes_{date}\\");
+                Directory.CreateDirectory(saveLocation);
             }
 
-            string path = saveLocation + $"Reportes_{date}\\" + date + "_" + worksheetName + ".csv";
+            string path = Path.Combine(saveLocation,  date + "_" + worksheetName + ".csv");
             StringBuilder sb = new StringBuilder();
 
             try

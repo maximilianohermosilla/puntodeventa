@@ -13,8 +13,8 @@
         public int IdUsuario { get; set; }
         public int? IdProducto { get; set; } = null;
 
-        public virtual TipoMovimiento TipoMovimiento { get; set; }
-        public virtual Usuario Usuario { get; set; }
+        public required TipoMovimiento TipoMovimiento { get; set; }
+        public required Usuario Usuario { get; set; }
         public virtual Producto? Producto { get; set; } = null;
     }
 }

@@ -51,7 +51,7 @@
         private void ToastForm_Load(object sender, EventArgs e)
         {
             Position();
-            timerToast.Interval = 3000;
+            timerToast.Interval = 5000;
             timerToast.Tick += timerToast_Tick;
             timerToast.Start();
         }
@@ -62,7 +62,7 @@
             Rectangle parentBounds = _parentForm.Bounds;
 
             toastX = parentBounds.Right - this.Width - 10;
-            toastY = parentBounds.Bottom - this.Height - 50;
+            toastY = parentBounds.Top - this.Height + 180;
 
             this.Location = new Point(toastX, toastY);
 

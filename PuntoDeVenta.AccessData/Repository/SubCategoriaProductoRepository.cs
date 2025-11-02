@@ -4,17 +4,17 @@ using PuntoDeVenta.Domain.Entities;
 
 namespace PuntoDeVenta.AccessData.Repository
 {
-    public class CategoriaProductoRepository : ICategoriaProductoRepository
+    public class SubCategoriaProductoRepository : ISubCategoriaProductoRepository
     {
 
         private readonly PuntoDeVentaDbContext vGblContext;
 
-        public CategoriaProductoRepository(PuntoDeVentaDbContext context)
+        public SubCategoriaProductoRepository(PuntoDeVentaDbContext context)
         {
             vGblContext = context;
         }
 
-        public async Task<CategoriaProducto> Create(CategoriaProducto pEntity)
+        public async Task<SubCategoriaProducto> Create(SubCategoriaProducto pEntity)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace PuntoDeVenta.AccessData.Repository
             }   
         }
 
-        public async Task Delete(CategoriaProducto pEntity)
+        public async Task Delete(SubCategoriaProducto pEntity)
         {
             try
             {
@@ -44,16 +44,17 @@ namespace PuntoDeVenta.AccessData.Repository
             }
         }
 
-        public async Task<List<CategoriaProducto>> GetAll(bool? habilitados)
+        public async Task<List<SubCategoriaProducto>> GetAllByCategoria(int pIdCategoriaProducto, bool? habilitados)
         {
             vGblContext.ChangeTracker.Clear();
-            return await vGblContext.CategoriaProducto.Include(c => c.SubCategoriaProductos).Where(x => habilitados == null || x.Habilitado == habilitados).ToListAsync();
+            return await vGblContext.SubCategoriaProducto.Where(x => pIdCategoriaProducto == x.IdCategoriaProducto 
+                && (habilitados == null || x.Habilitado == habilitados)).ToListAsync();
         }
 
-        public async Task<CategoriaProducto> GetById(int pId)
+        public async Task<SubCategoriaProducto> GetById(int pId)
         {
             vGblContext.ChangeTracker.Clear();
-            return await vGblContext.CategoriaProducto.Include(c => c.SubCategoriaProductos).Where(p => p.Id == pId).FirstOrDefaultAsync()!;
+            return await vGblContext.SubCategoriaProducto.Where(p => p.Id == pId).FirstOrDefaultAsync()!;
         }
 
         public bool SaveChanges()

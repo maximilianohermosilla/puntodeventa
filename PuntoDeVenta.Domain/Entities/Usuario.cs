@@ -3,8 +3,8 @@
     public partial class Usuario
     {
         public int Id { get; set; }
-        public string User { get; set; }        
-        public string Password { get; set; }
+        public string User { get; set; } = string.Empty;     
+        public string Password { get; set; } = string.Empty;
         public string? Nombre { get; set; }
         public string? Apellido { get; set; }
         public string? Email { get; set; }
@@ -15,10 +15,10 @@
         public int IdPerfil { get; set; }
 
         public virtual Perfil Perfil { get; set; }
-        public virtual ICollection<Ticket> Tickets { get; set; }
-        public virtual ICollection<Turno> Turnos { get; set; }
-        public virtual ICollection<Movimiento> Movimientos { get; set; }
-        public virtual ICollection<ProductoMovimiento> ProductoMovimientos { get; set; }
+        public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
+        public virtual ICollection<Turno> Turnos { get; set; } = new List<Turno>();
+        public virtual ICollection<Movimiento> Movimientos { get; set; } = new List<Movimiento>();
+        public virtual ICollection<ProductoMovimiento> ProductoMovimientos { get; set; } = new List<ProductoMovimiento>();
         public virtual ICollection<PermisoUsuario> PermisoUsuarios { get; } = new List<PermisoUsuario>();
     }
 }

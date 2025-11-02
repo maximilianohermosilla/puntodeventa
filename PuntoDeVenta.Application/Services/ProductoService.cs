@@ -89,7 +89,30 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
+        public async Task<ResponseModel<List<ProductoResponse>>> GetAllByCategoria(int pIdCategoriaProducto, int? pIdSubCategoriaProducto, bool? habilitados)
+        {
+            ResponseModel<List<ProductoResponse>> response = new ResponseModel<List<ProductoResponse>>();
 
+            try
+            {
+                List<Producto> lista = await _productoRepository.GetAllByCategoria(pIdCategoriaProducto, pIdSubCategoriaProducto, habilitados);
+                List<ProductoResponse> listaDTO = _mapper.Map<List<ProductoResponse>>(lista);
+
+                response.message = "Consulta realizada correctamente";
+                response.statusCode = 200;
+                response.response = listaDTO;
+            }
+            catch (Exception ex)
+            {
+                response.success = false;
+                response.statusCode = 400;
+                response.message = ex.Message;
+                response.response = null;
+            }
+
+            return response;
+        }
+        
         public async Task<ResponseModel<ProductoResponse>> GetById(int IdProducto)
         {
             ResponseModel<ProductoResponse> response = new ResponseModel<ProductoResponse>();
@@ -137,6 +160,40 @@ namespace PuntoDeVenta.Application.Services
                     response.success = false;
                     response.statusCode = 404;
                     response.message = "El producto seleccionado no existe";
+                    response.response = null;
+                    return response;
+                }
+
+                ProductoResponse ProductoResponse = _mapper.Map<ProductoResponse>(producto);
+
+                response.message = "Consulta realizada correctamente";
+                response.statusCode = 200;
+                response.response = ProductoResponse;
+            }
+            catch (Exception ex)
+            {
+                response.success = false;
+                response.statusCode = 400;
+                response.message = ex.Message;
+                response.response = null;
+            }
+
+            return response;
+        }
+
+        public async Task<ResponseModel<ProductoResponse>> GetByDescripcion(string descripcion)
+        {
+            ResponseModel<ProductoResponse> response = new ResponseModel<ProductoResponse>();
+
+            try
+            {
+                Producto producto = await _productoRepository.GetByDescripcion(descripcion);
+
+                if (producto == null)
+                {
+                    response.success = false;
+                    response.statusCode = 404;
+                    response.message = "No se encontró ningún producto con esta descripción";
                     response.response = null;
                     return response;
                 }

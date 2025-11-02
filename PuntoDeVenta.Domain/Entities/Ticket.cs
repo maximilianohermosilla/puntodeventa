@@ -12,12 +12,12 @@
         public int? IdTurno { get; set; }
         public int? IdCliente { get; set; }
         
-        public virtual Estado Estado { get; set; }
-        public virtual FormaPago FormaPago { get; set; }
+        public required Estado Estado { get; set; }
+        public required FormaPago FormaPago { get; set; }
         public virtual Turno? Turno { get; set; }
         public virtual Cliente? Cliente{ get; set; }
 
-        public virtual ICollection<TicketDetalle> TicketDetalles { get; set; }
-        public virtual ICollection<TicketEstado> TicketEstados { get; set; }
+        public virtual ICollection<TicketDetalle> TicketDetalles { get; set; } = new List<TicketDetalle>();
+        public virtual ICollection<TicketEstado> TicketEstados { get; set; } = new List<TicketEstado>();
     }
 }

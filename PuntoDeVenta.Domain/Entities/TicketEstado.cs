@@ -7,7 +7,7 @@
         public int IdTicket { get; set; }
         public int IdEstado { get; set; }
 
-        public virtual Ticket Ticket { get; set; }
-        public virtual Estado Estado { get; set; }
+        public required Ticket Ticket { get; set; }
+        public required Estado Estado { get; set; }
     }
 }

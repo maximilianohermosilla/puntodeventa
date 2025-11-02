@@ -12,7 +12,7 @@
         public DateTime? FechaFin { get; set; }
         public int IdUsuario { get; set; }
 
-        public virtual Usuario Usuario { get; set; }
-        public virtual ICollection<Ticket> Tickets { get; set; }
+        public required Usuario Usuario { get; set; }
+        public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
     }
 }

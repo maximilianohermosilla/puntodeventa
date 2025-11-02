@@ -5,7 +5,7 @@ using System.Reflection.PortableExecutable;
 
 namespace PuntoDeVenta.AccessData
 {
-    public class PuntoDeVentaDbContext: DbContext
+    public class PuntoDeVentaDbContext : DbContext
     {
         static string database = "puntoDeVenta.db";
 
@@ -24,6 +24,7 @@ namespace PuntoDeVenta.AccessData
         public DbSet<Promocion> Promocion { get; set; }
         public DbSet<PromocionCategoria> PromocionCategoria { get; set; }
         public DbSet<PromocionProducto> PromocionProducto { get; set; }
+        public DbSet<SubCategoriaProducto> SubCategoriaProducto { get; set; }
         public DbSet<Ticket> Ticket { get; set; }
         public DbSet<TicketDetalle> TicketDetalle { get; set; }
         public DbSet<TicketEstado> TicketEstado { get; set; }
@@ -51,7 +52,7 @@ namespace PuntoDeVenta.AccessData
                     op.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName);
                 });
 
-                base.OnConfiguring(optionsBuilder);
+            base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -99,6 +100,7 @@ namespace PuntoDeVenta.AccessData
                 entity.Property(e => e.PrecioPorMayor).HasColumnType("numeric(25,2)");
                 entity.HasIndex(e => e.Codigo).IsUnique();
                 entity.HasOne(d => d.CategoriaProducto).WithMany(p => p.Productos).HasForeignKey(d => d.IdCategoriaProducto).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.SubCategoriaProducto).WithMany(p => p.Productos).HasForeignKey(d => d.IdSubCategoriaProducto).OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(d => d.Unidad).WithMany(p => p.Productos).HasForeignKey(d => d.IdUnidad).OnDelete(DeleteBehavior.NoAction);
             });
 
@@ -119,6 +121,12 @@ namespace PuntoDeVenta.AccessData
                 entity.Property(e => e.Descripcion).HasMaxLength(100);
                 entity.HasOne(d => d.Producto).WithMany(p => p.PromocionProductos).HasForeignKey(d => d.IdProducto).OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(d => d.Promocion).WithMany(p => p.PromocionProductos).HasForeignKey(d => d.IdPromocion).OnDelete(DeleteBehavior.NoAction);
+            });
+
+            modelBuilder.Entity<SubCategoriaProducto>(entity =>
+            {
+                entity.Property(e => e.Descripcion).HasMaxLength(100).IsRequired();
+                entity.HasOne(d => d.CategoriaProducto).WithMany(p => p.SubCategoriaProductos).HasForeignKey(d => d.IdCategoriaProducto).OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<Usuario>(entity =>
@@ -175,9 +183,9 @@ namespace PuntoDeVenta.AccessData
 
             modelBuilder.Entity<Unidad>().HasData(
                 new Unidad { Id = 1, Nombre = "U", Descripcion = "Unidad", Habilitado = true },
-                new Unidad { Id = 2, Nombre = "Kg", Descripcion = "Kilogramos", Habilitado = false },
+                new Unidad { Id = 2, Nombre = "Kg", Descripcion = "Kilogramos", Habilitado = true },
                 new Unidad { Id = 3, Nombre = "G", Descripcion = "Gramos", Habilitado = false },
-                new Unidad { Id = 4, Nombre = "L", Descripcion = "Litros", Habilitado = false },
+                new Unidad { Id = 4, Nombre = "L", Descripcion = "Litros", Habilitado = true },
                 new Unidad { Id = 5, Nombre = "M", Descripcion = "Metros", Habilitado = false },
                 new Unidad { Id = 6, Nombre = "Hs", Descripcion = "Horas", Habilitado = false },
                 new Unidad { Id = 7, Nombre = "-", Descripcion = "No Aplica", Habilitado = false }
@@ -199,15 +207,24 @@ namespace PuntoDeVenta.AccessData
             );
 
             modelBuilder.Entity<Perfil>().HasData(
-                new Perfil { Id = 1, Descripcion = "Administrador", Habilitado = true }
+                new Perfil { Id = 1, Descripcion = "Administrador", Habilitado = true },
+                new Perfil { Id = 2, Descripcion = "Empleado", Habilitado = true }
             );
 
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario
                 {
-                    Id = 1, User = "admin", Password = "12345", Nombre = "Administrador", Apellido = "Sistemas",
-                    Email = "maximiliano_hermosilla@hotmail.com", Telefono = null, Imagen = null, Habilitado = true,
-                    FechaCreacion = DateTime.Now, IdPerfil = 1
+                    Id = 1,
+                    User = "admin",
+                    Password = "12345",
+                    Nombre = "Administrador",
+                    Apellido = "Sistemas",
+                    Email = "maximiliano_hermosilla@hotmail.com",
+                    Telefono = null,
+                    Imagen = null,
+                    Habilitado = true,
+                    FechaCreacion = DateTime.Now,
+                    IdPerfil = 1
                 }
             );
 
