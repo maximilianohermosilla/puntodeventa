@@ -34,6 +34,10 @@
             labelSinResultados = new Label();
             dvMovimientos = new DataGridView();
             panelHeader = new Panel();
+            linkLabelMes = new LinkLabel();
+            linkLabelSemana = new LinkLabel();
+            linkLabelHoy = new LinkLabel();
+            labelTotal = new Label();
             btnExportar = new Button();
             btnBuscar = new Button();
             labelHasta = new Label();
@@ -45,7 +49,6 @@
             chartDias = new System.Windows.Forms.DataVisualization.Charting.Chart();
             chartCategorias = new System.Windows.Forms.DataVisualization.Charting.Chart();
             chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            labelTotal = new Label();
             panelMain.SuspendLayout();
             panelDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dvMovimientos).BeginInit();
@@ -66,7 +69,7 @@
             panelMain.ForeColor = SystemColors.ButtonHighlight;
             panelMain.Location = new Point(0, 0);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(1447, 582);
+            panelMain.Size = new Size(1447, 800);
             panelMain.TabIndex = 0;
             // 
             // panelDataGrid
@@ -75,7 +78,7 @@
             panelDataGrid.Controls.Add(labelSinResultados);
             panelDataGrid.Controls.Add(dvMovimientos);
             panelDataGrid.Dock = DockStyle.Top;
-            panelDataGrid.Location = new Point(0, 108);
+            panelDataGrid.Location = new Point(0, 126);
             panelDataGrid.Name = "panelDataGrid";
             panelDataGrid.Size = new Size(1447, 251);
             panelDataGrid.TabIndex = 25;
@@ -105,6 +108,9 @@
             // 
             // panelHeader
             // 
+            panelHeader.Controls.Add(linkLabelMes);
+            panelHeader.Controls.Add(linkLabelSemana);
+            panelHeader.Controls.Add(linkLabelHoy);
             panelHeader.Controls.Add(labelTotal);
             panelHeader.Controls.Add(btnExportar);
             panelHeader.Controls.Add(btnBuscar);
@@ -116,8 +122,59 @@
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1447, 108);
+            panelHeader.Size = new Size(1447, 126);
             panelHeader.TabIndex = 28;
+            // 
+            // linkLabelMes
+            // 
+            linkLabelMes.AutoSize = true;
+            linkLabelMes.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            linkLabelMes.LinkColor = Color.FromArgb(128, 128, 255);
+            linkLabelMes.Location = new Point(226, 45);
+            linkLabelMes.Name = "linkLabelMes";
+            linkLabelMes.Size = new Size(88, 21);
+            linkLabelMes.TabIndex = 27;
+            linkLabelMes.TabStop = true;
+            linkLabelMes.Text = "Mes actual";
+            linkLabelMes.LinkClicked += linkLabelMes_LinkClicked;
+            // 
+            // linkLabelSemana
+            // 
+            linkLabelSemana.AutoSize = true;
+            linkLabelSemana.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            linkLabelSemana.LinkColor = Color.FromArgb(128, 128, 255);
+            linkLabelSemana.Location = new Point(81, 45);
+            linkLabelSemana.Name = "linkLabelSemana";
+            linkLabelSemana.Size = new Size(116, 21);
+            linkLabelSemana.TabIndex = 26;
+            linkLabelSemana.TabStop = true;
+            linkLabelSemana.Text = "Última semana";
+            linkLabelSemana.LinkClicked += linkLabelSemana_LinkClicked;
+            // 
+            // linkLabelHoy
+            // 
+            linkLabelHoy.AutoSize = true;
+            linkLabelHoy.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            linkLabelHoy.LinkColor = Color.FromArgb(128, 128, 255);
+            linkLabelHoy.Location = new Point(10, 45);
+            linkLabelHoy.Name = "linkLabelHoy";
+            linkLabelHoy.Size = new Size(40, 21);
+            linkLabelHoy.TabIndex = 25;
+            linkLabelHoy.TabStop = true;
+            linkLabelHoy.Text = "Hoy";
+            linkLabelHoy.LinkClicked += linkLabelHoy_LinkClicked;
+            // 
+            // labelTotal
+            // 
+            labelTotal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelTotal.AutoSize = true;
+            labelTotal.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTotal.ForeColor = SystemColors.ButtonHighlight;
+            labelTotal.Location = new Point(1256, 87);
+            labelTotal.Name = "labelTotal";
+            labelTotal.Size = new Size(97, 25);
+            labelTotal.TabIndex = 24;
+            labelTotal.Text = "TOTAL: $0";
             // 
             // btnExportar
             // 
@@ -131,7 +188,7 @@
             btnExportar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExportar.ForeColor = SystemColors.ButtonHighlight;
             btnExportar.Image = (Image)resources.GetObject("btnExportar.Image");
-            btnExportar.Location = new Point(623, 56);
+            btnExportar.Location = new Point(623, 85);
             btnExportar.Name = "btnExportar";
             btnExportar.Size = new Size(114, 35);
             btnExportar.TabIndex = 23;
@@ -153,7 +210,7 @@
             btnBuscar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
             btnBuscar.Image = (Image)resources.GetObject("btnBuscar.Image");
-            btnBuscar.Location = new Point(511, 56);
+            btnBuscar.Location = new Point(511, 85);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(93, 35);
             btnBuscar.TabIndex = 22;
@@ -167,7 +224,7 @@
             // 
             labelHasta.AutoSize = true;
             labelHasta.Font = new Font("Segoe UI", 10F);
-            labelHasta.Location = new Point(261, 46);
+            labelHasta.Location = new Point(261, 75);
             labelHasta.Name = "labelHasta";
             labelHasta.Size = new Size(47, 19);
             labelHasta.TabIndex = 21;
@@ -177,7 +234,7 @@
             // 
             labelDesde.AutoSize = true;
             labelDesde.Font = new Font("Segoe UI", 10F);
-            labelDesde.Location = new Point(10, 46);
+            labelDesde.Location = new Point(10, 75);
             labelDesde.Name = "labelDesde";
             labelDesde.Size = new Size(54, 19);
             labelDesde.TabIndex = 20;
@@ -185,14 +242,14 @@
             // 
             // dateHasta
             // 
-            dateHasta.Location = new Point(261, 68);
+            dateHasta.Location = new Point(261, 97);
             dateHasta.Name = "dateHasta";
             dateHasta.Size = new Size(227, 23);
             dateHasta.TabIndex = 4;
             // 
             // dateDesde
             // 
-            dateDesde.Location = new Point(10, 68);
+            dateDesde.Location = new Point(10, 97);
             dateDesde.Name = "dateDesde";
             dateDesde.Size = new Size(227, 23);
             dateDesde.TabIndex = 3;
@@ -216,47 +273,36 @@
             panelCharts.Dock = DockStyle.Fill;
             panelCharts.Location = new Point(0, 0);
             panelCharts.Name = "panelCharts";
-            panelCharts.Size = new Size(1447, 582);
+            panelCharts.Size = new Size(1447, 800);
             panelCharts.TabIndex = 27;
             // 
             // chartDias
             // 
             chartDias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            chartDias.Location = new Point(939, 365);
+            chartDias.Location = new Point(948, 375);
             chartDias.Name = "chartDias";
-            chartDias.Size = new Size(496, 204);
+            chartDias.Size = new Size(496, 412);
             chartDias.TabIndex = 27;
             chartDias.Text = "chart2";
             // 
             // chartCategorias
             // 
             chartCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            chartCategorias.Location = new Point(450, 365);
+            chartCategorias.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipXY;
+            chartCategorias.Location = new Point(450, 383);
             chartCategorias.Name = "chartCategorias";
-            chartCategorias.Size = new Size(472, 204);
+            chartCategorias.Size = new Size(472, 404);
             chartCategorias.TabIndex = 24;
             chartCategorias.Text = "chart1";
             // 
             // chartProductos
             // 
             chartProductos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            chartProductos.Location = new Point(10, 365);
+            chartProductos.Location = new Point(6, 383);
             chartProductos.Name = "chartProductos";
-            chartProductos.Size = new Size(415, 204);
+            chartProductos.Size = new Size(415, 404);
             chartProductos.TabIndex = 26;
             chartProductos.Text = "chart2";
-            // 
-            // labelTotal
-            // 
-            labelTotal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            labelTotal.AutoSize = true;
-            labelTotal.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTotal.ForeColor = SystemColors.ButtonHighlight;
-            labelTotal.Location = new Point(1274, 58);
-            labelTotal.Name = "labelTotal";
-            labelTotal.Size = new Size(97, 25);
-            labelTotal.TabIndex = 24;
-            labelTotal.Text = "TOTAL: $0";
             // 
             // ReporteVentasControl
             // 
@@ -265,7 +311,7 @@
             BackColor = SystemColors.ControlLight;
             Controls.Add(panelMain);
             Name = "ReporteVentasControl";
-            Size = new Size(1447, 582);
+            Size = new Size(1447, 800);
             panelMain.ResumeLayout(false);
             panelDataGrid.ResumeLayout(false);
             panelDataGrid.PerformLayout();
@@ -298,5 +344,8 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDias;
         public Button btnExportar;
         private Label labelTotal;
+        private LinkLabel linkLabelHoy;
+        private LinkLabel linkLabelMes;
+        private LinkLabel linkLabelSemana;
     }
 }

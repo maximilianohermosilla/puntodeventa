@@ -10,6 +10,6 @@ namespace PuntoDeVenta.AccessData.Interfaces
         Task<List<ProductoMovimiento>> GetAllByFechaAndTipoMovimiento(DateTime pFechaDesde, DateTime pFechaHasta, int pIdTipoMovimiento);
         Task<ProductoMovimiento> Create(ProductoMovimiento pEntity);
         Task Delete(ProductoMovimiento pEntity);
-        Task<ProductoMovimiento> GetById(int pId);
+        Task<ProductoMovimiento?> GetById(int pId);
     }
 }

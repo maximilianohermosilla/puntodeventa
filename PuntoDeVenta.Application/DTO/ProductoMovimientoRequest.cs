@@ -12,5 +12,6 @@
         public int IdTipoMovimiento { get; set; }
         public int IdUsuario { get; set; }
         public int? IdProducto { get; set; } = null;
+        public int? IdFormaPago { get; set; } = null;
     }
 }

@@ -50,6 +50,12 @@ namespace PuntoDeVenta.UserControls
         private void btnReporteDeVentas_Click(object sender, EventArgs e)
         {
             SetActivePanel(reporteVentasControl1);
+            GetAllMovimientos();
+        }
+
+        public void GetAllMovimientos()
+        {
+            _ = reporteVentasControl1.GetAllMovimientos();
         }
     }
 }

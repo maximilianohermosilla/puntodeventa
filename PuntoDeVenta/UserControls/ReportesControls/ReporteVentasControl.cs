@@ -59,13 +59,17 @@ namespace PuntoDeVenta.UserControls.ReportesControls
                     Categoria = x.Producto != null && x.Producto?.CategoriaProducto != null ? x.Producto?.CategoriaProducto?.Descripcion : "Producto Común",
                     x.Cantidad,
                     x.Valor,
+                    FormaPago = x.FormaPago != null ? x.FormaPago.Descripcion : "",
                     TipoMovimiento = x.TipoMovimiento.Descripcion ?? "",
                     Usuario = x.Usuario.User ?? "",
                     x.Fecha
                 })!.ToList();
+
+                dvMovimientos.DataSource = null;
                 dvMovimientos.DataSource = listaMovimientos;
                 dvMovimientos.Refresh();
                 dvMovimientos.Invalidate();
+
                 dvMovimientos.Visible = true;
                 chartCategorias.Visible = true;
                 chartProductos.Visible = true;
@@ -239,6 +243,27 @@ namespace PuntoDeVenta.UserControls.ReportesControls
                 ToastForm toast = new ToastForm(toastTipo, exportado ? "Exportación finalizada." : "Ocurrió un error en la exportación.", this.FindForm()!);
                 toast.Show();
             }
+        }
+
+        private void linkLabelHoy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            dateDesde.Value = DateTime.Now;
+            dateHasta.Value = DateTime.Now;
+            _ = GetAllMovimientos();
+        }
+
+        private void linkLabelSemana_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            dateDesde.Value = DateTime.Now.AddDays(-7);
+            dateHasta.Value = DateTime.Now;
+            _ = GetAllMovimientos();
+        }
+
+        private void linkLabelMes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            dateDesde.Value = new DateTime(dateDesde.Value.Year, dateDesde.Value.Month, 1, 0, 0, 0);
+            dateHasta.Value = DateTime.Now;
+            _ = GetAllMovimientos();
         }
     }
 }

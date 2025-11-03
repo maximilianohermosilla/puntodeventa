@@ -59,7 +59,20 @@ namespace PuntoDeVenta.UserControls
 
         private void btnCobrar_Click(object sender, EventArgs e)
         {
-            _ = CobrarTicket();
+
+            FormaPagoDialog dialog = new FormaPagoDialog();
+
+            try
+            {
+                if (dialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    _ = CobrarTicket(dialog.formaPago);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dataGridViewVentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -477,7 +490,7 @@ namespace PuntoDeVenta.UserControls
             }
         }
 
-        public async Task CobrarTicket()
+        public async Task CobrarTicket(int formaPago)
         {
             try
             {
@@ -525,6 +538,7 @@ namespace PuntoDeVenta.UserControls
                             productoMovimiento.IdTipoMovimiento = 2;
                             productoMovimiento.IdUsuario = 1;
                             productoMovimiento.IdProducto = vId != "0" ? Convert.ToInt32(vId) : null;
+                            productoMovimiento.IdFormaPago = formaPago;
 
                             productosMovimientos.Add(productoMovimiento);
                             await _productoMovimientoService.Insert(productoMovimiento);
@@ -540,7 +554,7 @@ namespace PuntoDeVenta.UserControls
                             FechaFinalizacion = DateTime.Now,
                             PrecioTotal = productos.Sum(x => x.PrecioFinal),
                             IdEstado = 2,
-                            IdFormaPago = 1,
+                            IdFormaPago = formaPago,
                             IdTurno = IdTurno != 0 ? IdTurno : null,
                             IdCliente = !string.IsNullOrEmpty(vIdCliente) ? Convert.ToInt32(vIdCliente) : null,
                             TicketDetalles = productos,
@@ -649,7 +663,6 @@ namespace PuntoDeVenta.UserControls
 
         private void btnBuscarCategorias_Click(object sender, EventArgs e)
         {
-
             ProductoBusquedaCategoriaDialog productoBusquedaDialog = new ProductoBusquedaCategoriaDialog();
             _ = GetAllCategorias(productoBusquedaDialog);
 
@@ -667,6 +680,7 @@ namespace PuntoDeVenta.UserControls
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         public async Task GetAllCategorias(ProductoBusquedaCategoriaDialog productoBusquedaDialog)
         {
             try

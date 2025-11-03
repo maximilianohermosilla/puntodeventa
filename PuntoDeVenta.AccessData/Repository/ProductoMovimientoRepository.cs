@@ -48,14 +48,15 @@ namespace PuntoDeVenta.AccessData.Repository
         {
             vGblContext.ChangeTracker.Clear();
             return await vGblContext.ProductoMovimiento.Where(x => x.Fecha >= pFechaDesde && x.Fecha <= pFechahasta && (pIdTipoMovimiento == 0 || x.IdTipoMovimiento == pIdTipoMovimiento))
-                .Include(p => p.TipoMovimiento).Include(p => p.Usuario).Include(p => p.Producto).ThenInclude(p => p.CategoriaProducto)
+                .Include(p => p.TipoMovimiento).Include(p => p.Usuario).Include(p => p.FormaPago).Include(p => p.Producto).ThenInclude(p => p.CategoriaProducto)
                 .ToListAsync();
         }
 
-        public async Task<ProductoMovimiento> GetById(int pId)
+        public async Task<ProductoMovimiento?> GetById(int pId)
         {
             vGblContext.ChangeTracker.Clear();
-            return await vGblContext.ProductoMovimiento.Include(p => p.Producto).Where(p => p.Id == pId).FirstOrDefaultAsync()!;
+            return await vGblContext.ProductoMovimiento.Include(p => p.TipoMovimiento).Include(p => p.Usuario).Include(p => p.FormaPago).Include(p => p.Producto).ThenInclude(p => p.CategoriaProducto)
+                .Where(p => p.Id == pId).FirstOrDefaultAsync()!;
         }
 
         public bool SaveChanges()

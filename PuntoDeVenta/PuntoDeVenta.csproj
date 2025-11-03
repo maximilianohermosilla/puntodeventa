@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FormDialogs\FormaPagoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormDialogs\ProductoBusquedaCategoriaDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -47,6 +50,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="FormDialogs\FormaPagoDialog.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="FormDialogs\NumberDialog.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

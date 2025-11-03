@@ -12,9 +12,11 @@
         public int IdTipoMovimiento { get; set; }
         public int IdUsuario { get; set; }
         public int? IdProducto { get; set; } = null;
+        public int? IdFormaPago { get; set; } = null;
 
         public virtual TipoMovimientoResponse TipoMovimiento { get; set; }
         public virtual UsuarioResponse Usuario { get; set; }
         public virtual ProductoResponse? Producto { get; set; } = null;
+        public virtual FormaPagoResponse? FormaPago { get; set; } = null;
     }
 }

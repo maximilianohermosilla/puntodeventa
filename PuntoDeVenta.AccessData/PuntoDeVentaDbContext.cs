@@ -104,6 +104,11 @@ namespace PuntoDeVenta.AccessData
                 entity.HasOne(d => d.Unidad).WithMany(p => p.Productos).HasForeignKey(d => d.IdUnidad).OnDelete(DeleteBehavior.NoAction);
             });
 
+            modelBuilder.Entity<ProductoMovimiento>(entity =>
+            {
+                entity.HasOne(d => d.FormaPago).WithMany(p => p.ProductoMovimientos).HasForeignKey(d => d.IdFormaPago).OnDelete(DeleteBehavior.NoAction);
+            });
+
             modelBuilder.Entity<Promocion>(entity =>
             {
                 entity.Property(e => e.Descripcion).HasMaxLength(100);
