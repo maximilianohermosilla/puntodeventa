@@ -55,6 +55,7 @@
             btnCambiar = new Button();
             panel4 = new Panel();
             panel5 = new Panel();
+            btnBuscarCategorias = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -99,7 +100,7 @@
             // 
             txtCodigo.Location = new Point(155, 14);
             txtCodigo.Name = "txtCodigo";
-            txtCodigo.Size = new Size(483, 23);
+            txtCodigo.Size = new Size(611, 23);
             txtCodigo.TabIndex = 2;
             txtCodigo.KeyUp += txtCodigo_KeyPress;
             // 
@@ -269,7 +270,7 @@
             btnAgregarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAgregarProducto.ForeColor = SystemColors.ButtonHighlight;
             btnAgregarProducto.Image = (Image)resources.GetObject("btnAgregarProducto.Image");
-            btnAgregarProducto.Location = new Point(644, 8);
+            btnAgregarProducto.Location = new Point(772, 7);
             btnAgregarProducto.Name = "btnAgregarProducto";
             btnAgregarProducto.Size = new Size(122, 35);
             btnAgregarProducto.TabIndex = 10;
@@ -291,9 +292,9 @@
             btnEliminarProducto.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEliminarProducto.ForeColor = SystemColors.ButtonHighlight;
             btnEliminarProducto.Image = (Image)resources.GetObject("btnEliminarProducto.Image");
-            btnEliminarProducto.Location = new Point(772, 8);
+            btnEliminarProducto.Location = new Point(900, 7);
             btnEliminarProducto.Name = "btnEliminarProducto";
-            btnEliminarProducto.Size = new Size(122, 35);
+            btnEliminarProducto.Size = new Size(141, 35);
             btnEliminarProducto.TabIndex = 11;
             btnEliminarProducto.Text = "(DEL) Borrar";
             btnEliminarProducto.TextAlign = ContentAlignment.MiddleRight;
@@ -516,6 +517,7 @@
             panel4.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel4.BackColor = Color.FromArgb(26, 32, 40);
             panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(btnBuscarCategorias);
             panel4.Controls.Add(txtCodigo);
             panel4.Controls.Add(labelCodigo);
             panel4.Controls.Add(btnVarios);
@@ -544,6 +546,28 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(1447, 393);
             panel5.TabIndex = 15;
+            // 
+            // btnBuscarCategorias
+            // 
+            btnBuscarCategorias.BackColor = Color.FromArgb(0, 80, 200);
+            btnBuscarCategorias.BackgroundImageLayout = ImageLayout.None;
+            btnBuscarCategorias.FlatAppearance.BorderColor = Color.Silver;
+            btnBuscarCategorias.FlatAppearance.BorderSize = 0;
+            btnBuscarCategorias.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnBuscarCategorias.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnBuscarCategorias.FlatStyle = FlatStyle.Flat;
+            btnBuscarCategorias.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBuscarCategorias.ForeColor = SystemColors.ButtonHighlight;
+            btnBuscarCategorias.Image = (Image)resources.GetObject("btnBuscarCategorias.Image");
+            btnBuscarCategorias.Location = new Point(900, 58);
+            btnBuscarCategorias.Name = "btnBuscarCategorias";
+            btnBuscarCategorias.Size = new Size(141, 35);
+            btnBuscarCategorias.TabIndex = 12;
+            btnBuscarCategorias.Text = "Buscar Categorías";
+            btnBuscarCategorias.TextAlign = ContentAlignment.MiddleRight;
+            btnBuscarCategorias.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBuscarCategorias.UseVisualStyleBackColor = false;
+            btnBuscarCategorias.Click += btnBuscarCategorias_Click;
             // 
             // VentasControl
             // 
@@ -599,5 +623,6 @@
         public Button btnReimprimir;
         public Button btnVentasDevoluciones;
         private Label labelTotal;
+        public Button btnBuscarCategorias;
     }
 }

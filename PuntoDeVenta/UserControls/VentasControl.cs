@@ -2,6 +2,7 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.Domain.Entities;
 using PuntoDeVenta.FormDialogs;
 using System.Data;
 
@@ -13,6 +14,7 @@ namespace PuntoDeVenta.UserControls
 
         private readonly IProductoService _productoService;
         private readonly IProductoMovimientoService _productoMovimientoService;
+        private readonly ICategoriaProductoService _categoriaProductoService;
         private readonly ITicketService _ticketService;
         private int IdTurno = 0;
 
@@ -20,6 +22,7 @@ namespace PuntoDeVenta.UserControls
         {
             _productoService = new ProductoService(_context);
             _productoMovimientoService = new ProductoMovimientoService(_context);
+            _categoriaProductoService = new CategoriaProductoService(_context);
             _ticketService = new TicketService(_context);
             InitializeComponent();
             AgregarTicket();
@@ -30,6 +33,7 @@ namespace PuntoDeVenta.UserControls
             IdTurno = idTurno;
             _productoService = new ProductoService(_context);
             _productoMovimientoService = new ProductoMovimientoService(_context);
+            _categoriaProductoService = new CategoriaProductoService(_context);
             _ticketService = new TicketService(_context);
             InitializeComponent();
             AgregarTicket();
@@ -643,5 +647,41 @@ namespace PuntoDeVenta.UserControls
 
         #endregion
 
+        private void btnBuscarCategorias_Click(object sender, EventArgs e)
+        {
+
+            ProductoBusquedaCategoriaDialog productoBusquedaDialog = new ProductoBusquedaCategoriaDialog();
+            _ = GetAllCategorias(productoBusquedaDialog);
+
+            try
+            {
+                if (productoBusquedaDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    int cantidad = (int)productoBusquedaDialog.txtCantidad.Value;
+                    string codigo = productoBusquedaDialog.selectedProducto;
+                    _ = AgregarProducto(codigo, cantidad);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public async Task GetAllCategorias(ProductoBusquedaCategoriaDialog productoBusquedaDialog)
+        {
+            try
+            {
+                var response = await _categoriaProductoService.GetAll(null);
+
+                if (response != null && response.success)
+                {
+                    productoBusquedaDialog.SetearCategorias((List<CategoriaProductoResponse>)response.response!);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
