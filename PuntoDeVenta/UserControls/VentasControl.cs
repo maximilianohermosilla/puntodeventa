@@ -209,7 +209,21 @@ namespace PuntoDeVenta.UserControls
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            ProductoBusquedaDialog productoBusquedaDialog = new ProductoBusquedaDialog();
 
+            try
+            {
+                if (productoBusquedaDialog.ShowDialog(this) == DialogResult.OK)
+                {
+                    int cantidad = (int)productoBusquedaDialog.txtCantidad.Value;
+                    string codigo = productoBusquedaDialog.selectedProducto;
+                    _ = AgregarProducto(codigo, cantidad);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEntradas_Click(object sender, EventArgs e)

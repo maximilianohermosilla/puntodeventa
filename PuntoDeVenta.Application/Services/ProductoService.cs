@@ -181,15 +181,15 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
-        public async Task<ResponseModel<ProductoResponse>> GetByDescripcion(string descripcion)
+        public async Task<ResponseModel<List<ProductoResponse>>> GetAllByDescripcion(string descripcion)
         {
-            ResponseModel<ProductoResponse> response = new ResponseModel<ProductoResponse>();
+            ResponseModel<List<ProductoResponse>> response = new ResponseModel<List<ProductoResponse>>();
 
             try
             {
-                Producto producto = await _productoRepository.GetByDescripcion(descripcion);
+                List<Producto> productos = await _productoRepository.GetAllByDescripcion(descripcion);
 
-                if (producto == null)
+                if (productos == null)
                 {
                     response.success = false;
                     response.statusCode = 404;
@@ -198,11 +198,11 @@ namespace PuntoDeVenta.Application.Services
                     return response;
                 }
 
-                ProductoResponse ProductoResponse = _mapper.Map<ProductoResponse>(producto);
+                List<ProductoResponse> productosResponse = _mapper.Map<List<ProductoResponse>>(productos);
 
                 response.message = "Consulta realizada correctamente";
                 response.statusCode = 200;
-                response.response = ProductoResponse;
+                response.response = productosResponse;
             }
             catch (Exception ex)
             {

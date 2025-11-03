@@ -73,12 +73,14 @@ namespace PuntoDeVenta.AccessData.Repository
             return await vGblContext.Producto.Include(p => p.CategoriaProducto).Include(p => p.SubCategoriaProducto).Include(p => p.Unidad)
                 .Where(p => p.Codigo == pCodigo).FirstOrDefaultAsync()!;
         }
-        public async Task<Producto?> GetByDescripcion(string pDescripcion)
+        public async Task<List<Producto>> GetAllByDescripcion(string pDescripcion)
         {
             vGblContext.ChangeTracker.Clear();
             return await vGblContext.Producto.Include(p => p.CategoriaProducto).Include(p => p.SubCategoriaProducto).Include(p => p.Unidad)
-                .Where(p => p.Descripcion.Contains(pDescripcion) || p.CategoriaProducto.Descripcion.Contains(pDescripcion) || p.SubCategoriaProducto.Descripcion.Contains(pDescripcion))
-                .FirstOrDefaultAsync()!;
+                .Where(p => p.Descripcion.ToUpper().Contains(pDescripcion.ToUpper()) 
+                || p.CategoriaProducto!.Descripcion.ToUpper().Contains(pDescripcion.ToUpper()) 
+                || p.SubCategoriaProducto!.Descripcion.ToUpper().Contains(pDescripcion.ToUpper()))
+                .ToListAsync()!;
         }
 
         public bool SaveChanges()

@@ -54,7 +54,6 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             {
 
             }
-
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
