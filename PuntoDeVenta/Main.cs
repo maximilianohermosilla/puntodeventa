@@ -351,6 +351,8 @@ namespace PuntoDeVenta
                     CantidadInicio = cantidad,
                     CantidadFin = 0,
                     ValorTotal = 0,
+                    ValorEfectivo = 0,
+                    ValorTransferencia = 0,
                     ValorGanancia = 0,
                     Finalizado = false,
                     FechaInicio = DateTime.Now,
@@ -378,7 +380,12 @@ namespace PuntoDeVenta
                     Id = turnoActual.Id,
                     CantidadInicio = turnoActual.CantidadInicio,
                     CantidadFin = cantidad,
-                    ValorTotal = valorTotalTickets != null && valorTotalTickets!.response != null ? valorTotalTickets!.response!.Select(t => t.PrecioTotal).Sum() : 0,
+                    ValorTotal = valorTotalTickets != null && valorTotalTickets!.response != null 
+                        ? valorTotalTickets!.response!.Select(t => t.PrecioTotal).Sum() : 0,
+                    ValorEfectivo = valorTotalTickets != null && valorTotalTickets!.response != null 
+                        ? valorTotalTickets!.response!.Where(t => t.IdFormaPago == 1).Select(t => t.PrecioTotal).Sum() : 0,
+                    ValorTransferencia = valorTotalTickets != null && valorTotalTickets!.response != null 
+                        ? valorTotalTickets!.response!.Where(t => t.IdFormaPago != 1).Select(t => t.PrecioTotal).Sum() : 0,
                     ValorGanancia = turnoActual.ValorGanancia,
                     Finalizado = true,
                     FechaInicio = turnoActual.FechaInicio,

@@ -163,6 +163,9 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                     labelCategoria.Text = "Editar Categoría";
                     btnEliminarCategoria.Enabled = true;
                     comboCategoria.SelectedIndex = listCategorias!.SelectedIndex;
+                    //selectedCategoria.SubCategoriaProductos.Insert(0, new SubCategoriaProductoResponse 
+                    //    { Id = 0, Descripcion = "-- Seleccionar SubCategoría --", IdCategoriaProducto = selectedCategoria.Id, Habilitado = true }
+                    //);
                     SetearSubCategorias((List<SubCategoriaProductoResponse>)(selectedCategoria.SubCategoriaProductos));
                 }
                 else
@@ -206,7 +209,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         {
             try
             {
-                if (listSubCategorias != null && listSubCategorias!.SelectedIndex > 0)
+                if (listSubCategorias != null && listSubCategorias!.SelectedIndex >= 0)
                 {
                     selectedSubCategoria = (SubCategoriaProductoResponse)listSubCategorias!.SelectedItem!;
                     SetSubCategoriaSelected(selectedSubCategoria);
@@ -215,8 +218,8 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                 }
                 else
                 {
-                    btnEliminarCategoria.Enabled = false;
-                    NuevaCategoria();
+                    btnEliminarSubCategoria.Enabled = false;
+                    NuevaSubCategoria();
                 }
             }
             catch (Exception ex)
@@ -242,9 +245,9 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         {
             try
             {
-                if (txtDescripcionSubCategoria.Text == "")
+                if (txtDescripcionSubCategoria.Text == "" || comboCategoria.SelectedIndex == 0)
                 {
-                    MessageBox.Show("Debe ingresar un nombre válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Debe ingresar un nombre y categoría válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -294,7 +297,8 @@ namespace PuntoDeVenta.UserControls.ProductosControls
         {
             if (listSubCategorias != null && listSubCategorias.Items.Count > 0)
             {
-                listSubCategorias!.SelectedIndex = 0;
+                selectedSubCategoria = null;
+                listSubCategorias!.SelectedIndex = -1;
                 SetSubCategoriaSelected(new SubCategoriaProductoResponse() { Habilitado = true });
                 labelSubCategoria.Text = "Nueva SubCategoría";
             }

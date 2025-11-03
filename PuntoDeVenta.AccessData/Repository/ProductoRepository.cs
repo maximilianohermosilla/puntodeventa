@@ -48,7 +48,7 @@ namespace PuntoDeVenta.AccessData.Repository
         {
             vGblContext.ChangeTracker.Clear();
             return await vGblContext.Producto.Where(x => habilitados == null || x.Habilitado == habilitados)
-                .Include(p => p.CategoriaProducto).Include(p => p.SubCategoriaProducto).ToListAsync();
+                .Include(p => p.CategoriaProducto).Include(p => p.SubCategoriaProducto).Include(p => p.Unidad).ToListAsync();
         }
 
         public async Task<List<Producto>> GetAllByCategoria(int pIdCategoriaProducto, int? pIdSubCategoriaProducto, bool? habilitados)
@@ -57,24 +57,26 @@ namespace PuntoDeVenta.AccessData.Repository
             return await vGblContext.Producto.Where(x => (pIdCategoriaProducto == x.IdCategoriaProducto) 
                 && (pIdSubCategoriaProducto == null || pIdSubCategoriaProducto == x.IdSubCategoriaProducto)
                 && (habilitados == null || x.Habilitado == habilitados))
-                .Include(p => p.CategoriaProducto).Include(p => p.SubCategoriaProducto).ToListAsync();
+                .Include(p => p.CategoriaProducto).Include(p => p.SubCategoriaProducto).Include(p => p.Unidad).ToListAsync();
         }        
 
-        public async Task<Producto> GetById(int pId)
+        public async Task<Producto?> GetById(int pId)
         {
             vGblContext.ChangeTracker.Clear();
-            return await vGblContext.Producto.Include(p => p.CategoriaProducto).Include(p => p.SubCategoriaProducto).Where(p => p.Id == pId).FirstOrDefaultAsync()!;
+            return await vGblContext.Producto.Include(p => p.CategoriaProducto).Include(p => p.SubCategoriaProducto).Include(p => p.Unidad)
+                .Where(p => p.Id == pId).FirstOrDefaultAsync()!;
         }
 
-        public async Task<Producto> GetByCodigo(string pCodigo)
+        public async Task<Producto?> GetByCodigo(string pCodigo)
         {
             vGblContext.ChangeTracker.Clear();
-            return await vGblContext.Producto.Include(p => p.CategoriaProducto).Include(p => p.SubCategoriaProducto).Where(p => p.Codigo == pCodigo).FirstOrDefaultAsync()!;
+            return await vGblContext.Producto.Include(p => p.CategoriaProducto).Include(p => p.SubCategoriaProducto).Include(p => p.Unidad)
+                .Where(p => p.Codigo == pCodigo).FirstOrDefaultAsync()!;
         }
-        public async Task<Producto> GetByDescripcion(string pDescripcion)
+        public async Task<Producto?> GetByDescripcion(string pDescripcion)
         {
             vGblContext.ChangeTracker.Clear();
-            return await vGblContext.Producto.Include(p => p.CategoriaProducto).Include(p => p.SubCategoriaProducto)
+            return await vGblContext.Producto.Include(p => p.CategoriaProducto).Include(p => p.SubCategoriaProducto).Include(p => p.Unidad)
                 .Where(p => p.Descripcion.Contains(pDescripcion) || p.CategoriaProducto.Descripcion.Contains(pDescripcion) || p.SubCategoriaProducto.Descripcion.Contains(pDescripcion))
                 .FirstOrDefaultAsync()!;
         }

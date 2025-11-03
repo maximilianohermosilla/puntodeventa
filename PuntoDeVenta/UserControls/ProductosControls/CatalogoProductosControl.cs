@@ -105,8 +105,10 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                 x.Cantidad,
                 x.CantidadMinima,
                 x.FechaCreacion,
-                x.Habilitado,
-                Categoria = x.CategoriaProducto != null ? x.CategoriaProducto!.Descripcion : ""
+                Unidad = x.Unidad != null ? x.Unidad!.Descripcion : "",
+                Categoria = x.CategoriaProducto != null ? x.CategoriaProducto!.Descripcion : "",
+                SubCategoria = x.SubCategoriaProducto != null ? x.SubCategoriaProducto!.Descripcion : "",
+                x.Habilitado
             })!.ToList();
             dvCatalogo.DataSource = listaProductos;
             dvCatalogo.Refresh();

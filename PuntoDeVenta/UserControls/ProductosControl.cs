@@ -134,6 +134,7 @@ namespace PuntoDeVenta.UserControls
         private void btnCatalogo_Click(object sender, EventArgs e)
         {
             SetActivePanel(catalogoProductos1);
+            _ = GetAllCategorias();
             _ = catalogoProductos1.GetAllProductos();
 
         }

@@ -45,6 +45,8 @@ namespace PuntoDeVenta
         {
             try
             {
+                txtUser.Text = "admin";
+                txtPassword.Text = "12345";
                 var usuario = await _usuarioService.GetByUserAndPassword(txtUser.Text, txtPassword.Text);
 
                 if (usuario != null == usuario!.success)

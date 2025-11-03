@@ -2,6 +2,7 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.Domain.Entities;
 
 namespace PuntoDeVenta.UserControls.ProductosControls
 {
@@ -50,23 +51,33 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                     comboUnidad.Refresh();
                     comboUnidad.Invalidate();
                 }
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }            
+            }
         }
 
         public void SetearCategorias(List<CategoriaProductoResponse> categoriaProductos)
         {
             _categoriaProductos = categoriaProductos;
             categoriaProductos.Insert(0, new CategoriaProductoResponse { Id = 0, Descripcion = "-- Seleccionar Categoría --", Habilitado = true });
-            comboCategoria.DataSource = categoriaProductos.Where(x => x.Habilitado).ToList();
             comboCategoria.DisplayMember = "Descripcion";
             comboCategoria.ValueMember = "Id";
+            comboCategoria.DataSource = categoriaProductos.Where(x => x.Habilitado).ToList();
             comboCategoria.Refresh();
             comboCategoria.Invalidate();
+        }
+
+        public void SetearSubCategorias(List<SubCategoriaProductoResponse> subCategoriaProductos)
+        {
+            comboSubCategoria.DataSource = null;
+            comboSubCategoria.DataSource = subCategoriaProductos;
+            comboSubCategoria.DisplayMember = "Descripcion";
+            comboSubCategoria.ValueMember = "Id";
+            comboSubCategoria.Refresh();
+            comboSubCategoria.Invalidate();
         }
 
         public void SetProducto(ProductoResponse producto)
@@ -75,6 +86,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             txtCodigo.Text = selectedProducto.Codigo;
             txtDescripcion.Text = selectedProducto.Descripcion;
             comboCategoria.SelectedValue = producto.IdCategoriaProducto > 0 ? producto!.IdCategoriaProducto : 0;
+            comboSubCategoria.SelectedValue = producto.IdSubCategoriaProducto > 0 ? producto!.IdCategoriaProducto : 0;
             txtPrecioMayor.Value = (decimal)selectedProducto.PrecioPorMayor;
             txtPrecioVenta.Value = (decimal)selectedProducto.PrecioVenta;
             txtPrecioCosto.Value = (decimal)selectedProducto.PrecioCosto;
@@ -86,6 +98,8 @@ namespace PuntoDeVenta.UserControls.ProductosControls
 
             comboCategoria.Refresh();
             comboCategoria.Invalidate();
+            comboSubCategoria.Refresh();
+            comboSubCategoria.Invalidate();
         }
 
         private void btnGuardarProducto_Click(object sender, EventArgs e)
@@ -110,6 +124,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                         Codigo = txtCodigo.Text,
                         Descripcion = txtDescripcion.Text,
                         IdCategoriaProducto = Convert.ToInt32(comboCategoria.SelectedValue) > 0 ? Convert.ToInt32(comboCategoria.SelectedValue) : null,
+                        IdSubCategoriaProducto = Convert.ToInt32(comboSubCategoria.SelectedValue) > 0 ? Convert.ToInt32(comboSubCategoria.SelectedValue) : null,
                         IdUnidad = Convert.ToInt32(comboUnidad.SelectedValue) > 0 ? Convert.ToInt32(comboUnidad.SelectedValue) : null,
                         PrecioPorMayor = Convert.ToInt32(txtPrecioMayor.Value),
                         PrecioVenta = Convert.ToInt32(txtPrecioVenta.Value),
@@ -118,7 +133,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                         Cantidad = checkInventario.Checked ? Convert.ToInt32(txtCantidadActual.Value) : 0,
                     };
 
-                    if(selectedProducto.Id > 0)
+                    if (selectedProducto.Id > 0)
                     {
                         response = await _productoService.Update(producto);
                     }
@@ -127,7 +142,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
                         response = await _productoService.Insert(producto);
                     }
 
-                    if (response.success == true) 
+                    if (response.success == true)
                     {
                         SetProducto(new ProductoResponse());
                     }
@@ -140,14 +155,28 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }            
+            }
         }
 
         private void checkInventario_CheckedChanged_1(object sender, EventArgs e)
         {
             txtCantidadActual.Enabled = checkInventario.Checked == true;
             txtCantidadMinima.Enabled = checkInventario.Checked == true;
+        }
 
+        private void comboCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedCategoriaId = comboCategoria != null && comboCategoria.SelectedValue != null ? Convert.ToInt32(comboCategoria.SelectedValue) : 0;
+            var selectedCategoria = _categoriaProductos.Where(c => c.Id == selectedCategoriaId).FirstOrDefault();
+           
+            if(selectedCategoria != null && !selectedCategoria!.SubCategoriaProductos.Any(c => c.Id == 0))
+            {
+                selectedCategoria.SubCategoriaProductos.Insert(0, new SubCategoriaProductoResponse 
+                    { Id = 0, Descripcion = "-- Seleccionar SubCategoría --", IdCategoriaProducto = selectedCategoria.Id, Habilitado = true }
+                );
+            }
+
+            SetearSubCategorias(selectedCategoria!.SubCategoriaProductos.ToList());
         }
     }
 }

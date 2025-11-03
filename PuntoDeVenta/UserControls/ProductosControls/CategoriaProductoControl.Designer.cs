@@ -200,6 +200,7 @@ namespace PuntoDeVenta.UserControls.ProductosControls
             listSubCategorias.Location = new Point(20, 53);
             listSubCategorias.Name = "listSubCategorias";
             listSubCategorias.Size = new Size(277, 169);
+            listSubCategorias.SelectedIndexChanged += listSubCategorias_SelectedIndexChanged;
             listSubCategorias.TabIndex = 23;
             // 
             // panelFooterSubCategoria

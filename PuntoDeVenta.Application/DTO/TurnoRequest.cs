@@ -6,6 +6,8 @@
         public int CantidadInicio { get; set; }
         public int? CantidadFin { get; set; }
         public float? ValorTotal { get; set; }
+        public float? ValorEfectivo { get; set; }
+        public float? ValorTransferencia { get; set; }
         public float? ValorGanancia { get; set; }
         public bool Finalizado { get; set; }
         public DateTime FechaInicio { get; set; } = DateTime.Now;

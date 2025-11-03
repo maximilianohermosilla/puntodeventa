@@ -34,6 +34,8 @@
             panelFooter = new Panel();
             btnGuardarProducto = new Button();
             panelNuevoProducto = new Panel();
+            labelUnidad = new Label();
+            comboUnidad = new ComboBox();
             labelInventario = new Label();
             checkInventario = new CheckBox();
             labelCantidadMinima = new Label();
@@ -52,8 +54,8 @@
             labelDescripcion = new Label();
             txtCodigo = new TextBox();
             labelCodigo = new Label();
-            labelUnidad = new Label();
-            comboUnidad = new ComboBox();
+            labelSubCategoria = new Label();
+            comboSubCategoria = new ComboBox();
             panelFooter.SuspendLayout();
             panelNuevoProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtCantidadMinima).BeginInit();
@@ -108,6 +110,8 @@
             // panelNuevoProducto
             // 
             panelNuevoProducto.BackColor = Color.FromArgb(49, 66, 82);
+            panelNuevoProducto.Controls.Add(labelSubCategoria);
+            panelNuevoProducto.Controls.Add(comboSubCategoria);
             panelNuevoProducto.Controls.Add(labelUnidad);
             panelNuevoProducto.Controls.Add(comboUnidad);
             panelNuevoProducto.Controls.Add(panelFooter);
@@ -137,12 +141,30 @@
             panelNuevoProducto.Size = new Size(1447, 582);
             panelNuevoProducto.TabIndex = 0;
             // 
+            // labelUnidad
+            // 
+            labelUnidad.AutoSize = true;
+            labelUnidad.Font = new Font("Segoe UI", 10F);
+            labelUnidad.Location = new Point(5, 283);
+            labelUnidad.Name = "labelUnidad";
+            labelUnidad.Size = new Size(56, 19);
+            labelUnidad.TabIndex = 22;
+            labelUnidad.Text = "Unidad:";
+            // 
+            // comboUnidad
+            // 
+            comboUnidad.FormattingEnabled = true;
+            comboUnidad.Location = new Point(128, 279);
+            comboUnidad.Name = "comboUnidad";
+            comboUnidad.Size = new Size(309, 23);
+            comboUnidad.TabIndex = 21;
+            // 
             // labelInventario
             // 
             labelInventario.AutoSize = true;
             labelInventario.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelInventario.ForeColor = SystemColors.ButtonHighlight;
-            labelInventario.Location = new Point(6, 285);
+            labelInventario.Location = new Point(6, 317);
             labelInventario.Name = "labelInventario";
             labelInventario.Size = new Size(103, 21);
             labelInventario.TabIndex = 11;
@@ -151,7 +173,7 @@
             // checkInventario
             // 
             checkInventario.AutoSize = true;
-            checkInventario.Location = new Point(11, 313);
+            checkInventario.Location = new Point(11, 345);
             checkInventario.Name = "checkInventario";
             checkInventario.Size = new Size(177, 19);
             checkInventario.TabIndex = 7;
@@ -163,7 +185,7 @@
             // 
             labelCantidadMinima.AutoSize = true;
             labelCantidadMinima.Font = new Font("Segoe UI", 10F);
-            labelCantidadMinima.Location = new Point(5, 385);
+            labelCantidadMinima.Location = new Point(5, 417);
             labelCantidadMinima.Name = "labelCantidadMinima";
             labelCantidadMinima.Size = new Size(116, 19);
             labelCantidadMinima.TabIndex = 12;
@@ -172,7 +194,7 @@
             // txtCantidadMinima
             // 
             txtCantidadMinima.Enabled = false;
-            txtCantidadMinima.Location = new Point(128, 381);
+            txtCantidadMinima.Location = new Point(128, 413);
             txtCantidadMinima.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             txtCantidadMinima.Name = "txtCantidadMinima";
             txtCantidadMinima.Size = new Size(309, 23);
@@ -183,7 +205,7 @@
             // 
             labelCantidadActual.AutoSize = true;
             labelCantidadActual.Font = new Font("Segoe UI", 10F);
-            labelCantidadActual.Location = new Point(5, 348);
+            labelCantidadActual.Location = new Point(5, 380);
             labelCantidadActual.Name = "labelCantidadActual";
             labelCantidadActual.Size = new Size(107, 19);
             labelCantidadActual.TabIndex = 13;
@@ -192,7 +214,7 @@
             // txtCantidadActual
             // 
             txtCantidadActual.Enabled = false;
-            txtCantidadActual.Location = new Point(128, 344);
+            txtCantidadActual.Location = new Point(128, 376);
             txtCantidadActual.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             txtCantidadActual.Name = "txtCantidadActual";
             txtCantidadActual.Size = new Size(309, 23);
@@ -203,7 +225,7 @@
             // 
             labelCategoria.AutoSize = true;
             labelCategoria.Font = new Font("Segoe UI", 10F);
-            labelCategoria.Location = new Point(5, 212);
+            labelCategoria.Location = new Point(6, 212);
             labelCategoria.Name = "labelCategoria";
             labelCategoria.Size = new Size(71, 19);
             labelCategoria.TabIndex = 14;
@@ -212,10 +234,11 @@
             // comboCategoria
             // 
             comboCategoria.FormattingEnabled = true;
-            comboCategoria.Location = new Point(128, 211);
+            comboCategoria.Location = new Point(128, 208);
             comboCategoria.Name = "comboCategoria";
             comboCategoria.Size = new Size(309, 23);
             comboCategoria.TabIndex = 6;
+            comboCategoria.SelectedIndexChanged += comboCategoria_SelectedIndexChanged;
             // 
             // labelPrecioMayor
             // 
@@ -308,23 +331,23 @@
             labelCodigo.TabIndex = 19;
             labelCodigo.Text = "Código: ";
             // 
-            // labelUnidad
+            // labelSubCategoria
             // 
-            labelUnidad.AutoSize = true;
-            labelUnidad.Font = new Font("Segoe UI", 10F);
-            labelUnidad.Location = new Point(5, 251);
-            labelUnidad.Name = "labelUnidad";
-            labelUnidad.Size = new Size(56, 19);
-            labelUnidad.TabIndex = 22;
-            labelUnidad.Text = "Unidad:";
+            labelSubCategoria.AutoSize = true;
+            labelSubCategoria.Font = new Font("Segoe UI", 10F);
+            labelSubCategoria.Location = new Point(5, 248);
+            labelSubCategoria.Name = "labelSubCategoria";
+            labelSubCategoria.Size = new Size(94, 19);
+            labelSubCategoria.TabIndex = 24;
+            labelSubCategoria.Text = "SubCategoría:";
             // 
-            // comboUnidad
+            // comboSubCategoria
             // 
-            comboUnidad.FormattingEnabled = true;
-            comboUnidad.Location = new Point(128, 250);
-            comboUnidad.Name = "comboUnidad";
-            comboUnidad.Size = new Size(309, 23);
-            comboUnidad.TabIndex = 21;
+            comboSubCategoria.FormattingEnabled = true;
+            comboSubCategoria.Location = new Point(128, 244);
+            comboSubCategoria.Name = "comboSubCategoria";
+            comboSubCategoria.Size = new Size(309, 23);
+            comboSubCategoria.TabIndex = 23;
             // 
             // NuevoProductoControl
             // 
@@ -371,5 +394,7 @@
         private CheckBox checkInventario;
         private Label labelUnidad;
         private ComboBox comboUnidad;
+        private Label labelSubCategoria;
+        private ComboBox comboSubCategoria;
     }
 }
