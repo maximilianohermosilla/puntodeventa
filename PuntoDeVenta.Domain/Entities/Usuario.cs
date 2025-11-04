@@ -19,6 +19,7 @@
         public virtual ICollection<Turno> Turnos { get; set; } = new List<Turno>();
         public virtual ICollection<Movimiento> Movimientos { get; set; } = new List<Movimiento>();
         public virtual ICollection<ProductoMovimiento> ProductoMovimientos { get; set; } = new List<ProductoMovimiento>();
+        public virtual ICollection<CajaMovimiento> CajaMovimientos { get; set; } = new List<CajaMovimiento>();
         public virtual ICollection<PermisoUsuario> PermisoUsuarios { get; } = new List<PermisoUsuario>();
     }
 }

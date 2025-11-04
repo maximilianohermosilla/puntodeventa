@@ -11,5 +11,7 @@
         public bool Entrada { get; set; } = false;
         public bool Salida { get; set; } = false;
         public int IdUsuario { get; set; }
+        public int? IdFormaPago { get; set; } = null;
+        public int? IdTurno { get; set; } = null;
     }
 }

@@ -8,6 +8,10 @@ namespace PuntoDeVenta.Application.Profiles
     {
         public MappingProfile()
         {
+            CreateMap<CajaMovimientoRequest, CajaMovimiento>().ReverseMap();
+            CreateMap<CajaMovimientoResponse, CajaMovimiento>().ReverseMap();
+            CreateMap<CajaMovimientoResponse, CajaMovimientoRequest>().ReverseMap();
+
             CreateMap<CategoriaProductoRequest, CategoriaProducto>().ReverseMap();
             CreateMap<CategoriaProductoResponse, CategoriaProducto>().ReverseMap();
             CreateMap<CategoriaProductoResponse, CategoriaProductoRequest>().ReverseMap();

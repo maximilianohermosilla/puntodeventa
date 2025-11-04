@@ -11,8 +11,12 @@
         public bool Entrada { get; set; } = false;
         public bool Salida { get; set; } = false;
         public int IdUsuario { get; set; }
+        public int? IdFormaPago { get; set; } = null;
+        public int? IdTurno { get; set; } = null;
 
         public TipoMovimientoResponse TipoMovimiento { get; set; }
-        public virtual UsuarioResponse Usuario { get; set; }
+        public UsuarioResponse Usuario { get; set; }
+        public virtual FormaPagoResponse? FormaPago { get; set; } = null;
+        public virtual TurnoResponse? Turno { get; set; } = null;
     }
 }

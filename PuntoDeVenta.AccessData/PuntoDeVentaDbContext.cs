@@ -9,6 +9,7 @@ namespace PuntoDeVenta.AccessData
     {
         static string database = "puntoDeVenta.db";
 
+        public DbSet<CajaMovimiento> CajaMovimiento { get; set; }
         public DbSet<CategoriaProducto> CategoriaProducto { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Estado> Estado { get; set; }
@@ -57,6 +58,16 @@ namespace PuntoDeVenta.AccessData
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<CajaMovimiento>(entity =>
+            {
+                entity.Property(e => e.Descripcion).HasMaxLength(50).IsRequired();
+                entity.HasOne(d => d.Usuario).WithMany(p => p.CajaMovimientos).HasForeignKey(d => d.IdUsuario).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.FormaPago).WithMany(p => p.CajaMovimientos).HasForeignKey(d => d.IdFormaPago).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.Turno).WithMany(p => p.CajaMovimientos).HasForeignKey(d => d.IdTurno).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.TipoMovimiento).WithMany(p => p.CajaMovimientos).HasForeignKey(d => d.IdTipoMovimiento).OnDelete(DeleteBehavior.NoAction);
+
+            });
+
             modelBuilder.Entity<CategoriaProducto>(entity =>
             {
                 entity.Property(e => e.Descripcion).HasMaxLength(100).IsRequired();
@@ -102,11 +113,6 @@ namespace PuntoDeVenta.AccessData
                 entity.HasOne(d => d.CategoriaProducto).WithMany(p => p.Productos).HasForeignKey(d => d.IdCategoriaProducto).OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(d => d.SubCategoriaProducto).WithMany(p => p.Productos).HasForeignKey(d => d.IdSubCategoriaProducto).OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(d => d.Unidad).WithMany(p => p.Productos).HasForeignKey(d => d.IdUnidad).OnDelete(DeleteBehavior.NoAction);
-            });
-
-            modelBuilder.Entity<ProductoMovimiento>(entity =>
-            {
-                entity.HasOne(d => d.FormaPago).WithMany(p => p.ProductoMovimientos).HasForeignKey(d => d.IdFormaPago).OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<Promocion>(entity =>
@@ -164,6 +170,7 @@ namespace PuntoDeVenta.AccessData
             {
                 entity.HasOne(d => d.Usuario).WithMany(p => p.Movimientos).HasForeignKey(d => d.IdUsuario).OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(d => d.TipoMovimiento).WithMany(p => p.Movimientos).HasForeignKey(d => d.IdTipoMovimiento).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.Turno).WithMany(p => p.Movimientos).HasForeignKey(d => d.IdTurno).OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<ProductoMovimiento>(entity =>
@@ -171,6 +178,8 @@ namespace PuntoDeVenta.AccessData
                 entity.HasOne(d => d.Usuario).WithMany(p => p.ProductoMovimientos).HasForeignKey(d => d.IdUsuario).OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(d => d.TipoMovimiento).WithMany(p => p.ProductoMovimientos).HasForeignKey(d => d.IdTipoMovimiento).OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(d => d.Producto).WithMany(p => p.ProductoMovimientos).HasForeignKey(d => d.IdProducto).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.FormaPago).WithMany(p => p.ProductoMovimientos).HasForeignKey(d => d.IdFormaPago).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.Turno).WithMany(p => p.ProductoMovimientos).HasForeignKey(d => d.IdTurno).OnDelete(DeleteBehavior.NoAction);
             });
 
             base.OnModelCreating(modelBuilder);
@@ -198,9 +207,9 @@ namespace PuntoDeVenta.AccessData
 
             modelBuilder.Entity<FormaPago>().HasData(
                 new FormaPago { Id = 1, Descripcion = "Efectivo", Codigo = "cash", Habilitado = true },
-                new FormaPago { Id = 2, Descripcion = "Tarjeta de Crédito", Codigo = "credit", Habilitado = true },
-                new FormaPago { Id = 3, Descripcion = "Tarjeta de Débito", Codigo = "debit", Habilitado = true },
-                new FormaPago { Id = 4, Descripcion = "Transferencia", Codigo = "transfer", Habilitado = true },
+                new FormaPago { Id = 2, Descripcion = "Tarjeta de Crédito", Codigo = "credit", Habilitado = false },
+                new FormaPago { Id = 3, Descripcion = "Tarjeta de Débito", Codigo = "debit", Habilitado = false },
+                new FormaPago { Id = 4, Descripcion = "Transferencia", Codigo = "transfer", Habilitado = false },
                 new FormaPago { Id = 5, Descripcion = "MercadoPago", Codigo = "mercadopago", Habilitado = true }
             );
 
