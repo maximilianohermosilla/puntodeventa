@@ -171,6 +171,7 @@ namespace PuntoDeVenta.AccessData
                 entity.HasOne(d => d.Usuario).WithMany(p => p.Movimientos).HasForeignKey(d => d.IdUsuario).OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(d => d.TipoMovimiento).WithMany(p => p.Movimientos).HasForeignKey(d => d.IdTipoMovimiento).OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(d => d.Turno).WithMany(p => p.Movimientos).HasForeignKey(d => d.IdTurno).OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(d => d.FormaPago).WithMany(p => p.Movimientos).HasForeignKey(d => d.IdFormaPago).OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<ProductoMovimiento>(entity =>
