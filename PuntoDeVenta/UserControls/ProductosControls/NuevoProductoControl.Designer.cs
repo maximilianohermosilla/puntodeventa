@@ -34,6 +34,8 @@
             panelFooter = new Panel();
             btnGuardarProducto = new Button();
             panelNuevoProducto = new Panel();
+            labelSubCategoria = new Label();
+            comboSubCategoria = new ComboBox();
             labelUnidad = new Label();
             comboUnidad = new ComboBox();
             labelInventario = new Label();
@@ -54,8 +56,6 @@
             labelDescripcion = new Label();
             txtCodigo = new TextBox();
             labelCodigo = new Label();
-            labelSubCategoria = new Label();
-            comboSubCategoria = new ComboBox();
             panelFooter.SuspendLayout();
             panelNuevoProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtCantidadMinima).BeginInit();
@@ -140,6 +140,24 @@
             panelNuevoProducto.Name = "panelNuevoProducto";
             panelNuevoProducto.Size = new Size(1447, 582);
             panelNuevoProducto.TabIndex = 0;
+            // 
+            // labelSubCategoria
+            // 
+            labelSubCategoria.AutoSize = true;
+            labelSubCategoria.Font = new Font("Segoe UI", 10F);
+            labelSubCategoria.Location = new Point(5, 248);
+            labelSubCategoria.Name = "labelSubCategoria";
+            labelSubCategoria.Size = new Size(94, 19);
+            labelSubCategoria.TabIndex = 24;
+            labelSubCategoria.Text = "SubCategoría:";
+            // 
+            // comboSubCategoria
+            // 
+            comboSubCategoria.FormattingEnabled = true;
+            comboSubCategoria.Location = new Point(128, 244);
+            comboSubCategoria.Name = "comboSubCategoria";
+            comboSubCategoria.Size = new Size(309, 23);
+            comboSubCategoria.TabIndex = 23;
             // 
             // labelUnidad
             // 
@@ -253,7 +271,7 @@
             // txtPrecioMayor
             // 
             txtPrecioMayor.Location = new Point(128, 173);
-            txtPrecioMayor.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            txtPrecioMayor.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
             txtPrecioMayor.Name = "txtPrecioMayor";
             txtPrecioMayor.Size = new Size(309, 23);
             txtPrecioMayor.TabIndex = 5;
@@ -272,7 +290,7 @@
             // txtPrecioVenta
             // 
             txtPrecioVenta.Location = new Point(128, 138);
-            txtPrecioVenta.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            txtPrecioVenta.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
             txtPrecioVenta.Name = "txtPrecioVenta";
             txtPrecioVenta.Size = new Size(309, 23);
             txtPrecioVenta.TabIndex = 4;
@@ -291,7 +309,7 @@
             // txtPrecioCosto
             // 
             txtPrecioCosto.Location = new Point(128, 104);
-            txtPrecioCosto.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            txtPrecioCosto.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
             txtPrecioCosto.Name = "txtPrecioCosto";
             txtPrecioCosto.Size = new Size(309, 23);
             txtPrecioCosto.TabIndex = 3;
@@ -330,24 +348,6 @@
             labelCodigo.Size = new Size(60, 19);
             labelCodigo.TabIndex = 19;
             labelCodigo.Text = "Código: ";
-            // 
-            // labelSubCategoria
-            // 
-            labelSubCategoria.AutoSize = true;
-            labelSubCategoria.Font = new Font("Segoe UI", 10F);
-            labelSubCategoria.Location = new Point(5, 248);
-            labelSubCategoria.Name = "labelSubCategoria";
-            labelSubCategoria.Size = new Size(94, 19);
-            labelSubCategoria.TabIndex = 24;
-            labelSubCategoria.Text = "SubCategoría:";
-            // 
-            // comboSubCategoria
-            // 
-            comboSubCategoria.FormattingEnabled = true;
-            comboSubCategoria.Location = new Point(128, 244);
-            comboSubCategoria.Name = "comboSubCategoria";
-            comboSubCategoria.Size = new Size(309, 23);
-            comboSubCategoria.TabIndex = 23;
             // 
             // NuevoProductoControl
             // 

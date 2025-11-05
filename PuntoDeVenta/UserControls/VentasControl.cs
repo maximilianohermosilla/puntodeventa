@@ -4,7 +4,9 @@ using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
 using PuntoDeVenta.Domain.Entities;
 using PuntoDeVenta.FormDialogs;
+using PuntoDeVenta.Enum;
 using System.Data;
+using PuntoDeVenta.Helpers;
 
 namespace PuntoDeVenta.UserControls
 {
@@ -245,12 +247,34 @@ namespace PuntoDeVenta.UserControls
 
         private void btnEntradas_Click(object sender, EventArgs e)
         {
+            VentasEntradaSalidaDialog dialog = new VentasEntradaSalidaDialog("Entrada de dinero", (int)TipoMovimientoEnum.Entrada);
 
+            try
+            {
+                if (dialog.ShowDialog(this) == DialogResult.OK)
+                {
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSalidas_Click(object sender, EventArgs e)
         {
+            VentasEntradaSalidaDialog dialog = new VentasEntradaSalidaDialog("Salida de dinero", (int)TipoMovimientoEnum.Salida);
 
+            try
+            {
+                if (dialog.ShowDialog(this) == DialogResult.OK)
+                {
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnPorMayor_Click(object sender, EventArgs e)
@@ -536,7 +560,7 @@ namespace PuntoDeVenta.UserControls
                             productoMovimiento.CantidadFin = Convert.ToInt32(vCantidad);
                             productoMovimiento.Valor = Convert.ToInt32(vImporte);
                             productoMovimiento.IdTipoMovimiento = 2;
-                            productoMovimiento.IdUsuario = 1;
+                            productoMovimiento.IdUsuario = SessionHelper.IdUsuario;
                             productoMovimiento.IdProducto = vId != "0" ? Convert.ToInt32(vId) : null;
                             productoMovimiento.IdFormaPago = formaPago;
 

@@ -24,7 +24,7 @@
     <Compile Update="FormDialogs\ProductoBusquedaCategoriaDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormDialogs\VentasEntradaDialog.cs">
+    <Compile Update="FormDialogs\VentasEntradaSalidaDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormDialogs\ProductoBusquedaDialog.cs">
@@ -65,7 +65,7 @@
     <EmbeddedResource Update="FormDialogs\ProductoBusquedaCategoriaDialog.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Update="FormDialogs\VentasEntradaDialog.resx">
+    <EmbeddedResource Update="FormDialogs\VentasEntradaSalidaDialog.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Update="FormDialogs\ProductoBusquedaDialog.resx">

@@ -126,14 +126,14 @@
     <value>Segoe UI, 9.75pt</value>
   </data>
   <data name="txtDescripcion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 67</value>
+    <value>167, 89</value>
   </data>
   <data name="txtDescripcion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 25</value>
+    <value>295, 25</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtDescripcion.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;txtDescripcion.Name" xml:space="preserve">
     <value>txtDescripcion</value>
@@ -148,13 +148,13 @@
     <value>7</value>
   </data>
   <data name="txtCantidad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 25</value>
+    <value>167, 47</value>
   </data>
   <data name="txtCantidad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 23</value>
+    <value>295, 23</value>
   </data>
   <data name="txtCantidad.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;txtCantidad.Name" xml:space="preserve">
     <value>txtCantidad</value>
@@ -178,7 +178,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelCantidad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 25</value>
+    <value>58, 49</value>
   </data>
   <data name="labelCantidad.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 21</value>
@@ -211,7 +211,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelDescripcion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 67</value>
+    <value>58, 93</value>
   </data>
   <data name="labelDescripcion.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 21</value>
@@ -243,17 +243,28 @@
   <data name="btnCancelar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
+  <data name="btnCancelar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAAS5JREFUSEvllLFOwzAURTOz8wvMSDRmo0pdCYQqIfER/A9jv4UBpHZiACmsXZD4
+        AVJnQIoocXSfbCe3cdKxHOkMfbnvDo7T5P9g5um1ydK8yNSPydRTcXN+ikeHs1tcnBitdjERHwcr6nM7
+        S5dYjcMKhljoyRcq9sMWx1jMJ/eo6jL0zGOirgsLWy1sXuXvdF67QWUICTblAptX65dgLqLS0dxzErT6
+        +L9/zbaTFVHrMDP1wYJim75yK2odzRdKgr4+7Lkvah3282dBkcFyImod9r+FBa2CHItPOyuiNoQFq7fX
+        pqh95kK5mAZzEZUhLGitVs90bm6v6LzUlw+o7MIWxooqTn1dH9nSUFHTT31lP9lyzG+dnqEiTqnVHSvZ
+        J9bGUy9v2mW+vS/0CEiSPzWEPodvzICsAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="btnCancelar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnCancelar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 160</value>
+    <value>117, 199</value>
   </data>
   <data name="btnCancelar.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 35</value>
   </data>
   <data name="btnCancelar.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+    <value>3</value>
   </data>
   <data name="btnCancelar.Text" xml:space="preserve">
     <value>Cancelar</value>
@@ -285,17 +296,25 @@
   <data name="btnAceptar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
+  <data name="btnAceptar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wAAADsABataJCQAAAHNJREFUSEvtz0EKgCAQheE5UXewIe2U6v2iRQS1rAQfuJA2juBiPghSmH+KlBrP
+        HNcpv8pLcY7uSU++klPGxf9C41VjxjGUj1VNX/4N3X9LmuLA3l61JSJx4ODOcoloHIxfDkTF42Ci27vF
+        gYPdusUVEdELnQR79E/IdssAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnAceptar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnAceptar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>317, 160</value>
+    <value>317, 199</value>
   </data>
   <data name="btnAceptar.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 35</value>
   </data>
   <data name="btnAceptar.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>4</value>
   </data>
   <data name="btnAceptar.Text" xml:space="preserve">
     <value>Aceptar</value>
@@ -318,23 +337,14 @@
   <data name="&gt;&gt;btnAceptar.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <metadata name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="notifyIcon1.Text" xml:space="preserve">
-    <value>notifyIcon1</value>
-  </data>
-  <data name="notifyIcon1.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="comboFormaPago.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 114</value>
+    <value>167, 136</value>
   </data>
   <data name="comboFormaPago.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 23</value>
+    <value>295, 23</value>
   </data>
   <data name="comboFormaPago.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;comboFormaPago.Name" xml:space="preserve">
     <value>comboFormaPago</value>
@@ -358,7 +368,7 @@
     <value>NoControl</value>
   </data>
   <data name="labelFormaPago.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 112</value>
+    <value>58, 138</value>
   </data>
   <data name="labelFormaPago.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 21</value>
@@ -388,19 +398,13 @@
     <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>537, 217</value>
+    <value>537, 265</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Entrada de dinero</value>
   </data>
-  <data name="&gt;&gt;notifyIcon1.Name" xml:space="preserve">
-    <value>notifyIcon1</value>
-  </data>
-  <data name="&gt;&gt;notifyIcon1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>VentasEntradaDialog</value>
+    <value>VentasEntradaSalidaDialog</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

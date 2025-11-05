@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta.FormDialogs
 {
-    partial class VentasEntradaDialog
+    partial class VentasEntradaSalidaDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasEntradaDialog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentasEntradaSalidaDialog));
             txtDescripcion = new TextBox();
             txtCantidad = new NumericUpDown();
             labelCantidad = new Label();
             labelDescripcion = new Label();
             btnCancelar = new Button();
             btnAceptar = new Button();
-            notifyIcon1 = new NotifyIcon(components);
             comboFormaPago = new ComboBox();
             labelFormaPago = new Label();
             ((System.ComponentModel.ISupportInitialize)txtCantidad).BeginInit();
@@ -50,6 +48,7 @@
             // txtCantidad
             // 
             resources.ApplyResources(txtCantidad, "txtCantidad");
+            txtCantidad.Maximum = new decimal(new int[] { 999999999, 0, 0, 0 });
             txtCantidad.Name = "txtCantidad";
             // 
             // labelCantidad
@@ -61,19 +60,6 @@
             // 
             resources.ApplyResources(labelDescripcion, "labelDescripcion");
             labelDescripcion.Name = "labelDescripcion";
-            // 
-            // btnAceptar
-            // 
-            btnAceptar.BackColor = Color.FromArgb(0, 80, 200);
-            resources.ApplyResources(btnAceptar, "btnAceptar");
-            btnAceptar.FlatAppearance.BorderColor = Color.Black;
-            btnAceptar.FlatAppearance.BorderSize = 0;
-            btnAceptar.FlatAppearance.MouseDownBackColor = Color.DarkGray;
-            btnAceptar.FlatAppearance.MouseOverBackColor = Color.LightGray;
-            btnAceptar.ForeColor = SystemColors.ButtonHighlight;
-            btnAceptar.Name = "btnAceptar";
-            btnAceptar.UseVisualStyleBackColor = false;
-            btnAceptar.Click += btnAceptar_Click;
             // 
             // btnCancelar
             // 
@@ -88,9 +74,18 @@
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // notifyIcon1
+            // btnAceptar
             // 
-            resources.ApplyResources(notifyIcon1, "notifyIcon1");
+            btnAceptar.BackColor = Color.FromArgb(0, 80, 200);
+            resources.ApplyResources(btnAceptar, "btnAceptar");
+            btnAceptar.FlatAppearance.BorderColor = Color.Black;
+            btnAceptar.FlatAppearance.BorderSize = 0;
+            btnAceptar.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnAceptar.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnAceptar.ForeColor = SystemColors.ButtonHighlight;
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.UseVisualStyleBackColor = false;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // comboFormaPago
             // 
@@ -103,7 +98,7 @@
             resources.ApplyResources(labelFormaPago, "labelFormaPago");
             labelFormaPago.Name = "labelFormaPago";
             // 
-            // VentasEntradaDialog
+            // VentasEntradaSalidaDialog
             // 
             AllowDrop = true;
             resources.ApplyResources(this, "$this");
@@ -119,7 +114,7 @@
             Controls.Add(txtDescripcion);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Name = "VentasEntradaDialog";
+            Name = "VentasEntradaSalidaDialog";
             ((System.ComponentModel.ISupportInitialize)txtCantidad).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -132,8 +127,7 @@
         public Label labelDescripcion;
         public Button btnCancelar;
         public Button btnAceptar;
-        private NotifyIcon notifyIcon1;
-        private ComboBox comboFormaPago;
+        public ComboBox comboFormaPago;
         public Label labelFormaPago;
     }
 }

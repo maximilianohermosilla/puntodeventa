@@ -31,7 +31,7 @@ namespace PuntoDeVenta.FormDialogs
 
         public void SetearCategorias(List<CategoriaProductoResponse> categoriaProductos)
         {
-            comboCategoria.DisplayMember = "Descripcion";
+            comboCategoria.DisplayMember = "CodigoDescripcion";
             comboCategoria.ValueMember = "Id";
             comboCategoria.DataSource = categoriaProductos;
         }

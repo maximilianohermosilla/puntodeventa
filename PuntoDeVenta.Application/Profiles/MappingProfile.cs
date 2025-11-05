@@ -13,8 +13,10 @@ namespace PuntoDeVenta.Application.Profiles
             CreateMap<CajaMovimientoResponse, CajaMovimientoRequest>().ReverseMap();
 
             CreateMap<CategoriaProductoRequest, CategoriaProducto>().ReverseMap();
-            CreateMap<CategoriaProductoResponse, CategoriaProducto>().ReverseMap();
+            CreateMap<CategoriaProductoResponse, CategoriaProducto>();
             CreateMap<CategoriaProductoResponse, CategoriaProductoRequest>().ReverseMap();
+            CreateMap <CategoriaProducto, CategoriaProductoResponse>()
+                .ForMember(dest => dest.CodigoDescripcion, opt => opt.MapFrom(src => $"{src.Id.ToString()} - {src.Descripcion}"));
 
             CreateMap<ClienteRequest, Cliente>().ReverseMap();
             CreateMap<ClienteResponse, Cliente>().ReverseMap();

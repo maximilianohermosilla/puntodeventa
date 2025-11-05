@@ -3,6 +3,7 @@ using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
 using PuntoDeVenta.FormDialogs;
+using PuntoDeVenta.Helpers;
 using PuntoDeVenta.UserControls;
 using System.Windows.Forms;
 
@@ -28,6 +29,7 @@ namespace PuntoDeVenta
             _turnoService = new TurnoService(_context);
             _ticketService = new TicketService(_context);
             _parametroService = new ParametroService(_context);
+            SessionHelper.IdUsuario = idUsuario;
             IdUsuario = idUsuario;
             InitializeMain();
         }
@@ -124,6 +126,7 @@ namespace PuntoDeVenta
         private async Task InitializeUserControlsMain()
         {
             int idTurno = turnoActual != null ? turnoActual!.Id : 0;
+            SessionHelper.IdTurno = turnoActual != null ? turnoActual!.Id : 0;
             ventas1 = new VentasControl(idTurno);
             clientes1 = new ClientesControl();
             productos1 = new ProductosControl();
