@@ -70,14 +70,15 @@
             // 
             // labelToastMessage
             // 
-            labelToastMessage.AutoSize = true;
             labelToastMessage.Font = new Font("Segoe UI", 8F);
             labelToastMessage.ForeColor = SystemColors.ButtonHighlight;
             labelToastMessage.Location = new Point(52, 29);
             labelToastMessage.Name = "labelToastMessage";
-            labelToastMessage.Size = new Size(52, 13);
+            labelToastMessage.Size = new Size(320, 100);
+            labelToastMessage.AutoSize = false;
             labelToastMessage.TabIndex = 3;
             labelToastMessage.Text = "Message";
+
             // 
             // timerToast
             // 

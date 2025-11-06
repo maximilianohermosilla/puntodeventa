@@ -12,7 +12,8 @@ namespace PuntoDeVenta.Application.Services
 {
     public class ProductoMovimientoService : IProductoMovimientoService
     {
-        private readonly IProductoMovimientoRepository _productoRepository;
+        private readonly IProductoMovimientoRepository _productoMovimientoRepository;
+        private readonly IProductoRepository _productoRepository;
         private readonly IMapper _mapper;
 
         public ProductoMovimientoService(PuntoDeVentaDbContext context)
@@ -21,12 +22,14 @@ namespace PuntoDeVenta.Application.Services
                 cfg.AddProfile<MappingProfile>();
             });
 
-            _productoRepository = new ProductoMovimientoRepository(context);
+            _productoMovimientoRepository = new ProductoMovimientoRepository(context);
+            _productoRepository = new ProductoRepository(context);
             _mapper = config.CreateMapper();
         }
 
-        public ProductoMovimientoService(IProductoMovimientoRepository productoRepository, IMapper mapper, ILogger<ProductoMovimientoService> logger)
+        public ProductoMovimientoService(IProductoMovimientoRepository productoMovimientoRepository, IProductoRepository productoRepository, IMapper mapper, ILogger<ProductoMovimientoService> logger)
         {
+            _productoMovimientoRepository = productoMovimientoRepository;
             _productoRepository = productoRepository;
             _mapper = mapper;
         }
@@ -37,7 +40,7 @@ namespace PuntoDeVenta.Application.Services
             ProductoMovimientoResponse productoResponse = new ProductoMovimientoResponse();
             try
             {
-                var producto = await _productoRepository.GetById(id);
+                var producto = await _productoMovimientoRepository.GetById(id);
 
                 if (producto == null)
                 {
@@ -47,7 +50,7 @@ namespace PuntoDeVenta.Application.Services
                     return response;
                 }
 
-                await _productoRepository.Delete(producto);
+                await _productoMovimientoRepository.Delete(producto);
                 productoResponse = _mapper.Map<ProductoMovimientoResponse>(producto);
             }
             catch (Exception ex)
@@ -71,7 +74,7 @@ namespace PuntoDeVenta.Application.Services
 
             try
             {
-                List<ProductoMovimiento> lista = await _productoRepository.GetAllByFechaAndTipoMovimiento(pFechaDesde, pFechaHasta, pIdTipoMovimiento);
+                List<ProductoMovimiento> lista = await _productoMovimientoRepository.GetAllByFechaAndTipoMovimiento(pFechaDesde, pFechaHasta, pIdTipoMovimiento);
                 List<ProductoMovimientoResponse> listaDTO = _mapper.Map<List<ProductoMovimientoResponse>>(lista);
 
                 response.message = "Consulta realizada correctamente";
@@ -96,7 +99,7 @@ namespace PuntoDeVenta.Application.Services
 
             try
             {
-                ProductoMovimiento producto = await _productoRepository.GetById(IdProductoMovimiento);
+                ProductoMovimiento producto = await _productoMovimientoRepository.GetById(IdProductoMovimiento);
 
                 if (producto == null)
                 {
@@ -131,9 +134,27 @@ namespace PuntoDeVenta.Application.Services
             ProductoMovimientoResponse productoResponse = new ProductoMovimientoResponse();
             try
             {
+                var productoExistente = await _productoRepository.GetById((int)entity.IdProducto!);
+
+                if(productoExistente == null)
+                {
+                    throw new Exception($"No se encontró el producto {entity.Descripcion}");
+                }
+
+                if (productoExistente.Cantidad != 0 && (productoExistente.Cantidad - entity.Cantidad) < 0)
+                {
+                    throw new Exception($"No se puede completar la venta. La cantidad solicitada ({entity.Cantidad}) de {entity.Descripcion} supera la cantidad en stock ({productoExistente.Cantidad}).");
+                }
+
                 ProductoMovimiento producto = _mapper.Map<ProductoMovimiento>(entity);
-                producto = await _productoRepository.Create(producto);
+                producto = await _productoMovimientoRepository.Create(producto);
                 productoResponse = _mapper.Map<ProductoMovimientoResponse>(producto);
+
+                if(productoExistente.Cantidad > 0)
+                {
+                    productoExistente.Cantidad = productoExistente.Cantidad - entity.Cantidad;
+                    await _productoRepository.SaveChangesAsync();
+                }                
             }
             catch (Exception ex)
             {
@@ -151,6 +172,60 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
+        public async Task<ResponseModel<List<ProductoMovimientoResponse>>> InsertRange(List<ProductoMovimientoRequest> entities)
+        {
+            ResponseModel<List<ProductoMovimientoResponse>> response = new ResponseModel<List<ProductoMovimientoResponse>>();
+            List<ProductoMovimientoResponse> productosResponse = new List<ProductoMovimientoResponse>();
+
+            try
+            {
+                List<Producto> productosExistentes = new List<Producto>();
+                foreach (var entity in entities)
+                {
+                    var productoExistente = await _productoRepository.GetById((int)entity.IdProducto!);
+
+                    if (productoExistente == null)
+                    {
+                        throw new Exception($"No se encontró el producto {entity.Descripcion}");
+                    }
+
+                    if (productoExistente.Cantidad != 0 && (productoExistente.Cantidad - entity.Cantidad) < 0)
+                    {
+                        throw new Exception($"No se puede completar la venta. La cantidad solicitada ({entity.Cantidad}) de {entity.Descripcion} supera la cantidad en stock ({productoExistente.Cantidad}).");
+                    }
+
+                    if (productoExistente.Cantidad > 0)
+                    {
+                        productoExistente.Cantidad = productoExistente.Cantidad - entity.Cantidad;
+                    }
+
+                    productosExistentes.Add(productoExistente);
+                }
+
+                List<ProductoMovimiento> productosMovimientos = _mapper.Map<List<ProductoMovimiento>>(entities);
+                var createResponse = await _productoMovimientoRepository.CreateRange(productosMovimientos);
+                productosResponse = _mapper.Map<List<ProductoMovimientoResponse>>(productosMovimientos);
+
+                if(createResponse != null && createResponse.Any())
+                {
+                    await _productoRepository.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                response.success = false;
+                response.statusCode = 400;
+                response.message = ex.Message;
+                response.response = null;
+                return response;
+            }
+
+            response.success = true;
+            response.statusCode = 201;
+            response.message = "ProductoMovimiento insertado exitosamente";
+            response.response = productosResponse;
+            return response;
+        }
 
         public async Task<ResponseModel<ProductoMovimientoResponse>> Update(ProductoMovimientoRequest entity)
         {
@@ -158,7 +233,7 @@ namespace PuntoDeVenta.Application.Services
             ProductoMovimientoResponse productoResponse = new ProductoMovimientoResponse();
             try
             {
-                var producto = await _productoRepository.GetById(entity.Id);
+                var producto = await _productoMovimientoRepository.GetById(entity.Id);
 
                 if (producto == null)
                 {
@@ -171,7 +246,7 @@ namespace PuntoDeVenta.Application.Services
                                 
                 producto = _mapper.Map<ProductoMovimientoRequest, ProductoMovimiento>(entity, producto);
 
-                await _productoRepository.SaveChangesAsync();
+                await _productoMovimientoRepository.SaveChangesAsync();
                 productoResponse = _mapper.Map<ProductoMovimientoResponse>(producto);
             }
             catch (Exception ex)

@@ -565,35 +565,44 @@ namespace PuntoDeVenta.UserControls
                             productoMovimiento.IdFormaPago = formaPago;
 
                             productosMovimientos.Add(productoMovimiento);
-                            await _productoMovimientoService.Insert(productoMovimiento);
-
                         }
 
-                        string vIdCliente = dataGridView.Rows[0].Cells["IdCliente"].Value != null ? dataGridView.Rows[0].Cells["IdCliente"].Value.ToString()! : "";
+                        var responseMovimientos = await _productoMovimientoService.InsertRange(productosMovimientos);
 
-                        TicketRequest ticketRequest = new TicketRequest()
+                        if(responseMovimientos != null && responseMovimientos.success)
                         {
-                            Nombre = $@"{IdTurno}_{tabControlTickets!.SelectedTab!.Text}_{DateTime.Now.ToShortDateString()}_{DateTime.Now.ToShortTimeString()}",
-                            FechaCreacion = DateTime.Now,
-                            FechaFinalizacion = DateTime.Now,
-                            PrecioTotal = productos.Sum(x => x.PrecioFinal),
-                            IdEstado = 2,
-                            IdFormaPago = formaPago,
-                            IdTurno = IdTurno != 0 ? IdTurno : null,
-                            IdCliente = !string.IsNullOrEmpty(vIdCliente) ? Convert.ToInt32(vIdCliente) : null,
-                            TicketDetalles = productos,
-                            TicketEstados = new List<TicketEstadoRequest>() { new TicketEstadoRequest() { Fecha = DateTime.Now, IdTicket = 0, IdEstado = 2 } }
-                        };
+                            string vIdCliente = dataGridView.Rows[0].Cells["IdCliente"].Value != null ? dataGridView.Rows[0].Cells["IdCliente"].Value.ToString()! : "";
 
-                        var response = await _ticketService.Insert(ticketRequest);
-                        string toastTipo = response.success ? "SUCCESS" : "ERROR";
-                        ToastForm toast = new ToastForm(toastTipo, response!.message!, this.FindForm()!);
-                        toast.Show();
+                            TicketRequest ticketRequest = new TicketRequest()
+                            {
+                                Nombre = $@"{IdTurno}_{tabControlTickets!.SelectedTab!.Text}_{DateTime.Now.ToShortDateString()}_{DateTime.Now.ToShortTimeString()}",
+                                FechaCreacion = DateTime.Now,
+                                FechaFinalizacion = DateTime.Now,
+                                PrecioTotal = productos.Sum(x => x.PrecioFinal),
+                                IdEstado = 2,
+                                IdFormaPago = formaPago,
+                                IdTurno = IdTurno != 0 ? IdTurno : null,
+                                IdCliente = !string.IsNullOrEmpty(vIdCliente) ? Convert.ToInt32(vIdCliente) : null,
+                                TicketDetalles = productos,
+                                TicketEstados = new List<TicketEstadoRequest>() { new TicketEstadoRequest() { Fecha = DateTime.Now, IdTicket = 0, IdEstado = 2 } }
+                            };
 
-                        if (tabControlTickets.SelectedTab != null)
-                        {
-                            tabControlTickets.TabPages.Remove(tabControlTickets.SelectedTab);
+                            var response = await _ticketService.Insert(ticketRequest);
+                            string toastTipo = response.success ? "SUCCESS" : "ERROR";
+                            ToastForm toast = new ToastForm(toastTipo, response!.message!, this.FindForm()!);
+                            toast.Show();
+
+                            if (tabControlTickets.SelectedTab != null)
+                            {
+                                tabControlTickets.TabPages.Remove(tabControlTickets.SelectedTab);
+                            }
                         }
+                        else
+                        {
+                            string toastTipo = responseMovimientos!.success ? "SUCCESS" : "ERROR";
+                            ToastForm toast = new ToastForm(toastTipo, responseMovimientos!.message!, this.FindForm()!);
+                            toast.Show();
+                        }                        
                     }
                 }
             }

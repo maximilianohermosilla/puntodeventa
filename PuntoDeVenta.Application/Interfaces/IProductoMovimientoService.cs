@@ -7,6 +7,7 @@ namespace PuntoDeVenta.Application.Interfaces
         Task<ResponseModel<List<ProductoMovimientoResponse>>> GetAllByFechaAndTipoMovimiento(DateTime pFechaDesde, DateTime pFechaHasta, int pIdTipoMovimiento);
         Task<ResponseModel<ProductoMovimientoResponse>> GetById(int id);
         Task<ResponseModel<ProductoMovimientoResponse>> Insert(ProductoMovimientoRequest entity);
+        Task<ResponseModel<List<ProductoMovimientoResponse>>> InsertRange(List<ProductoMovimientoRequest> entities);
         Task<ResponseModel<ProductoMovimientoResponse>> Update(ProductoMovimientoRequest entity);
         Task<ResponseModel<ProductoMovimientoResponse>> Delete(int id);
     }

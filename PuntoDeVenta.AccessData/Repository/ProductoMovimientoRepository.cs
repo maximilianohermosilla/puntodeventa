@@ -30,6 +30,22 @@ namespace PuntoDeVenta.AccessData.Repository
             }    
         }
 
+        public async Task<List<ProductoMovimiento>> CreateRange(IList<ProductoMovimiento> pEntities)
+        {
+            try
+            {
+                vGblContext.AddRange(pEntities);
+                await vGblContext.SaveChangesAsync();
+
+                return pEntities.ToList();
+            }
+            catch (Exception ex)
+            {
+                vGblContext.ChangeTracker.Clear();
+                throw ex;
+            }
+        }
+
         public async Task Delete(ProductoMovimiento pEntity)
         {
             try
