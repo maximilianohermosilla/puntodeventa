@@ -2,6 +2,7 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.Enum;
 using PuntoDeVenta.FormDialogs;
 using PuntoDeVenta.Helpers;
 using PuntoDeVenta.UserControls;
@@ -14,6 +15,7 @@ namespace PuntoDeVenta
         private PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
         private readonly ITurnoService _turnoService;
         private readonly ITicketService _ticketService;
+        private readonly IMovimientoService _movimientoService;
         private readonly IParametroService _parametroService;
 
         public int IdUsuario;
@@ -28,6 +30,7 @@ namespace PuntoDeVenta
         {
             _turnoService = new TurnoService(_context);
             _ticketService = new TicketService(_context);
+            _movimientoService = new MovimientoService(_context);
             _parametroService = new ParametroService(_context);
             SessionHelper.IdUsuario = idUsuario;
             IdUsuario = idUsuario;
@@ -378,19 +381,40 @@ namespace PuntoDeVenta
             {
                 int cantidad = ObtenerCantidad();
                 var valorTotalTickets = await _ticketService.GetAllByIdTurno(turnoActual.Id);
+                var valorTotalMovimientos = await _movimientoService.GetAllByIdTurno(turnoActual.Id);
+
+                float valorTotalEfectivo = (valorTotalTickets != null && valorTotalTickets!.response != null
+                        ? valorTotalTickets!.response!.Where(t => t.IdFormaPago == (int)FormaPagoEnum.Efectivo).Select(t => t.PrecioTotal).Sum() : 0)
+                        +
+                        (valorTotalMovimientos != null && valorTotalMovimientos!.response != null
+                        ? valorTotalMovimientos!.response!.Where(t => t.IdTipoMovimiento == (int)TipoMovimientoEnum.Entrada && t.IdFormaPago == (int)FormaPagoEnum.Efectivo)
+                        .Select(t => t.Valor).Sum() : 0)
+                        -
+                        (valorTotalMovimientos != null && valorTotalMovimientos!.response != null
+                        ? valorTotalMovimientos!.response!.Where(t => t.IdTipoMovimiento == (int)TipoMovimientoEnum.Salida && t.IdFormaPago == (int)FormaPagoEnum.Efectivo)
+                        .Select(t => t.Valor).Sum() : 0);
+
+
+                float valorTotalTransferencia = (valorTotalTickets != null && valorTotalTickets!.response != null
+                        ? valorTotalTickets!.response!.Where(t => t.IdFormaPago != (int)FormaPagoEnum.Efectivo).Select(t => t.PrecioTotal).Sum() : 0)
+                        +
+                        (valorTotalMovimientos != null && valorTotalMovimientos!.response != null
+                        ? valorTotalMovimientos!.response!.Where(t => t.IdTipoMovimiento == (int)TipoMovimientoEnum.Entrada && t.IdFormaPago != (int)FormaPagoEnum.Efectivo)
+                        .Select(t => t.Valor).Sum() : 0)
+                        -
+                        (valorTotalMovimientos != null && valorTotalMovimientos!.response != null
+                        ? valorTotalMovimientos!.response!.Where(t => t.IdTipoMovimiento == (int)TipoMovimientoEnum.Salida && t.IdFormaPago != (int)FormaPagoEnum.Efectivo)
+                        .Select(t => t.Valor).Sum() : 0);
 
                 TurnoRequest turnoRequest = new TurnoRequest()
                 {
                     Id = turnoActual.Id,
                     CantidadInicio = turnoActual.CantidadInicio,
                     CantidadFin = cantidad,
-                    ValorTotal = valorTotalTickets != null && valorTotalTickets!.response != null 
-                        ? valorTotalTickets!.response!.Select(t => t.PrecioTotal).Sum() : 0,
-                    ValorEfectivo = valorTotalTickets != null && valorTotalTickets!.response != null 
-                        ? valorTotalTickets!.response!.Where(t => t.IdFormaPago == 1).Select(t => t.PrecioTotal).Sum() : 0,
-                    ValorTransferencia = valorTotalTickets != null && valorTotalTickets!.response != null 
-                        ? valorTotalTickets!.response!.Where(t => t.IdFormaPago != 1).Select(t => t.PrecioTotal).Sum() : 0,
-                    ValorGanancia = turnoActual.ValorGanancia,
+                    ValorTotal = valorTotalEfectivo + valorTotalTransferencia,
+                    ValorEfectivo = valorTotalEfectivo,
+                    ValorTransferencia = valorTotalTransferencia,
+                    ValorGanancia = cantidad - turnoActual.CantidadInicio,
                     Finalizado = true,
                     FechaInicio = turnoActual.FechaInicio,
                     FechaFin = DateTime.Now,

@@ -179,27 +179,25 @@ namespace PuntoDeVenta.Application.Services
 
             try
             {
-                List<Producto> productosExistentes = new List<Producto>();
                 foreach (var entity in entities)
                 {
-                    var productoExistente = await _productoRepository.GetById((int)entity.IdProducto!);
+                    int idProducto = entity.IdProducto != null ? (int)entity.IdProducto : 0;
+                    var productoExistente = await _productoRepository.GetById(idProducto);
 
-                    if (productoExistente == null)
+                    if (entity.IdProducto != null && productoExistente == null)
                     {
                         throw new Exception($"No se encontró el producto {entity.Descripcion}");
                     }
 
-                    if (productoExistente.Cantidad != 0 && (productoExistente.Cantidad - entity.Cantidad) < 0)
+                    if (entity.IdProducto != null && productoExistente.Cantidad != 0 && (productoExistente.Cantidad - entity.Cantidad) < 0)
                     {
                         throw new Exception($"No se puede completar la venta. La cantidad solicitada ({entity.Cantidad}) de {entity.Descripcion} supera la cantidad en stock ({productoExistente.Cantidad}).");
                     }
 
-                    if (productoExistente.Cantidad > 0)
+                    if (entity.IdProducto != null && productoExistente.Cantidad > 0)
                     {
                         productoExistente.Cantidad = productoExistente.Cantidad - entity.Cantidad;
                     }
-
-                    productosExistentes.Add(productoExistente);
                 }
 
                 List<ProductoMovimiento> productosMovimientos = _mapper.Map<List<ProductoMovimiento>>(entities);

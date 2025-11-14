@@ -563,6 +563,7 @@ namespace PuntoDeVenta.UserControls
                             productoMovimiento.IdUsuario = SessionHelper.IdUsuario;
                             productoMovimiento.IdProducto = vId != "0" ? Convert.ToInt32(vId) : null;
                             productoMovimiento.IdFormaPago = formaPago;
+                            productoMovimiento.IdTurno = IdTurno != 0 ? IdTurno : null;
 
                             productosMovimientos.Add(productoMovimiento);
                         }
