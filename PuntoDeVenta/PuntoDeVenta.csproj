@@ -50,6 +50,9 @@
     <Compile Update="UserControls\ProductosControls\CatalogoProductosControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UserControls\TurnosControls\ReporteTurnosControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
