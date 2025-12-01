@@ -7,7 +7,7 @@ using PuntoDeVenta.Application.Services;
 using PuntoDeVenta.Enum;
 using PuntoDeVenta.Helpers;
 
-namespace PuntoDeVenta.UserControls.CorteControls
+namespace PuntoDeVenta.UserControls.TurnosControls
 {
     public partial class TurnoControl : UserControl
     {

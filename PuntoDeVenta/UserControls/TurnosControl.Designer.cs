@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta.UserControls
 {
-    partial class CorteControl
+    partial class TurnosControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CorteControl));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TurnosControl));
             panelHeader = new Panel();
             title = new Label();
             panelNavbar = new Panel();
-            btnCorteCajero = new Button();
+            btnReporteTurnos = new Button();
+            btnTurnoActual = new Button();
             panelMain = new Panel();
             panelHeader.SuspendLayout();
             panelNavbar.SuspendLayout();
@@ -57,16 +58,17 @@
             title.ForeColor = SystemColors.ButtonHighlight;
             title.Location = new Point(3, 0);
             title.Name = "title";
-            title.Size = new Size(70, 25);
+            title.Size = new Size(86, 25);
             title.TabIndex = 0;
-            title.Text = "CORTE";
+            title.Text = "TURNOS";
             // 
             // panelNavbar
             // 
             panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelNavbar.BackColor = Color.FromArgb(26, 32, 40);
             panelNavbar.BorderStyle = BorderStyle.FixedSingle;
-            panelNavbar.Controls.Add(btnCorteCajero);
+            panelNavbar.Controls.Add(btnReporteTurnos);
+            panelNavbar.Controls.Add(btnTurnoActual);
             panelNavbar.Dock = DockStyle.Top;
             panelNavbar.ForeColor = SystemColors.ButtonHighlight;
             panelNavbar.Location = new Point(0, 28);
@@ -74,27 +76,49 @@
             panelNavbar.Size = new Size(1461, 48);
             panelNavbar.TabIndex = 19;
             // 
-            // btnCorteCajero
+            // btnReporteTurnos
             // 
-            btnCorteCajero.BackColor = Color.FromArgb(0, 80, 200);
-            btnCorteCajero.BackgroundImageLayout = ImageLayout.None;
-            btnCorteCajero.FlatAppearance.BorderColor = Color.Silver;
-            btnCorteCajero.FlatAppearance.BorderSize = 0;
-            btnCorteCajero.FlatAppearance.MouseDownBackColor = Color.Navy;
-            btnCorteCajero.FlatAppearance.MouseOverBackColor = Color.Teal;
-            btnCorteCajero.FlatStyle = FlatStyle.Flat;
-            btnCorteCajero.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCorteCajero.ForeColor = SystemColors.ButtonHighlight;
-            btnCorteCajero.Image = (Image)resources.GetObject("btnCorteCajero.Image");
-            btnCorteCajero.Location = new Point(3, 6);
-            btnCorteCajero.Name = "btnCorteCajero";
-            btnCorteCajero.Size = new Size(193, 35);
-            btnCorteCajero.TabIndex = 3;
-            btnCorteCajero.Text = "Corte Cajero";
-            btnCorteCajero.TextAlign = ContentAlignment.MiddleRight;
-            btnCorteCajero.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnCorteCajero.UseVisualStyleBackColor = false;
-            btnCorteCajero.Click += btnCorteCajero_Click;
+            btnReporteTurnos.BackColor = Color.FromArgb(0, 80, 200);
+            btnReporteTurnos.BackgroundImageLayout = ImageLayout.None;
+            btnReporteTurnos.FlatAppearance.BorderColor = Color.Silver;
+            btnReporteTurnos.FlatAppearance.BorderSize = 0;
+            btnReporteTurnos.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnReporteTurnos.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnReporteTurnos.FlatStyle = FlatStyle.Flat;
+            btnReporteTurnos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnReporteTurnos.ForeColor = SystemColors.ButtonHighlight;
+            btnReporteTurnos.Image = (Image)resources.GetObject("btnReporteTurnos.Image");
+            btnReporteTurnos.Location = new Point(202, 6);
+            btnReporteTurnos.Name = "btnReporteTurnos";
+            btnReporteTurnos.Size = new Size(182, 35);
+            btnReporteTurnos.TabIndex = 5;
+            btnReporteTurnos.Text = "Ver Turnos";
+            btnReporteTurnos.TextAlign = ContentAlignment.MiddleRight;
+            btnReporteTurnos.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnReporteTurnos.UseVisualStyleBackColor = false;
+            btnReporteTurnos.Click += btnReporteTurnos_Click;
+            // 
+            // btnTurnoActual
+            // 
+            btnTurnoActual.BackColor = Color.FromArgb(0, 80, 200);
+            btnTurnoActual.BackgroundImageLayout = ImageLayout.None;
+            btnTurnoActual.FlatAppearance.BorderColor = Color.Silver;
+            btnTurnoActual.FlatAppearance.BorderSize = 0;
+            btnTurnoActual.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnTurnoActual.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnTurnoActual.FlatStyle = FlatStyle.Flat;
+            btnTurnoActual.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTurnoActual.ForeColor = SystemColors.ButtonHighlight;
+            btnTurnoActual.Image = (Image)resources.GetObject("btnTurnoActual.Image");
+            btnTurnoActual.Location = new Point(3, 6);
+            btnTurnoActual.Name = "btnTurnoActual";
+            btnTurnoActual.Size = new Size(193, 35);
+            btnTurnoActual.TabIndex = 3;
+            btnTurnoActual.Text = "Turno Actual";
+            btnTurnoActual.TextAlign = ContentAlignment.MiddleRight;
+            btnTurnoActual.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnTurnoActual.UseVisualStyleBackColor = false;
+            btnTurnoActual.Click += btnTurnoActualCajero_Click;
             // 
             // panelMain
             // 
@@ -107,7 +131,7 @@
             panelMain.Size = new Size(1461, 513);
             panelMain.TabIndex = 20;
             // 
-            // CorteControl
+            // TurnosControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -117,7 +141,7 @@
             Controls.Add(panelNavbar);
             Controls.Add(panelHeader);
             ForeColor = SystemColors.ButtonHighlight;
-            Name = "CorteControl";
+            Name = "TurnosControl";
             Size = new Size(1461, 589);
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
@@ -130,8 +154,9 @@
         private Panel panelHeader;
         private Label title;
         private Panel panelNavbar;
-        public Button btnCorteCajero;
+        public Button btnTurnoActual;
         private Panel panelMain;
-        private CorteControls.TurnoControl turnoControl;
+        private TurnosControls.TurnoControl turnoControl;
+        public Button btnReporteTurnos;
     }
 }

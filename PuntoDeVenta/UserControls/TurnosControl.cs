@@ -2,11 +2,10 @@
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
 using PuntoDeVenta.Helpers;
-using PuntoDeVenta.UserControls.ReportesControls;
 
 namespace PuntoDeVenta.UserControls
 {
-    public partial class CorteControl : UserControl
+    public partial class TurnosControl : UserControl
     {
         private PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
         private readonly ITurnoService _turnoService;
@@ -14,7 +13,7 @@ namespace PuntoDeVenta.UserControls
         private readonly IMovimientoService _movimientoService;
         private readonly IProductoMovimientoService _productoMovimientoService;
 
-        public CorteControl()
+        public TurnosControl()
         {
             _turnoService = new TurnoService(_context);
             _ticketService = new TicketService(_context);
@@ -26,7 +25,7 @@ namespace PuntoDeVenta.UserControls
 
         public void InitializeControls()
         {
-            turnoControl = new CorteControls.TurnoControl();
+            turnoControl = new TurnosControls.TurnoControl();
 
             panelMain.Controls.Add(turnoControl);
 
@@ -63,7 +62,12 @@ namespace PuntoDeVenta.UserControls
             }
         }
 
-        private void btnCorteCajero_Click(object sender, EventArgs e)
+        private void btnTurnoActualCajero_Click(object sender, EventArgs e)
+        {
+            _ = GetTurno();
+        }
+
+        private void btnReporteTurnos_Click(object sender, EventArgs e)
         {
 
         }

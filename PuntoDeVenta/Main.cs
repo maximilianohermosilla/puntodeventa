@@ -93,10 +93,10 @@ namespace PuntoDeVenta
             SetActivePanel(facturas1);
         }
 
-        private void btnCorte_Click(object sender, EventArgs e)
+        private void btnTurnos_Click(object sender, EventArgs e)
         {
-            SetActivePanel(corte1);
-            corte1.InitializeControls();
+            SetActivePanel(turnos1);
+            turnos1.InitializeControls();
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
@@ -114,7 +114,7 @@ namespace PuntoDeVenta
             inventario1.Visible = false;
             facturas1.Visible = false;
             creditos1.Visible = false;
-            corte1.Visible = false;
+            turnos1.Visible = false;
             configuracion1.Visible = false;
             compras1.Visible = false;
             clientes1.Visible = false;
@@ -138,7 +138,7 @@ namespace PuntoDeVenta
             reportes1 = new ReportesControl();
             facturas1 = new FacturasControl();
             creditos1 = new CreditosControl();
-            corte1 = new CorteControl();
+            turnos1 = new TurnosControl();
             configuracion1 = new ConfiguracionControl();
             compras1 = new ComprasControl();
 
@@ -149,7 +149,7 @@ namespace PuntoDeVenta
             panelMain.Controls.Add(reportes1);
             panelMain.Controls.Add(facturas1);
             panelMain.Controls.Add(creditos1);
-            panelMain.Controls.Add(corte1);
+            panelMain.Controls.Add(turnos1);
             panelMain.Controls.Add(configuracion1);
             panelMain.Controls.Add(compras1);
 
@@ -201,15 +201,15 @@ namespace PuntoDeVenta
             creditos1.Size = new Size(1295, 771);
             creditos1.TabIndex = 4;
   
-            corte1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            corte1.BackColor = Color.FromArgb(49, 66, 82);
-            corte1.BorderStyle = BorderStyle.FixedSingle;
-            corte1.Dock = DockStyle.Fill;
-            corte1.ForeColor = SystemColors.ButtonHighlight;
-            corte1.Location = new Point(0, 0);
-            corte1.Name = "corte1";
-            corte1.Size = new Size(1295, 771);
-            corte1.TabIndex = 3;
+            turnos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            turnos1.BackColor = Color.FromArgb(49, 66, 82);
+            turnos1.BorderStyle = BorderStyle.FixedSingle;
+            turnos1.Dock = DockStyle.Fill;
+            turnos1.ForeColor = SystemColors.ButtonHighlight;
+            turnos1.Location = new Point(0, 0);
+            turnos1.Name = "turnos1";
+            turnos1.Size = new Size(1295, 771);
+            turnos1.TabIndex = 3;
    
             configuracion1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             configuracion1.BackColor = Color.FromArgb(49, 66, 82);

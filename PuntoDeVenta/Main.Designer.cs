@@ -47,7 +47,7 @@ namespace PuntoDeVenta
             panelNavbar = new Panel();
             pictureBoxLogo = new PictureBox();
             btnReportes = new Button();
-            btnCorte = new Button();
+            btnTurnos = new Button();
             btnFacturas = new Button();
             btnCompras = new Button();
             btnInventario = new Button();
@@ -73,7 +73,7 @@ namespace PuntoDeVenta
             panelNavbar.BackColor = Color.FromArgb(26, 32, 40);
             panelNavbar.Controls.Add(pictureBoxLogo);
             panelNavbar.Controls.Add(btnReportes);
-            panelNavbar.Controls.Add(btnCorte);
+            panelNavbar.Controls.Add(btnTurnos);
             panelNavbar.Controls.Add(btnFacturas);
             panelNavbar.Controls.Add(btnCompras);
             panelNavbar.Controls.Add(btnInventario);
@@ -120,27 +120,27 @@ namespace PuntoDeVenta
             btnReportes.UseVisualStyleBackColor = false;
             btnReportes.Click += btnReportes_Click;
             // 
-            // btnCorte
+            // btnTurnos
             // 
-            btnCorte.BackColor = Color.FromArgb(0, 80, 200);
-            btnCorte.BackgroundImageLayout = ImageLayout.None;
-            btnCorte.FlatAppearance.BorderColor = Color.Silver;
-            btnCorte.FlatAppearance.BorderSize = 0;
-            btnCorte.FlatAppearance.MouseDownBackColor = Color.Navy;
-            btnCorte.FlatAppearance.MouseOverBackColor = Color.Teal;
-            btnCorte.FlatStyle = FlatStyle.Flat;
-            btnCorte.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCorte.ForeColor = SystemColors.ButtonHighlight;
-            btnCorte.Image = (Image)resources.GetObject("btnCorte.Image");
-            btnCorte.Location = new Point(4, 489);
-            btnCorte.Name = "btnCorte";
-            btnCorte.Size = new Size(122, 45);
-            btnCorte.TabIndex = 7;
-            btnCorte.Text = "Corte";
-            btnCorte.TextAlign = ContentAlignment.MiddleRight;
-            btnCorte.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnCorte.UseVisualStyleBackColor = false;
-            btnCorte.Click += btnCorte_Click;
+            btnTurnos.BackColor = Color.FromArgb(0, 80, 200);
+            btnTurnos.BackgroundImageLayout = ImageLayout.None;
+            btnTurnos.FlatAppearance.BorderColor = Color.Silver;
+            btnTurnos.FlatAppearance.BorderSize = 0;
+            btnTurnos.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnTurnos.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnTurnos.FlatStyle = FlatStyle.Flat;
+            btnTurnos.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnTurnos.ForeColor = SystemColors.ButtonHighlight;
+            btnTurnos.Image = (Image)resources.GetObject("btnTurnos.Image");
+            btnTurnos.Location = new Point(4, 489);
+            btnTurnos.Name = "btnTurnos";
+            btnTurnos.Size = new Size(122, 45);
+            btnTurnos.TabIndex = 7;
+            btnTurnos.Text = "Turnos";
+            btnTurnos.TextAlign = ContentAlignment.MiddleRight;
+            btnTurnos.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnTurnos.UseVisualStyleBackColor = false;
+            btnTurnos.Click += btnTurnos_Click;
             // 
             // btnFacturas
             // 
@@ -398,7 +398,7 @@ namespace PuntoDeVenta
         public Button btnConfiguracion;
         public Button btnFacturas;
         public Button btnReportes;
-        public Button btnCorte;
+        public Button btnTurnos;
         private Panel panelMain;
         private VentasControl ventas1;
         private ReportesControl reportes1;
@@ -406,7 +406,7 @@ namespace PuntoDeVenta
         private InventarioControl inventario1;
         private FacturasControl facturas1;
         private CreditosControl creditos1;
-        private CorteControl corte1;
+        private TurnosControl turnos1;
         private ConfiguracionControl configuracion1;
         private ComprasControl compras1;
         private ClientesControl clientes1;

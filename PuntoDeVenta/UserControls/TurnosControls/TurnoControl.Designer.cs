@@ -1,4 +1,4 @@
-﻿namespace PuntoDeVenta.UserControls.CorteControls
+﻿namespace PuntoDeVenta.UserControls.TurnosControls
 {
     partial class TurnoControl
     {
