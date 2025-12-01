@@ -57,6 +57,14 @@ namespace PuntoDeVenta.AccessData.Repository
             return await vGblContext.Movimiento.Where(p => p.IdTurno == pIdTurno).ToListAsync();
         }
 
+        public async Task<List<Movimiento>> GetAllByFechaAndTipoMovimiento(DateTime pFechaDesde, DateTime pFechahasta, int pIdTipoMovimiento)
+        {
+            vGblContext.ChangeTracker.Clear();
+            return await vGblContext.Movimiento.Where(x => x.Fecha >= pFechaDesde && x.Fecha <= pFechahasta && (pIdTipoMovimiento == 0 || x.IdTipoMovimiento == pIdTipoMovimiento))
+                .Include(p => p.TipoMovimiento).Include(p => p.Usuario).Include(p => p.FormaPago)
+                .ToListAsync();
+        }
+
         public async Task<Movimiento> GetById(int pId)
         {
             vGblContext.ChangeTracker.Clear();

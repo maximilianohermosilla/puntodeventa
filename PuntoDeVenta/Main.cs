@@ -96,7 +96,7 @@ namespace PuntoDeVenta
         private void btnCorte_Click(object sender, EventArgs e)
         {
             SetActivePanel(corte1);
-            _ = corte1.GetTurno();
+            corte1.InitializeControls();
         }
 
         private void btnReportes_Click(object sender, EventArgs e)

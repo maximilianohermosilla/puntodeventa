@@ -2,10 +2,9 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
-using PuntoDeVenta.Domain.Entities;
+using PuntoDeVenta.Enum;
 using PuntoDeVenta.Helpers;
 using System.Data;
-using System.Diagnostics;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PuntoDeVenta.UserControls.ReportesControls
@@ -34,7 +33,7 @@ namespace PuntoDeVenta.UserControls.ReportesControls
             {
                 var desde = new DateTime(dateDesde.Value.Year, dateDesde.Value.Month, dateDesde.Value.Day, 0, 0, 0);
                 var hasta = new DateTime(dateHasta.Value.Year, dateHasta.Value.Month, dateHasta.Value.Day, 23, 59, 0);
-                var response = await _productoMovimientoService.GetAllByFechaAndTipoMovimiento(desde, hasta, 2);
+                var response = await _productoMovimientoService.GetAllByFechaAndTipoMovimiento(desde, hasta, (int)TipoMovimientoEnum.Salida);
 
                 if (response != null && response.success)
                 {

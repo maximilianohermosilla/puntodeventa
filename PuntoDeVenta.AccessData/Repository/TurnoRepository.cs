@@ -51,6 +51,15 @@ namespace PuntoDeVenta.AccessData.Repository
             return await vGblContext.Turno.ToListAsync();
         }
 
+        public async Task<List<Turno>> GetAllByFechaUsuario(DateOnly fecha, int? idUsuario)
+        {
+            vGblContext.ChangeTracker.Clear();
+            return await vGblContext.Turno
+                .Where(t => (DateOnly.FromDateTime(t.FechaInicio) == fecha || DateOnly.FromDateTime(t.FechaFin ?? t.FechaInicio) == fecha)
+                && (idUsuario == null || t.IdUsuario == idUsuario))
+                .ToListAsync();
+        }
+
         public async Task<Turno> GetById(int pId)
         {
             vGblContext.ChangeTracker.Clear();

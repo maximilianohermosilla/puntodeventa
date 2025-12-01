@@ -559,7 +559,7 @@ namespace PuntoDeVenta.UserControls
                             productoMovimiento.CantidadInicio = Convert.ToInt32(vCantidad);
                             productoMovimiento.CantidadFin = Convert.ToInt32(vCantidad);
                             productoMovimiento.Valor = Convert.ToInt32(vImporte);
-                            productoMovimiento.IdTipoMovimiento = 2;
+                            productoMovimiento.IdTipoMovimiento = (int)TipoMovimientoEnum.Salida;
                             productoMovimiento.IdUsuario = SessionHelper.IdUsuario;
                             productoMovimiento.IdProducto = vId != "0" ? Convert.ToInt32(vId) : null;
                             productoMovimiento.IdFormaPago = formaPago;
@@ -685,7 +685,7 @@ namespace PuntoDeVenta.UserControls
                     }
                 }
 
-                labelTotal.Text = $@"$ {total.ToString()}";
+                labelTotal.Text = $@"{total.ToString("C2")}";
             }
             catch (Exception ex)
             {

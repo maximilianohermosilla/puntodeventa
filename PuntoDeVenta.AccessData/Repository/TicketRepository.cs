@@ -56,6 +56,15 @@ namespace PuntoDeVenta.AccessData.Repository
             return await vGblContext.Ticket.Where(t => t.IdTurno == pIdTurno).ToListAsync();
         }
 
+        public async Task<List<Ticket>> GetAllByFechaAndFormaPago(DateTime pFechaDesde, DateTime pFechahasta, int pIdFormaPago)
+        {
+            vGblContext.ChangeTracker.Clear();
+            return await vGblContext.Ticket.Where(x => x.FechaCreacion >= pFechaDesde && x.FechaCreacion <= pFechahasta 
+                && (pIdFormaPago == 0 || x.IdFormaPago == pIdFormaPago))
+                .Include(p => p.Estado).Include(p => p.Cliente).Include(p => p.FormaPago)
+                .ToListAsync();
+        }
+
         public async Task<Ticket> GetById(int pId)
         {
             vGblContext.ChangeTracker.Clear();

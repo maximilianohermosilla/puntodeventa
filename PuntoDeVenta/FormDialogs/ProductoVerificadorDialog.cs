@@ -49,7 +49,7 @@ namespace PuntoDeVenta.FormDialogs
                 if (response != null && response.success)
                 {
                     labelNombreProducto.Text = response.response.Descripcion;
-                    labelPrecioProducto.Text = $"$ {response.response.PrecioVenta}";
+                    labelPrecioProducto.Text = $"{response.response.PrecioVenta.ToString("C")}";
                 }
                 else
                 {

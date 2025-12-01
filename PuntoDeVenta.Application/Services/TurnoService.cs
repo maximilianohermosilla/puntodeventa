@@ -89,6 +89,29 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
+        public async Task<ResponseModel<List<TurnoResponse>>> GetAllByFechaUsuario(DateOnly fecha, int? idUsuario)
+        {
+            ResponseModel<List<TurnoResponse>> response = new ResponseModel<List<TurnoResponse>>();
+
+            try
+            {
+                List<Turno> lista = await _turnoRepository.GetAllByFechaUsuario(fecha, idUsuario);
+                List<TurnoResponse> listaDTO = _mapper.Map<List<TurnoResponse>>(lista);
+
+                response.message = "Consulta realizada correctamente";
+                response.statusCode = 200;
+                response.response = listaDTO;
+            }
+            catch (Exception ex)
+            {
+                response.success = false;
+                response.statusCode = 400;
+                response.message = ex.Message;
+                response.response = null;
+            }
+
+            return response;
+        }
 
         public async Task<ResponseModel<TurnoResponse>> GetById(int IdTurno)
         {

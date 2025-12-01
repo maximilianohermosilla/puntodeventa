@@ -1,10 +1,8 @@
 ﻿using PuntoDeVenta.AccessData;
-using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
-using PuntoDeVenta.Enum;
 using PuntoDeVenta.Helpers;
-using System.Globalization;
+using PuntoDeVenta.UserControls.ReportesControls;
 
 namespace PuntoDeVenta.UserControls
 {
@@ -14,14 +12,44 @@ namespace PuntoDeVenta.UserControls
         private readonly ITurnoService _turnoService;
         private readonly ITicketService _ticketService;
         private readonly IMovimientoService _movimientoService;
+        private readonly IProductoMovimientoService _productoMovimientoService;
 
         public CorteControl()
         {
             _turnoService = new TurnoService(_context);
             _ticketService = new TicketService(_context);
             _movimientoService = new MovimientoService(_context);
+            _productoMovimientoService = new ProductoMovimientoService(_context);
             InitializeComponent();
+            InitializeControls();
+        }
+
+        public void InitializeControls()
+        {
+            turnoControl = new CorteControls.TurnoControl();
+
+            panelMain.Controls.Add(turnoControl);
+
+            turnoControl.Dock = DockStyle.Fill;
+            turnoControl.Location = new Point(0, 0);
+            turnoControl.Name = "turnoControl";
+            turnoControl.Size = new Size(319, 529);
+            turnoControl.TabIndex = 18;
+
+            SetActivePanel(turnoControl);
             _ = GetTurno();
+        }
+
+        public void SetActivePanel(UserControl? control)
+        {
+            //nuevoProducto1.Visible = false;
+            //categoriaProducto1.Visible = false;
+            //catalogoProductos1.Visible = false;
+
+            if (control != null)
+            {
+                control.Visible = true;
+            }
         }
 
         public async Task GetTurno()
@@ -30,67 +58,8 @@ namespace PuntoDeVenta.UserControls
 
             if (ultimoTurno != null && ultimoTurno.response != null)
             {
-                _ = SetearTurno(ultimoTurno.response);
-            }
-        }
-
-        public async Task SetearTurno(TurnoResponse turno)
-        {
-            try
-            {
-                var valorTotalTickets = await _ticketService.GetAllByIdTurno(turno.Id);
-                var valorTotalMovimientos = await _movimientoService.GetAllByIdTurno(turno.Id);
-
-                //EFECTIVO
-                float valorVentasEfectivo = (valorTotalTickets != null && valorTotalTickets!.response != null
-                        ? valorTotalTickets!.response!.Where(t => t.IdFormaPago == (int)FormaPagoEnum.Efectivo).Select(t => t.PrecioTotal).Sum() : 0);
-
-                float valorEntradaEfectivo = (valorTotalMovimientos != null && valorTotalMovimientos!.response != null
-                        ? valorTotalMovimientos!.response!.Where(t => t.IdTipoMovimiento == (int)TipoMovimientoEnum.Entrada && t.IdFormaPago == (int)FormaPagoEnum.Efectivo)
-                        .Select(t => t.Valor).Sum() : 0);
-
-                float valorSalidaEfectivo = (valorTotalMovimientos != null && valorTotalMovimientos!.response != null
-                        ? valorTotalMovimientos!.response!.Where(t => t.IdTipoMovimiento == (int)TipoMovimientoEnum.Salida && t.IdFormaPago == (int)FormaPagoEnum.Efectivo)
-                        .Select(t => t.Valor).Sum() : 0);
-
-                //TRANSFERENCIA
-                float valorVentasTransferencia = (valorTotalTickets != null && valorTotalTickets!.response != null
-                        ? valorTotalTickets!.response!.Where(t => t.IdFormaPago != (int)FormaPagoEnum.Efectivo).Select(t => t.PrecioTotal).Sum() : 0);
-
-                float valorEntradasTransferencia = (valorTotalMovimientos != null && valorTotalMovimientos!.response != null
-                        ? valorTotalMovimientos!.response!.Where(t => t.IdTipoMovimiento == (int)TipoMovimientoEnum.Entrada && t.IdFormaPago != (int)FormaPagoEnum.Efectivo)
-                        .Select(t => t.Valor).Sum() : 0);
-
-                float valorSalidasTransferencia = (valorTotalMovimientos != null && valorTotalMovimientos!.response != null
-                        ? valorTotalMovimientos!.response!.Where(t => t.IdTipoMovimiento == (int)TipoMovimientoEnum.Salida && t.IdFormaPago != (int)FormaPagoEnum.Efectivo)
-                        .Select(t => t.Valor).Sum() : 0);
-
-                //TOTAL
-                float valorTotalEfectivo = valorVentasEfectivo + valorEntradaEfectivo - valorSalidaEfectivo;
-                float valorTotalTransferencia = valorVentasTransferencia + valorEntradasTransferencia - valorSalidasTransferencia;
-
-                //SETEO CAMPOS
-                txtTurnoInicio.Text = turno.FechaInicio.ToString("dd/MM/yyyy HH:mm:ss", CultureInfo.CurrentCulture);
-
-                txtVentasEfectivo.Text = "$ " + valorVentasEfectivo.ToString();
-                txtVentasTransferencia.Text = "$ " + valorVentasTransferencia.ToString();
-                txtVentasTotal.Text = "$ " + (valorVentasEfectivo + valorVentasTransferencia).ToString();
-
-                txtEntradasEfectivo.Text = "$ " + valorEntradaEfectivo.ToString();
-                txtEntradasTransferencia.Text = "$ " + valorEntradasTransferencia.ToString();
-                txtEntradasTotal.Text = "$ " + (valorEntradaEfectivo + valorEntradasTransferencia).ToString();
-
-                txtSalidasEfectivo.Text = "$ " + valorSalidaEfectivo.ToString();
-                txtSalidasTransferencia.Text = "$ " + valorSalidasTransferencia.ToString();
-                txtSalidasTotal.Text = "$ " + (valorSalidaEfectivo + valorSalidasTransferencia).ToString();
-
-                txtTotalEfectivo.Text = "$ " + valorTotalEfectivo.ToString();
-                txtTotalTransferencia.Text = "$ " + valorTotalTransferencia.ToString();
-                txtTotalFinal.Text = "$ " + (valorTotalEfectivo + valorTotalTransferencia).ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SetActivePanel(turnoControl);
+                _ = turnoControl.SetearTurno(ultimoTurno.response);
             }
         }
 

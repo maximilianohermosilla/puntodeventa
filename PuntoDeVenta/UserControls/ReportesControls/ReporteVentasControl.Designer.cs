@@ -279,9 +279,9 @@
             // chartDias
             // 
             chartDias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            chartDias.Location = new Point(948, 375);
+            chartDias.Location = new Point(948, 383);
             chartDias.Name = "chartDias";
-            chartDias.Size = new Size(496, 412);
+            chartDias.Size = new Size(496, 404);
             chartDias.TabIndex = 27;
             chartDias.Text = "chart2";
             // 
