@@ -1,0 +1,156 @@
+﻿using PuntoDeVenta.AccessData;
+using PuntoDeVenta.Application.DTO;
+using PuntoDeVenta.Application.Interfaces;
+using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.Domain.Entities;
+using PuntoDeVenta.Helpers;
+using System.Data;
+
+namespace PuntoDeVenta.UserControls.ComprasControls
+{
+    public partial class ComprasFormControl : UserControl
+    {
+
+        private PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
+        private readonly ICajaMovimientoService _cajaMovimientoService;
+
+        private List<CajaMovimientoResponse> _movimientos = new List<CajaMovimientoResponse>();
+
+        public ComprasFormControl()
+        {
+            _cajaMovimientoService = new CajaMovimientoService(_context);
+            InitializeComponent();
+            _ = GetUltimoMovimiento();
+        }
+
+        public async Task GetUltimoMovimiento()
+        {
+            var ultimoMovimiento = await _cajaMovimientoService.GetLast();
+
+            if (ultimoMovimiento != null && ultimoMovimiento.response != null)
+            {
+                labelTotal.Text = $@"{ultimoMovimiento.response.ValorInicio!.ToString("C2")}";
+            }
+        }
+
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            _ = GetAllMovimientos();
+        }
+
+        public async Task GetAllMovimientos()
+        {
+            try
+            {
+                var desde = new DateTime(dateDesde.Value.Year, dateDesde.Value.Month, dateDesde.Value.Day, 0, 0, 0);
+                var hasta = new DateTime(dateHasta.Value.Year, dateHasta.Value.Month, dateHasta.Value.Day, 23, 59, 0);
+                var response = await _cajaMovimientoService.GetAllByFechaAndTipoMovimientoFormaPago(desde, hasta, 0, 0);
+
+                if (response != null && response.success)
+                {
+                    _movimientos = response.response!;
+                    SetearMovimientos(_movimientos);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void SetearMovimientos(List<CajaMovimientoResponse> movimientos)
+        {
+            if (movimientos != null && movimientos.Any())
+            {
+                var listaMovimientos = movimientos.Select(x => new
+                {
+                    Codigo = x.Id,
+                    Usuario = x.Usuario.User ?? "",
+                    x.Fecha,
+                    x.ValorInicio,
+                    x.Valor,
+                    x.ValorFin,
+                    TipoMovimiento = x.TipoMovimiento!.Descripcion,
+                    FormaPago = x.FormaPago!.Descripcion
+                })!.ToList();
+
+                dvMovimientos.DataSource = null;
+                dvMovimientos.DataSource = listaMovimientos;
+                dvMovimientos.Refresh();
+                dvMovimientos.Invalidate();
+
+                dvMovimientos.Visible = true;
+                labelSinResultados.Visible = false;
+            }
+            else
+            {
+                dvMovimientos.Visible = false;
+                labelSinResultados.Visible = true;
+            }
+        }
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFolderPath = folderBrowserDialog1.SelectedPath;
+                DataTable dt = new DataTable();
+
+                foreach (DataGridViewColumn column in dvMovimientos.Columns)
+                {
+                    dt.Columns.Add(column.HeaderText, typeof(object));
+                }
+
+                // Add rows to the DataTable based on DataGridView rows
+                foreach (DataGridViewRow row in dvMovimientos.Rows)
+                {
+                    if (row.IsNewRow) continue;
+
+                    DataRow dr = dt.NewRow();
+                    for (int i = 0; i < dvMovimientos.Columns.Count; i++)
+                    {
+                        dr[i] = row.Cells[i].Value;
+                    }
+                    dt.Rows.Add(dr);
+                }
+
+                string fecha = dateDesde.Value.ToString("yyyy-MM-dd") == dateHasta.Value.ToString("yyyy-MM-dd") ? dateDesde.Value.ToString("yyyy-MM-dd") : $"{dateDesde.Value.ToString("yyyy-MM-dd")}-{dateHasta.Value.ToString("yyyy-MM-dd")}";
+                bool exportado = ExportCsvHelper.ExportCsv(dt, $"ReporteVentas_{fecha}", selectedFolderPath);
+
+                string toastTipo = exportado ? "SUCCESS" : "ERROR";
+                ToastForm toast = new ToastForm(toastTipo, exportado ? "Exportación finalizada." : "Ocurrió un error en la exportación.", this.FindForm()!);
+                toast.Show();
+            }
+        }
+
+
+        private void linkLabelHoy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            dateDesde.Value = DateTime.Now;
+            dateHasta.Value = DateTime.Now;
+            _ = GetAllMovimientos();
+        }
+
+        private void linkLabelSemana_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            dateDesde.Value = DateTime.Now.AddDays(-7);
+            dateHasta.Value = DateTime.Now;
+            _ = GetAllMovimientos();
+        }
+
+        private void linkLabelMes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            dateDesde.Value = new DateTime(dateDesde.Value.Year, dateDesde.Value.Month, 1, 0, 0, 0);
+            dateHasta.Value = DateTime.Now;
+            _ = GetAllMovimientos();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

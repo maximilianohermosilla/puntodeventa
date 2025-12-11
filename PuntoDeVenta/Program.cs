@@ -55,6 +55,7 @@ namespace PuntoDeVenta
             // Agrega las interfaces y servicios necesarios
             services.AddScoped<PuntoDeVentaDbContext>();
 
+            services.AddTransient<ICajaMovimientoRepository, CajaMovimientoRepository>();
             services.AddTransient<ICategoriaProductoRepository, CategoriaProductoRepository>();
             services.AddTransient<IClienteRepository, ClienteRepository>();
             services.AddTransient<IEstadoRepository, EstadoRepository>();
@@ -80,6 +81,7 @@ namespace PuntoDeVenta
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IUnidadRepository, UnidadRepository>();
 
+            services.AddTransient<ICajaMovimientoService, CajaMovimientoService>();
             services.AddTransient<ICategoriaProductoService, CategoriaProductoService>();
             services.AddTransient<IClienteService,ClienteService>();
             services.AddTransient<IEstadoService, EstadoService>();

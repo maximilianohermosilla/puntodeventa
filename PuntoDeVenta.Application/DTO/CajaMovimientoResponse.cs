@@ -1,6 +1,6 @@
 ﻿namespace PuntoDeVenta.Application.DTO
 {
-    public partial class CajaMovimientoResponse
+    public class CajaMovimientoResponse
     {
         public int Id { get; set; }
         public DateTime Fecha { get; set; }
@@ -15,8 +15,8 @@
         public int? IdFormaPago { get; set; } = null;
         public int? IdTurno { get; set; } = null;
 
-        public required TipoMovimientoResponse TipoMovimiento { get; set; }
-        public required UsuarioResponse Usuario { get; set; }
+        public TipoMovimientoResponse? TipoMovimiento { get; set; }
+        public UsuarioResponse? Usuario { get; set; }
         public virtual TurnoResponse? Turno { get; set; }
         public virtual FormaPagoResponse? FormaPago { get; set; }
     }

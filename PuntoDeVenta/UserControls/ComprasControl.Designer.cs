@@ -1,4 +1,6 @@
-﻿namespace PuntoDeVenta.UserControls
+﻿using PuntoDeVenta.UserControls.ComprasControls;
+
+namespace PuntoDeVenta.UserControls
 {
     partial class ComprasControl
     {
@@ -94,6 +96,7 @@
             btnCompras.TextAlign = ContentAlignment.MiddleRight;
             btnCompras.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCompras.UseVisualStyleBackColor = false;
+            btnCompras.Click += btnCompras_Click;
             // 
             // panelMain
             // 
@@ -130,5 +133,6 @@
         private Panel panelNavbar;
         public Button btnCompras;
         private Panel panelMain;
+        private ComprasFormControl comprasFormControl1;
     }
 }
