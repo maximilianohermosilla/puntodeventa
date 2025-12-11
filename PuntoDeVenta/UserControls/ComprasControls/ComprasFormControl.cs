@@ -13,14 +13,22 @@ namespace PuntoDeVenta.UserControls.ComprasControls
 
         private PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
         private readonly ICajaMovimientoService _cajaMovimientoService;
+        private readonly ITipoMovimientoService _tipoMovimientoService;
+        private readonly IFormaPagoService _formaPagoService;
 
         private List<CajaMovimientoResponse> _movimientos = new List<CajaMovimientoResponse>();
+        public List<TipoMovimientoResponse> _tipoMovimientos;
+        public List<FormaPagoResponse> _formaPagos;
 
         public ComprasFormControl()
         {
             _cajaMovimientoService = new CajaMovimientoService(_context);
+            _tipoMovimientoService = new TipoMovimientoService(_context);
+            _formaPagoService = new FormaPagoService(_context);
             InitializeComponent();
             _ = GetUltimoMovimiento();
+            _ = GetAllTipoMovimientos();
+            _ = GetAllFormaPago();
         }
 
         public async Task GetUltimoMovimiento()
@@ -30,6 +38,50 @@ namespace PuntoDeVenta.UserControls.ComprasControls
             if (ultimoMovimiento != null && ultimoMovimiento.response != null)
             {
                 labelTotal.Text = $@"{ultimoMovimiento.response.ValorInicio!.ToString("C2")}";
+            }
+        }
+
+        public async Task GetAllTipoMovimientos()
+        {
+            try
+            {
+                var response = await _tipoMovimientoService.GetAll();
+
+                if (response != null && response.success)
+                {
+                    _tipoMovimientos = (List<TipoMovimientoResponse>)response.response!;                    
+                    comboTipoMovimiento.DisplayMember = "Descripcion";
+                    comboTipoMovimiento.ValueMember = "Id";
+                    comboTipoMovimiento.DataSource = _tipoMovimientos.ToList();
+                    comboTipoMovimiento.Refresh();
+                    comboTipoMovimiento.Invalidate();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public async Task GetAllFormaPago()
+        {
+            try
+            {
+                var response = await _formaPagoService.GetAll(true);
+
+                if (response != null && response.success)
+                {
+                    _formaPagos = (List<FormaPagoResponse>)response.response!;
+                    comboFormaPago.DisplayMember = "Descripcion";
+                    comboFormaPago.ValueMember = "Id";
+                    comboFormaPago.DataSource = _formaPagos.ToList();
+                    comboFormaPago.Refresh();
+                    comboFormaPago.Invalidate();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -58,6 +110,7 @@ namespace PuntoDeVenta.UserControls.ComprasControls
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         public void SetearMovimientos(List<CajaMovimientoResponse> movimientos)
         {

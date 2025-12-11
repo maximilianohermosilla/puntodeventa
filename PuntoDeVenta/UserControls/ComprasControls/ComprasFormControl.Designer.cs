@@ -36,7 +36,7 @@
             btnGuardar = new Button();
             lblNuevoGasto = new Label();
             labelFormaPago = new Label();
-            comboSubCategoria = new ComboBox();
+            comboFormaPago = new ComboBox();
             labelTipoMovimiento = new Label();
             comboTipoMovimiento = new ComboBox();
             labelValor = new Label();
@@ -109,7 +109,7 @@
             panel1.Controls.Add(btnGuardar);
             panel1.Controls.Add(lblNuevoGasto);
             panel1.Controls.Add(labelFormaPago);
-            panel1.Controls.Add(comboSubCategoria);
+            panel1.Controls.Add(comboFormaPago);
             panel1.Controls.Add(labelTipoMovimiento);
             panel1.Controls.Add(comboTipoMovimiento);
             panel1.Controls.Add(labelValor);
@@ -168,13 +168,13 @@
             labelFormaPago.TabIndex = 32;
             labelFormaPago.Text = "Forma Pago:";
             // 
-            // comboSubCategoria
+            // comboFormaPago
             // 
-            comboSubCategoria.FormattingEnabled = true;
-            comboSubCategoria.Location = new Point(108, 160);
-            comboSubCategoria.Name = "comboSubCategoria";
-            comboSubCategoria.Size = new Size(168, 23);
-            comboSubCategoria.TabIndex = 31;
+            comboFormaPago.FormattingEnabled = true;
+            comboFormaPago.Location = new Point(108, 160);
+            comboFormaPago.Name = "comboFormaPago";
+            comboFormaPago.Size = new Size(168, 23);
+            comboFormaPago.TabIndex = 31;
             // 
             // labelTipoMovimiento
             // 
@@ -471,7 +471,7 @@
         private Panel panel1;
         private Label lblNuevoGasto;
         private Label labelFormaPago;
-        private ComboBox comboSubCategoria;
+        private ComboBox comboFormaPago;
         private Label labelTipoMovimiento;
         private ComboBox comboTipoMovimiento;
         private Label labelValor;
