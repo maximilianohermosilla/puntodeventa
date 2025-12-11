@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PuntoDeVenta.AccessData.Interfaces;
 using PuntoDeVenta.Domain.Entities;
-using System.Security.Cryptography;
 
 namespace PuntoDeVenta.AccessData.Repository
 {
@@ -71,6 +70,14 @@ namespace PuntoDeVenta.AccessData.Repository
             vGblContext.ChangeTracker.Clear();
             return await vGblContext.Turno.Where(p => p.IdUsuario == pIdUsuario && (pFinalizado == null || p.Finalizado == pFinalizado))
                 .OrderByDescending(t => t.Id).FirstOrDefaultAsync()!;
+        }
+
+        public async Task<List<Turno>> GetAllByFecha(DateTime pFechaDesde, DateTime pFechahasta)
+        {
+            vGblContext.ChangeTracker.Clear();
+            return await vGblContext.Turno.Where(x => (x.FechaInicio >= pFechaDesde && x.FechaInicio <= pFechahasta) 
+                || (x.FechaFin >= pFechaDesde && x.FechaFin <= pFechahasta))
+                .Include(p => p.Usuario).ToListAsync();
         }
 
         public bool SaveChanges()

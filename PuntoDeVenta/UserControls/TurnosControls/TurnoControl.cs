@@ -12,49 +12,17 @@ namespace PuntoDeVenta.UserControls.TurnosControls
     public partial class TurnoControl : UserControl
     {
         private PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
-        private readonly ITurnoService _turnoService;
         private readonly ITicketService _ticketService;
         private readonly IMovimientoService _movimientoService;
         private readonly IProductoMovimientoService _productoMovimientoService;
 
         public TurnoControl()
         {
-            _turnoService = new TurnoService(_context);
             _ticketService = new TicketService(_context);
             _movimientoService = new MovimientoService(_context);
             _productoMovimientoService = new ProductoMovimientoService(_context);
             InitializeComponent();
         }
-
-        public async Task GetTurno()
-        {
-            var ultimoTurno = await _turnoService.GetByIdUsuario(SessionHelper.IdUsuario, false);
-
-            if (ultimoTurno != null && ultimoTurno.response != null)
-            {
-                _ = SetearTurno(ultimoTurno.response);
-            }
-        }
-
-        //public async Task GetAllMovimientos()
-        //{
-        //    try
-        //    {
-        //        var desde = new DateTime(dateDesde.Value.Year, dateDesde.Value.Month, dateDesde.Value.Day, 0, 0, 0);
-        //        var hasta = new DateTime(dateHasta.Value.Year, dateHasta.Value.Month, dateHasta.Value.Day, 23, 59, 0);
-        //        var response = await _productoMovimientoService.GetAllByFechaAndTipoMovimiento(desde, hasta, (int)TipoMovimientoEnum.Salida);
-
-        //        if (response != null && response.success)
-        //        {
-        //            _productoMovimientos = response.response!;
-        //            SetearMovimientos(_productoMovimientos);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
 
         public async Task SetearTurno(TurnoResponse turno)
         {

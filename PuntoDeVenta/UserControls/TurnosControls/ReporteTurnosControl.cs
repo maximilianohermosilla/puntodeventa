@@ -6,39 +6,42 @@ using PuntoDeVenta.Enum;
 using PuntoDeVenta.Helpers;
 using System.Data;
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace PuntoDeVenta.UserControls.TurnosControls
 {
     public partial class ReporteTurnosControl : UserControl
     {
         private static PuntoDeVentaDbContext _context = new PuntoDeVentaDbContext();
-        private readonly IProductoMovimientoService _productoMovimientoService;
+        private readonly ITurnoService _turnoService;
+        private UserControl _parent = null;
 
-        private List<ProductoMovimientoResponse> _productoMovimientos = new List<ProductoMovimientoResponse>();
+        private List<TurnoResponse> _turnos = new List<TurnoResponse>();
 
-        public ReporteTurnosControl()
+        public ReporteTurnosControl(UserControl parent)
         {
-            _productoMovimientoService = new ProductoMovimientoService(_context);
+            _parent = parent;
+            _turnoService = new TurnoService(_context);
             InitializeComponent();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            _ = GetAllMovimientos();
+            _ = GetAllTurnos();
         }
 
-        public async Task GetAllMovimientos()
+        public async Task GetAllTurnos()
         {
             try
             {
                 var desde = new DateTime(dateDesde.Value.Year, dateDesde.Value.Month, dateDesde.Value.Day, 0, 0, 0);
                 var hasta = new DateTime(dateHasta.Value.Year, dateHasta.Value.Month, dateHasta.Value.Day, 23, 59, 0);
-                var response = await _productoMovimientoService.GetAllByFechaAndTipoMovimiento(desde, hasta, (int)TipoMovimientoEnum.Salida);
+                var response = await _turnoService.GetAllByFecha(desde, hasta);
 
                 if (response != null && response.success)
                 {
-                    _productoMovimientos = response.response!;
-                    SetearMovimientos(_productoMovimientos);
+                    _turnos = response.response!;
+                    SetearTurnos(_turnos);
                 }
             }
             catch (Exception ex)
@@ -47,36 +50,36 @@ namespace PuntoDeVenta.UserControls.TurnosControls
             }
         }
 
-        public void SetearMovimientos(List<ProductoMovimientoResponse> movimientos)
+        public void SetearTurnos(List<TurnoResponse> turnos)
         {
-            if (movimientos != null && movimientos.Any())
+            if (turnos != null && turnos.Any())
             {
-                var listaMovimientos = movimientos.Select(x => new
+                var listaTurnos = turnos.Select(x => new
                 {
-                    Codigo = x.Producto != null ? x.Producto!.Codigo : "",
-                    Producto = x.Descripcion ?? "",
-                    Categoria = x.Producto != null && x.Producto?.CategoriaProducto != null ? x.Producto?.CategoriaProducto?.Descripcion : "Producto Común",
-                    x.Cantidad,
-                    x.Valor,
-                    FormaPago = x.FormaPago != null ? x.FormaPago.Descripcion : "",
-                    TipoMovimiento = x.TipoMovimiento.Descripcion ?? "",
+                    Codigo = x.Id,
                     Usuario = x.Usuario.User ?? "",
-                    x.Fecha
+                    x.FechaInicio,
+                    FechaFin = x.Finalizado == true ? x.FechaFin.ToString() : "",
+                    x.CantidadInicio,
+                    x.CantidadFin,
+                    x.ValorEfectivo,
+                    x.ValorTransferencia,
+                    x.ValorTotal
                 })!.ToList();
 
-                dvMovimientos.DataSource = null;
-                dvMovimientos.DataSource = listaMovimientos;
-                dvMovimientos.Refresh();
-                dvMovimientos.Invalidate();
+                dvTurnos.DataSource = null;
+                dvTurnos.DataSource = listaTurnos;
+                dvTurnos.Refresh();
+                dvTurnos.Invalidate();
 
-                dvMovimientos.Visible = true;
+                dvTurnos.Visible = true;
                 labelSinResultados.Visible = false;
-                labelTotal.Text = $"TOTAL: ${movimientos.Sum(p => p.Valor)}";
+                labelTotal.Text = $"TOTAL: ${turnos.Sum(p => p.ValorTotal)}";
                 labelTotal.Visible = true;
             }
             else
             {
-                dvMovimientos.Visible = false;
+                dvTurnos.Visible = false;
                 labelSinResultados.Visible = true;
                 labelTotal.Visible = false;
             }
@@ -91,18 +94,18 @@ namespace PuntoDeVenta.UserControls.TurnosControls
                 string selectedFolderPath = folderBrowserDialog1.SelectedPath;
                 DataTable dt = new DataTable();
 
-                foreach (DataGridViewColumn column in dvMovimientos.Columns)
+                foreach (DataGridViewColumn column in dvTurnos.Columns)
                 {
                     dt.Columns.Add(column.HeaderText, typeof(object));
                 }
 
                 // Add rows to the DataTable based on DataGridView rows
-                foreach (DataGridViewRow row in dvMovimientos.Rows)
+                foreach (DataGridViewRow row in dvTurnos.Rows)
                 {
                     if (row.IsNewRow) continue;
 
                     DataRow dr = dt.NewRow();
-                    for (int i = 0; i < dvMovimientos.Columns.Count; i++)
+                    for (int i = 0; i < dvTurnos.Columns.Count; i++)
                     {
                         dr[i] = row.Cells[i].Value;
                     }
@@ -122,21 +125,39 @@ namespace PuntoDeVenta.UserControls.TurnosControls
         {
             dateDesde.Value = DateTime.Now;
             dateHasta.Value = DateTime.Now;
-            _ = GetAllMovimientos();
+            _ = GetAllTurnos();
         }
 
         private void linkLabelSemana_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             dateDesde.Value = DateTime.Now.AddDays(-7);
             dateHasta.Value = DateTime.Now;
-            _ = GetAllMovimientos();
+            _ = GetAllTurnos();
         }
 
         private void linkLabelMes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             dateDesde.Value = new DateTime(dateDesde.Value.Year, dateDesde.Value.Month, 1, 0, 0, 0);
             dateHasta.Value = DateTime.Now;
-            _ = GetAllMovimientos();
+            _ = GetAllTurnos();
+        }
+
+        private void dvTurnos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string idTurno = dvTurnos.Rows[e.RowIndex].Cells[0].Value.ToString();
+                VerTurno(Convert.ToInt32(idTurno));
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        public void VerTurno(int idTurno)
+        {
+            _ = ((UserControls.TurnosControl)_parent).GetTurnoById(idTurno);
         }
     }
 }

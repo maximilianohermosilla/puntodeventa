@@ -62,10 +62,12 @@
             txtVentasTransferencia = new Label();
             txtTurnoInicio = new Label();
             labelTurnoInicio = new Label();
+            panelMain = new Panel();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
+            panelMain.SuspendLayout();
             SuspendLayout();
             // 
             // panel4
@@ -78,7 +80,7 @@
             panel4.Controls.Add(labelTotalFinal);
             panel4.Controls.Add(labelTotalTransferencia);
             panel4.Controls.Add(txtTotalTransferencia);
-            panel4.Location = new Point(16, 406);
+            panel4.Location = new Point(17, 405);
             panel4.Name = "panel4";
             panel4.Size = new Size(286, 103);
             panel4.TabIndex = 34;
@@ -170,7 +172,7 @@
             panel3.Controls.Add(labelSalidasTotal);
             panel3.Controls.Add(labelSalidasTransferencia);
             panel3.Controls.Add(txtSalidasTransferencia);
-            panel3.Location = new Point(16, 288);
+            panel3.Location = new Point(17, 287);
             panel3.Name = "panel3";
             panel3.Size = new Size(286, 103);
             panel3.TabIndex = 35;
@@ -262,7 +264,7 @@
             panel2.Controls.Add(labelEntradasTotal);
             panel2.Controls.Add(labelEntradasTransferencia);
             panel2.Controls.Add(txtEntradasTransferencia);
-            panel2.Location = new Point(16, 166);
+            panel2.Location = new Point(17, 165);
             panel2.Name = "panel2";
             panel2.Size = new Size(286, 103);
             panel2.TabIndex = 33;
@@ -354,7 +356,7 @@
             panel1.Controls.Add(labelVentasTotal);
             panel1.Controls.Add(labelVentasTransferencia);
             panel1.Controls.Add(txtVentasTransferencia);
-            panel1.Location = new Point(16, 47);
+            panel1.Location = new Point(17, 46);
             panel1.Name = "panel1";
             panel1.Size = new Size(286, 103);
             panel1.TabIndex = 32;
@@ -441,7 +443,7 @@
             txtTurnoInicio.AutoSize = true;
             txtTurnoInicio.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtTurnoInicio.ForeColor = SystemColors.ActiveBorder;
-            txtTurnoInicio.Location = new Point(136, 13);
+            txtTurnoInicio.Location = new Point(137, 12);
             txtTurnoInicio.Name = "txtTurnoInicio";
             txtTurnoInicio.Size = new Size(104, 21);
             txtTurnoInicio.TabIndex = 31;
@@ -452,23 +454,31 @@
             labelTurnoInicio.AutoSize = true;
             labelTurnoInicio.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             labelTurnoInicio.ForeColor = SystemColors.ButtonHighlight;
-            labelTurnoInicio.Location = new Point(13, 13);
+            labelTurnoInicio.Location = new Point(14, 12);
             labelTurnoInicio.Name = "labelTurnoInicio";
             labelTurnoInicio.Size = new Size(128, 21);
             labelTurnoInicio.TabIndex = 30;
             labelTurnoInicio.Text = "Turno Iniciado: ";
+            // 
+            // panelMain
+            // 
+            panelMain.Controls.Add(panel4);
+            panelMain.Controls.Add(panel3);
+            panelMain.Controls.Add(panel2);
+            panelMain.Controls.Add(panel1);
+            panelMain.Controls.Add(txtTurnoInicio);
+            panelMain.Controls.Add(labelTurnoInicio);
+            panelMain.Location = new Point(0, 0);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(319, 529);
+            panelMain.TabIndex = 36;
             // 
             // TurnoControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(49, 66, 82);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(txtTurnoInicio);
-            Controls.Add(labelTurnoInicio);
+            Controls.Add(panelMain);
             Name = "TurnoControl";
             Size = new Size(319, 529);
             panel4.ResumeLayout(false);
@@ -479,8 +489,9 @@
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panelMain.ResumeLayout(false);
+            panelMain.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -519,5 +530,6 @@
         private Label txtVentasTransferencia;
         private Label txtTurnoInicio;
         private Label labelTurnoInicio;
+        private Panel panelMain;
     }
 }

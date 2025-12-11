@@ -122,6 +122,7 @@
             // 
             // panelMain
             // 
+            panelMain.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelMain.BackColor = Color.FromArgb(49, 66, 82);
             panelMain.BorderStyle = BorderStyle.FixedSingle;
             panelMain.Dock = DockStyle.Fill;
@@ -156,7 +157,8 @@
         private Panel panelNavbar;
         public Button btnTurnoActual;
         private Panel panelMain;
-        private TurnosControls.TurnoControl turnoControl;
+        public TurnosControls.TurnoControl turnoControl1;
+        public TurnosControls.ReporteTurnosControl reporteTurnosControl1;
         public Button btnReporteTurnos;
     }
 }

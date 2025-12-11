@@ -32,7 +32,7 @@
             panelMain = new Panel();
             panelDataGrid = new Panel();
             labelSinResultados = new Label();
-            dvMovimientos = new DataGridView();
+            dvTurnos = new DataGridView();
             panelHeader = new Panel();
             linkLabelMes = new LinkLabel();
             linkLabelSemana = new LinkLabel();
@@ -47,7 +47,7 @@
             labelTitle = new Label();
             panelMain.SuspendLayout();
             panelDataGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dvMovimientos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dvTurnos).BeginInit();
             panelHeader.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,11 +67,11 @@
             // 
             panelDataGrid.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelDataGrid.Controls.Add(labelSinResultados);
-            panelDataGrid.Controls.Add(dvMovimientos);
-            panelDataGrid.Dock = DockStyle.Top;
+            panelDataGrid.Controls.Add(dvTurnos);
+            panelDataGrid.Dock = DockStyle.Fill;
             panelDataGrid.Location = new Point(0, 126);
             panelDataGrid.Name = "panelDataGrid";
-            panelDataGrid.Size = new Size(1447, 251);
+            panelDataGrid.Size = new Size(1447, 674);
             panelDataGrid.TabIndex = 25;
             // 
             // labelSinResultados
@@ -85,17 +85,18 @@
             labelSinResultados.Text = "No se encontraron resultados";
             labelSinResultados.Visible = false;
             // 
-            // dvMovimientos
+            // dvTurnos
             // 
-            dvMovimientos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dvMovimientos.BackgroundColor = Color.FromArgb(49, 66, 82);
-            dvMovimientos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dvMovimientos.Dock = DockStyle.Fill;
-            dvMovimientos.Location = new Point(0, 0);
-            dvMovimientos.Name = "dvMovimientos";
-            dvMovimientos.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
-            dvMovimientos.Size = new Size(1447, 251);
-            dvMovimientos.TabIndex = 23;
+            dvTurnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dvTurnos.BackgroundColor = SystemColors.AppWorkspace;
+            dvTurnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dvTurnos.Dock = DockStyle.Fill;
+            dvTurnos.Location = new Point(0, 0);
+            dvTurnos.Name = "dvTurnos";
+            dvTurnos.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            dvTurnos.Size = new Size(1447, 674);
+            dvTurnos.TabIndex = 23;
+            dvTurnos.CellDoubleClick += dvTurnos_CellDoubleClick;
             // 
             // panelHeader
             // 
@@ -267,7 +268,7 @@
             panelMain.ResumeLayout(false);
             panelDataGrid.ResumeLayout(false);
             panelDataGrid.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dvMovimientos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dvTurnos).EndInit();
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             ResumeLayout(false);
@@ -281,7 +282,7 @@
         private DateTimePicker dateDesde;
         private Label labelHasta;
         private Label labelDesde;
-        private DataGridView dvMovimientos;
+        private DataGridView dvTurnos;
         public Button btnBuscar;
         private Panel panelDataGrid;
         private Label labelSinResultados;
