@@ -84,9 +84,19 @@ namespace PuntoDeVenta.FormDialogs
             this.DialogResult = DialogResult.OK;
         }
 
+        private void dvBusqueda_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedProducto = dvBusqueda.Rows[e.RowIndex].Cells[0].Value.ToString()!;
+        }
+
         private void comboCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             _ = GetProductosByCategoria();
+        }
+
+        private void btnAceptar_Click_1(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

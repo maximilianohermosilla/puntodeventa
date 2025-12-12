@@ -25,14 +25,21 @@ namespace PuntoDeVenta.UserControls
             comprasFormControl1.TabIndex = 18;
 
             comprasFormControl1.Visible = true;
-            _ = comprasFormControl1.GetUltimoMovimiento();
+            _ = GetUltimoMovimiento();
         }
 
 
         private void btnCompras_Click(object sender, EventArgs e)
         {
             comprasFormControl1.Visible = true;
-            _ = comprasFormControl1.GetUltimoMovimiento();
+            _ = GetUltimoMovimiento();
         }
+
+        public async Task GetUltimoMovimiento()
+        {
+            await comprasFormControl1.GetUltimoMovimiento();
+        }
+
+
     }
 }

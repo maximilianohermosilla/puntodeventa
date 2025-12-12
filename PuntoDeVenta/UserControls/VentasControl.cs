@@ -2,7 +2,6 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
-using PuntoDeVenta.Domain.Entities;
 using PuntoDeVenta.FormDialogs;
 using PuntoDeVenta.Enum;
 using System.Data;

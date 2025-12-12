@@ -81,6 +81,7 @@ namespace PuntoDeVenta
         private void btnCompras_Click(object sender, EventArgs e)
         {
             SetActivePanel(compras1);
+            _ = compras1.GetUltimoMovimiento();
         }
 
         private void btnConfiguracion_Click(object sender, EventArgs e)

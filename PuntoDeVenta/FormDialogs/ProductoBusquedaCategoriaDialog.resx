@@ -131,16 +131,16 @@
   <data name="btnCancelar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAASNJREFUSEvllDFOwzAYhTN35wrMlWjMVpS4UitUCYlDcB9GzsIAEkwMVGrXLpW4
-        AK4zIEWkssER/WwnDiM86S1/3v89yYmTZf9GepbPdZGvVSE+dCHu1WJ8wsxgNcuzkZai6TP3kkRIn/dl
-        fkdGVFxOtZKTN7I8cWmo1WxyTWar1DPvM7mtGHQ24sy4Xq+82be3ZFsFghbuFJrXz4/ejjHZX995IBgq
-        cfrUey8bLyjFhqFYSR88WGBvaCAYK+EzmvzMXH+GYnAnZjoLzL+FIcLdsaSUkG/FkHH9+nIEZ2m1vPB2
-        BhXYkqcHb2Z9OfVnUjSVPL8huxXDvzGZR9KluOXCEJMXlCrEjospfpf5KVlRVVJcEdBl7ifL/LgI++nO
-        F/ondAA1hD6HTFl82QAAAABJRU5ErkJggg==
+        vAAADrwBlbxySQAAAS5JREFUSEvllLFOwzAURTOz8wvMSDRmo0pdCYQqIfER/A9jv4UBpHZiACmsXZD4
+        AVJnQIoocXSfbCe3cdKxHOkMfbnvDo7T5P9g5um1ydK8yNSPydRTcXN+ikeHs1tcnBitdjERHwcr6nM7
+        S5dYjcMKhljoyRcq9sMWx1jMJ/eo6jL0zGOirgsLWy1sXuXvdF67QWUICTblAptX65dgLqLS0dxzErT6
+        +L9/zbaTFVHrMDP1wYJim75yK2odzRdKgr4+7Lkvah3282dBkcFyImod9r+FBa2CHItPOyuiNoQFq7fX
+        pqh95kK5mAZzEZUhLGitVs90bm6v6LzUlw+o7MIWxooqTn1dH9nSUFHTT31lP9lyzG+dnqEiTqnVHSvZ
+        J9bGUy9v2mW+vS/0CEiSPzWEPodvzICsAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnCancelar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>271, 389</value>
+    <value>200, 389</value>
   </data>
   <data name="btnCancelar.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 35</value>
@@ -168,7 +168,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCancelar.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="dvBusqueda.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -192,7 +192,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dvBusqueda.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="labelNotFound.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -225,7 +225,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelNotFound.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txtCantidad.Location" type="System.Drawing.Point, System.Drawing">
     <value>583, 12</value>
@@ -246,7 +246,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtCantidad.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="labelCantidad.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -279,7 +279,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelCantidad.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="labelCategoria.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -312,7 +312,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelCategoria.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="comboCategoria.Location" type="System.Drawing.Point, System.Drawing">
     <value>95, 12</value>
@@ -333,6 +333,48 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;comboCategoria.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnAceptar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnAceptar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="btnAceptar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="btnAceptar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAceptar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 389</value>
+  </data>
+  <data name="btnAceptar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 35</value>
+  </data>
+  <data name="btnAceptar.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="btnAceptar.Text" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="btnAceptar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btnAceptar.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnAceptar.Name" xml:space="preserve">
+    <value>btnAceptar</value>
+  </data>
+  <data name="&gt;&gt;btnAceptar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAceptar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAceptar.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

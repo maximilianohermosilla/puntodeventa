@@ -37,6 +37,7 @@
             labelCantidad = new Label();
             labelCategoria = new Label();
             comboCategoria = new ComboBox();
+            btnAceptar = new Button();
             ((System.ComponentModel.ISupportInitialize)dvBusqueda).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtCantidad).BeginInit();
             SuspendLayout();
@@ -71,6 +72,7 @@
             dvBusqueda.Name = "dvBusqueda";
             dvBusqueda.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
             dvBusqueda.CellDoubleClick += dvBusqueda_CellDoubleClick;
+            dvBusqueda.CellClick += dvBusqueda_CellClick;
             // 
             // labelNotFound
             // 
@@ -100,12 +102,27 @@
             comboCategoria.Name = "comboCategoria";
             comboCategoria.SelectedIndexChanged += comboCategoria_SelectedIndexChanged;
             // 
+            // btnAceptar
+            // 
+            btnAceptar.BackColor = Color.FromArgb(0, 80, 200);
+            resources.ApplyResources(btnAceptar, "btnAceptar");
+            btnAceptar.FlatAppearance.BorderColor = Color.Black;
+            btnAceptar.FlatAppearance.BorderSize = 0;
+            btnAceptar.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnAceptar.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnAceptar.ForeColor = SystemColors.ButtonHighlight;
+            btnAceptar.Image = Properties.Resources.check_button;
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.UseVisualStyleBackColor = false;
+            btnAceptar.Click += btnAceptar_Click_1;
+            // 
             // ProductoBusquedaCategoriaDialog
             // 
             AllowDrop = true;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
+            Controls.Add(btnAceptar);
             Controls.Add(comboCategoria);
             Controls.Add(labelCategoria);
             Controls.Add(txtCantidad);
@@ -123,7 +140,6 @@
         }
 
         #endregion
-        public Button btnAceptar;
         public Button btnCancelar;
         private DataGridView dvBusqueda;
         private Label labelNotFound;
@@ -131,5 +147,6 @@
         public Label labelCantidad;
         public Label labelCategoria;
         private ComboBox comboCategoria;
+        public Button btnAceptar;
     }
 }
