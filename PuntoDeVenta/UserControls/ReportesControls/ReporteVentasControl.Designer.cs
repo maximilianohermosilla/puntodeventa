@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteVentasControl));
             panelMain = new Panel();
+            panelCharts = new Panel();
+            panelChartCategorias = new Panel();
+            chartCategorias = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            panelChartProductos = new Panel();
+            chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panelDataGrid = new Panel();
             labelSinResultados = new Label();
             dvMovimientos = new DataGridView();
@@ -45,32 +50,82 @@
             dateHasta = new DateTimePicker();
             dateDesde = new DateTimePicker();
             labelTitle = new Label();
-            panelCharts = new Panel();
-            chartDias = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            chartCategorias = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panelMain.SuspendLayout();
+            panelCharts.SuspendLayout();
+            panelChartCategorias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartCategorias).BeginInit();
+            panelChartProductos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartProductos).BeginInit();
             panelDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dvMovimientos).BeginInit();
             panelHeader.SuspendLayout();
-            panelCharts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chartDias).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chartCategorias).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chartProductos).BeginInit();
             SuspendLayout();
             // 
             // panelMain
             // 
+            panelMain.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelMain.BackColor = Color.FromArgb(49, 66, 82);
+            panelMain.Controls.Add(panelCharts);
             panelMain.Controls.Add(panelDataGrid);
             panelMain.Controls.Add(panelHeader);
-            panelMain.Controls.Add(panelCharts);
             panelMain.Dock = DockStyle.Fill;
             panelMain.ForeColor = SystemColors.ButtonHighlight;
             panelMain.Location = new Point(0, 0);
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(1447, 800);
             panelMain.TabIndex = 0;
+            // 
+            // panelCharts
+            // 
+            panelCharts.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelCharts.Controls.Add(panelChartProductos);
+            panelCharts.Controls.Add(panelChartCategorias);
+            panelCharts.Dock = DockStyle.Top;
+            panelCharts.Location = new Point(0, 377);
+            panelCharts.Name = "panelCharts";
+            panelCharts.Size = new Size(1447, 417);
+            panelCharts.TabIndex = 27;
+            // 
+            // panelChartCategorias
+            // 
+            panelChartCategorias.AutoScroll = true;
+            panelChartCategorias.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelChartCategorias.Controls.Add(chartCategorias);
+            panelChartCategorias.Dock = DockStyle.Right;
+            panelChartCategorias.Location = new Point(706, 0);
+            panelChartCategorias.Name = "panelChartCategorias";
+            panelChartCategorias.Size = new Size(741, 417);
+            panelChartCategorias.TabIndex = 28;
+            // 
+            // chartCategorias
+            // 
+            chartCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            chartCategorias.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipXY;
+            chartCategorias.Location = new Point(0, 0);
+            chartCategorias.Name = "chartCategorias";
+            chartCategorias.Size = new Size(741, 417);
+            chartCategorias.TabIndex = 24;
+            chartCategorias.Text = "chart1";
+            // 
+            // panelChartProductos
+            // 
+            panelChartProductos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelChartProductos.AutoScroll = true;
+            panelChartProductos.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelChartProductos.Controls.Add(chartProductos);
+            panelChartProductos.Location = new Point(0, 0);
+            panelChartProductos.Name = "panelChartProductos";
+            panelChartProductos.Size = new Size(684, 417);
+            panelChartProductos.TabIndex = 27;
+            // 
+            // chartProductos
+            // 
+            chartProductos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            chartProductos.Location = new Point(0, 0);
+            chartProductos.Name = "chartProductos";
+            chartProductos.Size = new Size(684, 417);
+            chartProductos.TabIndex = 26;
+            chartProductos.Text = "chart2";
             // 
             // panelDataGrid
             // 
@@ -265,45 +320,6 @@
             labelTitle.TabIndex = 2;
             labelTitle.Text = "REPORTE DE VENTAS";
             // 
-            // panelCharts
-            // 
-            panelCharts.Controls.Add(chartDias);
-            panelCharts.Controls.Add(chartCategorias);
-            panelCharts.Controls.Add(chartProductos);
-            panelCharts.Dock = DockStyle.Fill;
-            panelCharts.Location = new Point(0, 0);
-            panelCharts.Name = "panelCharts";
-            panelCharts.Size = new Size(1447, 800);
-            panelCharts.TabIndex = 27;
-            // 
-            // chartDias
-            // 
-            chartDias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            chartDias.Location = new Point(948, 383);
-            chartDias.Name = "chartDias";
-            chartDias.Size = new Size(496, 404);
-            chartDias.TabIndex = 27;
-            chartDias.Text = "chart2";
-            // 
-            // chartCategorias
-            // 
-            chartCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            chartCategorias.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipXY;
-            chartCategorias.Location = new Point(450, 383);
-            chartCategorias.Name = "chartCategorias";
-            chartCategorias.Size = new Size(472, 404);
-            chartCategorias.TabIndex = 24;
-            chartCategorias.Text = "chart1";
-            // 
-            // chartProductos
-            // 
-            chartProductos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            chartProductos.Location = new Point(6, 383);
-            chartProductos.Name = "chartProductos";
-            chartProductos.Size = new Size(415, 404);
-            chartProductos.TabIndex = 26;
-            chartProductos.Text = "chart2";
-            // 
             // ReporteVentasControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -313,15 +329,16 @@
             Name = "ReporteVentasControl";
             Size = new Size(1447, 800);
             panelMain.ResumeLayout(false);
+            panelCharts.ResumeLayout(false);
+            panelChartCategorias.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)chartCategorias).EndInit();
+            panelChartProductos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)chartProductos).EndInit();
             panelDataGrid.ResumeLayout(false);
             panelDataGrid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dvMovimientos).EndInit();
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
-            panelCharts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)chartDias).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chartCategorias).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chartProductos).EndInit();
             ResumeLayout(false);
         }
 
@@ -341,11 +358,12 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartProductos;
         private Panel panelCharts;
         private Panel panelHeader;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartDias;
         public Button btnExportar;
         private Label labelTotal;
         private LinkLabel linkLabelHoy;
         private LinkLabel linkLabelMes;
         private LinkLabel linkLabelSemana;
+        private Panel panelChartCategorias;
+        private Panel panelChartProductos;
     }
 }

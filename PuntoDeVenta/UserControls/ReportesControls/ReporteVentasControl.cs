@@ -72,7 +72,6 @@ namespace PuntoDeVenta.UserControls.ReportesControls
                 dvMovimientos.Visible = true;
                 chartCategorias.Visible = true;
                 chartProductos.Visible = true;
-                chartDias.Visible = true;
                 labelSinResultados.Visible = false;
                 labelTotal.Text = $"TOTAL: ${movimientos.Sum(p => p.Valor)}";
                 labelTotal.Visible = true;
@@ -86,7 +85,6 @@ namespace PuntoDeVenta.UserControls.ReportesControls
                 dvMovimientos.Visible = false;
                 chartCategorias.Visible = false;
                 chartProductos.Visible = false;
-                chartDias.Visible = false;
                 labelSinResultados.Visible = true;
                 labelTotal.Visible = false;
             }
@@ -178,12 +176,7 @@ namespace PuntoDeVenta.UserControls.ReportesControls
                     .Select(m => new ChartResponse { Nombre = m.Key, Cantidad = Convert.ToInt32(m.Sum(item => item.Valor)) }).ToList();
             }
 
-            chartDias.Series.Clear();
-            chartDias.ChartAreas.Clear();
-            chartDias.Legends.Clear();
-
             ChartArea chartArea1 = new ChartArea("Fecha");
-            chartDias.ChartAreas.Add(chartArea1);
 
             foreach (var item in movimientosAgrupados)
             {
@@ -192,20 +185,7 @@ namespace PuntoDeVenta.UserControls.ReportesControls
                 series.ChartArea = "Fecha";
                 series.Points.AddXY(item.Nombre, item.Cantidad);
                 series.IsVisibleInLegend = true;
-                chartDias.Series.Add(series);
-                chartDias.Legends.Add(new Legend(item.Nombre));
-                chartDias.Legends[item.Nombre].Docking = Docking.Bottom;
             }
-
-            chartDias.ChartAreas["Fecha"].AxisX.LabelStyle.Enabled = false;
-            chartDias.ChartAreas["Fecha"].AxisX.Title = "Fecha";
-            chartDias.ChartAreas["Fecha"].AxisY.Title = "Valor";
-            chartDias.ChartAreas["Fecha"].AxisX.Interval = 1;
-            chartDias.ChartAreas["Fecha"].AxisX.MajorGrid.Enabled = true;
-            chartDias.ChartAreas["Fecha"].AxisX.MajorTickMark.Enabled = true;
-
-            chartDias.Titles.Clear();
-            chartDias.Titles.Add("Fecha");
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
