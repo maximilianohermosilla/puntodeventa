@@ -2,6 +2,7 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.UserControls.TurnosControls;
 
 
 namespace PuntoDeVenta.UserControls
@@ -18,13 +19,51 @@ namespace PuntoDeVenta.UserControls
         {
             _parametroService = new ParametroService(_context);
             InitializeComponent();
+            InitializeControls();
             _ = GetParametroNombre();
         }
 
-        private void btnMostrarOpciones_Click(object sender, EventArgs e)
+        public void InitializeControls()
         {
+            usuarioControl = new ConfiguracionControls.UsuariosControl();
 
+            panelMain.Controls.Add(usuarioControl);
+
+            usuarioControl.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            usuarioControl.Dock = DockStyle.Fill;
+            usuarioControl.Location = new Point(0, 0);
+            usuarioControl.Name = "usuarioControl";
+            usuarioControl.Size = new Size(319, 529);
+            usuarioControl.TabIndex = 1;
+
+            usuarioControl.Visible = false;
         }
+
+        private void btnGeneral_Click(object sender, EventArgs e)
+        {
+            SetActivePanel(null);
+            panelGeneral.Visible = true;
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            SetActivePanel(usuarioControl);
+        }
+
+        public void SetActivePanel(UserControl? control)
+        {
+            usuarioControl.Visible = false;
+            panelGeneral.Visible = false;
+
+            if (control != null)
+            {
+                control.Visible = true;
+            }
+
+            panelMain.Refresh();
+            this.Refresh();
+        }
+
 
         private void btnSubirImagen_Click(object sender, EventArgs e)
         {
@@ -59,7 +98,7 @@ namespace PuntoDeVenta.UserControls
                         File.Copy(openFileDialog1.FileName, destinationPath, true);
 
                         await UpdateParametro("Logo", fileName);
-                        
+
                         PictureChanged?.Invoke(this, Image.FromFile(destinationPath));
 
                         MessageBox.Show("Imagen actualizada. Debe reiniciar la aplicación para confirmar los cambios", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -108,5 +147,6 @@ namespace PuntoDeVenta.UserControls
 
             }
         }
+
     }
 }
