@@ -54,8 +54,8 @@
             btnNuevoTicket = new Button();
             btnCambiar = new Button();
             panel4 = new Panel();
-            panel5 = new Panel();
             btnBuscarCategorias = new Button();
+            panel5 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
@@ -73,7 +73,6 @@
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1447, 28);
-            panel1.TabIndex = 0;
             // 
             // ventasTitle
             // 
@@ -83,7 +82,6 @@
             ventasTitle.Location = new Point(3, 0);
             ventasTitle.Name = "ventasTitle";
             ventasTitle.Size = new Size(81, 25);
-            ventasTitle.TabIndex = 0;
             ventasTitle.Text = "VENTAS";
             // 
             // labelCodigo
@@ -93,7 +91,6 @@
             labelCodigo.Location = new Point(7, 14);
             labelCodigo.Name = "labelCodigo";
             labelCodigo.Size = new Size(142, 19);
-            labelCodigo.TabIndex = 1;
             labelCodigo.Text = "Código del producto: ";
             // 
             // txtCodigo
@@ -101,7 +98,7 @@
             txtCodigo.Location = new Point(155, 14);
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(611, 23);
-            txtCodigo.TabIndex = 2;
+            ventasTitle.TabIndex = 0;
             txtCodigo.KeyUp += txtCodigo_KeyPress;
             // 
             // btnVarios
@@ -138,11 +135,11 @@
             btnComun.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnComun.ForeColor = SystemColors.ButtonHighlight;
             btnComun.Image = (Image)resources.GetObject("btnComun.Image");
-            btnComun.Location = new Point(132, 58);
+            btnComun.Location = new Point(260, 58);
             btnComun.Name = "btnComun";
             btnComun.Size = new Size(122, 35);
-            btnComun.TabIndex = 4;
-            btnComun.Text = "Prod. Común";
+            btnComun.TabIndex = 5;
+            btnComun.Text = "(F6) Genérico";
             btnComun.TextAlign = ContentAlignment.MiddleRight;
             btnComun.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnComun.UseVisualStyleBackColor = false;
@@ -160,10 +157,10 @@
             btnBuscar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
             btnBuscar.Image = (Image)resources.GetObject("btnBuscar.Image");
-            btnBuscar.Location = new Point(260, 58);
+            btnBuscar.Location = new Point(772, 58);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(122, 35);
-            btnBuscar.TabIndex = 5;
+            btnBuscar.TabIndex = 9;
             btnBuscar.Text = "(F10) Buscar";
             btnBuscar.TextAlign = ContentAlignment.MiddleRight;
             btnBuscar.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -226,11 +223,11 @@
             btnPorMayor.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnPorMayor.ForeColor = SystemColors.ButtonHighlight;
             btnPorMayor.Image = (Image)resources.GetObject("btnPorMayor.Image");
-            btnPorMayor.Location = new Point(644, 58);
+            btnPorMayor.Location = new Point(132, 58);
             btnPorMayor.Name = "btnPorMayor";
             btnPorMayor.Size = new Size(122, 35);
-            btnPorMayor.TabIndex = 8;
-            btnPorMayor.Text = "(F11) Por Mayor";
+            btnPorMayor.TabIndex = 4;
+            btnPorMayor.Text = "Por Mayor";
             btnPorMayor.TextAlign = ContentAlignment.MiddleRight;
             btnPorMayor.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnPorMayor.UseVisualStyleBackColor = false;
@@ -248,10 +245,10 @@
             btnVerificador.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnVerificador.ForeColor = SystemColors.ButtonHighlight;
             btnVerificador.Image = (Image)resources.GetObject("btnVerificador.Image");
-            btnVerificador.Location = new Point(772, 58);
+            btnVerificador.Location = new Point(644, 58);
             btnVerificador.Name = "btnVerificador";
             btnVerificador.Size = new Size(122, 35);
-            btnVerificador.TabIndex = 9;
+            btnVerificador.TabIndex = 8;
             btnVerificador.Text = "(F9) Verificador";
             btnVerificador.TextAlign = ContentAlignment.MiddleRight;
             btnVerificador.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -273,7 +270,7 @@
             btnAgregarProducto.Location = new Point(772, 7);
             btnAgregarProducto.Name = "btnAgregarProducto";
             btnAgregarProducto.Size = new Size(122, 35);
-            btnAgregarProducto.TabIndex = 10;
+            btnAgregarProducto.TabIndex = 1;
             btnAgregarProducto.Text = "(ENTER) Añadir";
             btnAgregarProducto.TextAlign = ContentAlignment.MiddleRight;
             btnAgregarProducto.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -295,7 +292,7 @@
             btnEliminarProducto.Location = new Point(900, 7);
             btnEliminarProducto.Name = "btnEliminarProducto";
             btnEliminarProducto.Size = new Size(141, 35);
-            btnEliminarProducto.TabIndex = 11;
+            btnEliminarProducto.TabIndex = 2;
             btnEliminarProducto.Text = "(DEL) Borrar";
             btnEliminarProducto.TextAlign = ContentAlignment.MiddleRight;
             btnEliminarProducto.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -309,7 +306,6 @@
             tabControlTickets.Name = "tabControlTickets";
             tabControlTickets.SelectedIndex = 0;
             tabControlTickets.Size = new Size(1445, 391);
-            tabControlTickets.TabIndex = 12;
             tabControlTickets.SelectedIndexChanged += tabControlTickets_SelectedIndexChanged;
             // 
             // panel2
@@ -325,7 +321,6 @@
             panel2.Location = new Point(0, 561);
             panel2.Name = "panel2";
             panel2.Size = new Size(1447, 43);
-            panel2.TabIndex = 13;
             // 
             // btnReimprimir
             // 
@@ -342,7 +337,7 @@
             btnReimprimir.Location = new Point(3, 3);
             btnReimprimir.Name = "btnReimprimir";
             btnReimprimir.Size = new Size(223, 36);
-            btnReimprimir.TabIndex = 16;
+            btnReimprimir.TabIndex = 15;
             btnReimprimir.Text = "Reimprimir Último Ticket";
             btnReimprimir.TextAlign = ContentAlignment.MiddleRight;
             btnReimprimir.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -365,7 +360,7 @@
             btnCobrar.Location = new Point(1282, 3);
             btnCobrar.Name = "btnCobrar";
             btnCobrar.Size = new Size(160, 34);
-            btnCobrar.TabIndex = 25;
+            btnCobrar.TabIndex = 17;
             btnCobrar.Text = "(F12) Cobrar";
             btnCobrar.TextAlign = ContentAlignment.MiddleRight;
             btnCobrar.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -387,7 +382,7 @@
             btnVentasDevoluciones.Location = new Point(232, 3);
             btnVentasDevoluciones.Name = "btnVentasDevoluciones";
             btnVentasDevoluciones.Size = new Size(222, 36);
-            btnVentasDevoluciones.TabIndex = 15;
+            btnVentasDevoluciones.TabIndex = 16;
             btnVentasDevoluciones.Text = "Ventas del día y Devoluciones";
             btnVentasDevoluciones.TextAlign = ContentAlignment.MiddleRight;
             btnVentasDevoluciones.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -409,7 +404,6 @@
             panel3.Location = new Point(0, 520);
             panel3.Name = "panel3";
             panel3.Size = new Size(1447, 41);
-            panel3.TabIndex = 14;
             // 
             // labelTotal
             // 
@@ -420,7 +414,6 @@
             labelTotal.Location = new Point(1282, 2);
             labelTotal.Name = "labelTotal";
             labelTotal.Size = new Size(160, 34);
-            labelTotal.TabIndex = 12;
             labelTotal.Text = "$ 0.00";
             labelTotal.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -439,7 +432,7 @@
             btnAsignarCliente.Location = new Point(266, 2);
             btnAsignarCliente.Name = "btnAsignarCliente";
             btnAsignarCliente.Size = new Size(122, 35);
-            btnAsignarCliente.TabIndex = 24;
+            btnAsignarCliente.TabIndex = 13;
             btnAsignarCliente.Text = "Asignar Cliente";
             btnAsignarCliente.TextAlign = ContentAlignment.MiddleRight;
             btnAsignarCliente.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -461,7 +454,7 @@
             btnEliminarTicket.Location = new Point(138, 2);
             btnEliminarTicket.Name = "btnEliminarTicket";
             btnEliminarTicket.Size = new Size(122, 35);
-            btnEliminarTicket.TabIndex = 23;
+            btnEliminarTicket.TabIndex = 12;
             btnEliminarTicket.Text = "Eliminar Ticket";
             btnEliminarTicket.TextAlign = ContentAlignment.MiddleRight;
             btnEliminarTicket.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -483,7 +476,7 @@
             btnNuevoTicket.Location = new Point(2, 2);
             btnNuevoTicket.Name = "btnNuevoTicket";
             btnNuevoTicket.Size = new Size(130, 35);
-            btnNuevoTicket.TabIndex = 22;
+            btnNuevoTicket.TabIndex = 11;
             btnNuevoTicket.Text = "Nuevo Ticket";
             btnNuevoTicket.TextAlign = ContentAlignment.MiddleRight;
             btnNuevoTicket.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -505,7 +498,7 @@
             btnCambiar.Location = new Point(394, 2);
             btnCambiar.Name = "btnCambiar";
             btnCambiar.Size = new Size(122, 35);
-            btnCambiar.TabIndex = 12;
+            btnCambiar.TabIndex = 14;
             btnCambiar.Text = "(F5) Cambiar";
             btnCambiar.TextAlign = ContentAlignment.MiddleRight;
             btnCambiar.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -534,18 +527,6 @@
             panel4.Location = new Point(0, 28);
             panel4.Name = "panel4";
             panel4.Size = new Size(1447, 99);
-            panel4.TabIndex = 15;
-            // 
-            // panel5
-            // 
-            panel5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(tabControlTickets);
-            panel5.Dock = DockStyle.Fill;
-            panel5.Location = new Point(0, 127);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(1447, 393);
-            panel5.TabIndex = 15;
             // 
             // btnBuscarCategorias
             // 
@@ -562,12 +543,22 @@
             btnBuscarCategorias.Location = new Point(900, 58);
             btnBuscarCategorias.Name = "btnBuscarCategorias";
             btnBuscarCategorias.Size = new Size(141, 35);
-            btnBuscarCategorias.TabIndex = 12;
-            btnBuscarCategorias.Text = "Buscar Categorías";
+            btnBuscarCategorias.TabIndex = 10;
+            btnBuscarCategorias.Text = "(F11) Categorías";
             btnBuscarCategorias.TextAlign = ContentAlignment.MiddleRight;
             btnBuscarCategorias.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnBuscarCategorias.UseVisualStyleBackColor = false;
             btnBuscarCategorias.Click += btnBuscarCategorias_Click;
+            // 
+            // panel5
+            // 
+            panel5.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(tabControlTickets);
+            panel5.Dock = DockStyle.Fill;
+            panel5.Location = new Point(0, 127);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(1447, 393);
             // 
             // VentasControl
             // 
@@ -597,7 +588,7 @@
         private Panel panel1;
         private Label ventasTitle;
         private Label labelCodigo;
-        private TextBox txtCodigo;
+        public TextBox txtCodigo;
         public Button btnVarios;
         public Button btnComun;
         public Button btnBuscar;

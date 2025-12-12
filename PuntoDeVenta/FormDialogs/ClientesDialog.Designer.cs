@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesDialog));
             panelMain = new Panel();
+            panelFooter = new Panel();
+            btnAsignar = new Button();
+            btnQuitar = new Button();
+            btnNuevoCliente = new Button();
+            listClientes = new ListBox();
+            txtBuscar = new TextBox();
             panelNewClient = new Panel();
             labelTitleCliente = new Label();
             btnCancelar = new Button();
@@ -43,15 +49,9 @@
             labelApellido = new Label();
             txtNombre = new TextBox();
             labelNombre = new Label();
-            panelFooter = new Panel();
-            btnAsignar = new Button();
-            btnQuitar = new Button();
-            btnNuevoCliente = new Button();
-            listClientes = new ListBox();
-            txtBuscar = new TextBox();
             panelMain.SuspendLayout();
-            panelNewClient.SuspendLayout();
             panelFooter.SuspendLayout();
+            panelNewClient.SuspendLayout();
             SuspendLayout();
             // 
             // panelMain
@@ -63,6 +63,66 @@
             panelMain.Controls.Add(txtBuscar);
             panelMain.ForeColor = SystemColors.ButtonHighlight;
             panelMain.Name = "panelMain";
+            // 
+            // panelFooter
+            // 
+            resources.ApplyResources(panelFooter, "panelFooter");
+            panelFooter.Controls.Add(btnAsignar);
+            panelFooter.Controls.Add(btnQuitar);
+            panelFooter.Controls.Add(btnNuevoCliente);
+            panelFooter.Name = "panelFooter";
+            // 
+            // btnAsignar
+            // 
+            btnAsignar.BackColor = Color.FromArgb(0, 80, 200);
+            resources.ApplyResources(btnAsignar, "btnAsignar");
+            btnAsignar.FlatAppearance.BorderColor = Color.Silver;
+            btnAsignar.FlatAppearance.BorderSize = 0;
+            btnAsignar.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnAsignar.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnAsignar.ForeColor = SystemColors.ButtonHighlight;
+            btnAsignar.Name = "btnAsignar";
+            btnAsignar.UseVisualStyleBackColor = false;
+            btnAsignar.Click += btnAsignar_Click;
+            // 
+            // btnQuitar
+            // 
+            btnQuitar.BackColor = Color.FromArgb(0, 80, 200);
+            resources.ApplyResources(btnQuitar, "btnQuitar");
+            btnQuitar.FlatAppearance.BorderColor = Color.Silver;
+            btnQuitar.FlatAppearance.BorderSize = 0;
+            btnQuitar.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnQuitar.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnQuitar.ForeColor = SystemColors.ButtonHighlight;
+            btnQuitar.Name = "btnQuitar";
+            btnQuitar.UseVisualStyleBackColor = false;
+            btnQuitar.Click += btnQuitar_Click;
+            // 
+            // btnNuevoCliente
+            // 
+            btnNuevoCliente.BackColor = Color.FromArgb(0, 80, 200);
+            resources.ApplyResources(btnNuevoCliente, "btnNuevoCliente");
+            btnNuevoCliente.FlatAppearance.BorderColor = Color.Silver;
+            btnNuevoCliente.FlatAppearance.BorderSize = 0;
+            btnNuevoCliente.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnNuevoCliente.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnNuevoCliente.ForeColor = SystemColors.ButtonHighlight;
+            btnNuevoCliente.Name = "btnNuevoCliente";
+            btnNuevoCliente.UseVisualStyleBackColor = false;
+            btnNuevoCliente.Click += btnNuevoCliente_Click_1;
+            // 
+            // listClientes
+            // 
+            resources.ApplyResources(listClientes, "listClientes");
+            listClientes.FormattingEnabled = true;
+            listClientes.Name = "listClientes";
+            listClientes.SelectedIndexChanged += listClientes_SelectedIndexChanged;
+            // 
+            // txtBuscar
+            // 
+            resources.ApplyResources(txtBuscar, "txtBuscar");
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // panelNewClient
             // 
@@ -99,6 +159,7 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
+            btnCancelar.KeyDown += btnCancelar_KeyDown;
             // 
             // checkHabilitado
             // 
@@ -161,82 +222,25 @@
             resources.ApplyResources(labelNombre, "labelNombre");
             labelNombre.Name = "labelNombre";
             // 
-            // panelFooter
-            // 
-            resources.ApplyResources(panelFooter, "panelFooter");
-            panelFooter.Controls.Add(btnAsignar);
-            panelFooter.Controls.Add(btnQuitar);
-            panelFooter.Controls.Add(btnNuevoCliente);
-            panelFooter.Name = "panelFooter";
-            // 
-            // btnAsignar
-            // 
-            btnAsignar.BackColor = Color.FromArgb(0, 80, 200);
-            resources.ApplyResources(btnAsignar, "btnAsignar");
-            btnAsignar.FlatAppearance.BorderColor = Color.Silver;
-            btnAsignar.FlatAppearance.BorderSize = 0;
-            btnAsignar.FlatAppearance.MouseDownBackColor = Color.Navy;
-            btnAsignar.FlatAppearance.MouseOverBackColor = Color.Teal;
-            btnAsignar.ForeColor = SystemColors.ButtonHighlight;
-            btnAsignar.Name = "btnAsignar";
-            btnAsignar.UseVisualStyleBackColor = false;
-            btnAsignar.Click += btnAsignar_Click;
-            // 
-            // btnQuitar
-            // 
-            btnQuitar.BackColor = Color.FromArgb(0, 80, 200);
-            resources.ApplyResources(btnQuitar, "btnQuitar");
-            btnQuitar.FlatAppearance.BorderColor = Color.Silver;
-            btnQuitar.FlatAppearance.BorderSize = 0;
-            btnQuitar.FlatAppearance.MouseDownBackColor = Color.Navy;
-            btnQuitar.FlatAppearance.MouseOverBackColor = Color.Teal;
-            btnQuitar.ForeColor = SystemColors.ButtonHighlight;
-            btnQuitar.Name = "btnQuitar";
-            btnQuitar.UseVisualStyleBackColor = false;
-            btnQuitar.Click += btnQuitar_Click;
-            // 
-            // btnNuevoCliente
-            // 
-            btnNuevoCliente.BackColor = Color.FromArgb(0, 80, 200);
-            resources.ApplyResources(btnNuevoCliente, "btnNuevoCliente");
-            btnNuevoCliente.FlatAppearance.BorderColor = Color.Silver;
-            btnNuevoCliente.FlatAppearance.BorderSize = 0;
-            btnNuevoCliente.FlatAppearance.MouseDownBackColor = Color.Navy;
-            btnNuevoCliente.FlatAppearance.MouseOverBackColor = Color.Teal;
-            btnNuevoCliente.ForeColor = SystemColors.ButtonHighlight;
-            btnNuevoCliente.Name = "btnNuevoCliente";
-            btnNuevoCliente.UseVisualStyleBackColor = false;
-            btnNuevoCliente.Click += btnNuevoCliente_Click_1;
-            // 
-            // listClientes
-            // 
-            resources.ApplyResources(listClientes, "listClientes");
-            listClientes.FormattingEnabled = true;
-            listClientes.Name = "listClientes";
-            listClientes.SelectedIndexChanged += listClientes_SelectedIndexChanged;
-            // 
-            // txtBuscar
-            // 
-            resources.ApplyResources(txtBuscar, "txtBuscar");
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.TextChanged += txtBuscar_TextChanged;
-            // 
             // ClientesDialog
             // 
             AllowDrop = true;
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 32, 40);
+            CancelButton = btnCancelar;
             Controls.Add(panelNewClient);
             Controls.Add(panelMain);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            KeyPreview = true;
             Name = "ClientesDialog";
+            KeyDown += ClientesDialog_KeyDown;
             panelMain.ResumeLayout(false);
             panelMain.PerformLayout();
+            panelFooter.ResumeLayout(false);
             panelNewClient.ResumeLayout(false);
             panelNewClient.PerformLayout();
-            panelFooter.ResumeLayout(false);
             ResumeLayout(false);
         }
 

@@ -125,7 +125,10 @@
             Controls.Add(labelDescripcion);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            KeyPreview = true;
             Name = "ProductoComunDialog";
+            Load += ProductoComunDialog_Load;
+            KeyDown += ProductoComunDialog_KeyDown;
             ((System.ComponentModel.ISupportInitialize)txtCantidad).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtPrecio).EndInit();
             ResumeLayout(false);

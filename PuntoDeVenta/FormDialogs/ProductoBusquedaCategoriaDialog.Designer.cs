@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductoBusquedaCategoriaDialog));
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             btnCancelar = new Button();
             dvBusqueda = new DataGridView();
             labelNotFound = new Label();
@@ -61,18 +61,18 @@
             dvBusqueda.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dvBusqueda.BackgroundColor = Color.FromArgb(49, 66, 82);
             dvBusqueda.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dvBusqueda.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dvBusqueda.DefaultCellStyle = dataGridViewCellStyle1;
             dvBusqueda.Name = "dvBusqueda";
             dvBusqueda.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
-            dvBusqueda.CellDoubleClick += dvBusqueda_CellDoubleClick;
             dvBusqueda.CellClick += dvBusqueda_CellClick;
+            dvBusqueda.CellDoubleClick += dvBusqueda_CellDoubleClick;
             // 
             // labelNotFound
             // 
@@ -132,7 +132,9 @@
             Controls.Add(btnCancelar);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            KeyPreview = true;
             Name = "ProductoBusquedaCategoriaDialog";
+            KeyDown += ProductoBusquedaCategoriaDialog_KeyDown;
             ((System.ComponentModel.ISupportInitialize)dvBusqueda).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtCantidad).EndInit();
             ResumeLayout(false);

@@ -171,13 +171,13 @@ namespace PuntoDeVenta.Application.Services
             return response;
         }
 
-        public async Task<ResponseModel<CajaMovimientoResponse>> GetLast()
+        public async Task<ResponseModel<CajaMovimientoResponse>> GetLastByFormaPago(int idFormaPago)
         {
             ResponseModel<CajaMovimientoResponse> response = new ResponseModel<CajaMovimientoResponse>();
 
             try
             {
-                CajaMovimiento movimiento = await _movimientoRepository.GetLast();
+                CajaMovimiento movimiento = await _movimientoRepository.GetLastByFormaPago(idFormaPago);
 
                 if (movimiento == null)
                 {

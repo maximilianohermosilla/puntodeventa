@@ -71,7 +71,9 @@
             Controls.Add(btnEfectivo);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            KeyPreview = true;
             Name = "FormaPagoDialog";
+            KeyDown += FormaPagoDialog_KeyDown;
             ResumeLayout(false);
         }
 

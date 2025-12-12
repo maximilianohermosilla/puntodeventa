@@ -122,7 +122,9 @@
             Controls.Add(txtDescripcion);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            KeyPreview = true;
             Name = "ProductoBusquedaDialog";
+            KeyDown += ProductoBusquedaDialog_KeyDown;
             ((System.ComponentModel.ISupportInitialize)dvBusqueda).EndInit();
             ((System.ComponentModel.ISupportInitialize)txtCantidad).EndInit();
             ResumeLayout(false);

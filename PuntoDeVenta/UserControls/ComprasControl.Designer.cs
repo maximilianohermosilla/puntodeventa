@@ -34,7 +34,7 @@ namespace PuntoDeVenta.UserControls
             panelHeader = new Panel();
             comprasTitle = new Label();
             panelNavbar = new Panel();
-            btnCompras = new Button();
+            btnCajaGrande = new Button();
             panelMain = new Panel();
             panelHeader.SuspendLayout();
             panelNavbar.SuspendLayout();
@@ -68,7 +68,7 @@ namespace PuntoDeVenta.UserControls
             panelNavbar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelNavbar.BackColor = Color.FromArgb(26, 32, 40);
             panelNavbar.BorderStyle = BorderStyle.FixedSingle;
-            panelNavbar.Controls.Add(btnCompras);
+            panelNavbar.Controls.Add(btnCajaGrande);
             panelNavbar.Dock = DockStyle.Top;
             panelNavbar.ForeColor = SystemColors.ButtonHighlight;
             panelNavbar.Location = new Point(0, 28);
@@ -76,27 +76,27 @@ namespace PuntoDeVenta.UserControls
             panelNavbar.Size = new Size(1460, 48);
             panelNavbar.TabIndex = 17;
             // 
-            // btnCompras
+            // btnCajaGrande
             // 
-            btnCompras.BackColor = Color.FromArgb(0, 80, 200);
-            btnCompras.BackgroundImageLayout = ImageLayout.None;
-            btnCompras.FlatAppearance.BorderColor = Color.Silver;
-            btnCompras.FlatAppearance.BorderSize = 0;
-            btnCompras.FlatAppearance.MouseDownBackColor = Color.Navy;
-            btnCompras.FlatAppearance.MouseOverBackColor = Color.Teal;
-            btnCompras.FlatStyle = FlatStyle.Flat;
-            btnCompras.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCompras.ForeColor = SystemColors.ButtonHighlight;
-            btnCompras.Image = (Image)resources.GetObject("btnCompras.Image");
-            btnCompras.Location = new Point(2, 6);
-            btnCompras.Name = "btnCompras";
-            btnCompras.Size = new Size(193, 35);
-            btnCompras.TabIndex = 3;
-            btnCompras.Text = "Compras";
-            btnCompras.TextAlign = ContentAlignment.MiddleRight;
-            btnCompras.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnCompras.UseVisualStyleBackColor = false;
-            btnCompras.Click += btnCompras_Click;
+            btnCajaGrande.BackColor = Color.FromArgb(0, 80, 200);
+            btnCajaGrande.BackgroundImageLayout = ImageLayout.None;
+            btnCajaGrande.FlatAppearance.BorderColor = Color.Silver;
+            btnCajaGrande.FlatAppearance.BorderSize = 0;
+            btnCajaGrande.FlatAppearance.MouseDownBackColor = Color.Navy;
+            btnCajaGrande.FlatAppearance.MouseOverBackColor = Color.Teal;
+            btnCajaGrande.FlatStyle = FlatStyle.Flat;
+            btnCajaGrande.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCajaGrande.ForeColor = SystemColors.ButtonHighlight;
+            btnCajaGrande.Image = (Image)resources.GetObject("btnCajaGrande.Image");
+            btnCajaGrande.Location = new Point(2, 6);
+            btnCajaGrande.Name = "btnCajaGrande";
+            btnCajaGrande.Size = new Size(193, 35);
+            btnCajaGrande.TabIndex = 3;
+            btnCajaGrande.Text = "Caja Grande";
+            btnCajaGrande.TextAlign = ContentAlignment.MiddleRight;
+            btnCajaGrande.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCajaGrande.UseVisualStyleBackColor = false;
+            btnCajaGrande.Click += btnCompras_Click;
             // 
             // panelMain
             // 
@@ -131,7 +131,7 @@ namespace PuntoDeVenta.UserControls
         private Panel panelHeader;
         private Label comprasTitle;
         private Panel panelNavbar;
-        public Button btnCompras;
+        public Button btnCajaGrande;
         private Panel panelMain;
         private ComprasFormControl comprasFormControl1;
     }

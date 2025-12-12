@@ -69,5 +69,13 @@ namespace PuntoDeVenta.FormDialogs
             labelPrecioProducto.Text = string.Empty;
             _ = GetProductoByCodigo(txtEtiqueta.Text);
         }
+
+        private void ProductoVerificadorDialog_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

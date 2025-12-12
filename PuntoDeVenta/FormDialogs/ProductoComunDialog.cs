@@ -41,5 +41,18 @@
                 numericUpDown.Select(0, numericUpDown.Text.Length);
             }
         }
+
+        private void ProductoComunDialog_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProductoComunDialog_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

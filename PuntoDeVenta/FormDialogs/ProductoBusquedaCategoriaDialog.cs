@@ -98,5 +98,13 @@ namespace PuntoDeVenta.FormDialogs
         {
             this.DialogResult = DialogResult.OK;
         }
+
+        private void ProductoBusquedaCategoriaDialog_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

@@ -185,5 +185,18 @@ namespace PuntoDeVenta.FormDialogs
             //listClientes!.SelectedIndex = 0;
             SetClienteSelected(new ClienteResponse() { Habilitado = true });
         }
+
+        private void btnCancelar_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void ClientesDialog_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

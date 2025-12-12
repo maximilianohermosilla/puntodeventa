@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComprasFormControl));
-            panelHeader = new Panel();
-            labelTotal = new Label();
-            labelTitle = new Label();
+            labelTotalEfectivo = new Label();
             panel1 = new Panel();
+            btnMercadoPago = new Button();
+            btnEfectivo = new Button();
+            labelTotalMercadoPago = new Label();
             btnGuardar = new Button();
             lblNuevoGasto = new Label();
             labelFormaPago = new Label();
@@ -48,6 +49,8 @@
             labelSinResultados = new Label();
             dvMovimientos = new DataGridView();
             panelHeaderGrid = new Panel();
+            labelPago = new Label();
+            comboFiltroFormaPago = new ComboBox();
             linkLabelMes = new LinkLabel();
             linkLabelSemana = new LinkLabel();
             linkLabelHoy = new LinkLabel();
@@ -59,7 +62,6 @@
             dateHasta = new DateTimePicker();
             dateDesde = new DateTimePicker();
             label2 = new Label();
-            panelHeader.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)txtValor).BeginInit();
             panelGrid.SuspendLayout();
@@ -68,44 +70,26 @@
             panelHeaderGrid.SuspendLayout();
             SuspendLayout();
             // 
-            // panelHeader
+            // labelTotalEfectivo
             // 
-            panelHeader.BackColor = Color.FromArgb(26, 32, 40);
-            panelHeader.Controls.Add(labelTotal);
-            panelHeader.Controls.Add(labelTitle);
-            panelHeader.Dock = DockStyle.Top;
-            panelHeader.Location = new Point(0, 0);
-            panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1098, 45);
-            panelHeader.TabIndex = 0;
-            // 
-            // labelTotal
-            // 
-            labelTotal.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            labelTotal.BackColor = Color.White;
-            labelTotal.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTotal.ForeColor = SystemColors.ActiveCaptionText;
-            labelTotal.Location = new Point(925, 5);
-            labelTotal.Name = "labelTotal";
-            labelTotal.Size = new Size(160, 34);
-            labelTotal.TabIndex = 13;
-            labelTotal.Text = "$ 0.00";
-            labelTotal.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // labelTitle
-            // 
-            labelTitle.AutoSize = true;
-            labelTitle.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTitle.ForeColor = SystemColors.ButtonHighlight;
-            labelTitle.Location = new Point(3, 9);
-            labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(102, 25);
-            labelTitle.TabIndex = 2;
-            labelTitle.Text = "COMPRAS";
+            labelTotalEfectivo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelTotalEfectivo.BackColor = Color.White;
+            labelTotalEfectivo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTotalEfectivo.ForeColor = SystemColors.ActiveCaptionText;
+            labelTotalEfectivo.Location = new Point(96, 311);
+            labelTotalEfectivo.Name = "labelTotalEfectivo";
+            labelTotalEfectivo.Size = new Size(180, 48);
+            labelTotalEfectivo.TabIndex = 13;
+            labelTotalEfectivo.Text = "$ 0.00";
+            labelTotalEfectivo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(49, 66, 82);
+            panel1.Controls.Add(btnMercadoPago);
+            panel1.Controls.Add(btnEfectivo);
+            panel1.Controls.Add(labelTotalMercadoPago);
+            panel1.Controls.Add(labelTotalEfectivo);
             panel1.Controls.Add(btnGuardar);
             panel1.Controls.Add(lblNuevoGasto);
             panel1.Controls.Add(labelFormaPago);
@@ -118,11 +102,68 @@
             panel1.Controls.Add(labelDescripcion);
             panel1.Dock = DockStyle.Left;
             panel1.ForeColor = SystemColors.ButtonHighlight;
-            panel1.Location = new Point(0, 45);
+            panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 3, 8, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(290, 520);
+            panel1.Size = new Size(290, 565);
             panel1.TabIndex = 1;
+            // 
+            // btnMercadoPago
+            // 
+            btnMercadoPago.BackColor = Color.FromArgb(0, 80, 200);
+            btnMercadoPago.BackgroundImage = Properties.Resources.payment_mercadopago;
+            btnMercadoPago.BackgroundImageLayout = ImageLayout.Stretch;
+            btnMercadoPago.FlatAppearance.BorderColor = Color.Black;
+            btnMercadoPago.FlatAppearance.BorderSize = 0;
+            btnMercadoPago.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnMercadoPago.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnMercadoPago.FlatStyle = FlatStyle.Popup;
+            btnMercadoPago.Font = new Font("Segoe UI", 8.25F);
+            btnMercadoPago.ForeColor = SystemColors.ButtonHighlight;
+            btnMercadoPago.ImeMode = ImeMode.NoControl;
+            btnMercadoPago.Location = new Point(19, 375);
+            btnMercadoPago.Name = "btnMercadoPago";
+            btnMercadoPago.Size = new Size(48, 48);
+            btnMercadoPago.TabIndex = 36;
+            btnMercadoPago.TextAlign = ContentAlignment.BottomCenter;
+            btnMercadoPago.TextImageRelation = TextImageRelation.TextAboveImage;
+            btnMercadoPago.UseVisualStyleBackColor = false;
+            btnMercadoPago.Click += btnMercadoPago_Click;
+            // 
+            // btnEfectivo
+            // 
+            btnEfectivo.BackColor = Color.FromArgb(0, 80, 200);
+            btnEfectivo.BackgroundImage = Properties.Resources.payment_cash;
+            btnEfectivo.BackgroundImageLayout = ImageLayout.Stretch;
+            btnEfectivo.FlatAppearance.BorderColor = Color.Black;
+            btnEfectivo.FlatAppearance.BorderSize = 0;
+            btnEfectivo.FlatAppearance.MouseDownBackColor = Color.DarkGray;
+            btnEfectivo.FlatAppearance.MouseOverBackColor = Color.LightGray;
+            btnEfectivo.FlatStyle = FlatStyle.Popup;
+            btnEfectivo.Font = new Font("Segoe UI", 8.25F);
+            btnEfectivo.ForeColor = SystemColors.ButtonHighlight;
+            btnEfectivo.ImeMode = ImeMode.NoControl;
+            btnEfectivo.Location = new Point(19, 311);
+            btnEfectivo.Name = "btnEfectivo";
+            btnEfectivo.Size = new Size(48, 48);
+            btnEfectivo.TabIndex = 35;
+            btnEfectivo.TextAlign = ContentAlignment.BottomCenter;
+            btnEfectivo.TextImageRelation = TextImageRelation.TextAboveImage;
+            btnEfectivo.UseVisualStyleBackColor = false;
+            btnEfectivo.Click += btnEfectivo_Click;
+            // 
+            // labelTotalMercadoPago
+            // 
+            labelTotalMercadoPago.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelTotalMercadoPago.BackColor = Color.White;
+            labelTotalMercadoPago.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTotalMercadoPago.ForeColor = SystemColors.ActiveCaptionText;
+            labelTotalMercadoPago.Location = new Point(96, 375);
+            labelTotalMercadoPago.Name = "labelTotalMercadoPago";
+            labelTotalMercadoPago.Size = new Size(181, 48);
+            labelTotalMercadoPago.TabIndex = 34;
+            labelTotalMercadoPago.Text = "$ 0.00";
+            labelTotalMercadoPago.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnGuardar
             // 
@@ -136,7 +177,7 @@
             btnGuardar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = SystemColors.ButtonHighlight;
             btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
-            btnGuardar.Location = new Point(75, 244);
+            btnGuardar.Location = new Point(76, 217);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(136, 35);
             btnGuardar.TabIndex = 33;
@@ -164,9 +205,9 @@
             labelFormaPago.ForeColor = SystemColors.ButtonHighlight;
             labelFormaPago.Location = new Point(9, 164);
             labelFormaPago.Name = "labelFormaPago";
-            labelFormaPago.Size = new Size(86, 19);
+            labelFormaPago.Size = new Size(43, 19);
             labelFormaPago.TabIndex = 32;
-            labelFormaPago.Text = "Forma Pago:";
+            labelFormaPago.Text = "Pago:";
             // 
             // comboFormaPago
             // 
@@ -239,9 +280,9 @@
             panelGrid.Controls.Add(panelDataGrid);
             panelGrid.Controls.Add(panelHeaderGrid);
             panelGrid.Dock = DockStyle.Fill;
-            panelGrid.Location = new Point(290, 45);
+            panelGrid.Location = new Point(290, 0);
             panelGrid.Name = "panelGrid";
-            panelGrid.Size = new Size(808, 520);
+            panelGrid.Size = new Size(808, 565);
             panelGrid.TabIndex = 2;
             // 
             // panelDataGrid
@@ -252,7 +293,7 @@
             panelDataGrid.Dock = DockStyle.Fill;
             panelDataGrid.Location = new Point(0, 126);
             panelDataGrid.Name = "panelDataGrid";
-            panelDataGrid.Size = new Size(806, 392);
+            panelDataGrid.Size = new Size(806, 437);
             panelDataGrid.TabIndex = 31;
             // 
             // labelSinResultados
@@ -276,11 +317,13 @@
             dvMovimientos.Location = new Point(0, 0);
             dvMovimientos.Name = "dvMovimientos";
             dvMovimientos.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
-            dvMovimientos.Size = new Size(806, 392);
+            dvMovimientos.Size = new Size(806, 437);
             dvMovimientos.TabIndex = 23;
             // 
             // panelHeaderGrid
             // 
+            panelHeaderGrid.Controls.Add(labelPago);
+            panelHeaderGrid.Controls.Add(comboFiltroFormaPago);
             panelHeaderGrid.Controls.Add(linkLabelMes);
             panelHeaderGrid.Controls.Add(linkLabelSemana);
             panelHeaderGrid.Controls.Add(linkLabelHoy);
@@ -297,6 +340,25 @@
             panelHeaderGrid.Name = "panelHeaderGrid";
             panelHeaderGrid.Size = new Size(806, 126);
             panelHeaderGrid.TabIndex = 30;
+            // 
+            // labelPago
+            // 
+            labelPago.AutoSize = true;
+            labelPago.Font = new Font("Segoe UI", 10F);
+            labelPago.ForeColor = SystemColors.ButtonHighlight;
+            labelPago.Location = new Point(517, 75);
+            labelPago.Name = "labelPago";
+            labelPago.Size = new Size(43, 19);
+            labelPago.TabIndex = 33;
+            labelPago.Text = "Pago:";
+            // 
+            // comboFiltroFormaPago
+            // 
+            comboFiltroFormaPago.FormattingEnabled = true;
+            comboFiltroFormaPago.Location = new Point(517, 97);
+            comboFiltroFormaPago.Name = "comboFiltroFormaPago";
+            comboFiltroFormaPago.Size = new Size(192, 23);
+            comboFiltroFormaPago.TabIndex = 32;
             // 
             // linkLabelMes
             // 
@@ -361,7 +423,7 @@
             btnExportar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnExportar.ForeColor = SystemColors.ButtonHighlight;
             btnExportar.Image = (Image)resources.GetObject("btnExportar.Image");
-            btnExportar.Location = new Point(629, 85);
+            btnExportar.Location = new Point(679, 10);
             btnExportar.Name = "btnExportar";
             btnExportar.Size = new Size(114, 35);
             btnExportar.TabIndex = 23;
@@ -383,9 +445,9 @@
             btnBuscar.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBuscar.ForeColor = SystemColors.ButtonHighlight;
             btnBuscar.Image = (Image)resources.GetObject("btnBuscar.Image");
-            btnBuscar.Location = new Point(511, 85);
+            btnBuscar.Location = new Point(556, 10);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(93, 35);
+            btnBuscar.Size = new Size(103, 35);
             btnBuscar.TabIndex = 22;
             btnBuscar.Text = "Buscar";
             btnBuscar.TextAlign = ContentAlignment.MiddleRight;
@@ -436,9 +498,9 @@
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(10, 10);
             label2.Name = "label2";
-            label2.Size = new Size(186, 25);
+            label2.Size = new Size(228, 25);
             label2.TabIndex = 2;
-            label2.Text = "REPORTE COMPRAS";
+            label2.Text = "REPORTE MOVIMIENTOS";
             // 
             // ComprasFormControl
             // 
@@ -447,11 +509,8 @@
             BackColor = Color.FromArgb(26, 32, 40);
             Controls.Add(panelGrid);
             Controls.Add(panel1);
-            Controls.Add(panelHeader);
             Name = "ComprasFormControl";
             Size = new Size(1098, 565);
-            panelHeader.ResumeLayout(false);
-            panelHeader.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)txtValor).EndInit();
@@ -465,9 +524,6 @@
         }
 
         #endregion
-
-        private Panel panelHeader;
-        private Label labelTitle;
         private Panel panel1;
         private Label lblNuevoGasto;
         private Label labelFormaPago;
@@ -480,7 +536,7 @@
         private Label labelDescripcion;
         public Button btnGuardar;
         private Panel panelGrid;
-        private Label labelTotal;
+        private Label labelTotalEfectivo;
         private Panel panelHeaderGrid;
         private LinkLabel linkLabelMes;
         private LinkLabel linkLabelSemana;
@@ -496,5 +552,10 @@
         private Panel panelDataGrid;
         private Label labelSinResultados;
         private DataGridView dvMovimientos;
+        private Label labelTotalMercadoPago;
+        public Button btnMercadoPago;
+        public Button btnEfectivo;
+        private Label labelPago;
+        private ComboBox comboFiltroFormaPago;
     }
 }

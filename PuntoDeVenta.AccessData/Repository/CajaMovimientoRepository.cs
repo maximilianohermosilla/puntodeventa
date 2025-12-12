@@ -72,10 +72,10 @@ namespace PuntoDeVenta.AccessData.Repository
             return await vGblContext.CajaMovimiento.Where(p => p.Id == pId).FirstOrDefaultAsync()!;
         }
 
-        public async Task<CajaMovimiento> GetLast()
+        public async Task<CajaMovimiento> GetLastByFormaPago(int pIdFormaPago)
         {
             vGblContext.ChangeTracker.Clear();
-            return await vGblContext.CajaMovimiento!.OrderByDescending(t => t.Id)!.FirstOrDefaultAsync()!;
+            return await vGblContext.CajaMovimiento!.Where(c => c.IdFormaPago == pIdFormaPago).OrderByDescending(t => t.Id)!.FirstOrDefaultAsync()!;
         }
 
         public bool SaveChanges()

@@ -127,13 +127,146 @@
   <data name="panelFooter.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
   </data>
+  <data name="&gt;&gt;btnAsignar.Name" xml:space="preserve">
+    <value>btnAsignar</value>
+  </data>
+  <data name="&gt;&gt;btnAsignar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAsignar.Parent" xml:space="preserve">
+    <value>panelFooter</value>
+  </data>
+  <data name="&gt;&gt;btnAsignar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnQuitar.Name" xml:space="preserve">
+    <value>btnQuitar</value>
+  </data>
+  <data name="&gt;&gt;btnQuitar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnQuitar.Parent" xml:space="preserve">
+    <value>panelFooter</value>
+  </data>
+  <data name="&gt;&gt;btnQuitar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnNuevoCliente.Name" xml:space="preserve">
+    <value>btnNuevoCliente</value>
+  </data>
+  <data name="&gt;&gt;btnNuevoCliente.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnNuevoCliente.Parent" xml:space="preserve">
+    <value>panelFooter</value>
+  </data>
+  <data name="&gt;&gt;btnNuevoCliente.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelFooter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="panelFooter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 502</value>
+  </data>
+  <data name="panelFooter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>487, 48</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panelFooter.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panelFooter.Name" xml:space="preserve">
+    <value>panelFooter</value>
+  </data>
+  <data name="&gt;&gt;panelFooter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelFooter.Parent" xml:space="preserve">
+    <value>panelMain</value>
+  </data>
+  <data name="&gt;&gt;panelFooter.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="listClientes.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="listClientes.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="listClientes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 55</value>
+  </data>
+  <data name="listClientes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>443, 424</value>
+  </data>
+  <data name="listClientes.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;listClientes.Name" xml:space="preserve">
+    <value>listClientes</value>
+  </data>
+  <data name="&gt;&gt;listClientes.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listClientes.Parent" xml:space="preserve">
+    <value>panelMain</value>
+  </data>
+  <data name="&gt;&gt;listClientes.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtBuscar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 17</value>
+  </data>
+  <data name="txtBuscar.PlaceholderText" xml:space="preserve">
+    <value>Buscar...</value>
+  </data>
+  <data name="txtBuscar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 23</value>
+  </data>
+  <data name="txtBuscar.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;txtBuscar.Name" xml:space="preserve">
+    <value>txtBuscar</value>
+  </data>
+  <data name="&gt;&gt;txtBuscar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtBuscar.Parent" xml:space="preserve">
+    <value>panelMain</value>
+  </data>
+  <data name="&gt;&gt;txtBuscar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="panelMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>487, 550</value>
+  </data>
+  <data name="panelMain.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;panelMain.Name" xml:space="preserve">
+    <value>panelMain</value>
+  </data>
+  <data name="&gt;&gt;panelMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelMain.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="btnAsignar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="btnAsignar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnAsignar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 8.25pt</value>
   </data>
@@ -158,7 +291,6 @@
   <data name="btnAsignar.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 35</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnAsignar.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
@@ -281,101 +413,173 @@
   <data name="&gt;&gt;btnNuevoCliente.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panelFooter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="&gt;&gt;labelTitleCliente.Name" xml:space="preserve">
+    <value>labelTitleCliente</value>
   </data>
-  <data name="panelFooter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 502</value>
+  <data name="&gt;&gt;labelTitleCliente.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="panelFooter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>487, 48</value>
+  <data name="&gt;&gt;labelTitleCliente.Parent" xml:space="preserve">
+    <value>panelNewClient</value>
   </data>
-  <data name="panelFooter.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;labelTitleCliente.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;panelFooter.Name" xml:space="preserve">
-    <value>panelFooter</value>
+  <data name="&gt;&gt;btnCancelar.Name" xml:space="preserve">
+    <value>btnCancelar</value>
   </data>
-  <data name="&gt;&gt;panelFooter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnCancelar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelFooter.Parent" xml:space="preserve">
-    <value>panelMain</value>
+  <data name="&gt;&gt;btnCancelar.Parent" xml:space="preserve">
+    <value>panelNewClient</value>
   </data>
-  <data name="&gt;&gt;panelFooter.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="listClientes.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="listClientes.ItemHeight" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="listClientes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 55</value>
-  </data>
-  <data name="listClientes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>443, 424</value>
-  </data>
-  <data name="listClientes.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;listClientes.Name" xml:space="preserve">
-    <value>listClientes</value>
-  </data>
-  <data name="&gt;&gt;listClientes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;listClientes.Parent" xml:space="preserve">
-    <value>panelMain</value>
-  </data>
-  <data name="&gt;&gt;listClientes.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnCancelar.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="txtBuscar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 17</value>
+  <data name="&gt;&gt;checkHabilitado.Name" xml:space="preserve">
+    <value>checkHabilitado</value>
   </data>
-  <data name="txtBuscar.PlaceholderText" xml:space="preserve">
-    <value>Buscar...</value>
+  <data name="&gt;&gt;checkHabilitado.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txtBuscar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>445, 23</value>
+  <data name="&gt;&gt;checkHabilitado.Parent" xml:space="preserve">
+    <value>panelNewClient</value>
   </data>
-  <data name="txtBuscar.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;txtBuscar.Name" xml:space="preserve">
-    <value>txtBuscar</value>
-  </data>
-  <data name="&gt;&gt;txtBuscar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtBuscar.Parent" xml:space="preserve">
-    <value>panelMain</value>
-  </data>
-  <data name="&gt;&gt;txtBuscar.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;checkHabilitado.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panelMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 12</value>
+  <data name="&gt;&gt;btnGuardarCliente.Name" xml:space="preserve">
+    <value>btnGuardarCliente</value>
   </data>
-  <data name="panelMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>487, 550</value>
+  <data name="&gt;&gt;btnGuardarCliente.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="panelMain.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;btnGuardarCliente.Parent" xml:space="preserve">
+    <value>panelNewClient</value>
+  </data>
+  <data name="&gt;&gt;btnGuardarCliente.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtTelefono.Name" xml:space="preserve">
+    <value>txtTelefono</value>
+  </data>
+  <data name="&gt;&gt;txtTelefono.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtTelefono.Parent" xml:space="preserve">
+    <value>panelNewClient</value>
+  </data>
+  <data name="&gt;&gt;txtTelefono.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;labelTelefono.Name" xml:space="preserve">
+    <value>labelTelefono</value>
+  </data>
+  <data name="&gt;&gt;labelTelefono.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelTelefono.Parent" xml:space="preserve">
+    <value>panelNewClient</value>
+  </data>
+  <data name="&gt;&gt;labelTelefono.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Name" xml:space="preserve">
+    <value>txtEmail</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Parent" xml:space="preserve">
+    <value>panelNewClient</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;labelEmail.Name" xml:space="preserve">
+    <value>labelEmail</value>
+  </data>
+  <data name="&gt;&gt;labelEmail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelEmail.Parent" xml:space="preserve">
+    <value>panelNewClient</value>
+  </data>
+  <data name="&gt;&gt;labelEmail.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtApellido.Name" xml:space="preserve">
+    <value>txtApellido</value>
+  </data>
+  <data name="&gt;&gt;txtApellido.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtApellido.Parent" xml:space="preserve">
+    <value>panelNewClient</value>
+  </data>
+  <data name="&gt;&gt;txtApellido.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;panelMain.Name" xml:space="preserve">
-    <value>panelMain</value>
+  <data name="&gt;&gt;labelApellido.Name" xml:space="preserve">
+    <value>labelApellido</value>
   </data>
-  <data name="&gt;&gt;panelMain.Type" xml:space="preserve">
+  <data name="&gt;&gt;labelApellido.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelApellido.Parent" xml:space="preserve">
+    <value>panelNewClient</value>
+  </data>
+  <data name="&gt;&gt;labelApellido.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;txtNombre.Name" xml:space="preserve">
+    <value>txtNombre</value>
+  </data>
+  <data name="&gt;&gt;txtNombre.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNombre.Parent" xml:space="preserve">
+    <value>panelNewClient</value>
+  </data>
+  <data name="&gt;&gt;txtNombre.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;labelNombre.Name" xml:space="preserve">
+    <value>labelNombre</value>
+  </data>
+  <data name="&gt;&gt;labelNombre.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelNombre.Parent" xml:space="preserve">
+    <value>panelNewClient</value>
+  </data>
+  <data name="&gt;&gt;labelNombre.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="panelNewClient.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 5</value>
+  </data>
+  <data name="panelNewClient.Size" type="System.Drawing.Size, System.Drawing">
+    <value>487, 557</value>
+  </data>
+  <data name="panelNewClient.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="panelNewClient.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;panelNewClient.Name" xml:space="preserve">
+    <value>panelNewClient</value>
+  </data>
+  <data name="&gt;&gt;panelNewClient.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelMain.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panelNewClient.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;panelMain.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;panelNewClient.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="labelTitleCliente.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -419,7 +623,7 @@
   <data name="btnCancelar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAAS5JREFUSEvllLFOwzAURTOz8wvMSDRmo0pdCYQqIfER/A9jv4UBpHZiACmsXZD4
+        vQAADr0BR/uQrQAAAS5JREFUSEvllLFOwzAURTOz8wvMSDRmo0pdCYQqIfER/A9jv4UBpHZiACmsXZD4
         AVJnQIoocXSfbCe3cdKxHOkMfbnvDo7T5P9g5um1ydK8yNSPydRTcXN+ikeHs1tcnBitdjERHwcr6nM7
         S5dYjcMKhljoyRcq9sMWx1jMJ/eo6jL0zGOirgsLWy1sXuXvdF67QWUICTblAptX65dgLqLS0dxzErT6
         +L9/zbaTFVHrMDP1wYJim75yK2odzRdKgr4+7Lkvah3282dBkcFyImod9r+FBa2CHItPOyuiNoQFq7fX
@@ -743,30 +947,6 @@
   </data>
   <data name="&gt;&gt;labelNombre.ZOrder" xml:space="preserve">
     <value>11</value>
-  </data>
-  <data name="panelNewClient.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 5</value>
-  </data>
-  <data name="panelNewClient.Size" type="System.Drawing.Size, System.Drawing">
-    <value>487, 557</value>
-  </data>
-  <data name="panelNewClient.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="panelNewClient.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;panelNewClient.Name" xml:space="preserve">
-    <value>panelNewClient</value>
-  </data>
-  <data name="&gt;&gt;panelNewClient.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelNewClient.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panelNewClient.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

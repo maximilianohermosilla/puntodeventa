@@ -1,4 +1,5 @@
-﻿using PuntoDeVenta.Helpers;
+﻿using PuntoDeVenta.Enum;
+using PuntoDeVenta.Helpers;
 using PuntoDeVenta.UserControls.ComprasControls;
 
 namespace PuntoDeVenta.UserControls
@@ -37,7 +38,8 @@ namespace PuntoDeVenta.UserControls
 
         public async Task GetUltimoMovimiento()
         {
-            await comprasFormControl1.GetUltimoMovimiento();
+            await comprasFormControl1.GetUltimoMovimiento((int)FormaPagoEnum.Efectivo);
+            await comprasFormControl1.GetUltimoMovimiento((int)FormaPagoEnum.MercadoPago);
         }
 
 

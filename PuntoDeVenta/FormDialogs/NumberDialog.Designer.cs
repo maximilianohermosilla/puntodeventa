@@ -88,7 +88,9 @@
             Controls.Add(labelHeader);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            KeyPreview = true;
             Name = "NumberDialog";
+            KeyDown += NumberDialog_KeyDown;
             ((System.ComponentModel.ISupportInitialize)txtNumber).EndInit();
             ResumeLayout(false);
         }

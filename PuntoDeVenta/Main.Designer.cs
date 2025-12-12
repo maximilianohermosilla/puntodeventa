@@ -376,9 +376,12 @@ namespace PuntoDeVenta
             Controls.Add(panelNavbar);
             Controls.Add(panelMain);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             Name = "Main";
             Text = "PuntoDeVenta";
             WindowState = FormWindowState.Maximized;
+            Load += Main_Load;
+            KeyDown += Main_KeyDown;
             panelNavbar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             panelFooter.ResumeLayout(false);

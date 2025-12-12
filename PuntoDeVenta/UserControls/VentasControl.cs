@@ -6,6 +6,7 @@ using PuntoDeVenta.FormDialogs;
 using PuntoDeVenta.Enum;
 using System.Data;
 using PuntoDeVenta.Helpers;
+using System.Windows.Forms;
 
 namespace PuntoDeVenta.UserControls
 {
@@ -60,14 +61,28 @@ namespace PuntoDeVenta.UserControls
 
         private void btnCobrar_Click(object sender, EventArgs e)
         {
+            CobrarTicket();
+        }
 
-            FormaPagoDialog dialog = new FormaPagoDialog();
-
+        public void CobrarTicket()
+        {
             try
             {
-                if (dialog.ShowDialog(this) == DialogResult.OK)
+                var dataGridView = GetDataGridView();
+                if (dataGridView != null)
                 {
-                    _ = CobrarTicket(dialog.formaPago);
+                    var dataTable = (DataTable)(dataGridView!.DataSource ?? NewDataTable());
+
+                    if (dataTable != null && dataTable.Rows.Count > 0)
+                    {
+                        FormaPagoDialog dialog = new FormaPagoDialog();
+
+                        if (dialog.ShowDialog(this) == DialogResult.OK)
+                        {
+                            _ = CobrarTicket(dialog.formaPago);
+                        }
+
+                    }
                 }
             }
             catch (Exception ex)
@@ -125,6 +140,11 @@ namespace PuntoDeVenta.UserControls
         }
 
         private void btnComun_Click(object sender, EventArgs e)
+        {
+            ProductoComun();
+        }
+
+        public void ProductoComun()
         {
             ProductoComunDialog productoComunDialog = new ProductoComunDialog();
 
@@ -216,6 +236,11 @@ namespace PuntoDeVenta.UserControls
 
         private void btnCambiar_Click(object sender, EventArgs e)
         {
+            CambiarTicket();
+        }
+
+        public void CambiarTicket()
+        {
             if (tabControlTickets.SelectedIndex < tabControlTickets.TabCount - 1)
             {
                 tabControlTickets.SelectedIndex++;
@@ -225,7 +250,13 @@ namespace PuntoDeVenta.UserControls
                 tabControlTickets.SelectedIndex = 0;
             }
         }
+
         private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Buscar();
+        }
+
+        public void Buscar()
         {
             ProductoBusquedaDialog productoBusquedaDialog = new ProductoBusquedaDialog();
 
@@ -246,6 +277,11 @@ namespace PuntoDeVenta.UserControls
 
         private void btnEntradas_Click(object sender, EventArgs e)
         {
+            NuevaEntrada();
+        }
+
+        public void NuevaEntrada()
+        {
             VentasEntradaSalidaDialog dialog = new VentasEntradaSalidaDialog("Entrada de dinero", (int)TipoMovimientoEnum.Entrada);
 
             try
@@ -261,6 +297,11 @@ namespace PuntoDeVenta.UserControls
         }
 
         private void btnSalidas_Click(object sender, EventArgs e)
+        {
+            NuevaSalida();
+        }
+
+        public void NuevaSalida()
         {
             VentasEntradaSalidaDialog dialog = new VentasEntradaSalidaDialog("Salida de dinero", (int)TipoMovimientoEnum.Salida);
 
@@ -282,6 +323,11 @@ namespace PuntoDeVenta.UserControls
         }
 
         private void btnVerificador_Click(object sender, EventArgs e)
+        {
+            Verificador();
+        }
+
+        public void Verificador()
         {
             ProductoVerificadorDialog productoVerificadorDialog = new ProductoVerificadorDialog();
 
@@ -569,7 +615,7 @@ namespace PuntoDeVenta.UserControls
 
                         var responseMovimientos = await _productoMovimientoService.InsertRange(productosMovimientos);
 
-                        if(responseMovimientos != null && responseMovimientos.success)
+                        if (responseMovimientos != null && responseMovimientos.success)
                         {
                             string vIdCliente = dataGridView.Rows[0].Cells["IdCliente"].Value != null ? dataGridView.Rows[0].Cells["IdCliente"].Value.ToString()! : "";
 
@@ -602,7 +648,7 @@ namespace PuntoDeVenta.UserControls
                             string toastTipo = responseMovimientos!.success ? "SUCCESS" : "ERROR";
                             ToastForm toast = new ToastForm(toastTipo, responseMovimientos!.message!, this.FindForm()!);
                             toast.Show();
-                        }                        
+                        }
                     }
                 }
             }
@@ -695,6 +741,11 @@ namespace PuntoDeVenta.UserControls
         #endregion
 
         private void btnBuscarCategorias_Click(object sender, EventArgs e)
+        {
+            BuscarCategorias();
+        }
+
+        public void BuscarCategorias()
         {
             ProductoBusquedaCategoriaDialog productoBusquedaDialog = new ProductoBusquedaCategoriaDialog();
             _ = GetAllCategorias(productoBusquedaDialog);

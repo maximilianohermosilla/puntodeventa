@@ -114,7 +114,9 @@
             Controls.Add(txtDescripcion);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            KeyPreview = true;
             Name = "VentasEntradaSalidaDialog";
+            KeyDown += VentasEntradaSalidaDialog_KeyDown;
             ((System.ComponentModel.ISupportInitialize)txtCantidad).EndInit();
             ResumeLayout(false);
             PerformLayout();

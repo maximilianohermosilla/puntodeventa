@@ -29,5 +29,13 @@
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void ProductoEtiquetaDialog_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

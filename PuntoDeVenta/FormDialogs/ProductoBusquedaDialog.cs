@@ -89,5 +89,13 @@ namespace PuntoDeVenta.FormDialogs
             selectedProducto = dvBusqueda.Rows[e.RowIndex].Cells[0].Value.ToString();
             this.DialogResult = DialogResult.OK;
         }
+
+        private void ProductoBusquedaDialog_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace PuntoDeVenta.AccessData.Interfaces
         Task<bool> SaveChangesAsync();
         Task<List<CajaMovimiento>> GetAll();
         Task<List<CajaMovimiento>> GetAllByIdTurno(int pIdTurno);
-        Task<CajaMovimiento> GetLast();
+        Task<CajaMovimiento> GetLastByFormaPago(int pIdFormaPago);
         Task<List<CajaMovimiento>> GetAllByFechaAndTipoMovimientoFormaPago(DateTime pFechaDesde, DateTime pFechaHasta, int pIdTipoMovimiento, int pIdFormaPago);
         Task<CajaMovimiento> Create(CajaMovimiento pEntity);
         Task Delete(CajaMovimiento pEntity);

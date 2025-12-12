@@ -53,7 +53,7 @@ namespace PuntoDeVenta
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
-        {            
+        {
             SetActivePanel(ventas1);
         }
 
@@ -103,7 +103,7 @@ namespace PuntoDeVenta
         private void btnReportes_Click(object sender, EventArgs e)
         {
             SetActivePanel(reportes1);
-            reportes1.InitializeControls();   
+            reportes1.InitializeControls();
             reportes1.GetAllMovimientos();
         }
 
@@ -163,7 +163,7 @@ namespace PuntoDeVenta
             ventas1.Name = "ventas1";
             ventas1.Size = new Size(1295, 771);
             ventas1.TabIndex = 9;
-       
+
             reportes1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             reportes1.BackColor = Color.FromArgb(49, 66, 82);
             reportes1.BorderStyle = BorderStyle.FixedSingle;
@@ -173,7 +173,7 @@ namespace PuntoDeVenta
             reportes1.Name = "reportes1";
             reportes1.Size = new Size(1295, 771);
             reportes1.TabIndex = 8;
-      
+
             inventario1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             inventario1.BorderStyle = BorderStyle.FixedSingle;
             inventario1.Dock = DockStyle.Fill;
@@ -181,7 +181,7 @@ namespace PuntoDeVenta
             inventario1.Name = "inventario1";
             inventario1.Size = new Size(1295, 771);
             inventario1.TabIndex = 6;
-     
+
             facturas1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             facturas1.BackColor = Color.FromArgb(49, 66, 82);
             facturas1.BorderStyle = BorderStyle.FixedSingle;
@@ -191,7 +191,7 @@ namespace PuntoDeVenta
             facturas1.Name = "facturas1";
             facturas1.Size = new Size(1295, 771);
             facturas1.TabIndex = 5;
-     
+
             creditos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             creditos1.BackColor = Color.FromArgb(49, 66, 82);
             creditos1.BorderStyle = BorderStyle.FixedSingle;
@@ -201,7 +201,7 @@ namespace PuntoDeVenta
             creditos1.Name = "creditos1";
             creditos1.Size = new Size(1295, 771);
             creditos1.TabIndex = 4;
-  
+
             turnos1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             turnos1.BackColor = Color.FromArgb(49, 66, 82);
             turnos1.BorderStyle = BorderStyle.FixedSingle;
@@ -211,7 +211,7 @@ namespace PuntoDeVenta
             turnos1.Name = "turnos1";
             turnos1.Size = new Size(1295, 771);
             turnos1.TabIndex = 3;
-   
+
             configuracion1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             configuracion1.BackColor = Color.FromArgb(49, 66, 82);
             configuracion1.BorderStyle = BorderStyle.FixedSingle;
@@ -221,7 +221,7 @@ namespace PuntoDeVenta
             configuracion1.Name = "configuracion1";
             configuracion1.Size = new Size(1295, 771);
             configuracion1.TabIndex = 2;
-         
+
             compras1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             compras1.BackColor = Color.FromArgb(49, 66, 82);
             compras1.Dock = DockStyle.Fill;
@@ -322,7 +322,7 @@ namespace PuntoDeVenta
             {
                 var ultimoTurno = await _turnoService.GetByIdUsuario(IdUsuario, false);
 
-                if(ultimoTurno != null && ultimoTurno.success)
+                if (ultimoTurno != null && ultimoTurno.success)
                 {
                     if (DialogResult.Yes == MessageBox.Show(@$"¿Desea reanudar el turno iniciado {ultimoTurno!.response!.FechaInicio.ToString()}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
                     {
@@ -454,6 +454,99 @@ namespace PuntoDeVenta
 
             numberDialog.Close();
             return cantidad;
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Main_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                SetActivePanel(ventas1);
+                e.Handled = true;
+            }
+
+            if (e.KeyCode == Keys.F2)
+            {
+                SetActivePanel(inventario1);
+                e.Handled = true;
+            }
+
+            if (e.KeyCode == Keys.F3)
+            {
+                SetActivePanel(productos1);
+                e.Handled = true;
+            }
+
+            if (e.KeyCode == Keys.F4)
+            {
+                SetActivePanel(creditos1);
+                e.Handled = true;
+            }
+
+            if (e.KeyCode == Keys.F5)
+            {
+                ventas1.CambiarTicket();
+                e.Handled = true;
+            }
+
+            if (e.KeyCode == Keys.F6)
+            {
+                ventas1.ProductoComun();
+                e.Handled = true;
+            }
+
+            if (e.KeyCode == Keys.F7)
+            {
+                ventas1.NuevaEntrada();
+                e.Handled = true;
+            }
+
+            if (e.KeyCode == Keys.F8)
+            {
+                ventas1.NuevaSalida();
+                e.Handled = true;
+            }
+
+            if (e.KeyCode == Keys.F9)
+            {
+                ventas1.Verificador();
+                e.Handled = true;
+            }
+
+            if (e.KeyCode == Keys.F10)
+            {
+                ventas1.Buscar();
+                e.Handled = true;
+            }
+
+            if (e.KeyCode == Keys.F11)
+            {
+                ventas1.BuscarCategorias();
+                e.Handled = true;
+            }
+
+            if (e.KeyCode == Keys.F12)
+            {
+                ventas1.CobrarTicket();
+                e.Handled = true;
+            }
+
+            if (e.KeyCode == Keys.Delete)
+            {
+                _ = ventas1.EliminarProducto(ventas1.txtCodigo.Text);
+                e.Handled = true;
+            }
+
+            // Example 3: Detect multiple modifiers (e.g., Ctrl + Alt + O)
+            //if (e.Control && e.Alt && e.KeyCode == Keys.O)
+            //{
+            //    MessageBox.Show("Shortcut Ctrl + Alt + O pressed!");
+            //    e.Handled = true;
+            //}
         }
     }
 }

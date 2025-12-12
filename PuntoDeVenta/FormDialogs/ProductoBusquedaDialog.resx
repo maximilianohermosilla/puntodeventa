@@ -159,12 +159,12 @@
   <data name="btnCancelar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAASNJREFUSEvllDFOwzAYhTN35wrMlWjMVpS4UitUCYlDcB9GzsIAEkwMVGrXLpW4
-        AK4zIEWkssER/WwnDiM86S1/3v89yYmTZf9GepbPdZGvVSE+dCHu1WJ8wsxgNcuzkZai6TP3kkRIn/dl
-        fkdGVFxOtZKTN7I8cWmo1WxyTWar1DPvM7mtGHQ24sy4Xq+82be3ZFsFghbuFJrXz4/ejjHZX995IBgq
-        cfrUey8bLyjFhqFYSR88WGBvaCAYK+EzmvzMXH+GYnAnZjoLzL+FIcLdsaSUkG/FkHH9+nIEZ2m1vPB2
-        BhXYkqcHb2Z9OfVnUjSVPL8huxXDvzGZR9KluOXCEJMXlCrEjospfpf5KVlRVVJcEdBl7ifL/LgI++nO
-        F/ondAA1hD6HTFl82QAAAABJRU5ErkJggg==
+        vAAADrwBlbxySQAAAS5JREFUSEvllLFOwzAURTOz8wvMSDRmo0pdCYQqIfER/A9jv4UBpHZiACmsXZD4
+        AVJnQIoocXSfbCe3cdKxHOkMfbnvDo7T5P9g5um1ydK8yNSPydRTcXN+ikeHs1tcnBitdjERHwcr6nM7
+        S5dYjcMKhljoyRcq9sMWx1jMJ/eo6jL0zGOirgsLWy1sXuXvdF67QWUICTblAptX65dgLqLS0dxzErT6
+        +L9/zbaTFVHrMDP1wYJim75yK2odzRdKgr4+7Lkvah3282dBkcFyImod9r+FBa2CHItPOyuiNoQFq7fX
+        pqh95kK5mAZzEZUhLGitVs90bm6v6LzUlw+o7MIWxooqTn1dH9nSUFHTT31lP9lyzG+dnqEiTqnVHSvZ
+        J9bGUy9v2mW+vS/0CEiSPzWEPodvzICsAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnCancelar.Location" type="System.Drawing.Point, System.Drawing">
@@ -209,12 +209,12 @@
   <data name="btnBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAS9JREFUSEtjYBj2IDMzUzAhIWFdYmLikYSEhOno8mSDxMTE64mJif/x4EB0PUQD
-        mCFJJU3/U7Z+w8CJ6Tlwi9D1EgQwjeiGYuDld8HqEhISPqCbgRMkJibeRDd8193f/3ffQ+D1N38j5Ne9
-        BFuSnJysh24WVgAJlma4ASADu47/QLFw5dVfYHEYn+igSk5OFkJ3ffp2LEGz9dv/3J3f4ezkpbeJsyAx
-        MXEtugXEYmItOEJrC6bT1AIQIMeC5DmnSLMAlInQDcGHiU5FIJCQkOAL9sXyexgGYcNJ1X1gwwsLCznR
-        zcIJYC5KWfsCw0BknAw1nGjXIwNQ9odpTl52G9VgaJijY3QzCILExER9dEOQMSxYQGwLj4D/5u7+pFtC
-        LAAZDsPoclQDw88SdPGhCwBxF1N8D5mcEAAAAABJRU5ErkJggg==
+        vAAADrwBlbxySQAAAS1JREFUSEtjGP4gMzNTMCEhYV1iYuIRID0dKkw5ABp4HYj/48GBUKWkA5ghSSVN
+        /1O2fsPAiek5cIugWogHMI3YDEbBy++C1QGD7QNUK2EA1HAT3fBdd3//330Pgdff/I2QX/cSbElycrIe
+        1Aj8AKQ4qaQZbgDIwK7jPxAGAvHKq7/A4jA+SA8IQ43ADYCuEEJ3ffp2BBsZ5+78DmcnL71NnAVARWvR
+        LSAWE2vBEVpbMJ2mFoAAORYkzzlFmgWgTITNIFwYrIdYC4CZxhfsi+X3sBqGjpOq+8CGFxYWckKNIAxg
+        LkpZ+wKroTCcDDUchKFaiQeg7A/TnLzsNqrB0DBHx1CtxAOgJn10Q5AxLFhAbAuPgP/m7v6kW0IsABkO
+        w1Ah6oPhZwmUO+QBAwMAcRdTfJeCq3wAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnBuscar.Location" type="System.Drawing.Point, System.Drawing">

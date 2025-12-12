@@ -101,7 +101,9 @@
             Controls.Add(labelProducto);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            KeyPreview = true;
             Name = "ProductoEtiquetaDialog";
+            KeyDown += ProductoEtiquetaDialog_KeyDown;
             ((System.ComponentModel.ISupportInitialize)txtCantidad).EndInit();
             ResumeLayout(false);
             PerformLayout();

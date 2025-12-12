@@ -41,7 +41,8 @@ namespace PuntoDeVenta.FormDialogs
 
         public async Task InsertMovimiento()
         {
-            var movimiento = new MovimientoRequest {
+            var movimiento = new MovimientoRequest
+            {
                 Id = 0,
                 Descripcion = txtDescripcion.Text,
                 Fecha = DateTime.Now,
@@ -73,5 +74,12 @@ namespace PuntoDeVenta.FormDialogs
             this.DialogResult = DialogResult.Cancel;
         }
 
+        private void VentasEntradaSalidaDialog_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+        }
     }
 }

@@ -2,6 +2,8 @@
 using PuntoDeVenta.Application.DTO;
 using PuntoDeVenta.Application.Interfaces;
 using PuntoDeVenta.Application.Services;
+using PuntoDeVenta.Domain.Entities;
+using PuntoDeVenta.Enum;
 using PuntoDeVenta.Helpers;
 using System.Data;
 
@@ -18,7 +20,8 @@ namespace PuntoDeVenta.UserControls.ComprasControls
         public List<TipoMovimientoResponse> _tipoMovimientos;
         public List<FormaPagoResponse> _formaPagos;
 
-        public CajaMovimientoResponse ultimoMovimiento;
+        public CajaMovimientoResponse ultimoMovimientoEfectivo;
+        public CajaMovimientoResponse ultimoMovimientoMercadoPago;
 
         public ComprasFormControl()
         {
@@ -26,19 +29,42 @@ namespace PuntoDeVenta.UserControls.ComprasControls
             _tipoMovimientoService = new TipoMovimientoService(_context);
             _formaPagoService = new FormaPagoService(_context);
             InitializeComponent();
-            _ = GetUltimoMovimiento();
+            _ = GetUltimoMovimiento((int)FormaPagoEnum.Efectivo);
+            _ = GetUltimoMovimiento((int)FormaPagoEnum.MercadoPago);
             _ = GetAllTipoMovimientos();
             _ = GetAllFormaPago();
+            _ = GetAllMovimientos();
         }
 
-        public async Task GetUltimoMovimiento()
+        public async Task GetUltimoMovimiento(int idFormaPago)
         {
-            var responseMovimiento = await _cajaMovimientoService.GetLast();
+            var responseMovimiento = await _cajaMovimientoService.GetLastByFormaPago(idFormaPago);
 
             if (responseMovimiento != null && responseMovimiento.response != null)
             {
-                ultimoMovimiento = (CajaMovimientoResponse)responseMovimiento.response;
-                labelTotal.Text = $@"{responseMovimiento.response.ValorFin!.ToString("C2")}";
+                if (idFormaPago == (int)FormaPagoEnum.MercadoPago)
+                {
+                    ultimoMovimientoMercadoPago = (CajaMovimientoResponse)responseMovimiento.response;
+                    labelTotalMercadoPago.Text = $@"{responseMovimiento.response.ValorFin!.ToString("C2")}";
+                }
+                else
+                {
+                    ultimoMovimientoEfectivo = (CajaMovimientoResponse)responseMovimiento.response;
+                    labelTotalEfectivo.Text = $@"{responseMovimiento.response.ValorFin!.ToString("C2")}";
+                }
+            }
+            else
+            {
+                if (idFormaPago == (int)FormaPagoEnum.MercadoPago)
+                {
+                    ultimoMovimientoMercadoPago = null;
+                    labelTotalMercadoPago.Text = $@"$ 0.00";
+                }
+                else
+                {
+                    ultimoMovimientoEfectivo = null;
+                    labelTotalEfectivo.Text = $@"$ 0.00";
+                }
             }
         }
 
@@ -50,10 +76,11 @@ namespace PuntoDeVenta.UserControls.ComprasControls
 
                 if (response != null && response.success)
                 {
-                    _tipoMovimientos = (List<TipoMovimientoResponse>)response.response!;                    
+                    _tipoMovimientos = (List<TipoMovimientoResponse>)response.response!;
                     comboTipoMovimiento.DisplayMember = "Descripcion";
                     comboTipoMovimiento.ValueMember = "Id";
-                    comboTipoMovimiento.DataSource = _tipoMovimientos.Where(t => t.Id <3).ToList();
+                    comboTipoMovimiento.DataSource = _tipoMovimientos.Where(t => t.Id == (int)TipoMovimientoEnum.Entrada
+                                                        || t.Id == (int)TipoMovimientoEnum.Salida).ToList();
                     comboTipoMovimiento.Refresh();
                     comboTipoMovimiento.Invalidate();
                 }
@@ -78,6 +105,14 @@ namespace PuntoDeVenta.UserControls.ComprasControls
                     comboFormaPago.DataSource = _formaPagos.ToList();
                     comboFormaPago.Refresh();
                     comboFormaPago.Invalidate();
+
+                    var formaPagosFiltro = (List<FormaPagoResponse>)response.response!;
+                    formaPagosFiltro.Insert(0, new FormaPagoResponse { Id = 0, Descripcion = "-- Todos --", Habilitado = true });
+                    comboFiltroFormaPago.DisplayMember = "Descripcion";
+                    comboFiltroFormaPago.ValueMember = "Id";
+                    comboFiltroFormaPago.DataSource = _formaPagos.ToList();
+                    comboFiltroFormaPago.Refresh();
+                    comboFiltroFormaPago.Invalidate();
                 }
             }
             catch (Exception ex)
@@ -90,7 +125,8 @@ namespace PuntoDeVenta.UserControls.ComprasControls
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             _ = GetAllMovimientos();
-            _ = GetUltimoMovimiento();
+            _ = GetUltimoMovimiento((int)FormaPagoEnum.Efectivo);
+            _ = GetUltimoMovimiento((int)FormaPagoEnum.MercadoPago);
         }
 
         public async Task GetAllMovimientos()
@@ -99,7 +135,9 @@ namespace PuntoDeVenta.UserControls.ComprasControls
             {
                 var desde = new DateTime(dateDesde.Value.Year, dateDesde.Value.Month, dateDesde.Value.Day, 0, 0, 0);
                 var hasta = new DateTime(dateHasta.Value.Year, dateHasta.Value.Month, dateHasta.Value.Day, 23, 59, 0);
-                var response = await _cajaMovimientoService.GetAllByFechaAndTipoMovimientoFormaPago(desde, hasta, 0, 0);
+                var formaPago = Convert.ToInt32(comboFiltroFormaPago!.SelectedValue);
+
+                var response = await _cajaMovimientoService.GetAllByFechaAndTipoMovimientoFormaPago(desde, hasta, 0, formaPago);
 
                 if (response != null && response.success)
                 {
@@ -120,7 +158,7 @@ namespace PuntoDeVenta.UserControls.ComprasControls
             {
                 var listaMovimientos = movimientos.Select(x => new
                 {
-                    Codigo = x.Id,
+                    x.Descripcion,
                     Usuario = x.Usuario.User ?? "",
                     x.Fecha,
                     x.ValorInicio,
@@ -219,7 +257,17 @@ namespace PuntoDeVenta.UserControls.ComprasControls
                 }
                 else
                 {
-                    var ultimoValor = ultimoMovimiento != null ? ultimoMovimiento!.ValorFin : 0;
+                    float ultimoValor = 0;
+                    if (Convert.ToInt32(comboFormaPago.SelectedValue) == (int)FormaPagoEnum.MercadoPago && ultimoMovimientoMercadoPago != null)
+                    {
+                        ultimoValor = ultimoMovimientoMercadoPago!.ValorFin;
+                    }
+
+                    if (Convert.ToInt32(comboFormaPago.SelectedValue) == (int)FormaPagoEnum.Efectivo && ultimoMovimientoEfectivo != null)
+                    {
+                        ultimoValor = ultimoMovimientoEfectivo!.ValorFin;
+                    }
+
                     CajaMovimientoRequest movimiento = new CajaMovimientoRequest()
                     {
                         Id = 0,
@@ -227,7 +275,7 @@ namespace PuntoDeVenta.UserControls.ComprasControls
                         Descripcion = txtDescripcion.Text,
                         Valor = Convert.ToInt32(txtValor.Value),
                         ValorInicio = ultimoValor,
-                        ValorFin = Convert.ToInt32(comboTipoMovimiento!.SelectedValue) == 1 
+                        ValorFin = Convert.ToInt32(comboTipoMovimiento!.SelectedValue) == 1
                                     ? ultimoValor + Convert.ToInt32(txtValor.Value)
                                     : ultimoValor - Convert.ToInt32(txtValor.Value),
                         Entrada = Convert.ToInt32(comboTipoMovimiento!.SelectedValue) == 1,
@@ -238,12 +286,11 @@ namespace PuntoDeVenta.UserControls.ComprasControls
                         IdTurno = SessionHelper.IdTurno
                     };
 
-
                     response = await _cajaMovimientoService.Insert(movimiento);
 
                     if (response.success == true)
                     {
-                        _ = GetUltimoMovimiento();
+                        _ = GetUltimoMovimiento(Convert.ToInt32(comboFormaPago.SelectedValue));
                         _ = GetAllMovimientos();
                         txtDescripcion.Text = "";
                         txtValor.Value = 0;
@@ -258,6 +305,21 @@ namespace PuntoDeVenta.UserControls.ComprasControls
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnEfectivo_Click(object sender, EventArgs e)
+        {
+            comboFiltroFormaPago.SelectedValue = (int)FormaPagoEnum.Efectivo;
+            _ = GetAllMovimientos();
+            _ = GetUltimoMovimiento((int)FormaPagoEnum.Efectivo);
+
+        }
+
+        private void btnMercadoPago_Click(object sender, EventArgs e)
+        {
+            comboFiltroFormaPago.SelectedValue = (int)FormaPagoEnum.MercadoPago;
+            _ = GetAllMovimientos();
+            _ = GetUltimoMovimiento((int)FormaPagoEnum.MercadoPago);
         }
     }
 }

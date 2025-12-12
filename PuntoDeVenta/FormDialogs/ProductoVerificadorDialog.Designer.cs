@@ -109,7 +109,9 @@
             Controls.Add(labelProducto);
             ForeColor = SystemColors.ButtonHighlight;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            KeyPreview = true;
             Name = "ProductoVerificadorDialog";
+            KeyDown += ProductoVerificadorDialog_KeyDown;
             panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
