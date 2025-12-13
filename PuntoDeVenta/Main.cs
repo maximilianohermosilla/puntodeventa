@@ -6,7 +6,6 @@ using PuntoDeVenta.Enum;
 using PuntoDeVenta.FormDialogs;
 using PuntoDeVenta.Helpers;
 using PuntoDeVenta.UserControls;
-using System.Windows.Forms;
 
 namespace PuntoDeVenta
 {
@@ -19,6 +18,7 @@ namespace PuntoDeVenta
         private readonly IParametroService _parametroService;
 
         public int IdUsuario;
+        public string nombreUsuario;
         public TurnoResponse turnoActual;
 
         public Main()
@@ -26,14 +26,15 @@ namespace PuntoDeVenta
             InitializeMain();
         }
 
-        public Main(int idUsuario)
+        public Main(UsuarioResponse usuario)
         {
             _turnoService = new TurnoService(_context);
             _ticketService = new TicketService(_context);
             _movimientoService = new MovimientoService(_context);
             _parametroService = new ParametroService(_context);
-            SessionHelper.IdUsuario = idUsuario;
-            IdUsuario = idUsuario;
+            SessionHelper.IdUsuario = usuario!.Id;
+            IdUsuario = usuario!.Id;
+            nombreUsuario = usuario!.User;
             InitializeMain();
         }
 
@@ -48,7 +49,7 @@ namespace PuntoDeVenta
             timer1.Start();
             configuracion1.PictureChanged += configuracion1_PictureChanged;
             configuracion1.TextUpdateRequested += configuracion1_TextUpdateRequested;
-
+            labelUsuario.Text = $"Usuario: {nombreUsuario}";
             //SetAllControlsFont(this.Controls, new Font("Verdana", 8F, FontStyle.Regular));
         }
 

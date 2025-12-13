@@ -48,6 +48,9 @@ namespace PuntoDeVenta.UserControls
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             SetActivePanel(usuarioControl);
+            _ = usuarioControl.GetAllUsuarios();
+            _ = usuarioControl.GetAllPerfiles();
+            usuarioControl.SetUsuario(null);
         }
 
         public void SetActivePanel(UserControl? control)

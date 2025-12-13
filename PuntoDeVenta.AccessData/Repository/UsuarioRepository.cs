@@ -47,19 +47,19 @@ namespace PuntoDeVenta.AccessData.Repository
         public async Task<List<Usuario>> GetAll(bool? habilitados)
         {
             vGblContext.ChangeTracker.Clear();
-            return await vGblContext.Usuario.Where(x => habilitados == null || x.Habilitado == habilitados).ToListAsync();
+            return await vGblContext.Usuario.Include(u => u.Perfil).Where(x => habilitados == null || x.Habilitado == habilitados).ToListAsync();
         }
 
         public async Task<Usuario> GetById(int pId)
         {
             vGblContext.ChangeTracker.Clear();
-            return await vGblContext.Usuario.Where(p => p.Id == pId).FirstOrDefaultAsync()!;
+            return await vGblContext.Usuario.Include(u => u.Perfil).Where(p => p.Id == pId).FirstOrDefaultAsync()!;
         }
 
         public async Task<Usuario> GetByUserAndPassword(string user, string password)
         {
             vGblContext.ChangeTracker.Clear();
-            return await vGblContext.Usuario.Where(p => p.User == user && p.Password == password).FirstOrDefaultAsync()!;
+            return await vGblContext.Usuario.Include(u => u.Perfil).Where(p => p.User == user && p.Password == password).FirstOrDefaultAsync()!;
         }
         
         public bool SaveChanges()

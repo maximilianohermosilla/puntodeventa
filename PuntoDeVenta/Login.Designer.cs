@@ -128,11 +128,11 @@
             // labelErrors
             // 
             labelErrors.AutoSize = true;
-            labelErrors.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelErrors.ForeColor = Color.Red;
-            labelErrors.Location = new Point(297, 377);
+            labelErrors.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelErrors.ForeColor = Color.OrangeRed;
+            labelErrors.Location = new Point(308, 382);
             labelErrors.Name = "labelErrors";
-            labelErrors.Size = new Size(218, 25);
+            labelErrors.Size = new Size(178, 21);
             labelErrors.TabIndex = 7;
             labelErrors.Text = "Credenciales incorrectas";
             labelErrors.Visible = false;

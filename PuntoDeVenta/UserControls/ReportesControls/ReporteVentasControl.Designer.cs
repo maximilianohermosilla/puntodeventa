@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteVentasControl));
             panelMain = new Panel();
             panelCharts = new Panel();
-            panelChartCategorias = new Panel();
-            chartCategorias = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panelChartProductos = new Panel();
             chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            panelChartCategorias = new Panel();
+            chartCategorias = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panelDataGrid = new Panel();
             labelSinResultados = new Label();
             dvMovimientos = new DataGridView();
@@ -52,10 +52,10 @@
             labelTitle = new Label();
             panelMain.SuspendLayout();
             panelCharts.SuspendLayout();
-            panelChartCategorias.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chartCategorias).BeginInit();
             panelChartProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chartProductos).BeginInit();
+            panelChartCategorias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chartCategorias).BeginInit();
             panelDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dvMovimientos).BeginInit();
             panelHeader.SuspendLayout();
@@ -86,6 +86,26 @@
             panelCharts.Size = new Size(1447, 417);
             panelCharts.TabIndex = 27;
             // 
+            // panelChartProductos
+            // 
+            panelChartProductos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelChartProductos.AutoScroll = true;
+            panelChartProductos.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panelChartProductos.Controls.Add(chartProductos);
+            panelChartProductos.Location = new Point(0, 0);
+            panelChartProductos.Name = "panelChartProductos";
+            panelChartProductos.Size = new Size(684, 417);
+            panelChartProductos.TabIndex = 27;
+            // 
+            // chartProductos
+            // 
+            chartProductos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            chartProductos.Location = new Point(0, 0);
+            chartProductos.Name = "chartProductos";
+            chartProductos.Size = new Size(684, 417);
+            chartProductos.TabIndex = 26;
+            chartProductos.Text = "chart2";
+            // 
             // panelChartCategorias
             // 
             panelChartCategorias.AutoScroll = true;
@@ -106,26 +126,6 @@
             chartCategorias.Size = new Size(741, 417);
             chartCategorias.TabIndex = 24;
             chartCategorias.Text = "chart1";
-            // 
-            // panelChartProductos
-            // 
-            panelChartProductos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelChartProductos.AutoScroll = true;
-            panelChartProductos.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            panelChartProductos.Controls.Add(chartProductos);
-            panelChartProductos.Location = new Point(0, 0);
-            panelChartProductos.Name = "panelChartProductos";
-            panelChartProductos.Size = new Size(684, 417);
-            panelChartProductos.TabIndex = 27;
-            // 
-            // chartProductos
-            // 
-            chartProductos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            chartProductos.Location = new Point(0, 0);
-            chartProductos.Name = "chartProductos";
-            chartProductos.Size = new Size(684, 417);
-            chartProductos.TabIndex = 26;
-            chartProductos.Text = "chart2";
             // 
             // panelDataGrid
             // 
@@ -330,10 +330,10 @@
             Size = new Size(1447, 800);
             panelMain.ResumeLayout(false);
             panelCharts.ResumeLayout(false);
-            panelChartCategorias.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)chartCategorias).EndInit();
             panelChartProductos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)chartProductos).EndInit();
+            panelChartCategorias.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)chartCategorias).EndInit();
             panelDataGrid.ResumeLayout(false);
             panelDataGrid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dvMovimientos).EndInit();

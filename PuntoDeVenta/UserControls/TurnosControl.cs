@@ -55,8 +55,8 @@ namespace PuntoDeVenta.UserControls
                 control.Visible = true;
             }
 
-            panelMain.Refresh();
-            this.Refresh();
+            //panelMain.Refresh();
+            //this.Refresh();
         }
 
         public async Task GetTurno()

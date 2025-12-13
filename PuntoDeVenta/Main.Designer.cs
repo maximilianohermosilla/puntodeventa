@@ -59,12 +59,15 @@ namespace PuntoDeVenta
             imageList = new ImageList(components);
             panelMain = new Panel();
             panelFooter = new Panel();
+            labelUsuario = new Label();
+            pictureUser = new PictureBox();
             txtDatetime = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             timer1 = new System.Windows.Forms.Timer(components);
             panelNavbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             panelFooter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureUser).BeginInit();
             SuspendLayout();
             // 
             // panelNavbar
@@ -332,6 +335,7 @@ namespace PuntoDeVenta
             panelMain.BackColor = Color.FromArgb(49, 66, 82);
             panelMain.ForeColor = SystemColors.ButtonHighlight;
             panelMain.Location = new Point(138, 0);
+            panelMain.Margin = new Padding(3, 15, 3, 3);
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(1300, 771);
             panelMain.TabIndex = 2;
@@ -340,6 +344,8 @@ namespace PuntoDeVenta
             // 
             panelFooter.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panelFooter.BackColor = Color.FromArgb(49, 66, 82);
+            panelFooter.Controls.Add(labelUsuario);
+            panelFooter.Controls.Add(pictureUser);
             panelFooter.Controls.Add(txtDatetime);
             panelFooter.Dock = DockStyle.Bottom;
             panelFooter.ForeColor = SystemColors.ButtonHighlight;
@@ -347,6 +353,29 @@ namespace PuntoDeVenta
             panelFooter.Name = "panelFooter";
             panelFooter.Size = new Size(1301, 34);
             panelFooter.TabIndex = 3;
+            // 
+            // labelUsuario
+            // 
+            labelUsuario.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            labelUsuario.AutoSize = true;
+            labelUsuario.Font = new Font("Segoe UI Light", 14F, FontStyle.Bold);
+            labelUsuario.Location = new Point(38, 3);
+            labelUsuario.Margin = new Padding(3, 6, 3, 0);
+            labelUsuario.Name = "labelUsuario";
+            labelUsuario.Size = new Size(83, 25);
+            labelUsuario.TabIndex = 2;
+            labelUsuario.Text = "Usuario:";
+            // 
+            // pictureUser
+            // 
+            pictureUser.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            pictureUser.BackgroundImage = Properties.Resources.people_pc;
+            pictureUser.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureUser.Location = new Point(6, 3);
+            pictureUser.Name = "pictureUser";
+            pictureUser.Size = new Size(26, 25);
+            pictureUser.TabIndex = 3;
+            pictureUser.TabStop = false;
             // 
             // txtDatetime
             // 
@@ -386,6 +415,7 @@ namespace PuntoDeVenta
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             panelFooter.ResumeLayout(false);
             panelFooter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureUser).EndInit();
             ResumeLayout(false);
         }
 
@@ -426,5 +456,8 @@ namespace PuntoDeVenta
 
             panelMain.Controls.Add(clientesUserControl);
         }
+
+        private Label labelUsuario;
+        private PictureBox pictureUser;
     }    
 }

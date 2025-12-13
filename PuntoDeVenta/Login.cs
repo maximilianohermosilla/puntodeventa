@@ -45,18 +45,26 @@ namespace PuntoDeVenta
         {
             try
             {
-                #if DEBUG
-                    txtUser.Text = "admin";
-                    txtPassword.Text = "12345";
-                #endif
+                //#if DEBUG
+                //    txtUser.Text = "admin";
+                //    txtPassword.Text = "12345";
+                //#endif
 
                 var usuario = await _usuarioService.GetByUserAndPassword(txtUser.Text, txtPassword.Text);
 
                 if (usuario != null == usuario!.success)
                 {
-                    Main form = new Main(1);
-                    form.Show(this);
-                    this.Hide();
+                    if(!usuario.response!.Habilitado)
+                    {
+                        labelErrors.Text = "Usuario deshabilitado";
+                        labelErrors.Visible = true;
+                    }
+                    else
+                    {
+                        Main form = new Main(usuario!.response);
+                        form.Show(this);
+                        this.Hide();
+                    }
                 }
                 else
                 {
